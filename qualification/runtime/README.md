@@ -113,3 +113,61 @@ neither changes the native runtime nor rebuilds it. See the
 methods and 29 image-harness checks passed, including six real simulator runs.
 Parser-based hosted circuit restrictions, material staging, attestation, registry
 publication and hosted result/lifecycle wiring remain separate work.
+
+## Restricted parser qualification
+
+`program_guard.py` is an additional experimental profile, not a change to the
+existing CLI. Run it only in the bounded, credential-free CPU container. It uses
+the installed Qiskit 0.46 OpenQASM 2 parser in strict mode with an empty include
+search path; the existing byte/include precheck runs first. No dependencies are
+installed. The parser's built-in qelib1 support remains available.
+
+The profile accepts only X, H and CX operations, one quantum and one classical
+register of matching size, and complete final measurements in positional order.
+Expanded individual measurements equivalent to that final block are accepted.
+Other executed gates, barriers, reset, classical conditions, partial/reordered or
+mid-circuit measurements are rejected. Total parsed operations, including final
+measurements, are capped at 4096; input and canonical output are capped at 64 KiB.
+Unused declarations are not an advertised capability; executable instructions
+must all belong to the closed profile. Limits apply after parsing, so the parser
+itself still requires the outer CPU/memory/deadline boundary.
+
+The guard emits fresh OpenQASM with fixed q/c registers and only validated
+instructions. This avoids forwarding arbitrary source to a second native parser.
+It returns the original source hash separately. The native result hash refers to
+these canonical bytes: a future trusted integration must bind original and canonical
+artifacts rather than mislabel one hash as the other. The guard's returned hash is
+not an attestation or independent proof that normalization happened correctly.
+
+```sh
+python3 qualification/runtime/qualify_program_image.py --parent CANDIDATE_IMAGE_ID --output /tmp/qristal-program-evidence
+```
+
+Use the qualified candidate image from the preceding section; the harness depends
+on its bounded process helper and candidate validator. The command adds only the
+guard and tests. See [parser evidence](../evidence/2026-09-09-program/README.md).
+Supporting arbitrary QASM, parameterized rotations, noise, or compiling customer
+Python requires separate qualification. Hosted material staging, provenance and
+lifecycle integration remain unimplemented.
+
+### Joined local experiment
+
+`local_pipeline.run_local(program_bytes, options_bytes, backend='qpp')` joins the
+restricted parser, fixed simulator CLI and independent result validator. Options
+are at most 1024 UTF-8 JSON bytes, with exactly integer `qubits`, `shots`, `seed`;
+backend is qpp or Aer and this path is ideal-only. Unknown/duplicate keys, invalid
+types and bounds fail before parsing. Rejected circuits never start the simulator.
+Temporary canonical files are removed after success or failure. The whole call,
+including the parser, must remain inside the qualified isolation and outer deadline.
+
+The returned immutable `LocalObservation` separates the original source hash,
+canonical source hash and exact options-byte hash. Its nested local result refers
+to the canonical circuit actually sent to the CLI. These are local bookkeeping
+facts, not authenticated provenance or a hosted receipt. Options and source bytes
+come from the experiment's caller; no material gateway or admission is simulated.
+The pipeline does not select a provider resource, grant retries or release capacity.
+
+The existing `qualify_program_image.py` command now also runs this pipeline's tests.
+The latest [joined evidence](../evidence/2026-09-09-program-pipeline/README.md)
+records the derived image and logs. The existing image entrypoint and CLI remain
+unchanged; this helper is an additional local experiment, not the hosted adapter.
