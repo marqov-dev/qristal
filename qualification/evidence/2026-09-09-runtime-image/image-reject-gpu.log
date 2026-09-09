@@ -1,0 +1,4 @@
+usage: runtime.py [-h] [--capabilities] [--qasm QASM] [--backend {qpp,aer}]
+                  [--qubits QUBITS] [--shots SHOTS] [--seed SEED]
+                  [--readout-p10 READOUT_P10] [--readout-p01 READOUT_P01]
+runtime.py: error: argument --backend: invalid choice: 'gpu' (choose from 'qpp', 'aer')

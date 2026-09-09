@@ -1,0 +1,1 @@
+{"backend": "qpp", "bit_order": "qubit_0_first", "counts": {"00": 2022, "11": 2074}, "interface": "local-qristal-sample/experimental", "program_sha256": "a7577048a419d71bbbd20f20d0c37e75102152dc1b3f80c64ebaa550280285e9", "shots": 4096}

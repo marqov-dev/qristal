@@ -1,0 +1,9 @@
+python3=3.10.6-1~22.04.1
+libgomp1:amd64=12.3.0-1ubuntu1~22.04.3
+libopenblas0-pthread:amd64=0.3.20+ds-1
+libcurl4:amd64=7.81.0-1ubuntu1.27
+libssl3:amd64=3.0.2-0ubuntu1.29
+libpython3.10:amd64=3.10.12-1~22.04.18
+libstdc++6:amd64=12.3.0-1ubuntu1~22.04.3
+libgfortran5:amd64=12.3.0-1ubuntu1~22.04.3
+ca-certificates=20260601~22.04.1

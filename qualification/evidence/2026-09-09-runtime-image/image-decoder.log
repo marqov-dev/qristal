@@ -1,0 +1,27 @@
+max beam:0111
+0111: 128
+PASS: qpp symbols=2 beam=0111
+max beam:010111
+010111: 128
+PASS: qpp symbols=5 beam=010111
+max beam:
+: 128
+PASS: qpp symbols=5 beam=
+max beam:0111
+0111: 128
+PASS: aer symbols=2 beam=0111
+max beam:010111
+010111: 128
+PASS: aer symbols=5 beam=010111
+max beam:
+: 128
+PASS: aer symbols=5 beam=
+max beam:0111
+0111: 128
+PASS: sparse-sim symbols=2 beam=0111
+max beam:010111
+010111: 128
+PASS: sparse-sim symbols=5 beam=010111
+max beam:
+: 128
+PASS: sparse-sim symbols=5 beam=
