@@ -1,0 +1,35 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- clang-format not found! 'format' target not built. Install clang-format to enable formatting.
+Checking for CppMicroServices resource linking capability...yes
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found CppMicroServices: /work/install-xacc/share/cppmicroservices4/cmake/CppMicroServicesConfig.cmake  found components: Framework 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.74.0")  
+-- Found Python: /usr/bin/python3.10 (found suitable version "3.10.12", minimum required is "3") found components: Interpreter Development Development.Module Development.Embed 
+-- Performing Test HAS_FLTO
+-- Performing Test HAS_FLTO - Success
+-- Found pybind11: /work/install-core/include (found version "2.12.0")
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package):
+  Could not find a configuration file for package "Eigen3" that is compatible
+  with requested version "3.4.1".
+
+  The following configuration files were considered but not accepted:
+
+    /usr/share/eigen3/cmake/Eigen3Config.cmake, version: 3.4.0
+
+Call Stack (most recent call first):
+  /work/install-core/cmake/coreDependencies.cmake:20 (find_dependency)
+  /work/install-core/qristal_core-config.cmake:36 (include)
+  CMakeLists.txt:3 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/probe/consumer/CMakeFiles/CMakeOutput.log".

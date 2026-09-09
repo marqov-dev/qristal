@@ -1,0 +1,54 @@
+{
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "command": [
+    "python3",
+    "-s",
+    "-B",
+    "/checks/isolation.py",
+    "integration_smoke.py"
+  ],
+  "exit": 0,
+  "seconds": 2.0487353801727295,
+  "cpu": 2,
+  "memory_gib": 4,
+  "network": "none",
+  "mounts": [
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/install-xacc",
+      "target": "/work/install-xacc",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/install-core",
+      "target": "/work/install-core",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/integration-deps",
+      "target": "/runtime/python-deps",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/installed-checks",
+      "target": "/checks",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/install-integrations",
+      "target": "/work/install-integrations",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/runtime-probe",
+      "target": "/probe",
+      "readonly": false
+    }
+  ],
+  "environment": [
+    "empty environment",
+    "HOME=/tmp",
+    "PYTHONNOUSERSITE=1",
+    "PYTHONPATH=/work/install-core/lib:/runtime/python-deps:/work/install-integrations:/checks"
+  ],
+  "ld_library_path": null
+}

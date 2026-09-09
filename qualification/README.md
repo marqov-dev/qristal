@@ -42,3 +42,7 @@ Every stage writes a log and a JSON metadata record beside the checkout. Do not 
 After the Core stages, run `python3 qristal/qualification/run_stage.py noise-test`. This exercises native CPU Aer with analytically specified readout, amplitude-damping and symmetric Pauli-noise probabilities. It does not exercise pulse simulation, cloud IBM services, GPU acceleration, commercial Emulator models or a QB device model. The environment is empty of provider credentials and runtime networking is disabled.
 
 `python-constraints.txt` records the resolved Python package versions from the first CPU qualification. Core dependency acquisition uses these constraints. C++ sources and the public toolchain remain pinned/recorded separately.
+
+## Installed runtime
+
+The next qualification stage verifies CPU execution with source and build trees unmounted, including an independent installed Core C++ consumer. See [installed runtime reproduction and limits](installed/README.md). Its source lock includes the Core Eigen packaging fix under review in Core PR #2.

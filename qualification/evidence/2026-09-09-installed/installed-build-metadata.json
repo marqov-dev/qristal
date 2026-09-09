@@ -1,0 +1,29 @@
+{
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "command": [
+    "cmake",
+    "--build",
+    "/work/build-core",
+    "--parallel",
+    "2",
+    "--target",
+    "pycore",
+    "algorithm_ae",
+    "algorithm_es",
+    "aws_braket",
+    "circuits",
+    "sparse_simulator",
+    "uccsd",
+    "vqe",
+    "qb_gateset_transpiler",
+    "qb_qobj_compiler",
+    "decoder",
+    "simplified_decoder"
+  ],
+  "exit": 0,
+  "seconds": 178.53516006469727,
+  "cpu": 2,
+  "memory_gib": 4,
+  "network": "none",
+  "public_ubuntu_toolchain": true
+}

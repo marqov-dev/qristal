@@ -1,0 +1,5 @@
+-- clang-format not found! 'format' target not built. Install clang-format to enable formatting.
+-- Found pybind11: /work/install-core/include (found version "2.12.0")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /probe/consumer

@@ -1,0 +1,67 @@
+{
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "command": [
+    "c++",
+    "-std=c++17",
+    "-O1",
+    "-DNDEBUG",
+    "/checks/decoder_smoke.cpp",
+    "-I/work/install-xacc/include/xacc",
+    "-I/work/install-xacc/include/quantum/gate",
+    "-I/work/install-xacc/include",
+    "-I/work/install-xacc/include/cppmicroservices4",
+    "-L/work/install-xacc/lib",
+    "-Wl,-rpath,/work/install-xacc/lib",
+    "-lxacc",
+    "-lxacc-quantum-gate",
+    "-lCppMicroServices",
+    "-ldl",
+    "-lpthread",
+    "-o",
+    "/probe/decoder-smoke"
+  ],
+  "exit": 0,
+  "seconds": 2.27787184715271,
+  "cpu": 2,
+  "memory_gib": 4,
+  "network": "none",
+  "mounts": [
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/install-xacc",
+      "target": "/work/install-xacc",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/install-core",
+      "target": "/work/install-core",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/home/.local/lib/python3.10/site-packages",
+      "target": "/runtime/python-deps",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/installed-checks",
+      "target": "/checks",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/install-integrations",
+      "target": "/work/install-integrations",
+      "readonly": true
+    },
+    {
+      "source": "/private/tmp/marqov-qristal-followup-20260909/runtime-probe",
+      "target": "/probe",
+      "readonly": false
+    }
+  ],
+  "environment": [
+    "empty environment",
+    "HOME=/tmp",
+    "PYTHONNOUSERSITE=1",
+    "PYTHONPATH=/work/install-core/lib:/runtime/python-deps:/work/install-integrations:/checks"
+  ],
+  "ld_library_path": null
+}

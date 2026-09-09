@@ -2,12 +2,14 @@ import pathlib,subprocess,uuid,os,sys,json,time
 root=pathlib.Path(__file__).resolve().parents[2]
 stage=sys.argv[1]
 commands={
- 'configure':['cmake','-S','/work/xacc','-B','/work/build-xacc','-DCMAKE_INSTALL_PREFIX=/work/install-xacc','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DMARQOV_CPU_PROBE=ON','-DXACC_BUILD_TESTS=OFF','-DXACC_BUILD_EXAMPLES=OFF','-DXACC_ENABLE_MPI=OFF','-DGIT_SUBMODULE=OFF','-DCMAKE_DISABLE_FIND_PACKAGE_Python=TRUE','-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=/work/googletest','-DBOOST_ARCHIVE_DIRECTORY=/work/archives','-DBOOST_DOWNLOAD_TO_BINARY_DIR=ON','-DCPR_USE_SYSTEM_CURL=ON','-DCMAKE_IGNORE_PREFIX_PATH=/opt/qb;/mnt/qb'],
+ 'core-install':['cmake','--install','/work/build-core'],
+ 'runtime-build':['cmake','--build','/work/build-core','--parallel','2','--target','pycore','algorithm_ae','algorithm_es','aws_braket','circuits','sparse_simulator','uccsd','vqe','qb_gateset_transpiler','qb_qobj_compiler','decoder','simplified_decoder'],
+ 'configure':['cmake','-S','/work/xacc','-B','/work/build-xacc','-DCMAKE_INSTALL_PREFIX=/work/install-xacc','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DMARQOV_CPU_PROBE=ON','-DXACC_BUILD_TESTS=OFF','-DINSTALL_GTEST=OFF','-DXACC_BUILD_EXAMPLES=OFF','-DXACC_ENABLE_MPI=OFF','-DGIT_SUBMODULE=OFF','-DCMAKE_DISABLE_FIND_PACKAGE_Python=TRUE','-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=/work/googletest','-DBOOST_ARCHIVE_DIRECTORY=/work/archives','-DBOOST_DOWNLOAD_TO_BINARY_DIR=ON','-DCPR_USE_SYSTEM_CURL=ON','-DCMAKE_IGNORE_PREFIX_PATH=/opt/qb;/mnt/qb'],
  'build':['cmake','--build','/work/build-xacc','--parallel','2'],
  'test':['/work/build-xacc/marqov-acz-qpp'],
  'linkage':['ldd','/work/build-xacc/marqov-acz-qpp'],
  'install':['cmake','--install','/work/build-xacc'],
- 'core-configure':['cmake','-S','/work/qristal-core','-B','/work/build-core','-DCMAKE_INSTALL_PREFIX=/work/install-core','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=OFF','-DXACC_ROOT=/work/install-xacc','-DXACC_TAG=d1edaa7','-DXACC_REPOSITORY=https://github.com/eclipse-xacc/xacc.git','-DWITH_TNQVM=OFF','-DWITH_TKET=OFF','-DN_PROC=2','-DINSTALL_MISSING=ON','-DCPM_SOURCE_CACHE=/work/deps'],
+ 'core-configure':['cmake','-S','/work/qristal-core','-B','/work/build-core','-DCMAKE_INSTALL_PREFIX=/work/install-core','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=OFF','-DXACC_ROOT=/work/install-xacc','-DXACC_TAG=d1edaa7','-DXACC_REPOSITORY=https://github.com/eclipse-xacc/xacc.git','-DWITH_TNQVM=OFF','-DWITH_TKET=OFF','-DN_PROC=2','-DINSTALL_MISSING=ON','-DCPM_SOURCE_CACHE=/work/deps','-DPYTHON_PACKAGES_PATH=/work/install-core/python-site'],
  'noise-test':['python3','-B','/work/qristal/qualification/core_noise_smoke.py'],
  'core-test':['python3','-B','/work/qristal/qualification/core_cpu_smoke.py'],
  'python-lock':['python3','-m','pip','freeze','--all'],
@@ -38,7 +40,7 @@ cmd=['docker','run','--rm','--name',name,'--platform','linux/amd64','--network',
 start=time.time();status=None
 try:
  with (root/(stage+'.log')).open('w') as f:
-  p=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,timeout=3600 if stage in ('build','core-configure','core-build','core-plugins') else 300)
+  p=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,timeout=3600 if stage in ('build','core-configure','core-build','core-plugins','runtime-build') else 300)
   status=p.returncode
   if stage in ("test", "core-test", "noise-test"):
    output=(root/(stage+".log")).read_text()
