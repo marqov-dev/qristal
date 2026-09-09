@@ -113,3 +113,39 @@ neither changes the native runtime nor rebuilds it. See the
 methods and 29 image-harness checks passed, including six real simulator runs.
 Parser-based hosted circuit restrictions, material staging, attestation, registry
 publication and hosted result/lifecycle wiring remain separate work.
+
+## Restricted parser qualification
+
+`program_guard.py` is an additional experimental profile, not a change to the
+existing CLI. Run it only in the bounded, credential-free CPU container. It uses
+the installed Qiskit 0.46 OpenQASM 2 parser in strict mode with an empty include
+search path; the existing byte/include precheck runs first. No dependencies are
+installed. The parser's built-in qelib1 support remains available.
+
+The profile accepts only X, H and CX operations, one quantum and one classical
+register of matching size, and complete final measurements in positional order.
+Expanded individual measurements equivalent to that final block are accepted.
+Other executed gates, barriers, reset, classical conditions, partial/reordered or
+mid-circuit measurements are rejected. Total parsed operations, including final
+measurements, are capped at 4096; input and canonical output are capped at 64 KiB.
+Unused declarations are not an advertised capability; executable instructions
+must all belong to the closed profile. Limits apply after parsing, so the parser
+itself still requires the outer CPU/memory/deadline boundary.
+
+The guard emits fresh OpenQASM with fixed q/c registers and only validated
+instructions. This avoids forwarding arbitrary source to a second native parser.
+It returns the original source hash separately. The native result hash refers to
+these canonical bytes: a future trusted integration must bind original and canonical
+artifacts rather than mislabel one hash as the other. The guard's returned hash is
+not an attestation or independent proof that normalization happened correctly.
+
+```sh
+python3 qualification/runtime/qualify_program_image.py --parent CANDIDATE_IMAGE_ID --output /tmp/qristal-program-evidence
+```
+
+Use the qualified candidate image from the preceding section; the harness depends
+on its bounded process helper and candidate validator. The command adds only the
+guard and tests. See [parser evidence](../evidence/2026-09-09-program/README.md).
+Supporting arbitrary QASM, parameterized rotations, noise, or compiling customer
+Python requires separate qualification. Hosted material staging, provenance and
+lifecycle integration remain unimplemented.
