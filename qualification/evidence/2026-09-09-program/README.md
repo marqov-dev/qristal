@@ -13,7 +13,7 @@ New source hashes are in `source-hashes.json`.
   validation. Directional CX tests check control/target preservation.
 - The installed Qiskit 0.46 parser source was inspected for loads(strict=True,
   include_path=()) behavior. Expected dependency deprecation warnings are retained
-  in the unit log; they are not missing dependencies or test failures.
+  in the unit log (trailing whitespace trimmed); they are not missing dependencies or test failures.
 
 Tests run inside local Docker linux/amd64 under emulation, non-root, network none,
 no host mounts, read-only root, 128 MiB scratch, 2 CPUs, 4 GiB memory including swap,
