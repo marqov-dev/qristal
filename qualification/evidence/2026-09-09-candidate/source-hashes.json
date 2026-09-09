@@ -1,0 +1,8 @@
+{
+  "candidate.py": "b08bcbdc13d1917ff264e9a4c3b9ecec436533a8144e9048e3f3f36a9d7cfbea",
+  "bounded_process.py": "11cc12c25b671f6fe4b605c28eb235e82a0504f5ccf19e3384d6b465ae1ebeb3",
+  "test_candidate.py": "348d33af5ad0186ccf1fd853afbcd9c6fc97601e5fb8761281f6a6df1efa0693",
+  "test_bounded_process.py": "6fe83e865cca5bf3d4ba63d294df59697cea55842d9ec528a66f95d15ebb017d",
+  "test_candidate_image.py": "68d38f577459a10fb905a818debad90135035a32c39c769124cf8195a396b5e7",
+  "qualify_candidate_image.py": "706160e0f7cd836757304d49b2ec2ab6da894d2ca98dac2ccd01112fe52d9b24"
+}
