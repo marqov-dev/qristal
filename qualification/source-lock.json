@@ -1,0 +1,22 @@
+{
+  "xacc_commit": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3",
+  "submodules": [
+    " 05cac6db180adf8223a613dff808248e3048b07d quantum/plugins/dwave/embedding/minorminer (0.1.8)",
+    " 1956de9a1d3e2e442597e48e8396a3564b05420c quantum/plugins/dwave/tpls/legacy-sapi-clients (1956de9)",
+    " 29b401f802739f076d0683c3d59696187617b198 tpls/boost-cmake (v1.64.0-27-g29b401f)",
+    " 3dfb92faa2bd8e281d2ca85acccdf7eb93b9a442 tpls/cppmicroservices (v3.0.0-151-g3dfb92fa)",
+    " f88fd7737de3e640c61703eb57a0fa0ce00c60cd tpls/cpr (1.9.2)",
+    " e7248b26a1ed53fa030c5c459f7ea095dfd276ac tpls/eigen (3.4.0-44-ge7248b26a)",
+    " 8968adcd53951b652f9f480ad62e66dc2714b061 tpls/nlohmann (v3.1.1)",
+    " 1f04cc7062e33481c62c78231e9561b318bca67b tpls/pybind11 (v2.10.0-80-g1f04cc70)",
+    " 0afeb2bae0981cccd3a92b75f6375ed8f6a213e4 tpls/qsim (heads/master)",
+    " 41b5f149ab306e96b5b2faf523505d75acffd98a tpls/qsim/tests/googletest (release-1.8.0-2282-g41b5f149)",
+    " 8be5b41a2fe79f356c9cc20124fef6dbb050df4c tpls/spdlog (v1.2.1-2222-g8be5b41a)",
+    " c8c15f28c242857eba654f5357237b5d72f73cfb tpls/triq (heads/master)",
+    " 945d055b98be2db327f694b36ba507c41e1955fc xacc/optimizer/nlopt-optimizers/nlopt (nlopt-2.3-289-g945d055)"
+  ],
+  "googletest_commit": "58d77fa8070e8cec2dc1ed015d66b454c8d78850",
+  "boost_sha256": "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb",
+  "ubuntu_base": "ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d",
+  "core_commit": "a0bcfbf4e56adf443e981469e90013e999015183"
+}

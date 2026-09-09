@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work/qristal/qualification/core_cpu_smoke.py", line 18, in <module>
+    session = q.session()
+ValueError: IRTransformation plugin named 'circuit-optimizer' is not available. Please check your input or the installation.

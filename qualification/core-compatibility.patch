@@ -1,0 +1,81 @@
+diff --git a/cmake/base_config.cmake b/cmake/base_config.cmake
+index a6d94ee..60af002 100644
+--- a/cmake/base_config.cmake
++++ b/cmake/base_config.cmake
+@@ -104,8 +104,17 @@ if(WITH_COVERAGE)
+ endif()
+ 
+ # Determine number of processors for external builds
+-include(ProcessorCount)
+-ProcessorCount(N_PROC)
++# Marqov: respect an explicit resource limit for dependency builds.
++if(NOT DEFINED N_PROC)
++  include(ProcessorCount)
++  ProcessorCount(N_PROC)
++  if(NOT N_PROC)
++    set(N_PROC 1)
++  endif()
++endif()
++if(NOT "${N_PROC}" MATCHES "^[1-9][0-9]*$")
++  message(FATAL_ERROR "N_PROC must be a positive integer")
++endif()
+ 
+ # Save the version numbers for use in the code.
+ configure_file(cmake/cmake_variables.hpp.in ${CMAKE_CURRENT_SOURCE_DIR}/include/qristal/core/cmake_variables.hpp)
+diff --git a/cmake/dependencies.cmake b/cmake/dependencies.cmake
+index ce2f944..b5937e9 100644
+--- a/cmake/dependencies.cmake
++++ b/cmake/dependencies.cmake
+@@ -102,7 +102,10 @@ endif()
+ message(STATUS "${BoldGreen}Eigen3: Found system installation (version ${EIGEN3_VERSION_STRING}) config at ${Eigen3_DIR}; include directory: ${EIGEN3_INCLUDE_DIR}${ColorReset}")
+ 
+ # XACC
+-set(XACC_TAG "01053824")
++# Marqov: allow explicitly pinned public upstream compatibility builds.
++set(XACC_TAG "01053824" CACHE STRING "XACC source revision")
++set(XACC_REPOSITORY "https://gitlab.com/qbau/software-and-apps/open-source/xacc.git" CACHE STRING "XACC source repository")
++option(WITH_TNQVM "Build and install ExaTN/TNQVM tensor-network backends" ON)
+ if(CMAKE_BUILD_TYPE STREQUAL "None")
+   set(XACC_CMAKE_BUILD_TYPE "Release")
+ else()
+@@ -111,7 +114,7 @@ endif()
+ add_poorly_behaved_dependency(xacc 1.0.0
+   FIND_PACKAGE_NAME XACC
+   GIT_TAG ${XACC_TAG}
+-  GIT_REPOSITORY https://gitlab.com/qbau/software-and-apps/open-source/xacc.git
++  GIT_REPOSITORY ${XACC_REPOSITORY}
+   OPTIONS
+     "-DXACC_ENABLE_MPI=${ENABLE_MPI_IN_DEPS}"
+     "-DCOMPILE_FOR_LOCAL_ARCH=${COMPILE_FOR_LOCAL_ARCH}"
+@@ -322,6 +325,7 @@ if (NOT SUPPORT_EMULATOR_BUILD_ONLY)
+     # TODO (SWA-2341): sync packages installed here with those installed in the Qristal SDK image
+   )
+ 
++  if(WITH_TNQVM)
+   # Remove clang flags to compile exatn and tnqvm
+   string(REPLACE "-fopenmp=libgomp" "-fopenmp" EXATN_C_FLAGS "${CMAKE_C_FLAGS}")
+   string(REPLACE "-fopenmp=libgomp" "-fopenmp" EXATN_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+@@ -392,6 +396,8 @@ if (NOT SUPPORT_EMULATOR_BUILD_ONLY)
+     install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ${lib} ${XACC_ROOT}/plugins/${filename})")
+   endforeach()
+ 
++  endif()
++
+   # CPR curl wrapper
+   add_dependency(cpr 1.12.0
+     GIT_TAG 1.12.0
+diff --git a/src/session.cpp b/src/session.cpp
+index 6c2f2f6..7578d72 100644
+--- a/src/session.cpp
++++ b/src/session.cpp
+@@ -1281,6 +1281,10 @@ namespace qristal
+       auto buffer_qb = std::make_shared<xacc::AcceleratorBuffer>(qn);
+       try {
+         qb_transpiler->execute(buffer_qb, ir_target);
++      } catch (const std::exception& error) {
++        // Marqov: retain the underlying diagnostic for runtime qualification.
++        throw std::invalid_argument(
++            std::string("Transpiling to QB native gates for your input circuit failed: ") + error.what());
+       } catch (...) {
+         throw std::invalid_argument(
+             "Transpiling to QB native gates for your input circuit failed");

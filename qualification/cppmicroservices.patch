@@ -1,0 +1,21 @@
+diff --git a/framework/src/service/ServiceListeners.cpp b/framework/src/service/ServiceListeners.cpp
+index f53705b1..e4901bad 100644
+--- a/framework/src/service/ServiceListeners.cpp
++++ b/framework/src/service/ServiceListeners.cpp
+@@ -332,7 +332,7 @@ void ServiceListeners::ServiceChanged(ServiceListenerEntries& receivers,
+                                       const ServiceEvent& evt,
+                                       ServiceListenerEntries& matchBefore)
+ {
+-  int n = 0;
++  // Marqov build compatibility: removed unused listener counter.
+ 
+   if (!matchBefore.empty())
+   {
+@@ -348,7 +348,6 @@ void ServiceListeners::ServiceChanged(ServiceListenerEntries& receivers,
+     {
+       try
+       {
+-        ++n;
+         l.CallDelegate(evt);
+       }
+       catch (...)
