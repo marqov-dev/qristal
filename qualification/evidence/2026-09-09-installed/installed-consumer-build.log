@@ -1,0 +1,3 @@
+Consolidate compiler generated dependencies of target core-consumer
+[  0%] Built target xacc-plugins
+[100%] Built target core-consumer

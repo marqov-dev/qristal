@@ -1,0 +1,13 @@
+# Resolved isolated qualification environment; Qiskit V1 adapter.
+dill==0.4.1
+mpmath==1.3.0
+numpy==1.26.4
+python-dateutil==2.9.0.post0
+qiskit==1.2.0
+rustworkx==0.18.1
+scipy==1.15.3
+six==1.17.0
+stevedore==5.8.0
+symengine==0.14.1
+sympy==1.14.0
+typing_extensions==4.16.0

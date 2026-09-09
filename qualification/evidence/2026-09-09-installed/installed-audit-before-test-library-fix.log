@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/checks/audit.py", line 15, in <module>
+    assert p.returncode==0 and 'not found' not in p.stdout, (str(path),p.stdout,p.stderr)
+AssertionError: ('/work/install-xacc/lib/libgmock.so.1.12.1', '\tlibgtest.so.1.12.1 => not found\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fffff571000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fffff551000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fffff328000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fffff241000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ffffffc4000)\n', '')
