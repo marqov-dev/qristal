@@ -171,3 +171,32 @@ The existing `qualify_program_image.py` command now also runs this pipeline's te
 The latest [joined evidence](../evidence/2026-09-09-program-pipeline/README.md)
 records the derived image and logs. The existing image entrypoint and CLI remain
 unchanged; this helper is an additional local experiment, not the hosted adapter.
+
+### Local preparation binding and file-staging fixtures
+
+`preparation_binding.py` tests a local four-file preparation bundle: original QASM,
+canonical QASM, exact closed options JSON and dependency-lock bytes. A separately
+retained local manifest records their hashes, backend/settings, logical measurement
+map, parser package version/guard hash and supplied image/lock policy. Verification
+rehashes files and recomputes canonical preparation inside isolation before result
+validation. It rejects unknown/symlink files, duplicate JSON and changed facts.
+Verified byte snapshots must be used for execution rather than rereading mutable
+paths. The fixture directory is caller-owned; this is not a race-proof shared-filesystem
+or cross-tenant delivery protocol.
+
+Image and dependency-lock policy in these fixtures are deliberately synthetic,
+not an actual registered runtime profile or attestation. The lock hash check proves
+byte binding only; it does not prove the running dependencies match that lock.
+Parser package version and guard hash do not pin all parser/native dependencies.
+A hosted implementation must independently authorize the retained facts, validate
+image/lock identity and protect original-to-canonical preparation evidence. A
+workload that supplies its own replacement manifest can fabricate consistent facts.
+
+```sh
+python3 qualification/runtime/qualify_binding_image.py --parent PIPELINE_IMAGE_ID --output /tmp/qristal-binding-evidence
+```
+
+The parent must be the qualified joined-pipeline image. The command adds only local
+binding code/tests and runs offline, with no host mounts or credentials. See
+[binding evidence](../evidence/2026-09-09-binding/README.md). No material gateway,
+hosted schema, credential-bearing stager or deployment topology is implemented.
