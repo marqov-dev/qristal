@@ -1,0 +1,18 @@
+{
+  "passed": [
+    "qpp-x0",
+    "qpp-x1",
+    "qpp-bounds-1",
+    "qpp-bounds-12",
+    "aer-x0",
+    "aer-x1",
+    "aer-bounds-1",
+    "aer-bounds-12",
+    "comments",
+    "noise-nan",
+    "noise-qpp",
+    "arguments",
+    "shots",
+    "invalid-gate"
+  ]
+}
