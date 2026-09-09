@@ -81,3 +81,35 @@ SDK/compiler interface, provider identity, artifact schema, cancellation path or
 hosted status is changed. Platform admission currently supports Python task
 materials; a future QB profile must explicitly specify its program/result schemas
 and trusted lifecycle before this workload can be connected.
+
+## Independent local candidate validation
+
+`candidate.py` independently checks the local CLI record against caller-supplied
+program bytes, backend, qubit count and shots. It rejects duplicate JSON keys,
+unknown/missing fields, trailing data, invalid counts, inconsistent totals and
+nonzero process exits. The result is an immutable `LocalCounts` value with explicit
+positional qubit labels. This does not authenticate execution, prove that a circuit
+was run, certify its measurement semantics or produce a hosted result artifact.
+Expected facts must eventually come from the platform's admitted request; the local
+harness supplies fixed fixtures. The CLI format does not bind seed/options/runtime
+identity, so those facts need separate trusted provenance before hosted promotion.
+
+`bounded_process.py` is a POSIX qualification helper for fixed commands. It bounds
+both output streams while reading, enforces a deadline even when pipes close early,
+and kills the process group on exit. It is not a container scheduler or a hosted
+cancellation implementation. Its caller owns container cleanup; container/provider
+termination must be independently observed in a hosted implementation.
+
+```sh
+python3 -B -m unittest discover -s qualification/runtime -p test_candidate.py
+python3 -B -m unittest discover -s qualification/runtime -p test_bounded_process.py
+python3 qualification/runtime/qualify_candidate_image.py --parent IMAGE_ID --output /tmp/qristal-candidate-evidence
+```
+
+The last command adds only candidate-validation and qualification files to an
+existing local CPU image and runs fixed fixtures offline without host mounts. It
+neither changes the native runtime nor rebuilds it. See the
+[candidate evidence](../evidence/2026-09-09-candidate/README.md): nine unit test
+methods and 29 image-harness checks passed, including six real simulator runs.
+Parser-based hosted circuit restrictions, material staging, attestation, registry
+publication and hosted result/lifecycle wiring remain separate work.
