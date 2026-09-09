@@ -149,3 +149,25 @@ guard and tests. See [parser evidence](../evidence/2026-09-09-program/README.md)
 Supporting arbitrary QASM, parameterized rotations, noise, or compiling customer
 Python requires separate qualification. Hosted material staging, provenance and
 lifecycle integration remain unimplemented.
+
+### Joined local experiment
+
+`local_pipeline.run_local(program_bytes, options_bytes, backend='qpp')` joins the
+restricted parser, fixed simulator CLI and independent result validator. Options
+are at most 1024 UTF-8 JSON bytes, with exactly integer `qubits`, `shots`, `seed`;
+backend is qpp or Aer and this path is ideal-only. Unknown/duplicate keys, invalid
+types and bounds fail before parsing. Rejected circuits never start the simulator.
+Temporary canonical files are removed after success or failure. The whole call,
+including the parser, must remain inside the qualified isolation and outer deadline.
+
+The returned immutable `LocalObservation` separates the original source hash,
+canonical source hash and exact options-byte hash. Its nested local result refers
+to the canonical circuit actually sent to the CLI. These are local bookkeeping
+facts, not authenticated provenance or a hosted receipt. Options and source bytes
+come from the experiment's caller; no material gateway or admission is simulated.
+The pipeline does not select a provider resource, grant retries or release capacity.
+
+The existing `qualify_program_image.py` command now also runs this pipeline's tests.
+The latest [joined evidence](../evidence/2026-09-09-program-pipeline/README.md)
+records the derived image and logs. The existing image entrypoint and CLI remain
+unchanged; this helper is an additional local experiment, not the hosted adapter.

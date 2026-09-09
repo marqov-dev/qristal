@@ -1,0 +1,15 @@
+{
+  "passed": [
+    "qpp-x0",
+    "qpp-x1",
+    "qpp-cx-forward",
+    "qpp-cx-reverse",
+    "qpp-bell",
+    "aer-x0",
+    "aer-x1",
+    "aer-cx-forward",
+    "aer-cx-reverse",
+    "aer-bell"
+  ],
+  "hosted_authority": false
+}

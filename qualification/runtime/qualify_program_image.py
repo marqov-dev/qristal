@@ -19,13 +19,13 @@ def call(args,**kwargs):
     return subprocess.run(['docker',*args],check=True,timeout=240,**kwargs)
 try:
     call(['create','--name',name,'--platform','linux/amd64',a.parent],stdout=subprocess.DEVNULL)
-    for file in ['program_guard.py','test_program_guard.py','test_program_image.py']:
+    for file in ['program_guard.py','test_program_guard.py','test_program_image.py','local_pipeline.py','test_local_pipeline.py']:
         call(['cp',str(here/file),name+':/opt/qristal/'+file])
     image=call(['commit',name],capture_output=True,text=True).stdout.strip()
 finally:
     subprocess.run(['docker','rm','-f',name],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=15)
 (a.output/'image.json').write_text(json.dumps({'image':image,'parent':a.parent},indent=2)+'\n')
-for test in ['test_program_guard.py','test_program_image.py']:
+for test in ['test_program_guard.py','test_program_image.py','test_local_pipeline.py']:
     name='qristal-test-'+uuid.uuid4().hex[:10]
     args=['run','--rm','--name',name,'--platform','linux/amd64','--network','none','--cpus','2','--memory','4g','--memory-swap','4g','--pids-limit','256','--read-only','--tmpfs','/tmp:rw,exec,size=128m','--cap-drop','ALL','--security-opt','no-new-privileges','--entrypoint','python3',image,'-B','/opt/qristal/'+test]
     try:
