@@ -1,6 +1,8 @@
-import pathlib,subprocess,json,uuid,time
+import pathlib,subprocess,json,uuid,time,argparse
 here=pathlib.Path(__file__).resolve().parent;root=here.parents[2]
-image=json.loads((root/'runtime-image.json').read_text())['image']
+parser=argparse.ArgumentParser()
+parser.add_argument('--image', help='Local immutable image ID to qualify')
+image=parser.parse_args().image or json.loads((root/'runtime-image.json').read_text())['image']
 report=[]
 def run(label,args,entry=None,env=None,expected=0):
  name='marqov-runtime-test-'+uuid.uuid4().hex[:10]

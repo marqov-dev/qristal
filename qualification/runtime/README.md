@@ -1,6 +1,6 @@
 # Public CPU image — local qualification
 
-A self-contained Linux amd64 image now runs the previously qualified CPU workload without host mounts, source/build trees, private QB libraries or a compiler. It is a local experimental runtime, not a deployed Marqov executor. The [adapter proposal](ADAPTER-PROPOSAL.md) awaits the release owner's boundary review.
+A self-contained Linux amd64 image now runs the previously qualified CPU workload without host mounts, source/build trees, private QB libraries or a compiler. It is a local experimental runtime, not a deployed Marqov executor. The release owner reviewed the [adapter proposal](ADAPTER-PROPOSAL.md) and approved the workload-local adapter and conformance slice only. Hosted QB artifact/profile admission is not yet defined.
 
 The qualified local image ID is recorded in `../evidence/2026-09-09-runtime-image/runtime-image.json`. No image was pushed to a registry. Do not confuse this local image/config ID with a registry manifest digest required by hosted admission.
 
@@ -39,3 +39,45 @@ The initial assembly copied two directories one level too deep. A local assembly
 The default command reports capabilities. The local workload CLI accepts an OpenQASM file, qpp/Aer selection, bounded qubit/shot counts and optional Aer readout probabilities. It emits a local experimental counts record. It does not consume `marqov.execution-request/v1`, authenticate a job, submit provider work, promote artifacts or update customer state. Only the trusted platform boundary can do those things.
 
 The image contains additional installed libraries and qualification fixtures. They are not automatically advertised as hosted capabilities. The image is compiler-free. Minimizing it, publishing a registry artifact and registering the hosted runtime profile are separate steps. GPU/tensor backends, commercial Emulator/vQPU, full quantum Decoder, Qiskit V2, hosted cancellation and end-to-end platform execution remain outside this result.
+
+## Workload-local adapter qualification
+
+`adapter.py` separates bounded input/result validation from the CLI. It preserves
+`local-qristal-sample/experimental`, hashes the original input bytes, checks exact
+shot totals and emits qubit-0-first counts. Inputs are UTF-8 OpenQASM 2, at most
+64 KiB, with one qelib1.inc include and one matching qreg; qubits are 1–12,
+shots 1–16384 and seeds 0–2147483647. Nonzero readout probabilities require Aer.
+File reads reject symlinks and non-regular files. The precheck is not a complete
+QASM parser: circuit parsing remains inside the isolated native engine.
+
+The CLI suppresses native diagnostics and emits bounded static errors. It is
+intended for a fresh single-process workload, not concurrent calls inside a
+trusted web service. Native aborts or exits still require an external controller
+to enforce a deadline and require a valid result; exit status alone is never
+proof of success. The counts describe qubits in order, not a general classical
+register mapping. Only the tested full-register measurement cases are qualified.
+
+Run pure tests without native dependencies:
+
+```sh
+python3 -B -m unittest discover -s qualification/runtime -p test_adapter.py
+```
+
+To reproduce the local derivative and native conformance tests from an already
+qualified local CPU image, use its immutable image ID:
+
+```sh
+python3 qualification/runtime/qualify_adapter_image.py --parent IMAGE_ID --output /tmp/qristal-adapter-evidence
+python3 qualification/runtime/test_image.py --image DERIVED_IMAGE_ID
+```
+
+The overlay script copies only the adapter, CLI and tests, then runs both test
+modules with no network, no host mounts, read-only root, 128 MiB scratch, 2 CPUs,
+4 GiB including swap, 256 PIDs and a 240-second outer deadline per command.
+The clean image assembly recipe also includes adapter.py.
+
+See [adapter evidence](../evidence/2026-09-09-adapter/README.md). No platform gate,
+SDK/compiler interface, provider identity, artifact schema, cancellation path or
+hosted status is changed. Platform admission currently supports Python task
+materials; a future QB profile must explicitly specify its program/result schemas
+and trusted lifecycle before this workload can be connected.
