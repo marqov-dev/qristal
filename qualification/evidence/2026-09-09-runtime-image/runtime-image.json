@@ -1,0 +1,16 @@
+{
+  "image": "sha256:92b35c67ee1858c2825711eb58a95f76171a9c4f2a34eb7680d2b52ca80bbab4",
+  "base": "ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d",
+  "sources": {
+    "qristal": "a86117fbdb378b62f5515a926f370a6ecf9f75a2",
+    "qristal-core": "a5c3e5fa544c07d538974d3a289b19652d483848",
+    "qristal-decoder": "13bb8f80f98bd259196834a13817c23ec02480e6",
+    "qristal-integrations": "16e4941ef5ad8476ad971a366ecce91e5ea5bd45",
+    "xacc": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3"
+  },
+  "seconds": 129.15485191345215,
+  "platform": "linux/amd64",
+  "published": false,
+  "assembly_parent": "sha256:cd5f7e746d5a1cd1fec773c9ff4134db8717805657bd6a826000e41c02e9fa06",
+  "assembly_note": "Corrected directory-content copy layout; source recipe uses explicit /. copies."
+}

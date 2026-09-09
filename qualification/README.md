@@ -46,3 +46,7 @@ After the Core stages, run `python3 qristal/qualification/run_stage.py noise-tes
 ## Installed runtime
 
 The next qualification stage verifies CPU execution with source and build trees unmounted, including an independent installed Core C++ consumer. See [installed runtime reproduction and limits](installed/README.md). Its source lock includes the Core Eigen packaging fix under review in Core PR #2.
+
+## Local CPU image
+
+The installed runtime is now packaged and exercised without host mounts. See the [local image recipe, evidence and adapter proposal](runtime/README.md). No registry publication or platform connection is implied.
