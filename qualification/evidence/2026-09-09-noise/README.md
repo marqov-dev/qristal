@@ -1,0 +1,11 @@
+# Fresh public CPU and noise qualification
+
+Baselines: Qristal merged commit 2c32b8a2df9a43f2061af9dd7429886f25cf29f7 and Core merged commit 55fa21f502e47dd486ac624514af0a7983db2cab. The updated XACC profile adds the public IBM/Aer stack; no Core source changes were needed.
+
+A fresh workspace reused only verified public source downloads and the recorded public Ubuntu toolchain. Previous build/install directories were not copied; the copied XACC source's generated dist directory was removed before compiling. Fresh XACC/Aer compilation took 429.4 seconds, and fresh Core/Python compilation took 222.1 seconds, on two CPUs with 4 GiB memory. Core's 11 public C++ dependency commits and 49 Python versions exactly matched the earlier qualification; Python acquisition now uses explicit constraints.
+
+All 23 fixtures passed: five ACZ/qpp regressions using installed plugins; eight Core ideal-circuit regressions; ten native CPU Aer fixtures (two ideal controls and eight noise cases), each with 16384 shots. Noise cases cover asymmetric readout, deterministic flips, readout on Bell correlations, amplitude damping including full damping, and symmetric Pauli/depolarizing noise. Probabilities use an absolute tolerance of 0.025; deterministic outcomes and shot totals are exact. See noise-test.log for observed counts and expectations.
+
+The installed-plugin regression initially failed because the harness also registered build-tree copies. The launcher now selects one source. Public Eigen and range-v3 downloads hit bind-mount Git ownership checks; process-local safe.directory exceptions are limited to the exact Eigen, range-v3 and args dependency paths, with no wildcard or global configuration changes. Diagnostic excerpts are retained.
+
+Compiler warnings from the older upstream code are recorded, including an Aer non-void return warning. Passing these fixtures is not a complete code audit. Core is still tested through its rebuilt Python extension in the build tree; a clean distribution installation remains pending. Pulse simulation, GPU, tensor networks, device-specific commercial models, Decoder and Integrations are not qualified by this report. No QB image, private library, provider credential, deployment or paid job was used.

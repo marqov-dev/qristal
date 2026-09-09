@@ -1,0 +1,4 @@
+[2026-09-09 04:15:15.946] [xacc-logger] [error] [1;31m[XACC Error] Failure initializing XACC Plugin Registry - Failed to install bundle library at /work/build-xacc/quantum/gate/libxacc-quantum-gate.so: Bundle#3, a bundle with same symbolic name and version is already installed (xacc_quantum_gate, 0.0.0)[0m
+[2026-09-09 04:15:15.950] [xacc-logger] [error] [1;31m[XACC Error] Invalid XACC Service. Could not find quantum in Service Registry.[0m
+[2026-09-09 04:15:15.950] [xacc-logger] [error] [1;31m[XACC Error] Invalid IRProvider. Could not find quantum in Service Registry.[0m
+[2026-09-09 04:15:15.950] [xacc-logger] [error] [1;31m[XACC Error] Framework Exiting[0m

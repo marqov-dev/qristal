@@ -1,0 +1,11 @@
+HEAD is now at a814779 release 0.12.0
+Submodule 'doc/gh-pages' (https://github.com/ericniebler/range-v3.git) registered for path 'doc/gh-pages'
+Cloning into '/work/deps/range-v3/c7042f84d5198c6c2266bf6a4eb359019dc83699/doc/gh-pages'...
+fatal: detected dubious ownership in repository at '/work/deps/range-v3/c7042f84d5198c6c2266bf6a4eb359019dc83699'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /work/deps/range-v3/c7042f84d5198c6c2266bf6a4eb359019dc83699
+CMake Error at /work/build-core/_deps/range-v3-subbuild/range-v3-populate-prefix/tmp/range-v3-populate-gitclone.cmake:52 (message):
+  Failed to update submodules in:
+  '/work/deps/range-v3/c7042f84d5198c6c2266bf6a4eb359019dc83699'
+

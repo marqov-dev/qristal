@@ -18,5 +18,5 @@
   "googletest_commit": "58d77fa8070e8cec2dc1ed015d66b454c8d78850",
   "boost_sha256": "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb",
   "ubuntu_base": "ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d",
-  "core_commit": "a0bcfbf4e56adf443e981469e90013e999015183"
+  "core_commit": "55fa21f502e47dd486ac624514af0a7983db2cab"
 }

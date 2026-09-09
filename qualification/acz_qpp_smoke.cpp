@@ -2,12 +2,15 @@
 #include "xacc_service.hpp"
 #include <iostream>
 #include <stdexcept>
-int main() {
+int main(int argc, char** argv) {
+  const bool installed = argc == 2 && std::string(argv[1]) == "--installed";
+  if (!installed) {
   xacc::addPluginSearchPath("/work/build-xacc/quantum/gate");
   xacc::addPluginSearchPath("/work/build-xacc/quantum/annealing");
   xacc::addPluginSearchPath("/work/build-xacc/quantum/provider");
   xacc::addPluginSearchPath("/work/build-xacc/quantum/plugins/qpp");
   xacc::addPluginSearchPath("/work/build-xacc/xacc/utils/exprtk_parsing");
+  }
   xacc::Initialize();
   auto provider=xacc::getIRProvider("quantum");
   auto accelerator=xacc::getAccelerator("qpp",{{"shots",1024}});
@@ -36,5 +39,6 @@ int main() {
   auto buffer=xacc::qalloc(2);accelerator->execute(buffer,bell);auto counts=buffer->getMeasurementCounts();
   if(counts.size()!=2 || counts["00"]+counts["11"]!=1024 || counts["00"]<300 || counts["11"]<300)throw std::runtime_error("Bell mismatch");
   std::cout<<"PASS: ACZ registered, four interference circuits and Bell executed using rebuilt upstream qpp. Bell "<<counts["00"]<<"/"<<counts["11"]<<"\n";
+  std::cout << "Plugin source: " << (installed ? "installed prefix" : "build tree") << "\n";
   xacc::Finalize();
 }
