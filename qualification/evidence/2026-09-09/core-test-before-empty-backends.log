@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work/qristal/qualification/core_cpu_smoke.py", line 26, in <module>
+    session.run()
+RuntimeError: bad file: /work/install-core/remote_backends.yaml

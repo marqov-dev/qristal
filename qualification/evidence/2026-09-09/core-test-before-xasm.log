@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work/qristal/qualification/core_cpu_smoke.py", line 27, in <module>
+    session.run()
+ValueError: Transpiling to QB native gates for your input circuit failed: Invalid Compiler. Could not find xasm in Service Registry.
