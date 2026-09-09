@@ -1,0 +1,6 @@
+{
+  "base": "ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d",
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "platform": "linux/amd64",
+  "seconds": 90.9128167629242
+}

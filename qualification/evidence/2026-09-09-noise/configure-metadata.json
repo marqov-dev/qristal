@@ -1,0 +1,30 @@
+{
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "command": [
+    "cmake",
+    "-S",
+    "/work/xacc",
+    "-B",
+    "/work/build-xacc",
+    "-DCMAKE_INSTALL_PREFIX=/work/install-xacc",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG",
+    "-DMARQOV_CPU_PROBE=ON",
+    "-DXACC_BUILD_TESTS=OFF",
+    "-DXACC_BUILD_EXAMPLES=OFF",
+    "-DXACC_ENABLE_MPI=OFF",
+    "-DGIT_SUBMODULE=OFF",
+    "-DCMAKE_DISABLE_FIND_PACKAGE_Python=TRUE",
+    "-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=/work/googletest",
+    "-DBOOST_ARCHIVE_DIRECTORY=/work/archives",
+    "-DBOOST_DOWNLOAD_TO_BINARY_DIR=ON",
+    "-DCPR_USE_SYSTEM_CURL=ON",
+    "-DCMAKE_IGNORE_PREFIX_PATH=/opt/qb;/mnt/qb"
+  ],
+  "exit": 0,
+  "seconds": 233.77160906791687,
+  "cpu": 2,
+  "memory_gib": 4,
+  "network": "none",
+  "public_ubuntu_toolchain": true
+}

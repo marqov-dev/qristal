@@ -1,0 +1,28 @@
+{
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "command": [
+    "cmake",
+    "-S",
+    "/work/qristal-core",
+    "-B",
+    "/work/build-core",
+    "-DCMAKE_INSTALL_PREFIX=/work/install-core",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG",
+    "-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=OFF",
+    "-DXACC_ROOT=/work/install-xacc",
+    "-DXACC_TAG=d1edaa7",
+    "-DXACC_REPOSITORY=https://github.com/eclipse-xacc/xacc.git",
+    "-DWITH_TNQVM=OFF",
+    "-DWITH_TKET=OFF",
+    "-DN_PROC=2",
+    "-DINSTALL_MISSING=ON",
+    "-DCPM_SOURCE_CACHE=/work/deps"
+  ],
+  "exit": 0,
+  "seconds": 97.03920602798462,
+  "cpu": 2,
+  "memory_gib": 4,
+  "network": "bridge",
+  "public_ubuntu_toolchain": true
+}

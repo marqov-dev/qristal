@@ -1,0 +1,11 @@
+[ 22%] Performing download step (git clone) for 'eigen3-populate'
+Cloning into '3c806de9ccad1d4bcbbb741d21e21a08f67c8d04'...
+HEAD is now at 157756130 Restore C++03 compatibility.
+fatal: detected dubious ownership in repository at '/work/deps/eigen3/3c806de9ccad1d4bcbbb741d21e21a08f67c8d04'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /work/deps/eigen3/3c806de9ccad1d4bcbbb741d21e21a08f67c8d04
+CMake Error at /work/build-core/_deps/eigen3-subbuild/eigen3-populate-prefix/tmp/eigen3-populate-gitclone.cmake:52 (message):
+  Failed to update submodules in:
+  '/work/deps/eigen3/3c806de9ccad1d4bcbbb741d21e21a08f67c8d04'
+

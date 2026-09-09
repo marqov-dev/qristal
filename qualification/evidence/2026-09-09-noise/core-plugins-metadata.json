@@ -1,0 +1,19 @@
+{
+  "image": "sha256:432131e25d04d77dc4a5cacdf844de2f88f0d539fccfd283feb817ee5834a545",
+  "command": [
+    "cmake",
+    "--build",
+    "/work/build-core",
+    "--parallel",
+    "2",
+    "--target",
+    "qb_gateset_transpiler",
+    "qb_qobj_compiler"
+  ],
+  "exit": 0,
+  "seconds": 13.149942636489868,
+  "cpu": 2,
+  "memory_gib": 4,
+  "network": "none",
+  "public_ubuntu_toolchain": true
+}

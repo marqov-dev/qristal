@@ -7,7 +7,7 @@ The public Qristal 1.8.1 sources are the baseline. Commercial Emulator and inter
 |---|---|---|
 | Public toolchain | Public base digest, package inventory; no QB binary inputs | Built from Ubuntu 22.04; package inventory recorded locally |
 | XACC/qpp | Fresh compile, ACZ registration and interference tests, Bell correlations | Passed on public Ubuntu toolchain: five runtime fixtures; installation passed |
-| Core | Link/import rebuilt Python extension; ideal circuits, bit ordering, shot conservation; separate noise fixtures | Passed for eight ideal CPU fixtures, including OpenQASM and optimizer paths; noise pending |
+| Core | Link/import rebuilt Python extension; ideal circuits, bit ordering, shot conservation; separate noise fixtures | Passed for eight ideal CPU fixtures, including OpenQASM and optimizer paths; ten CPU Aer fixtures also pass (ideal controls, readout, amplitude damping, depolarizing noise) |
 | Decoder | Build both plugins; known small inputs and invalid-input tests | Pending; requires Core |
 | Integrations | Version-compatible Qiskit sampler/estimator; parameters, observables, measurements and application examples | Pending; Core pins Qiskit 0.46 but integrations expect 1.2.0 |
 | SDK distribution | Build pinned components, install into fresh runtime, run own examples without source tree | Pending |

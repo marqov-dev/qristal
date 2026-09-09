@@ -22,7 +22,7 @@ if actual != expected:
     raise RuntimeError("Submodule revisions differ from source lock")
 checkout("googletest", "https://github.com/google/googletest.git", lock["googletest_commit"])
 core = checkout("qristal-core", "https://github.com/marqov-dev/qristal-core.git", lock["core_commit"])
-for path, patch in [(core, here / "core-compatibility.patch"), (xacc, here / "xacc-cpu.patch"), (xacc / "tpls/cppmicroservices", here / "cppmicroservices.patch")]:
+for path, patch in [(xacc, here / "xacc-cpu.patch"), (xacc / "tpls/cppmicroservices", here / "cppmicroservices.patch")]:
     check = subprocess.run(["git", "-C", str(path), "apply", "--reverse", "--check", str(patch)], capture_output=True)
     if check.returncode:
         git(path, "apply", "--check", str(patch))
