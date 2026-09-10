@@ -30,3 +30,27 @@ One admitted quantum-program task executes an immutable OpenQASM 2 artifact on t
 The narrow local CLI is deliberately provisional. It performs workload checks inside isolation; it is not an authorization validator. Its input parsing does not replace trusted artifact binding, outer resource enforcement or the platform's canonical schema validation.
 
 No SDK/compiler release dependency is established. Proposed implementation follows owner review and remains separate from the current compiler-recovery work.
+
+## Follow-up after the bounded CPU/KVM proof — 2026-09-11
+
+The release owner reviewed preserving the synthetic microVM qualification package
+as an independent CPU evidence slice. The proof resolves basic guest boot and qpp
+feasibility. It does not accept this hosted adapter proposal or satisfy platform
+attestation. Current managed contracts still target Python/Fargate; their provider
+identities and result schema cannot be emitted by this local experiment.
+
+The next adapter review must cover these responsibilities together:
+
+| Responsibility | Available evidence and required extension |
+|---|---|
+| Preparation | Isolated parsing/revalidation works for the fixed fixture. A trusted preparer must verify retained bytes/provenance and return an unaccepted candidate. Parser agreement alone supplies no admission or semantic-correctness authority. |
+| Acceptance | A separate authority transaction must recheck current grants/storage and accept exact retained evidence. Guest success cannot directly authorize execution. |
+| Runtime identity | Define a registered CPU VM profile binding kernel, derivative filesystem, parser/dependencies and configuration. The existing OCI image ID alone does not identify the booted guest. |
+| Result | Authenticate the runtime before authority reads; bind the exact attempt/request and payload digest/size, then use an authorized acceptance writer. The local counts JSON and completion marker are not hosted receipts. |
+| Recovery and resources | Recover an already accepted result independently of fresh execution authority. New promotion requires current ownership. Observe exact guest/provider termination separately from result acceptance and account for host and guest capacity separately. |
+
+Bounded follow-ups are a reviewed preparation/acceptance contract, an exact counts
+result-consumer contract, and durable supervisor/provider recovery qualification.
+The public package implements none of these hosted responsibilities. No fleet,
+new paid experiment, SDK change or release-critical dependency follows from this
+proposal or the successful CPU proof.

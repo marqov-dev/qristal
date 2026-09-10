@@ -16,3 +16,8 @@ The public Qristal 1.8.1 sources are the baseline. Commercial Emulator and inter
 | Managed execution | Adapter contract, isolated job lifecycle and result retrieval | Later; outside current platform/compiler release critical path |
 
 Acceptance requires logs, exact source revisions, dependency versions, test counts and limitations. Compilation or import alone is not evidence that a simulator works. Statistical tests must specify sample sizes and tolerances in advance. Unsupported backends must not silently fall back to another simulator.
+
+A subsequent [bounded CPU/KVM proof](microvm/README.md) passed fixed preparation,
+validation, qpp sampling, forced termination and output-overflow cases. This adds
+native guest feasibility evidence only; it does not change the managed-execution,
+GPU or broader VM backend qualification statuses above.

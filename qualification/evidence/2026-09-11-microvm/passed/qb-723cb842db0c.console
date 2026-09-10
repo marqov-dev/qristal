@@ -1,0 +1,15 @@
+2026-09-10T23:04:53.536297870 [qb-723cb842db0c:main] Running Firecracker v1.16.1
+2026-09-10T23:04:53.548844959 [qb-723cb842db0c:main] Artificially kick devices
+2026-09-10T23:04:53.548871690 [qb-723cb842db0c:fc_vcpu 0] Received a VcpuEvent::Resume message with immediate_exit enabled. immediate_exit was disabled before proceeding
+2026-09-10T23:04:53.548899259 [qb-723cb842db0c:fc_vcpu 1] Received a VcpuEvent::Resume message with immediate_exit enabled. immediate_exit was disabled before proceeding
+2026-09-10T23:04:53.548930727 [qb-723cb842db0c:main] Successfully started microvm that was configured from one single json
+2026-09-10T23:04:53.571959775 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO write @ 0xcf8:0x4 failed: bus_error: MissingAddressRange
+2026-09-10T23:04:53.572004866 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO read @ 0xcfc:0x2 failed: bus_error: MissingAddressRange
+2026-09-10T23:04:54.000207495 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:04:54.000257960 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:04:54.004206151 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:04:54.004230797 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:04:54.040636716 [qb-723cb842db0c:fc_vcpu 0] vcpu: IO read @ 0x87:0x1 failed: bus_error: MissingAddressRange
+QB_ISOLATION={"uid": 65532, "interfaces": ["lo"], "canary_absent": true, "management_socket_absent": true, "metadata_unreachable": true, "aws_environment_absent": true}
+QB_RESULT={"canonical": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[2];\ncreg c[2];\nx q[0];\nmeasure q -> c;\n", "canonical_sha256": "ca6b12707a4c241f63bd6e2f502054dc382209d7a2d5f5d7df584933d8b6ed65", "logical_bits": ["q[0]", "q[1]"], "options_sha256": "fd0dfb16b98401f5b51ea50c1b676167fd3b943c8aa3cfc1126f9bd6a0b6d71e", "original_sha256": "1092bf6cb23781ae6e9433f722c56391a219bd81d66596c31be2e59e705dc5b1"}
+QB_EXIT=0
