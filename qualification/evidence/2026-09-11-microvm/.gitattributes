@@ -1,0 +1,2 @@
+# Preserve exact serial-console bytes and permit their CRLF records.
+*.console -text whitespace=cr-at-eol

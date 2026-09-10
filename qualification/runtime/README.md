@@ -200,3 +200,10 @@ The parent must be the qualified joined-pipeline image. The command adds only lo
 binding code/tests and runs offline, with no host mounts or credentials. See
 [binding evidence](../evidence/2026-09-09-binding/README.md). No material gateway,
 hosted schema, credential-bearing stager or deployment topology is implemented.
+
+### Disposable-host microVM proof
+
+The joined CPU image also passed a bounded qpp experiment inside Firecracker/KVM,
+including fresh preparation/validation guests and kill/output-limit cases. See
+[reproduction and offline evidence checks](../microvm/README.md). This is separate
+from the earlier container matrix and does not enable a hosted executor.

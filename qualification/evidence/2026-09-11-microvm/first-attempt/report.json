@@ -1,0 +1,21 @@
+{
+  "synthetic_data_only": true,
+  "guest_credentials": false,
+  "runs": [
+    {
+      "mode": "prepare",
+      "guest_id": "qb-c4273186a20d",
+      "launch_operation": "f3dffcb0c5e4409390b78ee9b478b8d9",
+      "guest_generation": "fb5497407f1d4f9491cd36744dcc5501",
+      "supervisor_epoch": "14525d9563354381a6ba9e9ed1c90970",
+      "pid": 1886,
+      "exit": -9,
+      "stop_observed": true,
+      "reason": "deadline",
+      "seconds": 90.304223304,
+      "console_bytes": 1579,
+      "config_sha256": "f364fd0cc703695e2dd17536785182c1cdf07c5030ed35869758170bee907f61"
+    }
+  ],
+  "supervisor_epoch": "14525d9563354381a6ba9e9ed1c90970"
+}

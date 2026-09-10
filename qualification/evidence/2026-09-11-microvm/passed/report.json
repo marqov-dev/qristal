@@ -1,0 +1,79 @@
+{
+  "synthetic_data_only": true,
+  "guest_credentials": false,
+  "runs": [
+    {
+      "mode": "prepare",
+      "guest_id": "qb-723cb842db0c",
+      "launch_operation": "1e5549eed0244b57849c8aa6cde7a4f0",
+      "guest_generation": "b78b8073771b44a39594ebf8dd94dc8c",
+      "supervisor_epoch": "481db50abede44beadf79ecc948d4e75",
+      "pid": 1944,
+      "exit": -9,
+      "stop_observed": true,
+      "reason": "guest_completed",
+      "seconds": 2.1823108500000217,
+      "console_bytes": 2077,
+      "config_sha256": "f364fd0cc703695e2dd17536785182c1cdf07c5030ed35869758170bee907f61"
+    },
+    {
+      "mode": "validate",
+      "guest_id": "qb-f1b1ca090749",
+      "launch_operation": "4dcc594a96fe4eb59bf5b8952e2bdfa2",
+      "guest_generation": "c115d5d3993d45ca922f22f3bf623462",
+      "supervisor_epoch": "481db50abede44beadf79ecc948d4e75",
+      "pid": 1958,
+      "exit": -9,
+      "stop_observed": true,
+      "reason": "guest_completed",
+      "seconds": 2.275434529999984,
+      "console_bytes": 2077,
+      "config_sha256": "f364fd0cc703695e2dd17536785182c1cdf07c5030ed35869758170bee907f61"
+    },
+    {
+      "mode": "simulate",
+      "guest_id": "qb-ca311fc1ba5a",
+      "launch_operation": "7351d56d686e44f5865f3998b1e0e899",
+      "guest_generation": "7424ed15e06b44ce9e6056121c838858",
+      "supervisor_epoch": "481db50abede44beadf79ecc948d4e75",
+      "pid": 1975,
+      "exit": -9,
+      "stop_observed": true,
+      "reason": "guest_completed",
+      "seconds": 2.6987979159999895,
+      "console_bytes": 2099,
+      "config_sha256": "f364fd0cc703695e2dd17536785182c1cdf07c5030ed35869758170bee907f61"
+    },
+    {
+      "mode": "killed",
+      "guest_id": "qb-06b85e4fa5d1",
+      "launch_operation": "c4dc7b10d6ca444aa9c8054f0e5a1698",
+      "guest_generation": "c9ec5e5ac5444fd6aebce6798eac1fe0",
+      "supervisor_epoch": "481db50abede44beadf79ecc948d4e75",
+      "pid": 1983,
+      "exit": -9,
+      "stop_observed": true,
+      "reason": "requested_kill",
+      "seconds": 1.3080101040000045,
+      "console_bytes": 1664,
+      "config_sha256": "f364fd0cc703695e2dd17536785182c1cdf07c5030ed35869758170bee907f61"
+    },
+    {
+      "mode": "overflow",
+      "guest_id": "qb-615b54891b4b",
+      "launch_operation": "f82d81feb1ce415487fa705e4df1d220",
+      "guest_generation": "9825d7f33c7145c5addd4771c68fc0d1",
+      "supervisor_epoch": "481db50abede44beadf79ecc948d4e75",
+      "pid": 1997,
+      "exit": -9,
+      "stop_observed": true,
+      "reason": "output_limit",
+      "seconds": 3.3951244040000574,
+      "console_bytes": 131080,
+      "config_sha256": "f364fd0cc703695e2dd17536785182c1cdf07c5030ed35869758170bee907f61"
+    }
+  ],
+  "supervisor_epoch": "481db50abede44beadf79ecc948d4e75",
+  "stale_identity_comparison": "synthetic tuple rejection only; no hosted writer",
+  "passed": true
+}

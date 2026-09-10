@@ -1,0 +1,14 @@
+2026-09-10T23:05:23.826113498 [qb-06b85e4fa5d1:main] Running Firecracker v1.16.1
+2026-09-10T23:05:23.840386466 [qb-06b85e4fa5d1:main] Artificially kick devices
+2026-09-10T23:05:23.840431459 [qb-06b85e4fa5d1:fc_vcpu 0] Received a VcpuEvent::Resume message with immediate_exit enabled. immediate_exit was disabled before proceeding
+2026-09-10T23:05:23.840443207 [qb-06b85e4fa5d1:fc_vcpu 1] Received a VcpuEvent::Resume message with immediate_exit enabled. immediate_exit was disabled before proceeding
+2026-09-10T23:05:23.840455372 [qb-06b85e4fa5d1:main] Successfully started microvm that was configured from one single json
+2026-09-10T23:05:23.864064233 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO write @ 0xcf8:0x4 failed: bus_error: MissingAddressRange
+2026-09-10T23:05:23.864102471 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO read @ 0xcfc:0x2 failed: bus_error: MissingAddressRange
+2026-09-10T23:05:24.296896005 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:05:24.296933962 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:05:24.300998715 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:05:24.301024929 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: bus_error: MissingAddressRange
+2026-09-10T23:05:24.344464977 [qb-06b85e4fa5d1:fc_vcpu 0] vcpu: IO read @ 0x87:0x1 failed: bus_error: MissingAddressRange
+QB_ISOLATION={"uid": 65532, "interfaces": ["lo"], "canary_absent": true, "management_socket_absent": true, "metadata_unreachable": true, "aws_environment_absent": true}
+QB_WAITING
