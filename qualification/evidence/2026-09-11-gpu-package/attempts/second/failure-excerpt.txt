@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 229, in <module>
+    main(args.output, args.build)
+  File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 121, in main
+    raise RuntimeError(
+RuntimeError: inventory_failure: python3: can't open file '/opt/marqov-qb/inventory.py': [Errno 13] Permission denied
+[  178.133882] cloud-init[1314]: Traceback (most recent call last):
+[  178.135082] cloud-init[1314]:   File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 229, in <module>
+[  178.136804] cloud-init[1314]:     main(args.output, args.build)
+[  178.137874] cloud-init[1314]:   File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 121, in main
+[  178.139509] cloud-init[1314]:     raise RuntimeError(
+[  178.140427] cloud-init[1314]: RuntimeError: inventory_failure: python3: can't open file '/opt/marqov-qb/inventory.py': [Errno 13] Permission denied
+QB_GPU_HOST_FINISHED

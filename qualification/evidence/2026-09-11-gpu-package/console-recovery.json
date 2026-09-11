@@ -1,0 +1,11 @@
+{
+  "discarded_truncated_nonfinal_fragments": [
+    {
+      "index": 37,
+      "length": 141
+    }
+  ],
+  "observed_sha256": "ef23b23033e2db783dbba45f865aa5a3850c38c3327f62f6c21116c040b2745c",
+  "complete_records_sha256": "d01cc5135f17d9fcf4d3797bda12ff65d76ebe3b3e1c38da070205febd43f21a",
+  "rule": "Require 160 characters for nonfinal records and a complete copy matching every truncated prefix; all indexes, stream identity and original payload checksum must verify; conflicting copies reject."
+}

@@ -1,0 +1,37 @@
+#8 exporting to image
+#8 exporting layers 0.1s done
+[  175.797486] cloud-init[1321]: #6 [2/3] COPY --chmod=0444 adapter.py fault_workload.py inventory.py payload.json /opt/marqov-qb/
+[  175.799583] cloud-init[1321]: #6 DONE 0.0s
+[  175.800446] cloud-init[1321]: #7 [3/3] WORKDIR /tmp
+[  175.801335] cloud-init[1321]: #7 DONE 0.0s
+[  175.802664] cloud-init[1321]: #8 exporting to image
+[  175.803567] cloud-init[1321]: #8 exporting layers 0.1s done
+#8 exporting manifest sha256:8a41758e686362d43eaebe1b6e239608479ebf4c3da73e51ea4e08c837285726 0.0s done
+#8 exporting config sha256:0975150e3b7d96638fa573e2a1a9a83808a673bbfa57254c0b8ac7d917137c43 0.0s done
+#8 exporting attestation manifest sha256:0e495d527087d5d6192c0e117a7cc1c77453529a2f4f72f632536170f8d89861 0.0s done
+#8 exporting manifest list sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc 0.0s done
+#8 naming to moby-dangling@sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc done
+#8 unpacking to moby-dangling@sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc 0.1s done
+[  175.949120] cloud-init[1321]: #8 exporting manifest sha256:8a41758e686362d43eaebe1b6e239608479ebf4c3da73e51ea4e08c837285726 0.0s done
+[  175.949281] cloud-init[1321]: #8 exporting config sha256:0975150e3b7d96638fa573e2a1a9a83808a673bbfa57254c0b8ac7d917137c43 0.0s done
+[  175.949442] cloud-init[1321]: #8 exporting attestation manifest sha256:0e495d527087d5d6192c0e117a7cc1c77453529a2f4f72f632536170f8d89861 0.0s done
+[  175.949652] cloud-init[1321]: #8 exporting manifest list sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc 0.0s done
+[  175.949859] cloud-init[1321]: #8 naming to moby-dangling@sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc done
+[  175.950278] cloud-init[1321]: #8 unpacking to moby-dangling@sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc 0.1s done
+#8 DONE 0.4s
+[  176.198083] cloud-init[1321]: #8 DONE 0.4s
+sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc
+[  176.582609] cloud-init[1321]: sha256:84de020e1242a2b910c3cde91314e12c8cca1c3ad42968903980fa1bf38dd5cc
+Traceback (most recent call last):
+  File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 227, in <module>
+    main(args.output, args.build)
+  File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 121, in main
+[  177.824662] cloud-init[1321]: Traceback (most recent call last):
+    raise RuntimeError("inventory_failure")
+[  177.824929] cloud-init[1321]:   File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 227, in <module>
+[  177.825038] cloud-init[1321]:     main(args.output, args.build)
+[  177.825237] cloud-init[1321]:   File "/opt/qb-proof/qualification/gpu_package/qualify.py", line 121, in main
+[  177.825441] cloud-init[1321]:     raise RuntimeError("inventory_failure")
+RuntimeError: inventory_failure
+[  177.830727] cloud-init[1321]: RuntimeError: inventory_failure
+QB_GPU_HOST_FINISHED

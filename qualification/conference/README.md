@@ -20,7 +20,7 @@ Inspected Qristal main: `fe745fecd2b19f7100996cbffeb4ec30d1ed08c6` (PR13 merged)
 
 Native CPU image: `sha256:89bcfeac18c20792799f9fa91e1876e57ef4e3f9c7339757bf8e520686fe0c44`.
 GPU upstream image: `nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a`.
-GPU hardware: A10G, driver 595.91.07, reported 23,028 MiB. GPU qualification used source overlays on the pinned image; a derivative image is not yet qualified. The NVIDIA image contains separately licensed components; the Qristal Apache license does not cover the entire distribution.
+GPU hardware: A10G, driver 595.91.07, reported 23,028 MiB. The initial GPU qualification used source overlays. The later [packaged runtime experiment](../evidence/2026-09-11-gpu-package) passed without source overlays; registry publication remains pending. The NVIDIA image contains separately licensed components; the Qristal Apache license does not cover the entire distribution.
 
 ## What we learned, including failures
 
@@ -67,7 +67,7 @@ Suggested five-minute demonstration:
 
 Next experiment ideas, in priority order:
 
-- **Packaged GPU repeat:** same six circuits on both targets, no source overlay, exact derivative image identity, negative input/no-GPU cases and fault/recovery checks. This resolves the immediate packaging gap before fleet investment.
+- **Packaged GPU repeat — passed:** [retained evidence](../evidence/2026-09-11-gpu-package) covers both targets, no source overlay, derivative identity, negatives and fault/recovery. Next release work is a retained registry artifact with license/SBOM review; hosted integration remains separately reviewed.
 - **Readout sweep:** p10/p01 grid with analytic probabilities and multiple seeds; plot deviation from prediction, not just attractive output. Use existing public CPU capabilities.
 - **Structure-sensitive scaling:** GHZ versus more entangling circuits, increasing qubit count with explicit time/memory ceilings. Record warm-up/compilation separately, repeated timings, failures and truncation settings. No speed comparison until hardware and measurement protocol are controlled.
 - **Mitigation demonstration:** calibrate and independently validate a confusion-matrix correction on held-out synthetic data, report uncertainty and conditioning. Keep separate from hardware calibration and current readout results.

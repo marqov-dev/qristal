@@ -1,0 +1,26 @@
+{
+  "files": {
+    "README.md": "9fd4fbbbacd10466cb5cd448f165ea1ed89fc74aa5c74f1faf94aa089b403d56",
+    "attempts/capacity/README.md": "a0c2c9c8c5a2de227fc3af50b8214181b46ff31262698bd87209f3088f0ddae1",
+    "attempts/capacity/cleanup.json": "a59254da00ee9190d294eec9e6bb35d5b97f558558c9ea6ef633148dc4e22841",
+    "attempts/first/Dockerfile": "74cac237dfc226af84ed83fd81200d712d270fc1738c0ce289217798def1b9e9",
+    "attempts/first/README.md": "31868c906e3eb72f48a22a3963bcbf08ff275a8d7891af5c2da4e72c80386a9c",
+    "attempts/first/cleanup.json": "b737497dd52f6ec966996a22807454c6e73ca673960984acf8ae564b1e42c15b",
+    "attempts/first/failure-excerpt.txt": "c0c167eb9c2b64a4c22464ef59f8d3805ed57765d8cd30483fea982d701e0fe4",
+    "attempts/first/inventory.py": "1465e441fef201e42ce426c92b7dcfec6a8ab5846532af81562c9b0df13dbc6c",
+    "attempts/first/qualify.py": "4e1cc2d1a3da3d9f331bff6c1534d668f755f6291b351092fad03cae36b0a259",
+    "attempts/first/source-hashes.json": "2b20df6324e5a838e8d6706878beaaef3cb25c18d115bcffa6410291f794a74a",
+    "attempts/second/Dockerfile": "74cac237dfc226af84ed83fd81200d712d270fc1738c0ce289217798def1b9e9",
+    "attempts/second/README.md": "24d93910ddc18fc1d4b5ee3be9c0a11e998ad4478656b7d2d94a964432659a27",
+    "attempts/second/cleanup.json": "b737497dd52f6ec966996a22807454c6e73ca673960984acf8ae564b1e42c15b",
+    "attempts/second/failure-excerpt.txt": "90bca0720c8ab74388579eeb198f8b15ccc93bfb2f0f2e83cf9cbe0c72d207c4",
+    "attempts/second/source-hashes.json": "7adf4c26f2b8fc4e3e94c0d1b1e95836552b0925fa1b6359bd3037afd66972d4",
+    "cleanup.json": "b737497dd52f6ec966996a22807454c6e73ca673960984acf8ae564b1e42c15b",
+    "console-chunks.txt": "d01cc5135f17d9fcf4d3797bda12ff65d76ebe3b3e1c38da070205febd43f21a",
+    "console-observed.txt": "ef23b23033e2db783dbba45f865aa5a3850c38c3327f62f6c21116c040b2745c",
+    "console-recovery.json": "a2556f18e09338ce1126cfaf6267b8ed4863165b74126b440b74938c8bb80963",
+    "result.json": "f962f83978b65bb2daa8b58f323cf5691fadc9858b671bb01b31894a341b88e9",
+    "source-hashes.json": "1cb8d971f1261179ae3e49176b7f11dfd6bd54420485c670c3cd392c04e29b25"
+  },
+  "scope": "Saved package qualification observations; unsigned engineering evidence, not hosted receipts."
+}
