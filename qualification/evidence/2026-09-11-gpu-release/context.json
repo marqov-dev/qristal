@@ -1,0 +1,21 @@
+{
+  "source_revision": "561a02b49d377af9e4adf5b8b0f05bbb99659f7e",
+  "base_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+  "context_files": {
+    "adapter.py": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+    "fault_workload.py": "f086351e76b256a9be8c601a621c2645c85eb8678e5fa1f0d4fe25bfd1dc769e",
+    "inventory.py": "6dea62cfed73e73ce5946f1df515b7a831ba3490a0ca92f82f9eb4613700d3e2",
+    "payload.json": "4323c6c6889dca31b8084698671343f7c3740f563336329f0ddf05d8df32a68f",
+    "LICENSE.source": "e966b14be242b644f9cf0d3f425aad8982cb7490e88468e60823ecdee3a27e3e",
+    "NOTICE.release.md": "19c536017684f5882b4cf9fb46b7f95f647c1f7d6eafebcf60635e0589e6ccc2",
+    "Dockerfile": "6948c25dc52aaa7d7d44ae1576cb61beb90463d5be4b7c1c5f7365d40cdea5ed"
+  },
+  "payload": {
+    "base": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+    "files": {
+      "adapter.py": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+      "fault_workload.py": "f086351e76b256a9be8c601a621c2645c85eb8678e5fa1f0d4fe25bfd1dc769e",
+      "inventory.py": "6dea62cfed73e73ce5946f1df515b7a831ba3490a0ca92f82f9eb4613700d3e2"
+    }
+  }
+}

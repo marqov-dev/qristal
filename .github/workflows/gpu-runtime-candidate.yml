@@ -109,18 +109,17 @@ jobs:
           docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cudaq-gpu@$DIGEST" --raw > .release/registry-index.json
           docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cudaq-gpu@$DIGEST" --format '{{ json .SBOM }}' > .release/sbom.json
           docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cudaq-gpu@$DIGEST" --format '{{ json .Provenance }}' > .release/provenance.json
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-          for name,key,field in (('sbom','SPDX','spdxVersion'),('provenance','SLSA','buildType')):
-              value=json.loads(Path('.release/'+name+'.json').read_text())
-              document=value.get(key) or value.get('linux/amd64',{}).get(key)
-              assert document and document.get(field), name+' attestation missing'
-          PY
+          python3 qualification/gpu_release/attestations.py .release
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always() && steps.publish.outcome == 'success'
         with:
           name: gpu-candidate-release-${{ github.run_id }}-${{ github.run_attempt }}
-          path: .release/*.json
+          path: |
+            .release/context.json
+            .release/release.json
+            .release/build-metadata.json
+            .release/registry-index.json
+            .release/sbom.json
+            .release/provenance.json
           retention-days: 90
           if-no-files-found: error
