@@ -1,0 +1,126 @@
+name: GPU runtime candidate
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/gpu-runtime-candidate.yml'
+      - 'qualification/gpu_release/**'
+      - 'qualification/gpu_package/**'
+      - 'qualification/gpu_adapter/**'
+      - 'qualification/accelerators/**'
+      - 'qualification/runtime/bounded_process.py'
+      - 'LICENSE'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: gpu-runtime-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Offline qualification and release tests
+        run: |
+          python3 qualification/gpu_package/check_evidence.py qualification/evidence/2026-09-11-gpu-package
+          python3 -m unittest discover -s qualification/gpu_release -p 'test_*.py'
+          python3 -m unittest discover -s qualification/gpu_package -p 'test_*.py'
+          PYTHONPATH=qualification/gpu_adapter:qualification/accelerators:qualification/runtime python3 -m unittest discover -s qualification/gpu_adapter -p 'test_*.py'
+      - name: Stage exact context
+        run: python3 qualification/gpu_release/release.py stage --output .release/context --record .release/context.json --revision "$GITHUB_SHA"
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+      - name: Build candidate without publishing
+        id: build
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .release/context
+          platforms: linux/amd64
+          load: true
+          network: none
+          provenance: false
+          tags: marqov-cudaq-candidate:check
+      - name: Verify baked payload without GPU or network
+        env:
+          IMAGE_ID: ${{ steps.build.outputs.imageid }}
+        run: |
+          docker run --rm --pull never --network none --read-only --tmpfs /tmp:rw,size=512m --cap-drop ALL --security-opt no-new-privileges --user 65532:65532 --env NVIDIA_VISIBLE_DEVICES=void --entrypoint python3 "$IMAGE_ID" -B /opt/marqov-qb/inventory.py > .release/inventory.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          context=json.loads(Path('.release/context.json').read_text())
+          inventory=json.loads(Path('.release/inventory.json').read_text())
+          assert inventory['payload']==context['payload']
+          assert inventory['observed_files']==context['payload']['files']
+          assert inventory['architecture']=='x86_64'
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: gpu-candidate-check-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .release/context.json
+            .release/inventory.json
+          retention-days: 30
+          if-no-files-found: error
+  publish:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && github.repository == 'marqov-dev/qristal'
+    needs: check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Stage exact context
+        run: python3 qualification/gpu_release/release.py stage --output .release/context --record .release/context.json --revision "$GITHUB_SHA"
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish candidate with standard attestations
+        id: publish
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .release/context
+          platforms: linux/amd64
+          network: none
+          push: true
+          provenance: mode=max
+          sbom: true
+          tags: ghcr.io/marqov-dev/qristal-cudaq-gpu:sha-${{ github.sha }}-run-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain registry identity and metadata
+        env:
+          DIGEST: ${{ steps.publish.outputs.digest }}
+          METADATA: ${{ steps.publish.outputs.metadata }}
+        run: |
+          python3 qualification/gpu_release/release.py record --context .release/context.json --digest "$DIGEST" --run "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" --output .release/release.json
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          Path('.release/build-metadata.json').write_text(os.environ['METADATA'])
+          PY
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cudaq-gpu@$DIGEST" --raw > .release/registry-index.json
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cudaq-gpu@$DIGEST" --format '{{ json .SBOM }}' > .release/sbom.json
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cudaq-gpu@$DIGEST" --format '{{ json .Provenance }}' > .release/provenance.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for name,key,field in (('sbom','SPDX','spdxVersion'),('provenance','SLSA','buildType')):
+              value=json.loads(Path('.release/'+name+'.json').read_text())
+              document=value.get(key) or value.get('linux/amd64',{}).get(key)
+              assert document and document.get(field), name+' attestation missing'
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always() && steps.publish.outcome == 'success'
+        with:
+          name: gpu-candidate-release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .release/*.json
+          retention-days: 90
+          if-no-files-found: error
