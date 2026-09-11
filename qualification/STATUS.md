@@ -11,8 +11,8 @@ The public Qristal 1.8.1 sources are the baseline. Commercial Emulator and inter
 | Decoder | Build both plugins; known small inputs and invalid-input tests | Installed simplified-decoder consumer passed nine fixed fixtures; full quantum-decoder execution remains unqualified ([installed evidence](installed/README.md)) |
 | Integrations | Version-compatible Qiskit sampler/estimator; parameters, observables, measurements and application examples | Sixteen Qiskit 1.2 V1 checks passed in a separate dependency environment; Core parser retains Qiskit 0.46. V2 and general application semantics remain unqualified ([installed evidence](installed/README.md)) |
 | SDK distribution | Build pinned components, install into fresh runtime, run own examples without source tree | Installed-only CPU and local pinned image qualified; registry publication, relocatable packages and supported distribution remain pending ([runtime guide](runtime/README.md)) |
-| Tensor networks | Public ExaTN/TNQVM build; exact small-circuit comparisons and truncation checks | Pending, excluded from initial CPU profile |
-| GPU | Explicit GPU/backend versions, native GPU correctness and resource tests | Pending; no GPU or paid execution authorized |
+| Tensor networks | Explicit method selection; exact small-circuit comparisons and truncation checks | Aer CPU MPS passed six analytic fixtures; public ExaTN/TNQVM reconstruction and truncation checks remain pending |
+| GPU | Explicit GPU/backend versions, native GPU correctness and resource tests | Standalone CUDA-Q 0.15 state-vector and tensor-network targets passed twelve native A10G cases; Qristal Core integration and hosted execution remain unqualified |
 | Managed execution | Adapter contract, isolated job lifecycle and result retrieval | Later; outside current platform/compiler release critical path |
 
 Acceptance requires logs, exact source revisions, dependency versions, test counts and limitations. Compilation or import alone is not evidence that a simulator works. Statistical tests must specify sample sizes and tolerances in advance. Unsupported backends must not silently fall back to another simulator.
@@ -29,3 +29,10 @@ This is a source overlay on the existing local image, not a newly published imag
 full device emulator, SPAM mitigation or hosted backend. The platform's independent
 local QPP rehearsal is merged; production admission, lifecycle and availability
 remain outside this community qualification status.
+
+The [standalone GPU workload adapter](gpu_adapter/README.md) subsequently passed
+twelve typed-artifact circuit cases, three owned-GPU-context termination/timeout/
+overflow cases and a fresh recovery case on A10G. Candidate output is bound to
+input/adapter/runtime provenance. Local stopped-state and GPU-process-removal
+evidence do not supply hosted STOPPED, resource-release or result-acceptance
+authority; Core GPU integration and hosted isolation remain unqualified.

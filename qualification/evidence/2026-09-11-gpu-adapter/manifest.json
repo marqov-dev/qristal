@@ -1,0 +1,19 @@
+{
+  "source_base": "246391ef03f67bb8abde87056ab3d10d0f6e7386",
+  "files": {
+    "console-chunks.txt": "86466881cd26b74510097b13278c1aba85fa0df0429f6c789584af1a210d892d",
+    "result.json": "7316c9cf78ad431cdfcf313104d2d589070ed8905c08b06e2280cc37b6da34a1",
+    "cleanup.json": "b737497dd52f6ec966996a22807454c6e73ca673960984acf8ae564b1e42c15b"
+  },
+  "aws_scope": {
+    "instance_type": "g5.xlarge",
+    "region": "us-east-1",
+    "ami": "ami-0eb7d782cce2fe526",
+    "maximum_host_minutes": 60,
+    "guest_shutdown_minutes": 55,
+    "root_volume_gib": 200,
+    "inbound_rules": 0,
+    "iam_role": false,
+    "root_delete_on_termination": true
+  }
+}

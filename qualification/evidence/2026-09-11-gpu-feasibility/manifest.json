@@ -1,0 +1,10 @@
+{
+  "files": {
+    "console-payloads.txt": "abfcfd9a6b4b5843f38e17f856c96fdc98a479cdfa3075f05039dde12419900c",
+    "result.json": "7de45b9e7b226491ec020e9291eadbbfa7bac0f583a6fdddd2f8458049d277c7",
+    "attempts.json": "ed752d605840e613b0bfc76f7a1da9ec9cfafcbd511a0c3b368dfca166bd8475",
+    "cleanup.json": "b737497dd52f6ec966996a22807454c6e73ca673960984acf8ae564b1e42c15b"
+  },
+  "source_base": "f90fda3adc625570851c9b350d9ba09c90394980",
+  "transport": "Two console payloads normalized by removing EC2 ISO timestamp annotations only; equality and source/program hashes checked."
+}

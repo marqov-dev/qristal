@@ -50,3 +50,9 @@ The next qualification stage verifies CPU execution with source and build trees 
 ## Local CPU image
 
 The installed runtime is now packaged and exercised without host mounts. See the [local image recipe, evidence and adapter proposal](runtime/README.md). No registry publication or platform connection is implied.
+
+## Additional CPU methods and public GPU feasibility
+
+See [accelerator qualification](accelerators/README.md) for explicit Aer MPS and
+density-matrix results, the corrected historical backend mapping, and a bounded
+standalone CUDA-Q GPU probe. GPU feasibility is separate from Core integration.

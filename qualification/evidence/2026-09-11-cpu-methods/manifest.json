@@ -1,0 +1,15 @@
+{
+  "files": {
+    "cleanup.json": "d79c54ce3f58b282b74372786275edbc4d03baa16ff5ce2ef55cf94820e9a564",
+    "cpu.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cpu.stdout": "3a6f4a18bb58310cd34df7e72cd2cec04d0739995cf7cd0830a82b9d154f3dfd",
+    "intent.json": "a337909775205a5b0627911bdddd03bc4912b06f1b804c4bfa817b2daf47134a"
+  },
+  "image": "sha256:89bcfeac18c20792799f9fa91e1876e57ef4e3f9c7339757bf8e520686fe0c44",
+  "source_base": "f90fda3adc625570851c9b350d9ba09c90394980",
+  "sources": {
+    "cpu_probe.py": "e5ab5d058f01f31b008cfbdeb704d1825ec9bc72b0b4da139430114d618a3dbb",
+    "fixtures.py": "83f4e44a7838ff494998a16ca1aed85de12c3999736efa4176306bcb3c161ab0",
+    "qualify_cpu.py": "074f92ae02b8e6dc1c24445f223cdeef1f137e0c77fb5a0645e2afe873022172"
+  }
+}
