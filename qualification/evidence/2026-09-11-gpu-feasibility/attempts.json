@@ -1,0 +1,46 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "outcome": "observer failure before a retained GPU result",
+      "reason": "AWS CLI returned decoded console text; observer incorrectly attempted base64 decoding again",
+      "cleanup": {
+        "instance_terminated": true,
+        "volumes_absent": true,
+        "security_group_deleted": true
+      }
+    },
+    {
+      "attempt": 2,
+      "outcome": "no instance launched",
+      "reason": "InsufficientInstanceCapacity in us-east-1a",
+      "cleanup": {
+        "instance_terminated": false,
+        "volumes_absent": true,
+        "security_group_deleted": true
+      }
+    },
+    {
+      "attempt": 3,
+      "outcome": "probe conversion failure after first CUDA-Q sample call returned",
+      "reason": "dict(SampleResult) iterates keys; use dict(SampleResult.items())",
+      "gpu": "NVIDIA A10G",
+      "driver": "595.91.07",
+      "error": "ValueError: dictionary update sequence element #0 has length 3; 2 is required",
+      "cleanup": {
+        "instance_terminated": true,
+        "volumes_absent": true,
+        "security_group_deleted": true
+      }
+    },
+    {
+      "attempt": 4,
+      "outcome": "passed twelve native cases on two targets",
+      "cleanup": {
+        "instance_terminated": true,
+        "volumes_absent": true,
+        "security_group_deleted": true
+      }
+    }
+  ]
+}
