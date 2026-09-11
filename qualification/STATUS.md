@@ -29,3 +29,10 @@ This is a source overlay on the existing local image, not a newly published imag
 full device emulator, SPAM mitigation or hosted backend. The platform's independent
 local QPP rehearsal is merged; production admission, lifecycle and availability
 remain outside this community qualification status.
+
+The [standalone GPU workload adapter](gpu_adapter/README.md) subsequently passed
+twelve typed-artifact circuit cases, three owned-GPU-context termination/timeout/
+overflow cases and a fresh recovery case on A10G. Candidate output is bound to
+input/adapter/runtime provenance. Local stopped-state and GPU-process-removal
+evidence do not supply hosted STOPPED, resource-release or result-acceptance
+authority; Core GPU integration and hosted isolation remain unqualified.
