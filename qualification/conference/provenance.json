@@ -1,0 +1,8 @@
+{
+  "source_commit": "fe745fecd2b19f7100996cbffeb4ec30d1ed08c6",
+  "inputs": {
+    "qualification/evidence/2026-09-11-cpu-methods/cpu.stdout": "3a6f4a18bb58310cd34df7e72cd2cec04d0739995cf7cd0830a82b9d154f3dfd",
+    "qualification/evidence/2026-09-11-gpu-feasibility/result.json": "7de45b9e7b226491ec020e9291eadbbfa7bac0f583a6fdddd2f8458049d277c7"
+  },
+  "scope": "Replot of retained observations, not new runs. Marginal sampling intervals, not independent hardware repetitions or simultaneous coverage."
+}
