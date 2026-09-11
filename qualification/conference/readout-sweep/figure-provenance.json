@@ -1,0 +1,11 @@
+{
+  "result_sha256": "46c41345a232363c232867ca5a998fdf6dd400c9454d1d205ae9f7a6288b56c7",
+  "plot_source_sha256": "7c5435b643fcea9ca42d550380741635c81af287f32cf34bd7cb2f1da228f6c3",
+  "plotted_seed": 42,
+  "max_outcome_probability_residual": 0.004931640625000011,
+  "files": {
+    "readout-sweep.png": "1dd2ea579a856441a440137f82f0da0627e58690a992b83fe02d4969c4c73ec9",
+    "readout-sweep.svg": "cd881847e14cd359a5b703603b5b624a4edccbc95396d2ad745c55d521615bf6",
+    "readout-sweep.csv": "85fddfa9acf5f6945bc75f08571e33abb53ff96672563522bc847f0f0cbf1bc9"
+  }
+}
