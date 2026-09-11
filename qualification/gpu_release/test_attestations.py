@@ -1,9 +1,44 @@
+import gzip
+import hashlib
+import json
+from pathlib import Path
 import unittest
 
 from attestations import check
 
 
 class AttestationTests(unittest.TestCase):
+    def test_recovered_registry_documents(self):
+        root = Path(__file__).resolve().parents[1] / "evidence/2026-09-11-gpu-release"
+        recovery = json.loads((root / "recovery.json").read_text())
+        for name, digest in recovery["files"].items():
+            self.assertEqual(
+                hashlib.sha256((root / name).read_bytes()).hexdigest(), digest
+            )
+        documents = {}
+        for name, digest in recovery["expanded_files"].items():
+            raw = gzip.decompress((root / (name + ".gz")).read_bytes())
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), digest)
+            documents[name] = json.loads(raw)
+        self.assertEqual(
+            check(documents["sbom.json"], documents["provenance.json"]),
+            {"spdx": "SPDX-2.3", "packages": 418, "slsa": "v1"},
+        )
+        release = json.loads((root / "reconstructed-release.json").read_text())
+        self.assertEqual(
+            release["image"].split("@")[1],
+            "sha256:"
+            + hashlib.sha256((root / "registry-index.json").read_bytes()).hexdigest(),
+        )
+        index = json.loads((root / "registry-index.json").read_text())
+        self.assertEqual(
+            index["manifests"][0]["digest"],
+            "sha256:"
+            + hashlib.sha256(
+                (root / "platform-manifest.json").read_bytes()
+            ).hexdigest(),
+        )
+
     def setUp(self):
         self.sbom = {
             "SPDX": {"spdxVersion": "SPDX-2.3", "packages": [{"name": "fixture"}]}
