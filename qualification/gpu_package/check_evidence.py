@@ -17,7 +17,7 @@ native = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(native)
 
 
-def verify(report):
+def verify(report, *, expected_recipe_sha256=None):
     native.verify(report)
     build = report["build"]
     image = build["image_id"]
@@ -39,9 +39,9 @@ def verify(report):
         or inventory["payload"] != {"base": native.IMAGE, "files": expected}
     ):
         raise ValueError("payload_binding")
-    if (
-        build["dockerfile_sha256"]
-        != hashlib.sha256((HERE / "Dockerfile").read_bytes()).hexdigest()
+    if build["dockerfile_sha256"] != (
+        expected_recipe_sha256
+        or hashlib.sha256((HERE / "Dockerfile").read_bytes()).hexdigest()
     ):
         raise ValueError("recipe_binding")
     if (

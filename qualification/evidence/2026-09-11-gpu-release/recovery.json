@@ -1,0 +1,23 @@
+{
+  "workflow_run": "https://github.com/marqov-dev/qristal/actions/runs/34569705163",
+  "workflow_conclusion": "failure",
+  "publish_step": "success",
+  "retention_step": "failure",
+  "source_revision": "561a02b49d377af9e4adf5b8b0f05bbb99659f7e",
+  "package_visibility": "private",
+  "record_origin": "reconstructed locally from successful check artifact, published digest and source; not the lost original release.json",
+  "attestation_origin": "retrieved by docker buildx imagetools from the published registry digest",
+  "native_published_digest_qualified": false,
+  "files": {
+    "platform-manifest.json": "35dbf1ead7b6c9cca0900a93e74da560db9d116c48917b449d5bfae249f8ba4a",
+    "registry-index.json": "1b51260a1e7cdc3f4fbc675d94fb0ca07867dc730bfcb5a3b9b25245e82560ef",
+    "context.json": "027e49a4c670d1d8e71bc4564a2809567adeb90d40856bfac50b028e4a05dcd5",
+    "reconstructed-release.json": "e1d7ffcd08bd68488bd7257294f2f2f29885f92fb4e028b3f0c2b9984275e2e2",
+    "sbom.json.gz": "1b2b8b1db0b365a6457b610ac4a693080324053ace447413dfebdb3d07607329",
+    "provenance.json.gz": "df8bfd265795077f80b2d14bbe626134b719bca8edf70a2d402b3031350c74f3"
+  },
+  "expanded_files": {
+    "sbom.json": "77b37ae11fa0d139b310ad0f7387edfe796ae452e65a17dcc05d4486022908e2",
+    "provenance.json": "96a11f66e0b4a3bddd396b79e4f401bb6e413c0255221e107ff9985f9852031f"
+  }
+}
