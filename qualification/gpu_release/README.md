@@ -104,3 +104,56 @@ observer lost AWS connectivity, so the same host’s checksummed result was reco
 through an allowlisted console filter. Instance/group/bucket absence and a regional
 launch-window volume scan were verified; the exact root-volume ID was not retained.
 See the evidence record for that limitation and bounded observer-hardening follow-up.
+
+## Observer recovery helpers (offline-qualified)
+
+The historical operator scripts in the evidence directory are immutable records of
+what ran. Do not rerun that launch script: it used fixed experiment resources,
+stored unfiltered console output, and could lose volume IDs on interruption.
+
+New `observer.py` helpers address that failure without launching or terminating
+anything. The operator must retain the existing cleanup authority and guest
+shutdown deadline. Immediately after security-group creation, persist its ID with
+`Journal.record(group=...)`. Immediately after the single idempotent launch
+response, call `Journal.instance_response(response["Instances"][0])` **before
+another AWS call**. This atomically flushes instance and available volume IDs.
+Empty later mappings never erase known volumes; changed instance identities fail.
+
+For an already-owned instance with its journal recorded:
+
+```python
+import time
+from functools import partial
+from pathlib import Path
+from observer import Journal, aws_read, observe_once
+
+journal = Journal(Path("/private/operator-run/resources.json"))
+deadline = time.monotonic() + 300  # fixed once, not reset by polling or retry
+read = partial(aws_read, "us-east-1")
+recovered = observe_once(journal, read, deadline, Path("/private/operator-run"))
+```
+
+The describe response is persisted before console retrieval, so a later network
+failure cannot discard newly observed disk IDs. Console output passes an
+allowlist before any file write. Existing chunk bounds, conflicts, truncated-copy
+and payload checksum validation remain in force. Only matching instance responses
+are accepted. Recovery proves saved payload integrity, not cleanup or hosted
+result acceptance. These files are private operator records, not automatically
+approved publication artifacts: qualified payload contents still require review.
+
+The AWS adapter permits only four observation APIs. It explicitly selects
+[AWS CLI standard retries](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-retries.html)
+with three total attempts inside a subprocess timeout capped at 45 seconds and
+the remaining original deadline. After exhausted transient connectivity or
+selected service failures, bounded backoff retries the read. Permission and other
+terminal failures stop immediately. Raw stderr is never included in retained
+errors. Retrying launch or resetting deadlines is not part of this helper.
+
+Eight additional offline tests replay real saved GPU console evidence and inject
+network, permission and atomic-write failures; they verify IDs survive restart,
+are saved before console failure, and unrelated bootstrap text is not retained.
+This helper has **not** had a new live AWS qualification. It does not repair the
+missing volume ID in the historical record. Wiring it into a future launch and
+cleanup supervisor, persisting the original deadline across process restart, and
+verifying that supervisor's native interruption/recovery remain bounded follow-up
+work. No new instance, image build or hosted backend was needed for these tests.
