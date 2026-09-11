@@ -111,3 +111,7 @@ The [native evidence](../evidence/2026-09-11-gpu-adapter/README.md) passes twelv
 adapter circuits, three owned-GPU-context fault cases and fresh recovery. Sixteen
 local regression/evidence tests pass. This adds standalone workload and local
 lifecycle evidence; the platform mapping above remains a review proposal.
+
+See the [hosted profile review](HOSTED-PROFILE-REVIEW.md) for the current concrete
+contract gaps, proposed single-attempt GPU VM boundary and required review gates.
+This proposal does not register or activate a profile.
