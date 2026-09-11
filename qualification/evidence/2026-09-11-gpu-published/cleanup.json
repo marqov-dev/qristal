@@ -1,0 +1,19 @@
+{
+  "instance_absent": true,
+  "volumes_absent": true,
+  "security_group_deleted": true,
+  "security_group_absent": true,
+  "instance_id": "i-0df84e33cffc898ce",
+  "volume_ids": [],
+  "security_group_id": "sg-0f740f36e98ddaacc",
+  "verified_at": "2026-09-11T20:30:07.826414+00:00",
+  "volume_verification": {
+    "method": "full-region creation-window scan; exact root-volume ID was not retained by the interrupted observer",
+    "region": "us-east-1",
+    "from_inclusive": "2026-09-11T10:19:00+00:00",
+    "to_inclusive": "2026-09-11T10:23:00+00:00",
+    "matching_volumes": [],
+    "launch_event_time": "2026-09-11T10:20:53Z"
+  },
+  "limitation": "No terminated-state response or exact root-volume-ID absence response was retained; instance absence and the full launch-window volume scan were observed independently."
+}

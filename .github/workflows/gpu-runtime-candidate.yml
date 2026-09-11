@@ -10,6 +10,7 @@ on:
       - 'qualification/runtime/bounded_process.py'
       - 'qualification/readout_sweep/**'
       - 'qualification/evidence/2026-09-11-readout-sweep/**'
+      - 'qualification/evidence/2026-09-11-gpu-published/**'
       - 'LICENSE'
   workflow_dispatch:
 permissions:

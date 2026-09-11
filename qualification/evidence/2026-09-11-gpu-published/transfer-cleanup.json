@@ -1,0 +1,11 @@
+{
+  "bucket": "codex-qb-release-proof-090208085542-20260911",
+  "bucket_absent": true,
+  "head_bucket_status": 404,
+  "deleted_objects": [
+    "candidate.tar.gz",
+    "supervisor.tar.gz"
+  ],
+  "aborted_multipart_uploads": 0,
+  "verified_at": "2026-09-11T20:18:35.769664+00:00"
+}

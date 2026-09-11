@@ -1,0 +1,18 @@
+[
+  {
+    "event_id": "cbac94c3-d2c9-4e7a-9ef2-5d17ff18e427",
+    "event_name": "RunInstances",
+    "event_time": "2026-09-11T10:20:53Z",
+    "instance_id": "i-0df84e33cffc898ce",
+    "instance_state": {
+      "code": 0,
+      "name": "pending"
+    },
+    "block_devices": {},
+    "placement": {
+      "availabilityZone": "us-east-1c",
+      "availabilityZoneId": "use1-az4",
+      "tenancy": "default"
+    }
+  }
+]

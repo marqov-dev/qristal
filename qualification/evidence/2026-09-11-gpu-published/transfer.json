@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "sha256:77b7fb176c0119c345505a979061132ddb48373feeb7afb9145b5b1867002833",
+  "archive_bytes": 4803147965,
+  "tag": "qb-release-proof:ecb6923f-20260911",
+  "registry_image": "ghcr.io/marqov-dev/qristal-cudaq-gpu@sha256:ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409",
+  "configuration": "sha256:e77eb03557c01a4e34cac3e7ee5fdcf005900064944d56aafd50f899cb2c3800",
+  "source_revision": "beecfb8fcc501c4cecefd9d12af3058ec8f1efe0",
+  "local_image_id": "sha256:ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409"
+}

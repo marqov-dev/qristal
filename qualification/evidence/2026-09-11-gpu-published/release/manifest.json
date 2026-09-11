@@ -1,0 +1,49 @@
+{
+  "workflow_url": "https://github.com/marqov-dev/qristal/actions/runs/34581422039",
+  "artifact_id": 10191934418,
+  "records": {
+    "build-metadata.json": {
+      "stored_file": "build-metadata.json",
+      "bytes": 12561,
+      "sha256": "255ce51824f2bcb115e966648de5c573974eb63982150b8eedd7ba9cf612b742",
+      "stored_sha256": "255ce51824f2bcb115e966648de5c573974eb63982150b8eedd7ba9cf612b742"
+    },
+    "context.json": {
+      "stored_file": "context.json",
+      "bytes": 1280,
+      "sha256": "0d494f7130008dd065a818504f9374e55237b2a5b4585a1893203b7d556cfb53",
+      "stored_sha256": "0d494f7130008dd065a818504f9374e55237b2a5b4585a1893203b7d556cfb53"
+    },
+    "platform-manifest.json": {
+      "stored_file": "platform-manifest.json",
+      "bytes": 12098,
+      "sha256": "9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "stored_sha256": "9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a"
+    },
+    "provenance.json": {
+      "stored_file": "provenance.json.gz",
+      "bytes": 129940,
+      "sha256": "329d9123acb2dd89d67af21bb16730c20e201c9fdee7f7095940944f17d4862c",
+      "stored_sha256": "20a7f8f4cde690d76b9c68d128781347faaa7981afc6cbaa363fc6de9b84ae69"
+    },
+    "registry-index.json": {
+      "stored_file": "registry-index.json",
+      "bytes": 858,
+      "sha256": "ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409",
+      "stored_sha256": "ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409"
+    },
+    "release.json": {
+      "stored_file": "release.json",
+      "bytes": 1751,
+      "sha256": "0523f0f2cc172edbc64c6a9ce32f73cd7e876704f78eed39d032acefc3701e53",
+      "stored_sha256": "0523f0f2cc172edbc64c6a9ce32f73cd7e876704f78eed39d032acefc3701e53"
+    },
+    "sbom.json": {
+      "stored_file": "sbom.json.gz",
+      "bytes": 13344229,
+      "sha256": "bbc98fa3efb86009e7a795aa5927f87e286a688f98d86a05b9ebe6165c3518d9",
+      "stored_sha256": "0f9a25281cf795168fcbdec54a52dfd9de1bc50d622b3ec9237fb5c2e9a41091"
+    }
+  },
+  "platform_manifest_origin": "registry imagetools raw; additional to the six original workflow records"
+}

@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-09-11T09:55:47.392536+00:00",
+  "scope": "one disposable native qualification of the existing private published image; no image rebuild or hosted admission",
+  "region": "us-east-1",
+  "instance_type": "g5.xlarge",
+  "instance_count": 1,
+  "ami": "ami-0eb7d782cce2fe526",
+  "subnet": "subnet-01fb5ff873d16c141",
+  "vpc": "vpc-0c8ff9e3276495a4c",
+  "iam_role": null,
+  "ssh_key": null,
+  "inbound_rules": [],
+  "egress": "TCP 443 only",
+  "metadata": "IMDSv2 required, hop limit 1",
+  "root_disk": {
+    "gb": 200,
+    "type": "gp3",
+    "encrypted": true,
+    "delete_on_termination": true
+  },
+  "host_shutdown_minutes": 55,
+  "observer_timeout_seconds": 3600,
+  "workload_containers": "non-root, no network, read-only input-only mounts; prior package qualifier unchanged",
+  "checks": {
+    "analytic_circuits": 12,
+    "negatives": 2,
+    "gpu_context_faults": 3,
+    "fresh_recovery": 1
+  },
+  "cleanup": "terminate instance, verify its volumes absent, delete its security group; delete exact transfer objects and bucket, verify bucket absent",
+  "operator_scripts": {
+    "launch.py": "4c27fc574f744c5a87da35ffab9e5e7be13631506ebf2cb4f8e57d808f862feb",
+    "prepare.py": "5813bc6b00aed0c9815048ff5ee70f3467843be3073e2dd772648a6b29913003",
+    "cleanup_transfer.py": "1c0cb5a790805b0b427e370e9505fb318a7dcbb5361825f846732e9ff4234f72",
+    "userdata.template.sh": "52d28a5c2678e7007bcd6d18666f9f37e7c16133a9a0119e2a200beeceb214a1"
+  }
+}

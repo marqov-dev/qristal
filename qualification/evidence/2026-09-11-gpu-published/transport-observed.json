@@ -1,0 +1,26 @@
+{
+  "bucket": "codex-qb-release-proof-090208085542-20260911",
+  "region": "us-east-1",
+  "objects": [
+    {
+      "key": "candidate.tar.gz",
+      "bytes": 4803147965,
+      "sha256": "sha256:77b7fb176c0119c345505a979061132ddb48373feeb7afb9145b5b1867002833",
+      "encryption": "AES256"
+    },
+    {
+      "key": "supervisor.tar.gz",
+      "bytes": 22684,
+      "sha256": "sha256:2f77056aca4bd6b52a5ef396e485b0ffe6104ab6487309055fe5939d64fc1aa9",
+      "encryption": "AES256"
+    }
+  ],
+  "public_access_block": {
+    "BlockPublicAcls": true,
+    "IgnorePublicAcls": true,
+    "BlockPublicPolicy": true,
+    "RestrictPublicBuckets": true
+  },
+  "get_url_ttl_seconds": 3600,
+  "prepared_at": "2026-09-11T10:20:32.235431+00:00"
+}
