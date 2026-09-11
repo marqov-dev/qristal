@@ -1,0 +1,11 @@
+{
+  "base": "6de01a6158779e837a965d444d95015d075dd322",
+  "files": {
+    "gpu_mapping/mapping.py": "6f630fd6aca6f5118b1fda36ad5b490ec7454afe0de9b3c38f94e762992e0a09",
+    "gpu_mapping/replay.py": "a1025156b7609caa3ae59a68bd5eb9a9cd88d45780c4bac7fb1c75b12ebc07f3",
+    "gpu_mapping/test_mapping.py": "a6dd11dbb933138ca0ffe6af76444fe9f432d674f264033b8ac1ebe10cdc9eae",
+    "accelerators/fixtures.py": "83f4e44a7838ff494998a16ca1aed85de12c3999736efa4176306bcb3c161ab0",
+    "evidence/2026-09-11-gpu-adapter/result.json": "7316c9cf78ad431cdfcf313104d2d589070ed8905c08b06e2280cc37b6da34a1",
+    "evidence/2026-09-11-gpu-mapping/replay.json": "94dfb73f6a4079ee61e4055b140672a0f204aedfd5c942e56f9d2afb17f55219"
+  }
+}

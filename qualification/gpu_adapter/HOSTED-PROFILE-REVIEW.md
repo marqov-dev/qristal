@@ -130,3 +130,11 @@ for historical GPU context, #2027/#2028 for the common-contract programme and
 The release owner retains the profile/contract decision. Nothing here adds a
 release-critical dependency, changes a shared checkout, starts a service, registers
 a backend or claims the main agent has accepted hosted GPU admission.
+
+## Offline mapping follow-up
+
+The [mapping experiment](../gpu_mapping/README.md) now supplies the proposed
+offline fixtures: twelve retained GPU candidates replay against independently
+constructed circuit/runtime expectations, with twelve regression tests. Synthetic
+engine-label parity and local display previews do not accept a hosted contract.
+Packaging, provider lifecycle, identity/transport and isolation remain open.
