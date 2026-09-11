@@ -207,3 +207,64 @@ The joined CPU image also passed a bounded qpp experiment inside Firecracker/KVM
 including fresh preparation/validation guests and kill/output-limit cases. See
 [reproduction and offline evidence checks](../microvm/README.md). This is separate
 from the earlier container matrix and does not enable a hosted executor.
+
+### Restricted readout-noise demo
+
+`local_pipeline.run_readout(program_bytes, options_bytes)` now joins restricted
+X/H/CX preparation, **Aer** execution and candidate validation with readout error
+on logical qubit zero. The exact closed options are:
+
+```json
+{"qubits":2,"shots":16384,"seed":42,"readout":{"p10":0.2,"p01":0.1}}
+```
+
+`p10` means P(report 1 | prepared 0); `p01` means P(report 0 | prepared 1).
+The other measured qubits have no readout error in this profile. Probabilities
+must be finite numbers in [0,1]; booleans, missing/extra/duplicate fields and
+invalid resource options are rejected before circuit parsing. The existing
+`run_local` API remains ideal-only and rejects the new noise options. The new
+entrypoint fixes Aer explicitly; failure never retries through QPP.
+
+Use the same restricted QASM described above. For example, prepare zero and then
+compare with X on q[0]: with p10=.2/p01=.1 the expected reported-one probabilities
+are .2 and .9. A Bell circuit illustrates how asymmetric readout error turns the
+ideal `00`/`11` distribution into four outcomes. These are analytic toy examples,
+not a calibration model for a QB device or a substitute for its commercial emulator.
+
+One command runs the boundary/regression tests and all eleven fixed analytic cases:
+
+```sh
+python3 qualification/runtime/qualify_readout_image.py --output /tmp/qristal-readout-new-run
+```
+
+It requires the already-qualified local linux/amd64 image
+`sha256:89bcfeac18c20792799f9fa91e1876e57ef4e3f9c7339757bf8e520686fe0c44`.
+It refuses an existing output directory and does not pull, rebuild or publish
+images. Two fresh containers receive exact source overlays in bounded `/tmp`;
+the native CLI source is checked against the overlay before execution. No host
+filesystem is mounted. The native binary image stays unchanged. This is a **source
+overlay qualification**, not a claim that the older image already contains the new
+helper. A machine without that image must first follow the earlier runtime build
+and qualification steps; those steps do not guarantee a byte-identical image.
+
+The harness uses non-root UID/GID 65532, network none, read-only root, 128 MiB tmpfs,
+two CPUs, 4 GiB memory, 256 PIDs, no capabilities and no-new-privileges. Each stage
+has a 240-second outer deadline, 128 KiB stdout and 16 KiB stderr limits. Inner
+simulations retain their 60-second bound. Output-limit/deadline errors trigger
+owned-container removal; Docker cleanup failures are errors. Recorded names and
+labels identify only this run. Abrupt host failure can leave a container: inspect
+and remove the exact recorded name only after verifying its `qristal.readout`
+label matches; a missing final manifest is incomplete evidence, not a retry grant.
+
+The evidence can be checked **without Docker or Qristal installed**:
+
+```sh
+python3 qualification/runtime/check_readout_evidence.py
+PYTHONPATH=qualification/runtime python3 -m unittest test_readout_evidence
+```
+
+See [retained observations and limitations](../evidence/2026-09-11-readout-pipeline/README.md).
+This does not widen any Marqov hosted schema or enable a backend selector. The
+previous four-artifact preparation-binding helper is still ideal-only; a hosted
+noise material/acceptance binding requires a separate agreed contract. Noisy options
+are bound to exact bytes in `LocalObservation`, not attested by the native result.
