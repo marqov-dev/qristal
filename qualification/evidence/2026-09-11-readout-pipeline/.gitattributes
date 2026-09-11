@@ -1,0 +1,2 @@
+*.stdout -text
+*.stderr -text whitespace=-blank-at-eol

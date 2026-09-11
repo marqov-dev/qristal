@@ -1,0 +1,35 @@
+{
+  "cloud_execution": false,
+  "files": {
+    "demo-cleanup.json": "969b00b8246d82633cf076d3846e01f2714d1b761901e7888054c0e1aa0d4af6",
+    "demo-intent.json": "53f976cfd91f867d54066cee958388f298d755a4065cd4dbd23c94581f477c86",
+    "demo.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "demo.stdout": "2dfe1f5d033b238b074e0942efa6dd87937107f0a537fe47118b231eb7440883",
+    "tests-cleanup.json": "3b094e09f163a419b3438abca0ba7c315c96d1dec6977cc3393505517ee47f6a",
+    "tests-intent.json": "ddbeb68a9700df124225892affcd976be10fc019d25af2d96b469224d1dd1bd3",
+    "tests.stderr": "f755e14abf9147da3b47fe4752d3aefa6f6027ec976bbac5f701ffb63148913f",
+    "tests.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "harness_sha256": "f0fe885fa6c1a8f4958cde2754db19933fc38f6a3fac35002cbd05c6f13a4333",
+  "native_rebuild": false,
+  "overlay_sources": {
+    "adapter.py": "af1be0aeddf17191560e6aadb85b130b6fdb31eb61a246f9b238e006127a2754",
+    "bounded_process.py": "11cc12c25b671f6fe4b605c28eb235e82a0504f5ccf19e3384d6b465ae1ebeb3",
+    "candidate.py": "b08bcbdc13d1917ff264e9a4c3b9ecec436533a8144e9048e3f3f36a9d7cfbea",
+    "local_pipeline.py": "b4e8a2b86fcf147ecaccccc5ad449cee3182106c5749e3ee2dee72d7fba105bf",
+    "preparation_binding.py": "609e3a868766d4f86009c29f81d62747d272775a0a04386d68af888552923191",
+    "program_guard.py": "9876bc941deae604491ea4ae2501b27da4e420bb7ac5122fc79a5a6e101e83a0",
+    "readout_demo.py": "b7bdc9202aa7fb708b776fc812b17c388885e12cfc55cf085d85912d4be4ec93",
+    "runtime.py": "8e39de398ea8117e74200026813e54f48304aa9c297d6d6fb2e5b7f9678b91f4",
+    "test_bounded_process.py": "6fe83e865cca5bf3d4ba63d294df59697cea55842d9ec528a66f95d15ebb017d",
+    "test_candidate.py": "348d33af5ad0186ccf1fd853afbcd9c6fc97601e5fb8761281f6a6df1efa0693",
+    "test_local_pipeline.py": "03f2754f89c98a42fad3e92c5cd035d088713156d597b663ffb1d40dba301404",
+    "test_preparation_binding.py": "96d7b4f180bf240be9f81836cd39ee5c82bb73a7de8ece0eb26069814d1558a7",
+    "test_program_guard.py": "7339792bb2ed3ae2e92b050bb4e160d6a7222471b072da7fe517c03a9aa8de96",
+    "test_readout_pipeline.py": "85bb1f23ea3e2272effd17bdcde08a744ce5f5269245c40854fcf9396d684561"
+  },
+  "parent_image": "sha256:89bcfeac18c20792799f9fa91e1876e57ef4e3f9c7339757bf8e520686fe0c44",
+  "profile": "restricted-cpu-readout-qualification-v0",
+  "registry_published": false,
+  "source_base": "a3869eae904bf2d0469468c54513031a52cb5ea8"
+}
