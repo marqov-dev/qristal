@@ -36,3 +36,10 @@ overflow cases and a fresh recovery case on A10G. Candidate output is bound to
 input/adapter/runtime provenance. Local stopped-state and GPU-process-removal
 evidence do not supply hosted STOPPED, resource-release or result-acceptance
 authority; Core GPU integration and hosted isolation remain unqualified.
+
+The [packaged GPU derivative](gpu_package/README.md) now has native A10G evidence
+without host source overlays: twelve circuit cases, two negatives, three faults
+and fresh recovery. Build/runtime hashes, package inventory, input-only mount
+observations and failure history are retained. The image was used on a disposable
+host and was not published or retained as a registry artifact. This advances
+packaging qualification, not supported distribution or hosted admission.
