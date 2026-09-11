@@ -1,0 +1,319 @@
+{
+  "scope": "offline replay; no new GPU runs or hosted acceptance",
+  "cases": [
+    {
+      "target": "nvidia",
+      "case": "x-first",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "56336e11c7085539adcf84faf0a0cc3acdb0de25cf210f9f95b2cd960d3830e7",
+        "input_sha256": "ba2d39d701868fd68c58653525dd75519b0ae019981e024cd45333b5592c96b4",
+        "target": "nvidia",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]"
+        ],
+        "counts": {
+          "100": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "nvidia",
+      "case": "x-last",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "a7f06ad2c5a5892ee38406074319df3347bc956bb1055166c6f22817a1d0d51e",
+        "input_sha256": "e151b11cea34837e2771526a00cde10d2a4a9889a8a1d8b351e83e15a54fccc0",
+        "target": "nvidia",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]"
+        ],
+        "counts": {
+          "001": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "nvidia",
+      "case": "interference",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "7c864a1b215e5ff1125fefabcc3e0f63ec8492648a47589c6e7c7e8e03900a7d",
+        "input_sha256": "e440f714aaf85c96e86fa4fcf83e82b47ce38e6b0d9f481dfc4fc3fa46172fe8",
+        "target": "nvidia",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]"
+        ],
+        "counts": {
+          "000": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "nvidia",
+      "case": "bell",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "1391d6022a7e6cea55d740b7bb42b4ba986c4503f8e9e65c6b3de7ed24d326eb",
+        "input_sha256": "84fcc3651973929703707dc2c8290c77c97be4fe63972e80cc94a80bf778c45f",
+        "target": "nvidia",
+        "positions": [
+          "q[0]",
+          "q[1]"
+        ],
+        "counts": {
+          "00": 8148,
+          "11": 8236
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "nvidia",
+      "case": "ghz8",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "7e6aad8ccc07bb327cdee653cc79c4e885ae75cf18554ce8e7aaab4957280801",
+        "input_sha256": "3534ae366c87775bdd61dc7362a117986aac8ea0339fcd037ebc80e39e811fd4",
+        "target": "nvidia",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]",
+          "q[3]",
+          "q[4]",
+          "q[5]",
+          "q[6]",
+          "q[7]"
+        ],
+        "counts": {
+          "00000000": 8148,
+          "11111111": 8236
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "nvidia",
+      "case": "inverse-ghz",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "8dc5f9a18127d97b32cc480c5357297ceebc8f77a7e83a9abc9501cea7ed5487",
+        "input_sha256": "9b3a43102ff94e609f9ea2b5a32af93d72aeaa4bf2f955cd29fe10dbaf56f081",
+        "target": "nvidia",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]",
+          "q[3]"
+        ],
+        "counts": {
+          "0000": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "tensornet",
+      "case": "x-first",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "0db77408a6f89f8a1eaa2bed2fe36f9a3a85610ac3a2d4dc9ca8494966c25a6f",
+        "input_sha256": "aa2a0c5d0810e60178662e60ec7ae445e01722c18ef7abc50fb5b6c58c1cfb4d",
+        "target": "tensornet",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]"
+        ],
+        "counts": {
+          "100": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "tensornet",
+      "case": "x-last",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "947e8fccc25e032d57ea1a01c0ffcfbb6e2d83a25e3a8963c82c9e139ee34f79",
+        "input_sha256": "f5253ddb80c17c54588f0fa147f2db915fe1b329b28c132706fc6a538310013d",
+        "target": "tensornet",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]"
+        ],
+        "counts": {
+          "001": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "tensornet",
+      "case": "interference",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "f0bd53bc87f5b28cce827de55e6392971808171fcaab366cd4b577387249e01e",
+        "input_sha256": "d641e9eac019f0c21770026185e6144635373b9faf7c73e33ea72dc165bd995f",
+        "target": "tensornet",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]"
+        ],
+        "counts": {
+          "000": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "tensornet",
+      "case": "bell",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "8ba4c3fe933766de792b6ce9a31e3eeb5fa170f3e8f35e2331af6f0be9ee17a4",
+        "input_sha256": "2b856aaded0281ce171a41ed891a0c26708f072679a3b8b6f1999c24e82987fb",
+        "target": "tensornet",
+        "positions": [
+          "q[0]",
+          "q[1]"
+        ],
+        "counts": {
+          "00": 8228,
+          "11": 8156
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "tensornet",
+      "case": "ghz8",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "a433fa614b6fba3afa643fe6ebeab568b01428470914e9abf8855b7265eb8098",
+        "input_sha256": "b646160d6735cf37e2e646816849af0478f101af0b6f93e46cee57533cb80df5",
+        "target": "tensornet",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]",
+          "q[3]",
+          "q[4]",
+          "q[5]",
+          "q[6]",
+          "q[7]"
+        ],
+        "counts": {
+          "00000000": 8228,
+          "11111111": 8156
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    },
+    {
+      "target": "tensornet",
+      "case": "inverse-ghz",
+      "preview": {
+        "scope": "offline-display-preview; unaccepted",
+        "candidate_sha256": "1539318606ed97e79331d873f04e4a3acbef75fbacc6ae43d201d180b25f9700",
+        "input_sha256": "056adfcf6e37d62e7e5ed3a8ffc2dea8334240b1be221bbc6514ae4e120b7df3",
+        "target": "tensornet",
+        "positions": [
+          "q[0]",
+          "q[1]",
+          "q[2]",
+          "q[3]"
+        ],
+        "counts": {
+          "0000": 16384
+        },
+        "shots": {
+          "requested": 16384,
+          "successful": 16384,
+          "discarded": 0,
+          "unknown": 0
+        }
+      },
+      "synthetic_engine_parity": true
+    }
+  ]
+}
