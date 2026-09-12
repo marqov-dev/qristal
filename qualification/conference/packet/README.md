@@ -18,3 +18,10 @@ Synthetic coverage and native simulator observations have separate labels.
 
 This provides a conference backup if app connectivity is unavailable. It does
 not publish the report, enable a backend or imply a supported release.
+
+After copying, run python3 qualification/conference/packet/verify.py ARCHIVE.zip.
+The standard-library checker reads without extracting, limits declared total size,
+rejects duplicate/unexpected paths and JSON keys, and rechecks all manifest hashes.
+This proves internal consistency only: a rewritten manifest can accompany altered
+content. Publisher authenticity requires independently trusted source/revision or
+signatures; the packet itself does not provide that authority.
