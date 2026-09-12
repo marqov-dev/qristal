@@ -16,7 +16,9 @@ resources and the transfer object/bucket must be cleaned and verified.
 
 Artifact: only public installed Core/XACC prefixes, explicit source/test paths,
 cached GoogleTest headers/libraries and generated plugin registration sources.
-Dereferenced links must remain inside the independent QB workspace. Preserve
+Links must resolve inside the independent QB workspace, except the existing
+/work/install-core/lib plugin links: preserve those exact guest-prefix links only
+after validating that their host counterparts exist in the packaged Core prefix. Preserve
 local installed prefixes. Retain archive SHA-256, input hashes and merged SHAs.
 
 Guest bootstraps the existing public Ubuntu toolchain recipe, then builds in its

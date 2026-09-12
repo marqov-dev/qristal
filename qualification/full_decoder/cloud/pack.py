@@ -26,11 +26,19 @@ for name in entries:
  path=ROOT/name
  if not path.exists(): raise RuntimeError('missing:'+name)
  for item in ([path] if path.is_file() else path.rglob('*')):
-  if not item.resolve().is_relative_to(ROOT): raise RuntimeError('external_link:'+str(item))
+  if not item.resolve().is_relative_to(ROOT):
+   # Installed plugin links deliberately target the Linux /work prefix.
+   # Validate their host counterparts before preserving these exact guest links.
+   target=item.readlink() if item.is_symlink() else item
+   if not target.is_relative_to('/work/install-core/lib'):
+    raise RuntimeError('external_link:'+str(item))
+   local=ROOT/target.relative_to('/work')
+   if not local.resolve().is_relative_to(ROOT/'install-core/lib') or not local.is_file():
+    raise RuntimeError('invalid_guest_link:'+str(item))
   if item.is_file() and (item.suffix in ('.cpp','.hpp','.py','.sh') or 'cppmicroservices_' in item.name) and not name.startswith(('install-', 'deps/')):
    manifest['source_hashes'][str(item.relative_to(ROOT))]=hashlib.sha256(item.read_bytes()).hexdigest()
 (OUT/'manifest.json').write_text(json.dumps(manifest,sort_keys=True,indent=2)+'\n')
-with tarfile.open(OUT/'cpu.tar.gz','w:gz',compresslevel=1,dereference=True) as archive:
+with tarfile.open(OUT/'cpu.tar.gz','w:gz',compresslevel=1,dereference=False) as archive:
  for source,target in entries.items(): archive.add(ROOT/source,arcname=target)
  archive.add(OUT/'manifest.json',arcname='manifest.json')
 info={'sha256':hashlib.sha256((OUT/'cpu.tar.gz').read_bytes()).hexdigest(),'bytes':(OUT/'cpu.tar.gz').stat().st_size}
