@@ -29,8 +29,8 @@ and orchestration burden without preserving an established working customer path
 | Aer CPU noise | 10 installed analytic noise fixtures; 11 restricted readout cases; 50-case sweep | Pulse/device models, correlated noise and general SPAM |
 | Aer MPS / density matrix | 6 circuits each on explicitly selected methods | Scaling, truncation semantics, performance and broader circuit families |
 | Integrations | 16 Qiskit 1.2 V1 checks, separate installed environment | Package distribution, V2, broader measurement/options semantics |
-| Decoder | 9 simplified fixtures on qpp/Aer/sparse-sim; installed C++ consumer | Full quantum decoder algorithm and application-scale cases |
-| Readout mitigation | 26 native cases, independent calibration, signed correction | Drift, repeated-calibration coverage, preparation/model mismatch |
+| Decoder | 9 simplified fixtures on qpp/Aer/sparse-sim; installed C++ consumer | Full algorithm: bounded historical fixture timed out; correctness and caller result contract unqualified |
+| Readout mitigation | 26 native mitigation cases plus 40 native drift cases, independent calibration, signed correction | Broader drift, repeated native calibration, preparation/model mismatch |
 | Standalone CUDA-Q GPU | A10G nvidia fp64/tensornet, private published candidate | Other GPU/driver combinations, scale, long-kernel termination |
 | Core/CUDA-Q bridge | Source compatibility question | No native bridge proof; do not substitute standalone evidence |
 | ExaTN/TNQVM | Excluded from CPU qualification | Public reconstruction and native correctness not established |
