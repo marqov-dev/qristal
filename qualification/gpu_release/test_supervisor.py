@@ -200,6 +200,20 @@ class Lifecycle(unittest.TestCase):
             self.supervisor.cleanup()
         self.assertTrue(self.cloud.group_exists)
 
+    def test_terminated_instance_may_omit_previously_bound_subnet(self):
+        self.supervisor.launch(b"fixture")
+        self.cloud.instance["State"]["Name"] = "terminated"
+        del self.cloud.instance["SubnetId"]
+        self.resume().cleanup()
+        self.assertTrue((self.root / "cleanup.json").exists())
+
+    def test_unbound_terminated_instance_cannot_omit_subnet(self):
+        with self.assertRaisesRegex(ValueError, "instance_ownership"):
+            self.supervisor.bind_instance({
+                "InstanceId": INSTANCE, "ClientToken": PLAN["run"],
+                "State": {"Name": "terminated"},
+            })
+
     def test_clock_regression_rejected_on_restart(self):
         self.clock.sleep(-1)
         with self.assertRaisesRegex(ValueError, "clock_moved_backwards"):

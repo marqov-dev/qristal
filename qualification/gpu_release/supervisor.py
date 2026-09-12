@@ -167,7 +167,15 @@ class Supervisor:
 
     def bind_instance(self, item):
         plan = self.state["plan"]
-        if item.get("ClientToken") != plan["run"] or item.get("SubnetId") != plan["subnet"]:
+        known_terminal = (
+            item.get("InstanceId") == self.journal.data["instance"]
+            and item.get("State", {}).get("Name") == "terminated"
+        )
+        subnet_matches = item.get("SubnetId") == plan["subnet"]
+        # EC2 removes placement fields after termination. This exception is
+        # limited to an ID previously bound with full ownership metadata.
+        subnet_retired = known_terminal and item.get("SubnetId") is None
+        if item.get("ClientToken") != plan["run"] or not (subnet_matches or subnet_retired):
             raise ValueError("instance_ownership")
         self.journal.instance_response(item)
         self.state["last_instance_state"] = item["State"]["Name"]
