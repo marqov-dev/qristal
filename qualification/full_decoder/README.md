@@ -69,3 +69,11 @@ repairs the binary-score decimal-overflow path; [4,110 standalone checks](../evi
 pass without Docker. Runtime/plugin qualification remains pending. The
 [next native protocol](NEXT-NATIVE.md) and tiny result-contract consumer are
 prepared and syntax-checked, not executed. No source lock is advanced yet.
+
+## Comparator-order and evidence-gate follow-up
+
+Core PR #3 is merged. [Decoder PR #3](https://github.com/marqov-dev/qristal-decoder/pull/3)
+fixes the threshold register's MSB/LSB mismatch; [4,216 standalone checks](../evidence/2026-09-12-full-decoder/comparator-order/README.md)
+pass on macOS/Linux. Seven new offline acceptance/cleanup tests strengthen the
+next input probe without claiming another native run. The full selected offline
+replay now passes 152 tests. Expanded linked/plugin execution remains deferred.

@@ -1,11 +1,12 @@
 # Next native qualification gate — predeclared, not executed
 
 Decoder PR #2 merged at 77684195ad9e0fa758a4caf3fe49875327f4b4b1.
-Core score-conversion review source: 5f8d4474648c35f61c0bae20c3d6d0455dbfff3d.
+Core score conversion merged at bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a (tested source 5f8d447).
+Decoder threshold-order review source: 24fc468b47500692350b7e8e1656c1d28dec4aa8.
 Do not advance the installed-runtime source lock on the strength of standalone
 checks. The release lane still has priority over shared local Docker.
 
-1. Repeat `input_probe.py` against the merged Decoder source. Its fixed
+1. Repeat `input_probe.py` against the explicitly selected Decoder source, including the threshold-order repair. Its fixed
    180-second compile-and-test limit remains; run only expanded initialization
    tests, not historical algorithm fixtures. Record source/header hashes and
    the complete compiler command. A harness exit zero is not test success unless
@@ -39,3 +40,12 @@ Acceptance is separated:
 Core score parsing also needs linked/plugin validation; standalone arithmetic
 checks alone do not prove that the rebuilt plugin was the one loaded. Retain
 loaded library paths and hashes before accepting any new installed-runtime claim.
+
+The input probe now fingerprints its source, both helper headers, class header and
+test source before/after execution. Qualification requires all six named tests,
+successful process status, unchanged identities and verified exact-owned cleanup.
+Docker inspection/removal calls have 20-second bounds; cleanup failure remains
+unverified and is retained instead of being mistaken for successful removal.
+The CLI exits nonzero for timeout, missing tests, changed source or failed cleanup.
+Seven offline tests cover these acceptance/cleanup controls; they do not launch
+Docker or establish native cleanup behavior under a daemon outage.
