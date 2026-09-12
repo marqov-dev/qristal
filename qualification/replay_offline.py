@@ -6,6 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 SUITES = (
+    ("conference/packet", (), "test_*.py"),
     ("gpu_release", (), "test_*.py"),
     ("gpu_package", (), "test_*.py"),
     ("gpu_adapter", ("accelerators", "runtime"), "test_*.py"),
