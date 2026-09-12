@@ -1,6 +1,6 @@
 # Public-source CPU qualification
 
-This directory is original community maintenance material. It does not establish a supported Qristal release. See STATUS.md for the boundaries of the evidence.
+This directory is original community maintenance material. It does not establish a supported Qristal release. See [the maintenance scope](MAINTENANCE.md) for the boundaries of the evidence.
 
 ## Prepare
 
@@ -56,3 +56,11 @@ The installed runtime is now packaged and exercised without host mounts. See the
 See [accelerator qualification](accelerators/README.md) for explicit Aer MPS and
 density-matrix results, the corrected historical backend mapping, and a bounded
 standalone CUDA-Q GPU probe. GPU feasibility is separate from Core integration.
+
+## Maintenance and evidence entry points
+
+Use [the bounded support and release plan](MAINTENANCE.md) for current scope,
+[the conference ledger](conference/README.md) for retained native observations,
+and [the walkthrough](conference/WALKTHROUGH.md) for the saved Marqov demo.
+Run `python3 qualification/replay_offline.py` to replay the selected evidence
+and boundary checks without Docker, network access or native dependencies.
