@@ -79,7 +79,7 @@ def validate_plan(plan):
     }.items():
         if not isinstance(plan[key], str) or not re.fullmatch(pattern, plan[key]):
             raise ValueError("plan_" + key)
-    if plan["instance_type"] not in {"g5.xlarge", "t3.micro"}:
+    if plan["instance_type"] not in {"g5.xlarge", "t3.micro", "m7i.large"}:
         raise ValueError("instance_type")
     if type(plan["root_gib"]) is not int or not 20 <= plan["root_gib"] <= 200:
         raise ValueError("root_gib")
@@ -167,14 +167,14 @@ class Supervisor:
 
     def bind_instance(self, item):
         plan = self.state["plan"]
-        known_terminal = (
+        known_retiring = (
             item.get("InstanceId") == self.journal.data["instance"]
-            and item.get("State", {}).get("Name") == "terminated"
+            and item.get("State", {}).get("Name") in {"shutting-down", "terminated"}
         )
         subnet_matches = item.get("SubnetId") == plan["subnet"]
-        # EC2 removes placement fields after termination. This exception is
+        # EC2 can remove placement fields during termination. This exception is
         # limited to an ID previously bound with full ownership metadata.
-        subnet_retired = known_terminal and item.get("SubnetId") is None
+        subnet_retired = known_retiring and item.get("SubnetId") is None
         if item.get("ClientToken") != plan["run"] or not (subnet_matches or subnet_retired):
             raise ValueError("instance_ownership")
         self.journal.instance_response(item)

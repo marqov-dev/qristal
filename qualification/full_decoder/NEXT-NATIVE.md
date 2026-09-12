@@ -1,4 +1,9 @@
-# Next native qualification gate — predeclared, not executed
+# Native qualification gate — original local protocol
+
+The [independent CPU VM protocol](cloud/PLAN.md) is the subsequent alternative
+for the shared-Docker hold. It has separately declared build/runtime limits and
+does not replace the installed-plugin qualification required below. Consult its
+retained outcome before treating any stage as complete.
 
 Decoder PR #2 merged at 77684195ad9e0fa758a4caf3fe49875327f4b4b1.
 Core score conversion merged at bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a (tested source 5f8d447).

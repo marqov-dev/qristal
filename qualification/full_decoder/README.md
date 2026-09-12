@@ -77,3 +77,13 @@ fixes the threshold register's MSB/LSB mismatch; [4,216 standalone checks](../ev
 pass on macOS/Linux. Seven new offline acceptance/cleanup tests strengthen the
 next input probe without claiming another native run. The full selected offline
 replay now passes 152 tests. Expanded linked/plugin execution remains deferred.
+
+## Independent cloud native follow-up
+
+The [first isolated CPU VM](../evidence/2026-09-12-full-decoder/cloud-initial/README.md)
+compiled the merged Core search plugin and both Decoder programs. All six named
+XACC-linked initialization tests passed. The tiny program failed before simulation
+because the new harness omitted CMake's post-link bundle archive. Cleanup required
+resuming the same supervisor and was then verified, without a replacement VM or
+deadline extension. A [separate packaging correction](cloud/BUNDLE-FOLLOWUP.md)
+restores that step; full Decoder correctness remains unqualified.

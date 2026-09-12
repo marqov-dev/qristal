@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 from observer import AwsFailure, Journal
-from supervisor import Client, CloudError, Supervisor
+from supervisor import Client, CloudError, Supervisor, validate_plan
 
 PLAN = {
     "account": "123456789012", "region": "us-east-1",
@@ -214,6 +214,26 @@ class Lifecycle(unittest.TestCase):
                 "State": {"Name": "terminated"},
             })
 
+    def test_bound_shutting_down_may_omit_subnet_but_not_change_token(self):
+        self.supervisor.launch(b"fixture")
+        retiring = copy.deepcopy(self.cloud.instance)
+        retiring['State']['Name'] = 'shutting-down'
+        del retiring['SubnetId']
+        self.supervisor.bind_instance(retiring)
+        retiring['ClientToken'] = 'different-token'
+        with self.assertRaisesRegex(ValueError, 'instance_ownership'):
+            self.supervisor.bind_instance(retiring)
+
+    def test_running_or_unbound_shutting_down_cannot_omit_subnet(self):
+        item = {'InstanceId': INSTANCE, 'ClientToken': PLAN['run'],
+                'State': {'Name': 'shutting-down'}}
+        with self.assertRaisesRegex(ValueError, 'instance_ownership'):
+            self.supervisor.bind_instance(item)
+        self.supervisor.launch(b'fixture')
+        item['State']['Name'] = 'running'
+        with self.assertRaisesRegex(ValueError, 'instance_ownership'):
+            self.supervisor.bind_instance(item)
+
     def test_clock_regression_rejected_on_restart(self):
         self.clock.sleep(-1)
         with self.assertRaisesRegex(ValueError, "clock_moved_backwards"):
@@ -228,3 +248,10 @@ class Lifecycle(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CpuPlanTests(unittest.TestCase):
+    def test_bounded_cpu_type(self):
+        validate_plan(dict(PLAN, instance_type="m7i.large", root_gib=20))
+        with self.assertRaises(ValueError):
+            validate_plan(dict(PLAN, instance_type="m7i.48xlarge", root_gib=20))

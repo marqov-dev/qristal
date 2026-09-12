@@ -1,0 +1,9 @@
+{
+  "action": "resume unchanged supervisor cleanup on same recorded instance",
+  "original_cleanup_error": "ValueError:instance_ownership",
+  "replacement_instance": false,
+  "deadline_extended": false,
+  "vm_cleanup_verified": true,
+  "transfer_cleanup_verified": true,
+  "launcher_revision": "47495b62e85bca68feba9183eb95985ebf1350d2"
+}

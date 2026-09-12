@@ -1,11 +1,32 @@
 #include <qristal/decoder/quantum_decoder.hpp>
 #include <iostream>
 #include <stdexcept>
+#ifdef __linux__
+#include <link.h>
+#include <cstring>
+#endif
 
 // Predeclared result-contract smoke. Run only under an external time/resource bound.
 int main(int argc, char** argv) {
   xacc::Initialize(argc, argv);
   try {
+#ifdef __linux__
+    int loaded_search_libraries = 0;
+    dl_iterate_phdr([](dl_phdr_info* info, size_t, void* data) {
+      if (std::strstr(info->dlpi_name, "libalgorithm_es.so")) {
+        ++*static_cast<int*>(data);
+        std::cout << "LOADED_CORE_LIBRARY: " << info->dlpi_name << std::endl;
+      }
+      return 0;
+    }, &loaded_search_libraries);
+    if (loaded_search_libraries != 1)
+      throw std::runtime_error("expected exactly one loaded Core search library");
+#endif
+    for (const std::string service : {"qft", "iqft"}) {
+      if (!xacc::hasService<xacc::Instruction>(service))
+        throw std::runtime_error("missing required public XACC service: " + service);
+      std::cout << "SERVICE_PRESENT: " << service << std::endl;
+    }
     auto backend = xacc::getAccelerator("sparse-sim", {{"shots",1}});
     qristal::QuantumDecoder decoder;
     std::vector<int> ancilla(15);
