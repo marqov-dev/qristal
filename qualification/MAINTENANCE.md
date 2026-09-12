@@ -106,3 +106,7 @@ It invokes only named standard-library test suites in separate processes, avoidi
 module-name collisions between qualification directories. It neither installs
 dependencies nor starts Docker, cloud resources or services. This checks retained
 evidence and boundary logic; it is not a fresh simulation or a security audit.
+
+[Read-only bridge/TNQVM audit](accelerators/COMPATIBILITY-AUDIT.md) identifies
+the exact Core compiler-discovery, library-layout, test-selection and
+Fortran/OpenBLAS/MPI boundaries for the next isolated compatibility probes.
