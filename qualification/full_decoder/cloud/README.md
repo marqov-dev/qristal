@@ -14,6 +14,12 @@ the first needed supervisor resumption, the next two completed automatically.
 Current source includes the QFT provider diagnostic and a subsequently tested
 partial-output repair. The latter was **not** used in the retained native runs.
 
+The subsequent [phase-sensitive protocol](QFT-STATE-PROTOCOL.md) ran that capture
+variant natively: [70 QFT cases passed](../../evidence/2026-09-12-qft-states/README.md),
+and the Decoder timeout retained its first-search-iteration checkpoint. Read the
+per-experiment records for exact versions; the earlier timeout remains missing
+its partial output. Full Decoder still has no successful result observation.
+
 From the independent Qristal checkout:
 
 ```sh
