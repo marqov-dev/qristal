@@ -104,3 +104,14 @@ files. The evidence workflow exports, verifies and retains this packet for30days
 It runs without Docker or native dependencies. The packet separates native
 observations from synthetic analysis and names outstanding qualification gates.
 Its hashes check internal consistency, not publisher authenticity.
+
+## Native calibration-drift follow-up completed
+
+The [40-case native stale/fresh experiment](../evidence/2026-09-12-readout-drift/README.md)
+has now passed, superseding earlier pending-status notes. Fresh calibration
+reduced aggregate observable error approximately95.0–97.9%. Stale correction
+made two settings worse than raw, including4.45times raw error when noise improved.
+[Comparison chart](readout-drift) shows the aggregate errors and Bell sampling
+intervals. One bounded existing-image CPU container ran and was removed; no AWS.
+The full offline replay now passes139tests. Broader noise, physical-device
+calibration, scaling and hosted integration remain separate work.

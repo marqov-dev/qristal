@@ -34,3 +34,11 @@ This experiment reuses our existing transparent two-outcome implementation.
 Run python3 qualification/readout_drift/qualify.py --output NEW_DIRECTORY.
 One existing-image container: 2 CPUs, 4 GiB, 240-second limit, non-root,
 read-only, no networking; removal verified. Commit protocol before execution.
+
+## Native result
+
+[All40 predeclared native cases passed](../evidence/2026-09-12-readout-drift/README.md).
+Fresh calibration reduced aggregate error approximately95.0–97.9%; stale
+calibration made two settings worse than raw. In the improved-noise setting,
+stale MAE was4.45times raw. [Chart](../conference/readout-drift).
+The source, counts, estimator binding and owned-container cleanup are retained.

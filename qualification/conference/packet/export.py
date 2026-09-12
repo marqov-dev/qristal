@@ -11,6 +11,11 @@ import zipfile
 QUAL = Path(__file__).resolve().parents[2]
 FILES = (
     "MAINTENANCE.md",
+    "conference/readout-drift/readout-drift.png",
+    "conference/readout-drift/provenance.json",
+    "evidence/2026-09-12-readout-drift/result.json",
+    "evidence/2026-09-12-readout-drift/analysis.json",
+    "evidence/2026-09-12-readout-drift/manifest.json",
     "conference/README.md",
     "conference/WALKTHROUGH.md",
     "conference/cpu-gpu-correlations.png",
@@ -76,12 +81,14 @@ This compares correctness, not speed or maximum capacity.</p>''']
     parts.append(figure("conference/readout-mitigation/readout-mitigation.png","Native CPU mitigation, restricted stationary q0 readout model. Approximate intervals include calibration uncertainty. This is not full SPAM or device calibration."))
     parts.append('<h2>4. A small error bar can miss calibration bias</h2><p>This separate synthetic study used 10,000 independently sampled calibration/measurement repetitions. Stationary coverage ranged from 94.3% to 96.5%; both deliberately stale scenarios had zero covered intervals in 1,000 repetitions per fixture. Sampling uncertainty does not include model mismatch.</p>')
     parts.append(figure("conference/readout-coverage/coverage.png","Synthetic multinomial sampling only — no Qristal or hardware execution. Wilson whiskers quantify Monte Carlo uncertainty in coverage; general coverage is not established."))
-    parts.append('''<h2>5. What is ready, and what remains</h2>
+    parts.append('<h2>5. Fresh calibration restores the native estimates</h2><p>The predeclared 40-case Qristal/Aer experiment passed. Fresh calibration reduced aggregate error by approximately95–98%. Stale calibration worsened two settings; with improved noise it produced4.45times the raw error.</p>')
+    parts.append(figure("conference/readout-drift/readout-drift.png","Native Qristal/Aer observations: same held-out counts with stale and fresh calibration. Sampling intervals exclude systematic drift bias."))
+    parts.append('''<h2>6. What is ready, and what remains</h2>
 <table><tr><th>Evidence retained</th><th>Remaining boundary</th></tr>
 <tr><td>Installed Core, selected Integrations and simplified Decoder fixtures</td><td>Full API/decoder coverage and supported public packaging</td></tr>
 <tr><td>Private GPU candidate qualified on A10G</td><td>Original Core bridge, TNQVM, broader hardware and distribution</td></tr>
 <tr><td>Bounded fault/recovery and exact cleanup after correction</td><td>Corrected-version soak, long-kernel interruption and hosted lifecycle</td></tr>
-<tr><td>Native stationary mitigation and synthetic coverage study</td><td>Native stale/fresh calibration experiment and broader noise models</td></tr></table>
+<tr><td>Native stationary mitigation and synthetic coverage study</td><td>Broader noise models, scaling and physical calibration</td></tr></table>
 <h2>Partnership discussion</h2><p>Useful next conversations include public examples, maintenance boundaries,
 upstream feedback and future hardware or commercial-plugin comparisons.</p>''')
     parts.append(f'<p><a href="{root}conference">Versioned research ledger</a> · <a href="{root}MAINTENANCE.md">Support and release gates</a> · <a href="https://app.marqov.ai/projects/776ca156-9051-4fcb-8aca-202e78a94cac/report">Marqov project report</a></p><footer>Packet source revision: {html.escape(revision)}. Embedded figures work offline. Linked repositories and Marqov require network access. Included evidence is a selected research subset, not the entire qualification archive.</footer></main></html>')

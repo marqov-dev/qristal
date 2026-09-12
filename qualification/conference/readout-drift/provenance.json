@@ -1,0 +1,6 @@
+{
+  "result_sha256": "b8846ea8ca610359494f2d428ccd06b3b4c5d2fe2403df6eaa6e8f71cb0b176b",
+  "plot_sha256": "9e852702429171885ebdc0b559edbb64fa5d34601d840a86ee63d88e7bbd843d",
+  "matplotlib": "3.11.1",
+  "native_observations": true
+}
