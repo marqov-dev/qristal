@@ -1,0 +1,19 @@
+name: Qualification evidence replay
+on:
+  pull_request:
+    paths:
+      - 'qualification/**'
+      - '.github/workflows/qualification-offline.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Replay retained evidence and boundary tests
+        run: python3 -B qualification/replay_offline.py

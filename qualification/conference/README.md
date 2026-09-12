@@ -4,7 +4,7 @@ This is the entry point for engineering reports, conference demonstrations and f
 
 ## Evidence and capability ledger
 
-Inspected Qristal main: `fe745fecd2b19f7100996cbffeb4ec30d1ed08c6` (PR13 merged). Platform contract review used `551f7c50dca3f1c2939e2c2fc5eb2949adcbc9d5`; subsequent platform changes require renewed review. Evidence directories retain their own source identities; these are not claims about deployed behavior.
+Current evidence audit baseline: Qristal main `deb37d4a6dcfd05131592021c73b8c948bf37609` (PR18 merged). Platform contract review used `551f7c50dca3f1c2939e2c2fc5eb2949adcbc9d5`; subsequent platform changes require renewed review. Evidence directories retain their own source identities; these are not claims about deployed behavior.
 
 | Capability | Observed evidence | Practical limit / next gate |
 |---|---|---|
@@ -44,7 +44,7 @@ Use the existing platform issue tracker; issues are disabled in the public Qrist
 | Existing issue | Scope to retain / bounded next work |
 |---|---|
 | [#1701](https://github.com/marqov-dev/marqov-platform/issues/1701) | Umbrella and current evidence index; capability-specific qualification, not restoration of the poll-loop worker |
-| [#691](https://github.com/marqov-dev/marqov-platform/issues/691) | Published candidate native qualification retained; next harden observer resource-ID persistence/recovery, then coordinate the hosted profile |
+| [#691](https://github.com/marqov-dev/marqov-platform/issues/691) | Published candidate native qualification retained; resource-ID persistence and corrected native recovery retained; next corrected-version soak, then owner-reviewed hosted profile |
 | [#338](https://github.com/marqov-dev/marqov-platform/issues/338), [#2104](https://github.com/marqov-dev/marqov-platform/pull/2104) | Owner-reviewed isolated material/result integration; no competing executor or authority schema |
 | [#609](https://github.com/marqov-dev/marqov-platform/issues/609), [#640](https://github.com/marqov-dev/marqov-platform/issues/640) | Build/target QA, reproducible native matrices, wrong-target and missing-output regressions |
 | [#704](https://github.com/marqov-dev/marqov-platform/issues/704) | Actual deployed end-to-end test only after admission exists; local evidence does not close this |
@@ -77,3 +77,9 @@ Next experiment ideas, in priority order:
 - **Mitigation demonstration — passed under the restricted model:** [protocol](../readout_mitigation), [26 native calibration/held-out cases](../evidence/2026-09-12-readout-mitigation), [before/after chart](readout-mitigation). All three accepted settings improved; the singular control was rejected. Next: test calibration drift/model mismatch and repeat calibration to study coverage before broadening claims.
 
 Potential article outline: inaccessible legacy dependencies → reproducible public subset → analytic correctness and bit order → CPU/GPU alternatives → failure and recovery evidence → isolated execution boundary → open maintenance and partnership roadmap. Cite source commits and raw observations for each claim; do not turn bounded experiments into universal performance or security claims.
+
+## Maintenance handoff
+
+[Supported subset, dependencies and release gates](../MAINTENANCE.md) · [Conference walkthrough and questions](WALKTHROUGH.md).
+
+The [40-case drift protocol](../readout_drift/README.md) is committed; four offline tests pass. Native drift execution remains pending. The consolidated dependency-free replay passed 124 tests across nine suites. This is evidence replay, not a new CPU/GPU experiment. PR18 is merged; the platform execution boundary remains separate.
