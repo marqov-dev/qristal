@@ -86,7 +86,7 @@ Reuse platform #1701 as the umbrella; issues in this fork are disabled.
 
 | Batch | Existing tracker | Concrete completion evidence |
 |---|---|---|
-| Calibration drift | #610 | 40 fixed native cases, raw/stale/fresh results, cleanup, before/after chart; protocol already committed |
+| Calibration drift — completed restricted model | #610 | 40 native cases passed; raw/stale/fresh counts, cleanup and chart retained in evidence/2026-09-12-readout-drift |
 | Coverage/model robustness | #610 | Predeclare independent repetitions, binomial coverage uncertainty and model-mismatch cases; record failures without retuning thresholds |
 | Public release packaging | #609, #640, #1585, #1839 | Clean acquisition, installed checks, exact CPU/GPU artifact smoke tests, notices and reproducibility limits |
 | Bridge/TNQVM decision | #691, #1701 | Public dependency/source audit followed by one bounded build/correctness probe per path, or explicit unsupported decision |

@@ -1,0 +1,935 @@
+{
+  "records": [
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 13058,
+        "10": 3326
+      },
+      "fixture": "zero",
+      "id": "0:calibration:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22001,
+        "shots": 16384
+      },
+      "options_sha256": "0f4cafb226e712c167797e700a348b602a0f95dad358d0b003c8f66d9a6d4218",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "calibration",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 1618,
+        "10": 14766
+      },
+      "fixture": "x0",
+      "id": "0:calibration:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22002,
+        "shots": 16384
+      },
+      "options_sha256": "81c79c18f3ace0154ff1e5d770e580e19d2c7a89c9df76074c92db6476ab069a",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "calibration",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 13134,
+        "10": 3250
+      },
+      "fixture": "zero",
+      "id": "0:held_out:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22003,
+        "shots": 16384
+      },
+      "options_sha256": "b9ab84a2393acd0243b93a8b7124f345a2fa600f23f69610f3d356ab30c12cb3",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "held_out",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 1701,
+        "10": 14683
+      },
+      "fixture": "x0",
+      "id": "0:held_out:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22004,
+        "shots": 16384
+      },
+      "options_sha256": "cebeb4b13020a1bd4cc544e6cf01725366648b30bdcb16f35f7c06750c5c400d",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "held_out",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 13121,
+        "11": 3263
+      },
+      "fixture": "x1",
+      "id": "0:held_out:x1",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22005,
+        "shots": 16384
+      },
+      "options_sha256": "4dce7d7388c69ef1094b811cbd2a486cfeef4f94e503ed1a21ec642adccb8530",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[1]; measure q -> c;",
+      "program_sha256": "2d44b5ce88fa6bd62444ebe2438b1300ea8865f9b8aba9bdd560005415ec3286",
+      "role": "held_out",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 1657,
+        "11": 14727
+      },
+      "fixture": "both",
+      "id": "0:held_out:both",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22006,
+        "shots": 16384
+      },
+      "options_sha256": "4f6b0cb5c854e8e0fa552195ca9d1ab0898d2e72827f8c0b9641075663878cfa",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; x q[1]; measure q -> c;",
+      "program_sha256": "dd91d1a5b39243bb68331045d834517c8ebbc03e140a28e876c8d8af2db89b8c",
+      "role": "held_out",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 7369,
+        "10": 9015
+      },
+      "fixture": "h0",
+      "id": "0:held_out:h0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22007,
+        "shots": 16384
+      },
+      "options_sha256": "9f4cb737254842e86259e9a2321b712dad6956e97758193a432d0644d266a01b",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; measure q -> c;",
+      "program_sha256": "649cb8549bfcf1cd6a1c2ac7016e8cc4b9e37cbca9222d88aa01d91d1be508d7",
+      "role": "held_out",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 6610,
+        "01": 789,
+        "10": 1624,
+        "11": 7361
+      },
+      "fixture": "bell",
+      "id": "0:held_out:bell",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.2
+        },
+        "seed": 22008,
+        "shots": 16384
+      },
+      "options_sha256": "2720b1779efa812d5919241f9830fac917e4fae697b4121be258e08acb06d248",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; cx q[0],q[1]; measure q -> c;",
+      "program_sha256": "bf32248b8ad17a74b8a2a13e19ec98be5ba3634d446ac1e0fb26f0f9034be2dd",
+      "role": "held_out",
+      "setting": 0
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 12308,
+        "10": 4076
+      },
+      "fixture": "zero",
+      "id": "1:calibration:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22101,
+        "shots": 16384
+      },
+      "options_sha256": "a600929f54fa98514047ed2b4088f539f292827a730bddec68e17f0b8bfdf292",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "calibration",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 1663,
+        "10": 14721
+      },
+      "fixture": "x0",
+      "id": "1:calibration:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22102,
+        "shots": 16384
+      },
+      "options_sha256": "4a2e3e9b148c3c5a7aa26bad09cd37d6103cab3e7d17e5467e1729bd2380f300",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "calibration",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 12261,
+        "10": 4123
+      },
+      "fixture": "zero",
+      "id": "1:held_out:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22103,
+        "shots": 16384
+      },
+      "options_sha256": "5a9a7a81b97c6f4be7995cfbce2c2e2b7677acf2062c9ab8d1966a47df783acd",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "held_out",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 1612,
+        "10": 14772
+      },
+      "fixture": "x0",
+      "id": "1:held_out:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22104,
+        "shots": 16384
+      },
+      "options_sha256": "a4e2f480223621f2ab28a8c3073a085357a7779253f2b50f736d06b3d0d815ee",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "held_out",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 12324,
+        "11": 4060
+      },
+      "fixture": "x1",
+      "id": "1:held_out:x1",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22105,
+        "shots": 16384
+      },
+      "options_sha256": "1b65054834b0aa949a9b57e1e016b99e33cfae9881b6b073d58d7f421fb78043",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[1]; measure q -> c;",
+      "program_sha256": "2d44b5ce88fa6bd62444ebe2438b1300ea8865f9b8aba9bdd560005415ec3286",
+      "role": "held_out",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 1591,
+        "11": 14793
+      },
+      "fixture": "both",
+      "id": "1:held_out:both",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22106,
+        "shots": 16384
+      },
+      "options_sha256": "aa776251e4a9fc9ceb08018154fa860b77531bfecbbc22c8f5cadb9dc0002e83",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; x q[1]; measure q -> c;",
+      "program_sha256": "dd91d1a5b39243bb68331045d834517c8ebbc03e140a28e876c8d8af2db89b8c",
+      "role": "held_out",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 6820,
+        "10": 9564
+      },
+      "fixture": "h0",
+      "id": "1:held_out:h0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22107,
+        "shots": 16384
+      },
+      "options_sha256": "b3d9a528ff88aa6589cbacb9bf803e5d1c5aecec6e2cf9293929e097d2e502ee",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; measure q -> c;",
+      "program_sha256": "649cb8549bfcf1cd6a1c2ac7016e8cc4b9e37cbca9222d88aa01d91d1be508d7",
+      "role": "held_out",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 6285,
+        "01": 819,
+        "10": 1983,
+        "11": 7297
+      },
+      "fixture": "bell",
+      "id": "1:held_out:bell",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.25
+        },
+        "seed": 22108,
+        "shots": 16384
+      },
+      "options_sha256": "56edc04cb7282af65551e34e9bd89fd2a06456715ebcb509a448392d169a3a64",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; cx q[0],q[1]; measure q -> c;",
+      "program_sha256": "bf32248b8ad17a74b8a2a13e19ec98be5ba3634d446ac1e0fb26f0f9034be2dd",
+      "role": "held_out",
+      "setting": 1
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 10587,
+        "10": 5797
+      },
+      "fixture": "zero",
+      "id": "2:calibration:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22201,
+        "shots": 16384
+      },
+      "options_sha256": "f2c7e35dee5808c2fa9883f5ddf4998c6fb68c0f4be56411a094657979e9ee54",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "calibration",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 1680,
+        "10": 14704
+      },
+      "fixture": "x0",
+      "id": "2:calibration:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22202,
+        "shots": 16384
+      },
+      "options_sha256": "dffa9e8d4294c93ad3f46c31a3ed8d55ca4849971d1e60f95f28529fc77e15c4",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "calibration",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 10721,
+        "10": 5663
+      },
+      "fixture": "zero",
+      "id": "2:held_out:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22203,
+        "shots": 16384
+      },
+      "options_sha256": "f3c825d0dd1464f00f672b371824ec370d4a92daaf8b92a00347c6fd332f9489",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "held_out",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 1640,
+        "10": 14744
+      },
+      "fixture": "x0",
+      "id": "2:held_out:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22204,
+        "shots": 16384
+      },
+      "options_sha256": "180cb78d9125f26f079e1e697669ba198f6041f00d330020a0c2685a58f75331",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "held_out",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 10602,
+        "11": 5782
+      },
+      "fixture": "x1",
+      "id": "2:held_out:x1",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22205,
+        "shots": 16384
+      },
+      "options_sha256": "d4c9d302aca19decb61022a8666b41041453b19469667aed6e121b79194f36b3",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[1]; measure q -> c;",
+      "program_sha256": "2d44b5ce88fa6bd62444ebe2438b1300ea8865f9b8aba9bdd560005415ec3286",
+      "role": "held_out",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 1657,
+        "11": 14727
+      },
+      "fixture": "both",
+      "id": "2:held_out:both",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22206,
+        "shots": 16384
+      },
+      "options_sha256": "839102f73927c8f8b6cd5c6948314f0d842ed734d4d174b256763ec1ab94d41b",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; x q[1]; measure q -> c;",
+      "program_sha256": "dd91d1a5b39243bb68331045d834517c8ebbc03e140a28e876c8d8af2db89b8c",
+      "role": "held_out",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 6138,
+        "10": 10246
+      },
+      "fixture": "h0",
+      "id": "2:held_out:h0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22207,
+        "shots": 16384
+      },
+      "options_sha256": "b2999cec604fdb57834d9d10c8d5610a20dc5fd714d94cf68750c5f88cb2cf36",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; measure q -> c;",
+      "program_sha256": "649cb8549bfcf1cd6a1c2ac7016e8cc4b9e37cbca9222d88aa01d91d1be508d7",
+      "role": "held_out",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 5303,
+        "01": 824,
+        "10": 2898,
+        "11": 7359
+      },
+      "fixture": "bell",
+      "id": "2:held_out:bell",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.1,
+          "p10": 0.35
+        },
+        "seed": 22208,
+        "shots": 16384
+      },
+      "options_sha256": "226a13703bda157fdebd03983d9c76fb33b0c3502b0e05f8e2df00ee214c3a4c",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; cx q[0],q[1]; measure q -> c;",
+      "program_sha256": "bf32248b8ad17a74b8a2a13e19ec98be5ba3634d446ac1e0fb26f0f9034be2dd",
+      "role": "held_out",
+      "setting": 2
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 14771,
+        "10": 1613
+      },
+      "fixture": "zero",
+      "id": "3:calibration:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22301,
+        "shots": 16384
+      },
+      "options_sha256": "973a9b80621d6db5345274152ec62931bbd37beb4df19cefe86f3a331371e3c5",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "calibration",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 3292,
+        "10": 13092
+      },
+      "fixture": "x0",
+      "id": "3:calibration:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22302,
+        "shots": 16384
+      },
+      "options_sha256": "15470e05e2dd0e67ab6ad41cb759b02639018b4f14a988a8f4866a5e7d42d53e",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "calibration",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 14756,
+        "10": 1628
+      },
+      "fixture": "zero",
+      "id": "3:held_out:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22303,
+        "shots": 16384
+      },
+      "options_sha256": "7000ea91858df96abdc8fad59d3972cf786e9c81d5fa373b6794f10de3b1e369",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "held_out",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 3233,
+        "10": 13151
+      },
+      "fixture": "x0",
+      "id": "3:held_out:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22304,
+        "shots": 16384
+      },
+      "options_sha256": "ce2b630aedf491e6342a2a9b5b3b60b4f6fa9c24e6dfd3a078e9ed118eb1ad1e",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "held_out",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 14802,
+        "11": 1582
+      },
+      "fixture": "x1",
+      "id": "3:held_out:x1",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22305,
+        "shots": 16384
+      },
+      "options_sha256": "1fa69831b63844122357e080ee0cea294d25140e6b160f0e7a73d836eff4a906",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[1]; measure q -> c;",
+      "program_sha256": "2d44b5ce88fa6bd62444ebe2438b1300ea8865f9b8aba9bdd560005415ec3286",
+      "role": "held_out",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 3251,
+        "11": 13133
+      },
+      "fixture": "both",
+      "id": "3:held_out:both",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22306,
+        "shots": 16384
+      },
+      "options_sha256": "f3435a6066597042ec1bce5a607c67385819b13e756a9216e4261cc28458c521",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; x q[1]; measure q -> c;",
+      "program_sha256": "dd91d1a5b39243bb68331045d834517c8ebbc03e140a28e876c8d8af2db89b8c",
+      "role": "held_out",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 9052,
+        "10": 7332
+      },
+      "fixture": "h0",
+      "id": "3:held_out:h0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22307,
+        "shots": 16384
+      },
+      "options_sha256": "cf22346d393c776fef1dca0303b77ee504987c0988224de63aa6cb7561b1f1a9",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; measure q -> c;",
+      "program_sha256": "649cb8549bfcf1cd6a1c2ac7016e8cc4b9e37cbca9222d88aa01d91d1be508d7",
+      "role": "held_out",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 7416,
+        "01": 1559,
+        "10": 823,
+        "11": 6586
+      },
+      "fixture": "bell",
+      "id": "3:held_out:bell",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.2,
+          "p10": 0.1
+        },
+        "seed": 22308,
+        "shots": 16384
+      },
+      "options_sha256": "017b4df9df2dd1ee3dc8a1b6184861409d309b2fff182ef93e01f82bc240f839",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; cx q[0],q[1]; measure q -> c;",
+      "program_sha256": "bf32248b8ad17a74b8a2a13e19ec98be5ba3634d446ac1e0fb26f0f9034be2dd",
+      "role": "held_out",
+      "setting": 3
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 15566,
+        "10": 818
+      },
+      "fixture": "zero",
+      "id": "4:calibration:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22401,
+        "shots": 16384
+      },
+      "options_sha256": "9a7c63bf6e5b2360e6ee90f50b9c7318523af99980c0cb9087fec00e267d5bbd",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "calibration",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 437,
+        "10": 15947
+      },
+      "fixture": "x0",
+      "id": "4:calibration:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22402,
+        "shots": 16384
+      },
+      "options_sha256": "8a14620e2b5c49be5804e33d746fd9a4b4e5a9821f90ff9ba536d33c4ddb51b2",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "calibration",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 15552,
+        "10": 832
+      },
+      "fixture": "zero",
+      "id": "4:held_out:zero",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22403,
+        "shots": 16384
+      },
+      "options_sha256": "f260f2feeeeefda1d29ba213c1a4afd9da316dd9c4f179b377a861523d97c06f",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; measure q -> c;",
+      "program_sha256": "249630db001227beb0a4d7ef0bae412752f0c81c5a0155e592ef5f0812f8f122",
+      "role": "held_out",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 405,
+        "10": 15979
+      },
+      "fixture": "x0",
+      "id": "4:held_out:x0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22404,
+        "shots": 16384
+      },
+      "options_sha256": "653ba7561063acab2feb9dbea9d886413d9b13e24195759db67f8033e31eef78",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; measure q -> c;",
+      "program_sha256": "485e4c72d0873b5f53f94ec65efe258ec41d29cd29ff748871500382be280212",
+      "role": "held_out",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 15564,
+        "11": 820
+      },
+      "fixture": "x1",
+      "id": "4:held_out:x1",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22405,
+        "shots": 16384
+      },
+      "options_sha256": "08750c0efde745e5a552189c7df9fe3c6600646ea6f16e6257af5ec49583e64a",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[1]; measure q -> c;",
+      "program_sha256": "2d44b5ce88fa6bd62444ebe2438b1300ea8865f9b8aba9bdd560005415ec3286",
+      "role": "held_out",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "01": 432,
+        "11": 15952
+      },
+      "fixture": "both",
+      "id": "4:held_out:both",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22406,
+        "shots": 16384
+      },
+      "options_sha256": "114c75a58b8daa0d8204ec417e054a7204f5b46ba79baef024300a95088c77eb",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; x q[0]; x q[1]; measure q -> c;",
+      "program_sha256": "dd91d1a5b39243bb68331045d834517c8ebbc03e140a28e876c8d8af2db89b8c",
+      "role": "held_out",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 8057,
+        "10": 8327
+      },
+      "fixture": "h0",
+      "id": "4:held_out:h0",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22407,
+        "shots": 16384
+      },
+      "options_sha256": "758d26591d78ecd8044e9abd50b266fe0ecdae43b98c8406b04f9f142b307336",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; measure q -> c;",
+      "program_sha256": "649cb8549bfcf1cd6a1c2ac7016e8cc4b9e37cbca9222d88aa01d91d1be508d7",
+      "role": "held_out",
+      "setting": 4
+    },
+    {
+      "backend": "aer",
+      "counts": {
+        "00": 7843,
+        "01": 203,
+        "10": 444,
+        "11": 7894
+      },
+      "fixture": "bell",
+      "id": "4:held_out:bell",
+      "options": {
+        "qubits": 2,
+        "readout": {
+          "p01": 0.025,
+          "p10": 0.05
+        },
+        "seed": 22408,
+        "shots": 16384
+      },
+      "options_sha256": "a9e7daa5f279c9a45467e77c8a14e036917b944eae3cbe6874fd743301e3be8e",
+      "program": "OPENQASM 2.0; include \"qelib1.inc\"; qreg q[2]; creg c[2]; h q[0]; cx q[0],q[1]; measure q -> c;",
+      "program_sha256": "bf32248b8ad17a74b8a2a13e19ec98be5ba3634d446ac1e0fb26f0f9034be2dd",
+      "role": "held_out",
+      "setting": 4
+    }
+  ],
+  "schema": "qb-readout-drift-v1"
+}

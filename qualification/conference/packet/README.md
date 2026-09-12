@@ -7,7 +7,7 @@ resource or dependency installation is started.
 Run python3 qualification/conference/packet/export.py --output NEW_DIRECTORY.
 Open index.html in a browser. Figures are embedded; no network is needed to show
 them. External source links and the Marqov report still need network access.
-The ZIP retains the HTML, source revision, SHA256 manifest and19 explicitly
+The ZIP retains the HTML, source revision, SHA256 manifest and24 explicitly
 selected evidence files. It is a research subset, not a complete standalone
 reproduction bundle; use repository qualification tools for full evidence checks.
 
