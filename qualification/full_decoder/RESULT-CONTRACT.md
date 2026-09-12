@@ -56,4 +56,4 @@ there is no decoded-beam or normalized-probability claim.
 
 The ten result-reduction checks are now part of 53 passing standalone sanitizer
 checks. XACC-linked execution, plugin rebuild and the bounded oracle comparison
-remain next. The separate Core atoi conversion concern remains unresolved.
+remain next. The Core atoi conversion is repaired in review source 5f8d447 (Core PR #3), with 4,110 standalone sanitizer checks. Linked/plugin qualification remains unresolved.

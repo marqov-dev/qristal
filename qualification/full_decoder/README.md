@@ -61,3 +61,11 @@ The result accumulator and caller metadata are implemented at Decoder 4d330ba;
 [53 standalone checks and syntax evidence](../evidence/2026-09-12-full-decoder/result-publication/README.md)
 pass. The expanded native integration remains deferred, and the Core integer
 conversion concern is unresolved. These repairs are bundled in Decoder PR #2.
+
+## Core dependency follow-up after Decoder merge
+
+Decoder PR #2 merged at 77684195. [Core PR #3](https://github.com/marqov-dev/qristal-core/pull/3)
+repairs the binary-score decimal-overflow path; [4,110 standalone checks](../evidence/2026-09-12-full-decoder/core-score-decoding/README.md)
+pass without Docker. Runtime/plugin qualification remains pending. The
+[next native protocol](NEXT-NATIVE.md) and tiny result-contract consumer are
+prepared and syntax-checked, not executed. No source lock is advanced yet.

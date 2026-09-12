@@ -1,0 +1,21 @@
+{
+  "core_revision": "5f8d4474648c35f61c0bae20c3d6d0455dbfff3d",
+  "kind": "standalone-search-score-parser",
+  "checks": 4110,
+  "exit_code": 0,
+  "platform": "macOS arm64",
+  "compiler": "Apple clang 17.0.0",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "command": "clang++ -std=c++17 -O1 -DNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -Iinclude tests/algorithms/exponential_search/ScoreDecodingStandalone.cpp -o /private/tmp/qb-core-score-checks && /private/tmp/qb-core-score-checks",
+  "source_sha256": {
+    "src/algorithms/exponential_search/exponential_search.cpp": "acc3dd0ec7297aaf56479c35b7ff86fdf73f042bb25e5317a52a21718922bd98",
+    "include/qristal/core/algorithms/exponential_search/score_decoding.hpp": "211eb1e5899019bd1762fab70b0af09ef99d404ef9d4331070f8a883bcee5489",
+    "tests/algorithms/exponential_search/ScoreDecodingStandalone.cpp": "a9a21f157d3890c8a0eecbb651deef8c075a799e1e8c60b6f77639b6b646bddd"
+  },
+  "native_plugin_execution": false,
+  "docker_used": false,
+  "aws_used": false
+}
