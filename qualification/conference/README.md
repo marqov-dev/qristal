@@ -95,3 +95,12 @@ produced0/1000 coverage per fixture in both chosen mismatch scenarios.
 This illustrates why sampling intervals cannot cover systematic calibration bias.
 The medium/Bell stationary Wilson interval excludes nominal95%; no thresholds
 were tuned and no blanket coverage claim is made. The native drift run is pending.
+
+## Portable conference backup
+
+[Packet exporter and verifier](packet/README.md) create a self-contained HTML
+presentation with four embedded charts and a ZIP containing19 selected evidence
+files. The evidence workflow exports, verifies and retains this packet for30days.
+It runs without Docker or native dependencies. The packet separates native
+observations from synthetic analysis and names outstanding qualification gates.
+Its hashes check internal consistency, not publisher authenticity.

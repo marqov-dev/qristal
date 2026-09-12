@@ -17,3 +17,16 @@ jobs:
           persist-credentials: false
       - name: Replay retained evidence and boundary tests
         run: python3 -B qualification/replay_offline.py
+      - name: Export and verify offline conference packet
+        run: |
+          python3 qualification/conference/packet/export.py --output "${{ runner.temp }}/qb-conference-packet"
+          python3 qualification/conference/packet/verify.py "${{ runner.temp }}/qb-conference-packet/qb-research-packet.zip"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: qb-conference-packet-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/qb-conference-packet/index.html
+            ${{ runner.temp }}/qb-conference-packet/manifest.json
+            ${{ runner.temp }}/qb-conference-packet/qb-research-packet.zip
+          retention-days: 30
+          if-no-files-found: error
