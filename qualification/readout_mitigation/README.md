@@ -62,3 +62,7 @@ already installed. It uses the existing non-root, network-free, read-only
 container harness (2 CPUs, 4 GiB, 240-second bound), verifies removal, and retains
 counts, source/options hashes and analysis. Analyze or plot the resulting JSON
 offline without starting Docker.
+
+## Recorded result
+
+[The predeclared native experiment passed](../evidence/2026-09-12-readout-mitigation): 26 cases, with the singular control rejected. Mean absolute Z0/Z0Z1 error on held-out circuits fell by 95.64–96.03% across the three tested settings. [The chart](../conference/readout-mitigation) shows signed estimates and calibration-inclusive uncertainty. This result is limited to the stated simulation model; it does not qualify full SPAM or physical-device calibration.
