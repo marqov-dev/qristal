@@ -47,7 +47,14 @@ try:
     result=stage('input-tests',['/proof/out/input-tests','--gtest_filter=FullDecoderInputValidation.*'],60)
     if '[  PASSED  ] 6 tests.' not in result['stdout']: raise RuntimeError('required_tests_not_passed')
     stage('tiny-build',BASE+['/work/qristal-decoder/src/quantum_decoder.cpp','/work/qualification/full_decoder/tiny_result_smoke.cpp']+INC+LIB+['-o','/proof/out/tiny-smoke'])
-    stage('tiny-result',['/proof/out/tiny-smoke'],60)
+    tiny=stage('tiny-result',['/proof/out/tiny-smoke'],60)
+    loaded=[line.removeprefix('LOADED_CORE_LIBRARY: ') for line in tiny['stdout'].splitlines()
+            if line.startswith('LOADED_CORE_LIBRARY: ')]
+    if len(loaded)!=1 or loaded[0] not in ('/work/install-xacc/plugins/libalgorithm_es.so.1.8.1',
+                                         '/work/install-core/lib/libalgorithm_es.so.1.8.1'):
+        raise RuntimeError('loaded_core_path_not_qualified')
+    if hashlib.sha256(pathlib.Path(loaded[0]).read_bytes()).hexdigest()!=report['core_plugin_sha256']:
+        raise RuntimeError('loaded_core_identity_mismatch')
 except Exception as error:
     report['error']=type(error).__name__+':'+str(error)
 finally:
