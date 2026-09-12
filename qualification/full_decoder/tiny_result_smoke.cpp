@@ -23,7 +23,10 @@ int main(int argc, char** argv) {
     auto buffer = xacc::qalloc(24);
     decoder.execute(buffer);
     const auto info = buffer->getInformation();
-    const bool found = info.at("has-improving-candidate").as<bool>();
+    const int candidate_flag = info.at("has-improving-candidate").as<int>();
+    if (candidate_flag != 0 && candidate_flag != 1)
+      throw std::runtime_error("candidate flag must be encoded as integer 0 or 1");
+    const bool found = candidate_flag == 1;
     const int score = info.at("best-score").as<int>();
     const auto bits = info.at("best-string").as<std::string>();
     if (info.at("initial-score").as<int>() != 0 ||

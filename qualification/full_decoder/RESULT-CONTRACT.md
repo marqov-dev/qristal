@@ -57,3 +57,12 @@ there is no decoded-beam or normalized-probability claim.
 The ten result-reduction checks are now part of 53 passing standalone sanitizer
 checks. XACC-linked execution, plugin rebuild and the bounded oracle comparison
 remain next. The Core atoi conversion is repaired in review source 5f8d447 (Core PR #3), with 4,110 standalone sanitizer checks. Linked/plugin qualification remains unresolved.
+
+### XACC metadata representation
+
+The installed XACC ExtraInfo variant contains int, double and string but no bool.
+`has-improving-candidate` is therefore represented as integer 0 or 1. Consumers
+must read `as<int>()`, reject other values, then interpret it as a logical flag.
+The first tiny-consumer syntax check correctly rejected `as<bool>()`; the corrected
+consumer uses the actual variant contract. This is a compile-time API finding,
+not a newly observed simulator result.
