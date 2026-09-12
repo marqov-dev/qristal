@@ -1,0 +1,23 @@
+{
+  "schema": "qb-supervisor-native-evidence-v1",
+  "files": {
+    "cleanup.json": "2b37f45d61c54d0082983f987dd0541e1c61235a0c28e5130fb042c3d7ac106e",
+    "console-filtered.json": "24839af7fcc61405484c30f2bab6d8fc6173ac7869fb7974eb41723a2ec38890",
+    "correction-source.json": "761cfcffea36136afdef0faa1a613cab2abffeaae2296242591543e51fc8b868",
+    "intent.json": "bbb6011c5ec7c983551038702073a28a811b6b68a64e4b68cbbdb9a1f615bd21",
+    "interruption.json": "add7a3c5ff2fc46daf476322366b8fb7b4649b4f198938cf463f6eabb01195d4",
+    "operator/bootstrap.sh": "431693aa1767e6a648189edd8c0b86882ddde5185d18958b0af0c621016eb4ba",
+    "operator/interrupt_probe.py": "d6189f1523c63270a6ae155fdb8c075484f13c15c35f4429eed8816a94b41d8f",
+    "operator/prepare.py": "a7fa7470d7236ad7a84701cb6d94947275036aa76b8d3dc71134840fd71d8673",
+    "operator/supervisor-after-terminal-fix.py": "b2f55929df8356b450d92dfd89d6c6d1b9b9f4da865e5e75f3578e099efb218d",
+    "operator/supervisor-before-terminal-fix.py": "9f91505a8e7f8b8cf450c6f381ec4427401725fe8a2d3abb3668149996b81bb2",
+    "operator/verify.py": "3dd8bb78a88054ee6def43445bfcf37eec861cf9824fc05a31737b17a01dbc98",
+    "plan.json": "2e79212fa469f90715021d560d598a769a22c420ebd16d592c2eb05876f609fe",
+    "recovered.json": "a4318a3234a88038ccb9a24b33f2d5407312bab7a7de6b1e818a45e32a9ddb07",
+    "resources.json": "a568a4d0394d2626c5e4da5ca7d4e06ad9ca34f98129f9cf230b04d1c9477fa7",
+    "source.json": "de54edc9991dc98e9718c6884d8c7a1315265bf8222bf9920dab59d6ab8d7558",
+    "supervisor.json": "a058add14d1dceb677e6b5193fa7e8dea463c7f6feef029143ba7a8f88e598d1",
+    "terminal-metadata-failure.json": "6eb15e7329d6354f8f4c165181d46c6174559889867cc16d59224e659360f588",
+    "verification.json": "c98a932c8c78986fd9abc92c67554caa920ab49561d7c112cd7ee5ae93e550d6"
+  }
+}

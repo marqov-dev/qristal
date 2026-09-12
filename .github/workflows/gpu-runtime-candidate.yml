@@ -11,6 +11,7 @@ on:
       - 'qualification/readout_sweep/**'
       - 'qualification/evidence/2026-09-11-readout-sweep/**'
       - 'qualification/evidence/2026-09-11-gpu-published/**'
+      - 'qualification/evidence/2026-09-11-supervisor-recovery/**'
       - 'LICENSE'
   workflow_dispatch:
 permissions:

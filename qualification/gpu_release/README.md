@@ -153,10 +153,9 @@ Eight additional offline tests replay real saved GPU console evidence and inject
 network, permission and atomic-write failures; they verify IDs survive restart,
 are saved before console failure, and unrelated bootstrap text is not retained.
 This helper has **not** had a new live AWS qualification. It does not repair the
-missing volume ID in the historical record. Wiring it into a future launch and
-cleanup supervisor, persisting the original deadline across process restart, and
-verifying that supervisor's native interruption/recovery remain bounded follow-up
-work. No new instance, image build or hosted backend was needed for these tests.
+missing volume ID in the historical record. The single-instance supervisor below now wires in these helpers and preserves
+deadlines across restart. Its separately recorded native interruption test is
+control-plane evidence, not another simulator qualification. No new instance, image build or hosted backend was needed for these tests.
 
 ## Single-instance launch and cleanup supervisor
 
@@ -203,10 +202,12 @@ An abrupt process kill can bypass that finalizer; a later resume uses the saved
 identity/deadlines. `--once` deliberately checkpoints one observation and leaves
 cleanup pending; it is only for a supervised interruption rehearsal.
 
-Twelve added offline tests cover lost launch acknowledgement, identical retry
+Fifteen added offline tests cover retired instance metadata, private request-file cleanup, lost launch acknowledgement, identical retry
 requests, restart without duplicate launch, resource ownership, expired budgets,
 clock regression, delayed instance visibility, missing disk IDs and interrupted
 group cleanup. They are control-plane fixtures, not new simulator measurements.
 The smallest native test is one short-lived host with a GPU/driver health probe,
 an abrupt local-supervisor interruption, resume, and exact resource cleanup.
 It needs no container transfer, dependency installation or simulator rerun.
+
+The [native restart experiment](../evidence/2026-09-11-supervisor-recovery) recovered the same A10G guest after SIGKILL of its observer and verified the exact disk and group cleanup within unchanged deadlines. It exposed missing subnet metadata after EC2 termination; the record retains that failure and the corrected cleanup on the same resources. Five additional evidence tests replay and mutate the saved proof. This was a GPU health/control-plane test, not a simulator rerun or a first-attempt unattended success.

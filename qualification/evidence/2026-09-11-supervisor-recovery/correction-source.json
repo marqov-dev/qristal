@@ -1,0 +1,5 @@
+{
+  "revision": "8fceb1f8b486a3c73736c955f620e4d25a53687d",
+  "supervisor_sha256": "b2f55929df8356b450d92dfd89d6c6d1b9b9f4da865e5e75f3578e099efb218d",
+  "action": "cleanup only, same instance and original journal/deadlines"
+}
