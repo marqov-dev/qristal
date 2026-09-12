@@ -1,0 +1,15 @@
+{
+  "kind": "synthetic-multinomial-coverage",
+  "native_execution": false,
+  "repetitions_per_scenario_fixture": 1000,
+  "seed": 2026091301,
+  "shots": 16384,
+  "python": "3.14.4",
+  "revision": "cff8773128b52280524d5ebd403bc2f6f6599022",
+  "source_sha256": "f5dd66fa2781c81c424085b12695c2aec9f6f5e9d1b5a7b0e2785e82b98d0dd4",
+  "estimator_sha256": "ea6af71674d4d7d39c085955f2e579bdce5eb6f824fa8ee6c76ba329a10e984f",
+  "files": {
+    "summary.json": "638fd83f6d235e05670eb89b90d92e1ef14eb7b7db62afb8d5a310d0c520f7b5",
+    "counts.json": "5fef0b0ba15c3c3e6bad4273322d60ebe67a2cea624e862e77ca5a7f480c007b"
+  }
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "scenario": "stationary-low",
+    "fixture": "zero",
+    "repetitions": 1000,
+    "covered": 957,
+    "coverage": 0.957,
+    "coverage_wilson95": [
+      0.942580996155916,
+      0.9679213465882865
+    ],
+    "mean_bias": 8.429307715187706e-05,
+    "mean_se": 0.005665747459423066
+  },
+  {
+    "scenario": "stationary-low",
+    "fixture": "bell",
+    "repetitions": 1000,
+    "covered": 945,
+    "coverage": 0.945,
+    "coverage_wilson95": [
+      0.9290916123226243,
+      0.9575025726252315
+    ],
+    "mean_bias": -6.602717265912794e-05,
+    "mean_se": 0.005906727576239252
+  },
+  {
+    "scenario": "stationary-medium",
+    "fixture": "zero",
+    "repetitions": 1000,
+    "covered": 949,
+    "coverage": 0.949,
+    "coverage_wilson95": [
+      0.9335645136552383,
+      0.9609990572247332
+    ],
+    "mean_bias": -0.0001486926247702849,
+    "mean_se": 0.01262967832599711
+  },
+  {
+    "scenario": "stationary-medium",
+    "fixture": "bell",
+    "repetitions": 1000,
+    "covered": 965,
+    "coverage": 0.965,
+    "coverage_wilson95": [
+      0.9517133776255466,
+      0.9747277369828871
+    ],
+    "mean_bias": 0.00018146474912088517,
+    "mean_se": 0.009666748716206992
+  },
+  {
+    "scenario": "stationary-high",
+    "fixture": "zero",
+    "repetitions": 1000,
+    "covered": 943,
+    "coverage": 0.943,
+    "coverage_wilson95": [
+      0.9268629323405141,
+      0.9557465596412841
+    ],
+    "mean_bias": 0.002756687314539609,
+    "mean_se": 0.05430997615342975
+  },
+  {
+    "scenario": "stationary-high",
+    "fixture": "bell",
+    "repetitions": 1000,
+    "covered": 948,
+    "coverage": 0.948,
+    "coverage_wilson95": [
+      0.93244426068072,
+      0.9601269637162226
+    ],
+    "mean_bias": 0.0036150433322230694,
+    "mean_se": 0.047039213940221966
+  },
+  {
+    "scenario": "stale-increased",
+    "fixture": "zero",
+    "repetitions": 1000,
+    "covered": 0,
+    "coverage": 0.0,
+    "coverage_wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_bias": -0.427944657911792,
+    "mean_se": 0.012832002425103413
+  },
+  {
+    "scenario": "stale-increased",
+    "fixture": "bell",
+    "repetitions": 1000,
+    "covered": 0,
+    "coverage": 0.0,
+    "coverage_wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_bias": -0.21376569010850316,
+    "mean_se": 0.010061847198401365
+  },
+  {
+    "scenario": "stale-improved",
+    "fixture": "zero",
+    "repetitions": 1000,
+    "covered": 0,
+    "coverage": 0.0,
+    "coverage_wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_bias": 0.4289701519457481,
+    "mean_se": 0.011971666734552498
+  },
+  {
+    "scenario": "stale-improved",
+    "fixture": "bell",
+    "repetitions": 1000,
+    "covered": 0,
+    "coverage": 0.0,
+    "coverage_wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_bias": 0.3215231853775694,
+    "mean_se": 0.008542464921468734
+  }
+]
