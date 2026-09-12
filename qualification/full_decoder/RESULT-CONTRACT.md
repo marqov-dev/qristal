@@ -66,3 +66,17 @@ must read `as<int>()`, reject other values, then interpret it as a logical flag.
 The first tiny-consumer syntax check correctly rejected `as<bool>()`; the corrected
 consumer uses the actual variant contract. This is a compile-time API finding,
 not a newly observed simulator result.
+
+The follow-up `metadata_type_check.cpp` exercised both true/false conversions
+through the actual installed ExtraInfo header on macOS with Release flags and
+sanitizers. Both yielded integer 1/0. This is a header-only probe with an explicit
+throwing test implementation of `xacc::emit_error`; it does not link the Linux
+XACC library or run simulator services. The initial link without that test stub
+failed on the missing XACC error symbol; no error path is silently ignored.
+
+Reproduction from the qualification repository's sibling-cache layout:
+
+```sh
+clang++ -std=c++17 -O1 -DNDEBUG -fsanitize=address,undefined -I../install-xacc/include/xacc -I../install-xacc/include qualification/full_decoder/metadata_type_check.cpp -o /tmp/qb-metadata-type-check
+/tmp/qb-metadata-type-check
+```
