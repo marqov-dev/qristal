@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 import time
 
 from observer import AwsFailure, Journal, atomic_json, capture_console, retry_read
@@ -36,13 +37,19 @@ class Client:
             raise ValueError("operation_not_allowed")
         service = "sts" if operation == "get-caller-identity" else "ec2"
         try:
-            result = subprocess.run(
-                ["aws", service, operation, "--region", self.region, "--output", "json",
-                 "--cli-input-json", "file:///dev/stdin"],
-                input=json.dumps(params), capture_output=True, text=True, timeout=timeout,
-                env=dict(os.environ, AWS_RETRY_MODE="standard", AWS_MAX_ATTEMPTS="3",
-                         AWS_PAGER=""),
-            )
+            # The AWS CLI does not reliably consume /dev/stdin on all hosts.
+            # A private temporary request avoids both that dependency and
+            # credential-bearing bootstrap material in process arguments.
+            with tempfile.NamedTemporaryFile(mode="w+", encoding="utf-8") as request:
+                json.dump(params, request)
+                request.flush()
+                result = subprocess.run(
+                    ["aws", service, operation, "--region", self.region, "--output", "json",
+                     "--cli-input-json", "file://" + request.name],
+                    capture_output=True, text=True, timeout=timeout,
+                    env=dict(os.environ, AWS_RETRY_MODE="standard", AWS_MAX_ATTEMPTS="3",
+                             AWS_PAGER=""),
+                )
         except subprocess.TimeoutExpired:
             raise CloudError("timeout", True) from None
         if result.returncode:

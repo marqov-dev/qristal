@@ -3,9 +3,10 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from observer import AwsFailure, Journal
-from supervisor import CloudError, Supervisor
+from supervisor import Client, CloudError, Supervisor
 
 PLAN = {
     "account": "123456789012", "region": "us-east-1",
@@ -97,6 +98,21 @@ class Lifecycle(unittest.TestCase):
     def resume(self):
         return Supervisor(self.root, self.cloud, wall=self.clock,
                           clock=self.clock, sleep=self.clock.sleep)
+
+    def test_cli_request_is_private_and_removed(self):
+        paths = []
+        def run(command, **kwargs):
+            path = Path(command[-1].removeprefix("file://"))
+            paths.append(path)
+            self.assertEqual(path.stat().st_mode & 0o777, 0o600)
+            self.assertEqual(json.loads(path.read_text()), {"UserData": "private-canary"})
+            self.assertNotIn("private-canary", " ".join(command))
+            from types import SimpleNamespace
+            return SimpleNamespace(returncode=0, stdout='{"ok":true}')
+        with patch("supervisor.subprocess.run", side_effect=run):
+            self.assertEqual(Client("us-east-1")("run-instances",
+                             {"UserData": "private-canary"}, 2), {"ok": True})
+        self.assertFalse(paths[0].exists())
 
     def test_lost_launch_response_reuses_identical_request(self):
         self.cloud.lose_launch = True
