@@ -9,7 +9,7 @@ INC=['-I/work/install-xacc/include/xacc','-I/work/install-xacc/include/quantum/g
 LIB=['-L/work/install-xacc/lib','-Wl,-rpath,/work/install-xacc/lib','-lxacc','-lxacc-quantum-gate','-lCppMicroServices','-ldl','-lpthread']
 BASE=['c++','-std=c++20','-O1','-DNDEBUG']
 
-def stage(name, command, seconds=180):
+def stage(name, command, seconds=180, retained_stdout=9000):
     # Unprivileged compilation/execution in a fresh network namespace. The VM
     # contains no instance credentials; only /proof/out is writable to ubuntu.
     prefix=['prlimit','--as=4294967296','--cpu=180','--nproc=256','--core=0','--',
@@ -18,12 +18,12 @@ def stage(name, command, seconds=180):
     item={'name':name,'command':command,'timeout_seconds':seconds}
     try:
         code,stdout,stderr=capture(prefix+command,timeout=seconds,stdout_limit=65536,stderr_limit=16384,retain_on_error=True)
-        item.update(exit_code=code, stdout=stdout.decode(errors='replace')[-9000:], stderr=stderr.decode(errors='replace')[-3000:])
+        item.update(exit_code=code, stdout=stdout.decode(errors='replace')[-retained_stdout:], stderr=stderr.decode(errors='replace')[-3000:])
         (OUT/(name+'.stdout')).write_bytes(stdout)
         (OUT/(name+'.stderr')).write_bytes(stderr)
     except Exception as error:
         item['error']=type(error).__name__+':'+str(error)
-        item['partial_stdout']=getattr(error,'stdout',b'').decode(errors='replace')[-9000:]
+        item['partial_stdout']=getattr(error,'stdout',b'').decode(errors='replace')[-retained_stdout:]
         item['partial_stderr']=getattr(error,'stderr',b'').decode(errors='replace')[-3000:]
     report['stages'].append(item)
     if item.get('exit_code') != 0: raise RuntimeError('stage_failed:'+name)
@@ -57,6 +57,12 @@ try:
     for destination in ['/work/install-xacc/plugins/libalgorithm_es.so.1.8.1','/work/install-core/lib/libalgorithm_es.so.1.8.1']:
         shutil.copyfile(new,destination)
     report['core_plugin_sha256']=hashlib.sha256(new.read_bytes()).hexdigest()
+    stage('qft-check-build',BASE+['/work/qft_state_checks.cpp']+INC+LIB+['-o','/proof/out/qft-checks'])
+    qft=stage('qft-checks',['/proof/out/qft-checks'],60,40000)
+    if 'PASS: 70 phase-sensitive QFT cases' not in qft['stdout']:
+        raise RuntimeError('qft_tests_not_passed')
+    if hashlib.sha256(pathlib.Path('/work/install-xacc/plugins/libmarqov_qft_qualification.so').read_bytes()).hexdigest()!=hashlib.sha256((OUT/'libmarqov_qft_qualification.so').read_bytes()).hexdigest():
+        raise RuntimeError('qft_library_identity_mismatch')
     stage('input-test-build',BASE+['/work/qristal-decoder/src/quantum_decoder.cpp','/work/qristal-decoder/tests/FullDecoderInputValidation.cpp']+INC+
         ['-I/work/gtest/include','/work/build-core/lib/libgtest_main.a','/work/build-core/lib/libgtest.a']+LIB+['-o','/proof/out/input-tests'])
     result=stage('input-tests',['/proof/out/input-tests','--gtest_filter=FullDecoderInputValidation.*'],60)
@@ -75,12 +81,18 @@ except Exception as error:
 finally:
     report['loaded_core_libraries']={}
     for item in report['stages']:
-        for line in item.get('stdout','').splitlines():
+        for line in item.get('stdout',item.get('partial_stdout','')).splitlines():
             if line.startswith('LOADED_CORE_LIBRARY: '):
                 path=pathlib.Path(line.removeprefix('LOADED_CORE_LIBRARY: '))
                 if str(path) in ('/work/install-xacc/plugins/libalgorithm_es.so.1.8.1',
                                   '/work/install-core/lib/libalgorithm_es.so.1.8.1'):
                     report['loaded_core_libraries'][str(path)]=hashlib.sha256(path.read_bytes()).hexdigest()
+    report['loaded_qft_libraries']={}
+    for item in report['stages']:
+        for line in item.get('stdout',item.get('partial_stdout','')).splitlines():
+            if line=='LOADED_QFT_LIBRARY: /work/install-xacc/plugins/libmarqov_qft_qualification.so':
+                path='/work/install-xacc/plugins/libmarqov_qft_qualification.so'
+                report['loaded_qft_libraries'][path]=hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
     report['binary_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.iterdir() if p.is_file() and p.suffix not in ('.stdout','.stderr','.json','.zip')}
     raw=json.dumps(report,sort_keys=True,separators=(',',':')).encode()
     if len(raw)>120000: raise RuntimeError('report_bounds')

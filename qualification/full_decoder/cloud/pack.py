@@ -22,6 +22,7 @@ entries={
  'qristal/qualification/full_decoder/tiny_result_smoke.cpp':'qualification/full_decoder/tiny_result_smoke.cpp',
  'qristal/qualification/full_decoder/cloud/guest.py':'guest.py',
  'qristal/qualification/full_decoder/cloud/qft_activator.cpp':'qft_activator.cpp',
+ 'qristal/qualification/full_decoder/cloud/qft_state_checks.cpp':'qft_state_checks.cpp',
  'qristal/qualification/full_decoder/cloud/qft-manifest.json':'qft-manifest.json',
  'qristal/qualification/install-toolchain.sh':'install-toolchain.sh',
 }
