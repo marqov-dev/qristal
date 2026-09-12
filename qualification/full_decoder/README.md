@@ -48,3 +48,11 @@ beam `a` 0.86), a case where the best path differs from the best beam, collapse
 order, multiple symbols, normalization and invalid inputs. This is a reference
 calculation, not native Decoder output. It intentionally accepts exactly
 normalized decimal/rational input, unlike the native float tolerance.
+
+## Register/score follow-up
+
+[43 host sanitizer checks](../evidence/2026-09-12-full-decoder/register-safety/README.md)
+cover the production register/score helper at Decoder b34a94b. Expanded XACC
+integration execution remains pending, distinct from the earlier table-only
+native pass. [Proposed result contract](RESULT-CONTRACT.md) records why an
+upstream score threshold and sampled string cannot always be forwarded as a pair.

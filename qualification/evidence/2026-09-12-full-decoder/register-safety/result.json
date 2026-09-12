@@ -1,0 +1,23 @@
+{
+  "decoder_revision": "b34a94baa5bf4136d7021210a774d068c47d8126",
+  "kind": "host-standalone-register-score-validation",
+  "platform": "macOS arm64",
+  "compiler": "Apple clang 17.0.0 (clang-1700.6.4.2)",
+  "checks": 43,
+  "exit_code": 0,
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "release_assertions_disabled": true,
+  "command": "clang++ -std=c++17 -O1 -DNDEBUG -Wall -Wextra -Werror -fsanitize=address,undefined -Iinclude tests/RegisterValidationStandalone.cpp -o /private/tmp/qb-register-validation-sanitized && /private/tmp/qb-register-validation-sanitized",
+  "source_sha256": {
+    "include/qristal/decoder/register_validation.hpp": "355d669aee55305b82e3bae352887cca726d49bb311b13344449d3867c4546c8",
+    "src/quantum_decoder.cpp": "415aa53a32744ee9b18661e97e4bddf9ced4c7815898fe251dbd65c3e7c33de9",
+    "tests/RegisterValidationStandalone.cpp": "344898d9a898c451cfa621e20d9e7de1ff44836754fc461d4bfa54c63e39aa42",
+    "tests/FullDecoderInputValidation.cpp": "07a12f75db77200d9551207de4906be9cc6ae1be76897071ea091962b11168df"
+  },
+  "xacc_linked_execution": false,
+  "docker_used": false,
+  "aws_used": false
+}
