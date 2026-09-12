@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 from observer import AwsFailure, Journal
-from supervisor import Client, CloudError, Supervisor
+from supervisor import Client, CloudError, Supervisor, validate_plan
 
 PLAN = {
     "account": "123456789012", "region": "us-east-1",
@@ -228,3 +228,10 @@ class Lifecycle(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CpuPlanTests(unittest.TestCase):
+    def test_bounded_cpu_type(self):
+        validate_plan(dict(PLAN, instance_type="m7i.large", root_gib=20))
+        with self.assertRaises(ValueError):
+            validate_plan(dict(PLAN, instance_type="m7i.48xlarge", root_gib=20))

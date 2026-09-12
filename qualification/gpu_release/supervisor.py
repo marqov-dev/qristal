@@ -79,7 +79,7 @@ def validate_plan(plan):
     }.items():
         if not isinstance(plan[key], str) or not re.fullmatch(pattern, plan[key]):
             raise ValueError("plan_" + key)
-    if plan["instance_type"] not in {"g5.xlarge", "t3.micro"}:
+    if plan["instance_type"] not in {"g5.xlarge", "t3.micro", "m7i.large"}:
         raise ValueError("instance_type")
     if type(plan["root_gib"]) is not int or not 20 <= plan["root_gib"] <= 200:
         raise ValueError("root_gib")
