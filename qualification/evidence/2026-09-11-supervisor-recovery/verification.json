@@ -1,0 +1,17 @@
+{
+  "account": "090208085542",
+  "exact_volume_ids": [
+    "vol-089bdde40f6f2b071"
+  ],
+  "instances_matching_original_token": [
+    {
+      "id": "i-0e6877c4d317c34b9",
+      "state": "terminated"
+    }
+  ],
+  "observed_epoch": 1789182475.3200052,
+  "region": "us-east-1",
+  "remaining_groups": 0,
+  "remaining_volumes": 0,
+  "security_group_id": "sg-0b710515b7e147346"
+}

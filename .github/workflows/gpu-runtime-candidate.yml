@@ -8,6 +8,12 @@ on:
       - 'qualification/gpu_adapter/**'
       - 'qualification/accelerators/**'
       - 'qualification/runtime/bounded_process.py'
+      - 'qualification/readout_sweep/**'
+      - 'qualification/readout_mitigation/**'
+      - 'qualification/evidence/2026-09-12-readout-mitigation/**'
+      - 'qualification/evidence/2026-09-11-readout-sweep/**'
+      - 'qualification/evidence/2026-09-11-gpu-published/**'
+      - 'qualification/evidence/2026-09-11-supervisor-recovery/**'
       - 'LICENSE'
   workflow_dispatch:
 permissions:
@@ -28,6 +34,8 @@ jobs:
           python3 qualification/gpu_package/check_evidence.py qualification/evidence/2026-09-11-gpu-package
           python3 -m unittest discover -s qualification/gpu_release -p 'test_*.py'
           python3 -m unittest discover -s qualification/gpu_package -p 'test_*.py'
+          python3 -m unittest discover -s qualification/readout_sweep -p 'test_*.py'
+          python3 -m unittest discover -s qualification/readout_mitigation -p 'test_*.py'
           PYTHONPATH=qualification/gpu_adapter:qualification/accelerators:qualification/runtime python3 -m unittest discover -s qualification/gpu_adapter -p 'test_*.py'
       - name: Stage exact context
         run: python3 qualification/gpu_release/release.py stage --output .release/context --record .release/context.json --revision "$GITHUB_SHA"

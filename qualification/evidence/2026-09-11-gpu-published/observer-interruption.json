@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-09-11T20:09:47.028406+00:00",
+  "instance_id": "i-0df84e33cffc898ce",
+  "operation": "describe-instances",
+  "failure": "Could not connect to endpoint https://ec2.us-east-1.amazonaws.com/",
+  "cleanup_attempt": "terminate-instances failed with the same endpoint connection error",
+  "host_shutdown_still_configured": true,
+  "native_outcome": "unknown; recover console and verify cleanup on the same instance"
+}

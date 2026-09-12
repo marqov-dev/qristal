@@ -6,10 +6,30 @@ import tarfile
 import tempfile
 import unittest
 
-from import_image import archive_config, bind_release, digest, validate_loaded
+from import_image import (
+    archive_config,
+    bind_release,
+    digest,
+    load_release,
+    validate_loaded,
+)
 
 
 class ImportTests(unittest.TestCase):
+    def test_original_and_reconstructed_records_are_unambiguous(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with self.assertRaises(ValueError):
+                load_release(root)
+            for name in ("release.json", "reconstructed-release.json"):
+                (root / name).write_text('{"fixture":true}')
+                self.assertEqual(load_release(root), {"fixture": True})
+                (root / name).unlink()
+            (root / "release.json").write_text("{}")
+            (root / "reconstructed-release.json").write_text("{}")
+            with self.assertRaises(ValueError):
+                load_release(root)
+
     def test_real_manifest_chain_and_mutations(self):
         root = Path(__file__).resolve().parents[1] / "evidence/2026-09-11-gpu-release"
         release = json.loads((root / "reconstructed-release.json").read_text())
@@ -65,7 +85,18 @@ class ImportTests(unittest.TestCase):
             },
             "RootFS": {"Layers": ["sha256:layer"]},
         }
+        config["config"] = copy.deepcopy(loaded["Config"])
         validate_loaded(loaded, config, "revision", "sha256:config")
+        modern = copy.deepcopy(loaded)
+        modern["Id"] = "sha256:manifest"
+        validate_loaded(
+            modern, config, "revision", "sha256:config", ("sha256:manifest",)
+        )
+        modern["Config"]["Entrypoint"] = ["unexpected"]
+        with self.assertRaises(ValueError):
+            validate_loaded(
+                modern, config, "revision", "sha256:config", ("sha256:manifest",)
+            )
         for field, value in (
             ("Id", "sha256:other"),
             ("RootFS", {"Layers": []}),

@@ -1,0 +1,11 @@
+{
+  "group_absent": true,
+  "group_id": "sg-0b710515b7e147346",
+  "instance_id": "i-0e6877c4d317c34b9",
+  "instance_termination_observed": true,
+  "no_launch_attempted": false,
+  "volume_ids": [
+    "vol-089bdde40f6f2b071"
+  ],
+  "volumes_absent": true
+}

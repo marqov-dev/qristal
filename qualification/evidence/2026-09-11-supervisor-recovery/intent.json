@@ -1,0 +1,13 @@
+{
+  "cleanup_seconds": 300,
+  "guest_shutdown_minutes": 8,
+  "instance_type": "g5.xlarge",
+  "maximum_instances": 1,
+  "network_egress": false,
+  "network_ingress": false,
+  "observation_seconds": 600,
+  "purpose": "native supervisor interruption/recovery, not simulator qualification",
+  "run": "qb-proof-20d775dc944a4427b871a4ba26f2aa8e",
+  "source": "80e6772",
+  "workload_credentials": false
+}

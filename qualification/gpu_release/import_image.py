@@ -56,23 +56,35 @@ def archive_config(path, config_digest):
         return manifest[0]["RepoTags"][0], json.loads(raw)
 
 
-def validate_loaded(loaded, config, revision, config_digest):
+def validate_loaded(loaded, config, revision, config_digest, manifest_ids=()):
     if (
-        loaded["Id"] != config_digest
+        loaded["Id"] not in (config_digest, *manifest_ids)
         or loaded["Architecture"] != "amd64"
         or loaded["Os"] != "linux"
         or loaded["Config"]["User"] != "65532:65532"
         or loaded["RootFS"]["Layers"] != config["rootfs"]["diff_ids"]
+        or loaded["Config"] != config["config"]
         or loaded["Config"].get("Labels", {}).get("org.opencontainers.image.revision")
         != revision
     ):
         raise ValueError("loaded_configuration_binding")
 
 
+def load_release(bundle):
+    records = [
+        bundle / name
+        for name in ("release.json", "reconstructed-release.json")
+        if (bundle / name).is_file()
+    ]
+    if len(records) != 1:
+        raise ValueError("one_release_record_required")
+    return json.loads(records[0].read_text())
+
+
 def main(archive, expected_archive, bundle, output):
     if output.exists():
         raise ValueError("new_output_required")
-    release = json.loads((bundle / "reconstructed-release.json").read_text())
+    release = load_release(bundle)
     index_raw = (bundle / "registry-index.json").read_bytes()
     manifest_raw = (bundle / "platform-manifest.json").read_bytes()
     config_digest = bind_release(release, index_raw, manifest_raw)
@@ -85,7 +97,13 @@ def main(archive, expected_archive, bundle, output):
     loaded = json.loads(
         subprocess.check_output(["docker", "image", "inspect", tag], timeout=30)
     )[0]
-    validate_loaded(loaded, config, release["source_revision"], config_digest)
+    validate_loaded(
+        loaded,
+        config,
+        release["source_revision"],
+        config_digest,
+        (digest(index_raw), digest(manifest_raw)),
+    )
     lock = {
         "image_id": loaded["Id"],
         "base": release["context"]["base_image"],

@@ -1,0 +1,1463 @@
+{
+  "build": {
+    "base": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+    "dockerfile_sha256": "666b7c49e4e1529a22a8425acc9ad216558ecfe10bbd3d4b09c284555b3fcbf3",
+    "files": {
+      "adapter.py": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+      "fault_workload.py": "f086351e76b256a9be8c601a621c2645c85eb8678e5fa1f0d4fe25bfd1dc769e",
+      "inventory.py": "6dea62cfed73e73ce5946f1df515b7a831ba3490a0ca92f82f9eb4613700d3e2"
+    },
+    "image_id": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+    "release_binding": {
+      "archive_sha256": "sha256:77b7fb176c0119c345505a979061132ddb48373feeb7afb9145b5b1867002833",
+      "configuration": "sha256:e77eb03557c01a4e34cac3e7ee5fdcf005900064944d56aafd50f899cb2c3800",
+      "platform_manifest": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "registry_image": "ghcr.io/marqov-dev/qristal-cudaq-gpu@sha256:ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409",
+      "source_revision": "beecfb8fcc501c4cecefd9d12af3058ec8f1efe0",
+      "transport": "private single-object transfer; no registry credential on host"
+    }
+  },
+  "container_observations": [
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "image": "sha256:9af6f0b834f66025a9fb031cae3d1a2774c305c11149a09d735c878b3f49295a",
+      "mounts": [
+        {
+          "destination": "/inputs",
+          "rw": false
+        }
+      ]
+    }
+  ],
+  "faults": [
+    {
+      "exit_code": 137,
+      "mode": "cancel",
+      "outcome": "requested_kill",
+      "owned_gpu_context_observed": true,
+      "stopped_observed": true
+    },
+    {
+      "exit_code": 137,
+      "mode": "timeout",
+      "outcome": "process_timeout",
+      "owned_gpu_context_observed": true,
+      "stopped_observed": true
+    },
+    {
+      "exit_code": 137,
+      "mode": "overflow",
+      "outcome": "process_output_limit",
+      "owned_gpu_context_observed": true,
+      "stopped_observed": true
+    }
+  ],
+  "gpu_processes_absent": true,
+  "hardware": "NVIDIA A10G, 595.91.07, 23028 MiB",
+  "image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+  "inventory": {
+    "architecture": "x86_64",
+    "dpkg": "adduser\t3.137ubuntu1\napt\t2.8.3\nbase-files\t13ubuntu10.4\nbase-passwd\t3.6.3build1\nbash\t5.2.21-2ubuntu4\nbinutils\t2.42-4ubuntu2.10\nbinutils-common\t2.42-4ubuntu2.10\nbinutils-x86-64-linux-gnu\t2.42-4ubuntu2.10\nbsdutils\t1:2.39.3-9ubuntu6.5\nca-certificates\t20260601~24.04.1\ncoreutils\t9.4-3ubuntu6.2\ncpp\t4:13.2.0-7ubuntu1\ncpp-13\t13.3.0-6ubuntu2~24.04.1\ncpp-13-x86-64-linux-gnu\t13.3.0-6ubuntu2~24.04.1\ncpp-x86-64-linux-gnu\t4:13.2.0-7ubuntu1\ncuda-compat-12-6\t560.35.05-0ubuntu1\ncuda-cudart-12-6\t12.6.77-1\ncuda-libraries-12-6\t12.6.0-1\ncuda-nvrtc-12-6\t12.6.85-1\ncuda-nvtx-12-6\t12.6.77-1\ncuda-opencl-12-6\t12.6.77-1\ncuda-toolkit-12-6-config-common\t12.6.77-1\ncuda-toolkit-12-config-common\t12.9.79-1\ncuda-toolkit-config-common\t13.3.29-1\ncurl\t8.5.0-2ubuntu10.11\ndash\t0.5.12-6ubuntu5\ndebconf\t1.5.86ubuntu1\ndebianutils\t5.17build1\ndiffutils\t1:3.10-1build1\ndpkg\t1.22.6ubuntu6.6\ndpkg-dev\t1.22.6ubuntu6.6\ne2fsprogs\t1.47.0-2.4~exp1ubuntu4.1\nfindutils\t4.9.0-5build1\nflex\t2.6.4-8.2build1\nfontconfig-config\t2.15.0-1.1ubuntu2\nfonts-dejavu-core\t2.37-8\nfonts-dejavu-mono\t2.37-8\ngcc\t4:13.2.0-7ubuntu1\ngcc-13\t13.3.0-6ubuntu2~24.04.1\ngcc-13-base\t13.3.0-6ubuntu2~24.04.1\ngcc-13-x86-64-linux-gnu\t13.3.0-6ubuntu2~24.04.1\ngcc-14-base\t14.2.0-4ubuntu2~24.04.1\ngcc-x86-64-linux-gnu\t4:13.2.0-7ubuntu1\ngit\t1:2.43.0-1ubuntu7.3\ngit-man\t1:2.43.0-1ubuntu7.3\ngpgv\t2.4.4-2ubuntu17.4\ngrep\t3.11-4build1\ngzip\t1.12-1ubuntu3.2\nhostname\t3.23+nmu2ubuntu2\nhwloc\t2.10.0-1build1\nibverbs-providers\t52mlnx1-1.53100\nibverbs-utils\t52mlnx1-1.53100\ninit-system-helpers\t1.66ubuntu1\njq\t1.7.1-3ubuntu0.24.04.2\nlibacl1\t2.3.2-1build1.1\nlibapparmor1\t4.0.1really4.0.1-0ubuntu0.24.04.7\nlibapt-pkg6.0t64\t2.8.3\nlibasan8\t14.2.0-4ubuntu2~24.04.1\nlibassuan0\t2.5.6-1build1\nlibatomic1\t14.2.0-4ubuntu2~24.04.1\nlibattr1\t1:2.5.2-1build1.1\nlibaudit-common\t1:3.1.2-2.1build1.1\nlibaudit1\t1:3.1.2-2.1build1.1\nlibbinutils\t2.42-4ubuntu2.10\nlibblkid1\t2.39.3-9ubuntu6.5\nlibbrotli1\t1.1.0-2build2\nlibbsd0\t0.12.1-1build1.1\nlibbz2-1.0\t1.0.8-5.1build0.1\nlibc-bin\t2.39-0ubuntu8.7\nlibc-dev-bin\t2.39-0ubuntu8.7\nlibc6\t2.39-0ubuntu8.7\nlibc6-dev\t2.39-0ubuntu8.7\nlibcairo2\t1.18.0-3build1\nlibcap-ng0\t0.8.4-2build2\nlibcap2\t1:2.66-5ubuntu2.4\nlibcbor0.10\t0.10.2-1.2ubuntu2\nlibcc1-0\t14.2.0-4ubuntu2~24.04.1\nlibcom-err2\t1.47.0-2.4~exp1ubuntu4.1\nlibcrypt-dev\t1:4.4.36-4build1\nlibcrypt1\t1:4.4.36-4build1\nlibctf-nobfd0\t2.42-4ubuntu2.10\nlibctf0\t2.42-4ubuntu2.10\nlibcublas-12-6\t12.6.0.22-1\nlibcufft-12-6\t11.3.0.4-1\nlibcufile-12-6\t1.11.1.6-1\nlibcurand-12-6\t10.3.7.77-1\nlibcurl3t64-gnutls\t8.5.0-2ubuntu10.11\nlibcurl4t64\t8.5.0-2ubuntu10.11\nlibcusolver-12-6\t11.7.1.2-1\nlibcusparse-12-6\t12.5.4.2-1\nlibdb5.3t64\t5.3.28+dfsg2-7\nlibdebconfclient0\t0.271ubuntu3\nlibedit2\t3.1-20230828-1build1\nliberror-perl\t0.17029-2\nlibevent-2.1-7t64\t2.1.12-stable-9ubuntu2\nlibevent-core-2.1-7t64\t2.1.12-stable-9ubuntu2\nlibevent-dev\t2.1.12-stable-9ubuntu2\nlibevent-extra-2.1-7t64\t2.1.12-stable-9ubuntu2\nlibevent-openssl-2.1-7t64\t2.1.12-stable-9ubuntu2\nlibevent-pthreads-2.1-7t64\t2.1.12-stable-9ubuntu2\nlibexpat1\t2.6.1-2ubuntu0.4\nlibexpat1-dev\t2.6.1-2ubuntu0.4\nlibext2fs2t64\t1.47.0-2.4~exp1ubuntu4.1\nlibffi8\t3.4.6-1build1\nlibfido2-1\t1.14.0-1build3\nlibfontconfig1\t2.15.0-1.1ubuntu2\nlibfreetype6\t2.13.2+dfsg-1ubuntu0.1\nlibgcc-13-dev\t13.3.0-6ubuntu2~24.04.1\nlibgcc-s1\t14.2.0-4ubuntu2~24.04.1\nlibgcrypt20\t1.10.3-2ubuntu0.1\nlibgdbm-compat4t64\t1.23-5.1build1\nlibgdbm6t64\t1.23-5.1build1\nlibgmp10\t2:6.3.0+dfsg-2ubuntu6.1\nlibgnutls30t64\t3.8.3-1.1ubuntu3.6\nlibgomp1\t14.2.0-4ubuntu2~24.04.1\nlibgpg-error0\t1.47-3build2.1\nlibgpm2\t1.20.7-11\nlibgprofng0\t2.42-4ubuntu2.10\nlibgssapi-krb5-2\t1.20.1-6ubuntu2.6\nlibhogweed6t64\t3.9.1-2.2build1.1\nlibhwasan0\t14.2.0-4ubuntu2~24.04.1\nlibhwloc15\t2.10.0-1build1\nlibibmad5\t52mlnx1-1.53100\nlibibumad3\t52mlnx1-1.53100\nlibibverbs1\t52mlnx1-1.53100\nlibidn2-0\t2.3.7-2build1.1\nlibisl23\t0.26-3build1.1\nlibitm1\t14.2.0-4ubuntu2~24.04.1\nlibjansson4\t2.14-2build2\nlibjq1\t1.7.1-3ubuntu0.24.04.2\nlibjs-jquery\t3.6.1+dfsg+~3.5.14-1\nlibk5crypto3\t1.20.1-6ubuntu2.6\nlibkeyutils1\t1.6.3-3build1\nlibkrb5-3\t1.20.1-6ubuntu2.6\nlibkrb5support0\t1.20.1-6ubuntu2.6\nlibldap2\t2.6.10+dfsg-0ubuntu0.24.04.1\nliblsan0\t14.2.0-4ubuntu2~24.04.1\nliblz4-1\t1.9.4-1build1.1\nliblzma5\t5.6.1+really5.4.5-1ubuntu0.3\nlibmd0\t1.1.0-2build1.1\nlibmount1\t2.39.3-9ubuntu6.5\nlibmpc3\t1.3.1-1build1.1\nlibmpfr6\t4.2.1-1build1.1\nlibnccl2\t2.22.3-1+cuda12.6\nlibncursesw6\t6.4+20240113-1ubuntu2.1\nlibnettle8t64\t3.9.1-2.2build1.1\nlibnghttp2-14\t1.59.0-1ubuntu0.4\nlibnl-3-200\t3.7.0-0.3build1.1\nlibnl-route-3-200\t3.7.0-0.3build1.1\nlibnpp-12-6\t12.3.1.54-1\nlibnpth0t64\t1.6-3.1build1\nlibnuma1\t2.0.18-1ubuntu0.24.04.1\nlibnvfatbin-12-6\t12.6.77-1\nlibnvjitlink-12-6\t12.6.85-1\nlibnvjpeg-12-6\t12.3.3.54-1\nlibonig5\t6.9.9-1build1\nlibp11-kit0\t0.25.3-4ubuntu2.1\nlibpam-modules\t1.5.3-5ubuntu5.5\nlibpam-modules-bin\t1.5.3-5ubuntu5.5\nlibpam-runtime\t1.5.3-5ubuntu5.5\nlibpam0g\t1.5.3-5ubuntu5.5\nlibpcre2-8-0\t10.42-4ubuntu2.1\nlibperl5.38t64\t5.38.2-3.2ubuntu0.3\nlibpixman-1-0\t0.42.2-1build1\nlibpng16-16t64\t1.6.43-5ubuntu0.6\nlibproc2-0\t2:4.0.4-4ubuntu3.2\nlibpsl5t64\t0.21.2-1.1build1\nlibpython3-dev\t3.12.3-0ubuntu2.1\nlibpython3-stdlib\t3.12.3-0ubuntu2.1\nlibpython3.12-dev\t3.12.3-1ubuntu0.15\nlibpython3.12-minimal\t3.12.3-1ubuntu0.15\nlibpython3.12-stdlib\t3.12.3-1ubuntu0.15\nlibpython3.12t64\t3.12.3-1ubuntu0.15\nlibquadmath0\t14.2.0-4ubuntu2~24.04.1\nlibrdmacm1\t52mlnx1-1.53100\nlibreadline8t64\t8.2-4build1\nlibrtmp1\t2.4+20151223.gitfa8646d.1-2build7\nlibsasl2-2\t2.1.28+dfsg1-5ubuntu3.1\nlibsasl2-modules-db\t2.1.28+dfsg1-5ubuntu3.1\nlibseccomp2\t2.5.5-1ubuntu3.1\nlibselinux1\t3.5-2ubuntu2.1\nlibsemanage-common\t3.5-1build5\nlibsemanage2\t3.5-1build5\nlibsepol2\t3.5-2build1\nlibsframe1\t2.42-4ubuntu2.10\nlibsmartcols1\t2.39.3-9ubuntu6.5\nlibsodium23\t1.0.18-1ubuntu0.24.04.1\nlibsqlite3-0\t3.45.1-1ubuntu2.6\nlibss2\t1.47.0-2.4~exp1ubuntu4.1\nlibssh-4\t0.10.6-2ubuntu0.4\nlibssl3t64\t3.0.13-0ubuntu3.11\nlibstdc++-13-dev\t13.3.0-6ubuntu2~24.04.1\nlibstdc++6\t14.2.0-4ubuntu2~24.04.1\nlibsystemd0\t255.4-1ubuntu8.16\nlibtasn1-6\t4.19.0-3ubuntu0.24.04.2\nlibtinfo6\t6.4+20240113-1ubuntu2.1\nlibtsan2\t14.2.0-4ubuntu2~24.04.1\nlibubsan1\t14.2.0-4ubuntu2~24.04.1\nlibudev1\t255.4-1ubuntu8.16\nlibunistring5\t1.1-2build1.1\nlibuuid1\t2.39.3-9ubuntu6.5\nlibx11-6\t2:1.8.7-1build1\nlibx11-data\t2:1.8.7-1build1\nlibxau6\t1:1.0.9-1build6\nlibxcb-render0\t1.15-1ubuntu2\nlibxcb-shm0\t1.15-1ubuntu2\nlibxcb1\t1.15-1ubuntu2\nlibxdmcp6\t1:1.1.3-0ubuntu6\nlibxext6\t2:1.3.4-1build2\nlibxrender1\t1:0.9.10-1.1build1\nlibxxhash0\t0.8.2-2build1\nlibzstd1\t1.5.5+dfsg2-2build1.1\nlinux-libc-dev\t6.8.0-134.134\nlogin\t1:4.13+dfsg1-4ubuntu3.2\nlogsave\t1.47.0-2.4~exp1ubuntu4.1\nm4\t1.4.19-4build1\nmawk\t1.3.4.20240123-1build1\nmedia-types\t10.1.0\nmount\t2.39.3-9ubuntu6.5\nncurses-base\t6.4+20240113-1ubuntu2.1\nncurses-bin\t6.4+20240113-1ubuntu2.1\nnetbase\t6.4\nopenssh-client\t1:9.6p1-3ubuntu13.16\nopenssl\t3.0.13-0ubuntu3.11\npasswd\t1:4.13+dfsg1-4ubuntu3.2\npatch\t2.7.6-7build3\nperl\t5.38.2-3.2ubuntu0.3\nperl-base\t5.38.2-3.2ubuntu0.3\nperl-modules-5.38\t5.38.2-3.2ubuntu0.3\nprocps\t2:4.0.4-4ubuntu3.2\npython3\t3.12.3-0ubuntu2.1\npython3-minimal\t3.12.3-0ubuntu2.1\npython3-pip\t24.0+dfsg-1ubuntu1.3\npython3-pkg-resources\t68.1.2-2ubuntu1.2\npython3-setuptools\t68.1.2-2ubuntu1.2\npython3-wheel\t0.42.0-2\npython3.12\t3.12.3-1ubuntu0.15\npython3.12-minimal\t3.12.3-1ubuntu0.15\nreadline-common\t8.2-4build1\nrpcsvc-proto\t1.4.2-0ubuntu7\nsed\t4.9-2ubuntu0.24.04.1\nsensible-utils\t0.0.22\nsudo\t1.9.15p5-3ubuntu5.24.04.2\nsysvinit-utils\t3.08-6ubuntu3\ntar\t1.35+dfsg-3ubuntu0.2\ntzdata\t2026b-0ubuntu0.24.04.1\nubuntu-keyring\t2023.11.28.1\nutil-linux\t2.39.3-9ubuntu6.5\nvim\t2:9.1.0016-1ubuntu7.17\nvim-common\t2:9.1.0016-1ubuntu7.17\nvim-runtime\t2:9.1.0016-1ubuntu7.17\nwget\t1.21.4-1ubuntu4.1\nzlib1g\t1:1.3.dfsg-3.1ubuntu2.1\nzlib1g-dev\t1:1.3.dfsg-3.1ubuntu2.1\n",
+    "license_files": [
+      {
+        "path": "/opt/nvidia/entrypoint.d/30-container-license.txt",
+        "sha256": "eccda01237e7a9f969ee8561d1ad213fb1b04c1d939d3783c165ce5027475c8e"
+      },
+      {
+        "path": "/opt/nvidia/entrypoint.d/15-container-copyright.txt",
+        "sha256": "e1f102ff77fc980f091d0924658a03a8371dadf6d1c3168ed1c148f09eb6a1c3"
+      },
+      {
+        "path": "/opt/nvidia/cudaq/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "/opt/nvidia/cudaq/NOTICE",
+        "sha256": "dad65b35f456cc445d851b969552e75f693106aba48515522b3a58a5fb6033c4"
+      },
+      {
+        "path": "/opt/nvidia/cudaq/Copyright.txt",
+        "sha256": "9d491a925b5280adc969a890c55697613e115d7edee109732128d2aa1e310370"
+      },
+      {
+        "path": "/usr/local/lib/python3.12/dist-packages/cuquantum/LICENSE",
+        "sha256": "82096cf495cfff8a38cb898dfeff61e3cf986864143391642662d0f72f4095c4"
+      }
+    ],
+    "license_scan_errors": [],
+    "metadata_errors": [],
+    "observed_files": {
+      "adapter.py": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+      "fault_workload.py": "f086351e76b256a9be8c601a621c2645c85eb8678e5fa1f0d4fe25bfd1dc769e",
+      "inventory.py": "6dea62cfed73e73ce5946f1df515b7a831ba3490a0ca92f82f9eb4613700d3e2"
+    },
+    "payload": {
+      "base": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+      "files": {
+        "adapter.py": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "fault_workload.py": "f086351e76b256a9be8c601a621c2645c85eb8678e5fa1f0d4fe25bfd1dc769e",
+        "inventory.py": "6dea62cfed73e73ce5946f1df515b7a831ba3490a0ca92f82f9eb4613700d3e2"
+      }
+    },
+    "python": "3.12.3",
+    "python_packages": [
+      [
+        "Jinja2",
+        "3.1.6"
+      ],
+      [
+        "MarkupSafe",
+        "3.0.3"
+      ],
+      [
+        "PyYAML",
+        "6.0.3"
+      ],
+      [
+        "Pygments",
+        "2.20.0"
+      ],
+      [
+        "Send2Trash",
+        "2.1.0"
+      ],
+      [
+        "anyio",
+        "4.14.1"
+      ],
+      [
+        "argon2-cffi",
+        "25.1.0"
+      ],
+      [
+        "argon2-cffi-bindings",
+        "25.1.0"
+      ],
+      [
+        "arrow",
+        "1.4.0"
+      ],
+      [
+        "asttokens",
+        "3.0.1"
+      ],
+      [
+        "async-lru",
+        "2.3.0"
+      ],
+      [
+        "attrs",
+        "26.1.0"
+      ],
+      [
+        "babel",
+        "2.18.0"
+      ],
+      [
+        "beautifulsoup4",
+        "4.15.0"
+      ],
+      [
+        "bleach",
+        "6.4.0"
+      ],
+      [
+        "certifi",
+        "2026.6.17"
+      ],
+      [
+        "cffi",
+        "2.1.0"
+      ],
+      [
+        "charset-normalizer",
+        "3.4.9"
+      ],
+      [
+        "comm",
+        "0.2.3"
+      ],
+      [
+        "contourpy",
+        "1.3.3"
+      ],
+      [
+        "cudensitymat-cu12",
+        "0.5.1"
+      ],
+      [
+        "cupauliprop-cu12",
+        "0.3.1"
+      ],
+      [
+        "cupy-cuda12x",
+        "13.4.1"
+      ],
+      [
+        "cuquantum-cu12",
+        "26.3.1"
+      ],
+      [
+        "custabilizer-cu12",
+        "0.3.0"
+      ],
+      [
+        "custatevec-cu12",
+        "1.13.1"
+      ],
+      [
+        "cutensor-cu12",
+        "2.7.0"
+      ],
+      [
+        "cutensornet-cu12",
+        "2.12.1"
+      ],
+      [
+        "cycler",
+        "0.12.1"
+      ],
+      [
+        "debugpy",
+        "1.8.21"
+      ],
+      [
+        "decorator",
+        "5.3.1"
+      ],
+      [
+        "defusedxml",
+        "0.7.1"
+      ],
+      [
+        "executing",
+        "2.2.1"
+      ],
+      [
+        "fastjsonschema",
+        "2.21.2"
+      ],
+      [
+        "fastrlock",
+        "0.8.3"
+      ],
+      [
+        "fonttools",
+        "4.63.0"
+      ],
+      [
+        "fqdn",
+        "1.5.1"
+      ],
+      [
+        "h11",
+        "0.16.0"
+      ],
+      [
+        "httpcore",
+        "1.0.9"
+      ],
+      [
+        "httpx",
+        "0.28.1"
+      ],
+      [
+        "idna",
+        "3.18"
+      ],
+      [
+        "ipykernel",
+        "7.3.0"
+      ],
+      [
+        "ipython",
+        "9.15.0"
+      ],
+      [
+        "ipython_pygments_lexers",
+        "1.1.1"
+      ],
+      [
+        "isoduration",
+        "20.11.0"
+      ],
+      [
+        "jedi",
+        "0.20.0"
+      ],
+      [
+        "json5",
+        "0.15.0"
+      ],
+      [
+        "jsonpointer",
+        "3.1.1"
+      ],
+      [
+        "jsonschema",
+        "4.26.0"
+      ],
+      [
+        "jsonschema-specifications",
+        "2025.9.1"
+      ],
+      [
+        "jupyter-events",
+        "0.12.1"
+      ],
+      [
+        "jupyter-lsp",
+        "2.3.1"
+      ],
+      [
+        "jupyter_client",
+        "8.9.1"
+      ],
+      [
+        "jupyter_core",
+        "5.9.1"
+      ],
+      [
+        "jupyter_server",
+        "2.20.0"
+      ],
+      [
+        "jupyter_server_terminals",
+        "0.5.4"
+      ],
+      [
+        "jupyterlab",
+        "4.5.7"
+      ],
+      [
+        "jupyterlab_pygments",
+        "0.3.0"
+      ],
+      [
+        "jupyterlab_server",
+        "2.28.0"
+      ],
+      [
+        "kiwisolver",
+        "1.5.0"
+      ],
+      [
+        "lark",
+        "1.3.1"
+      ],
+      [
+        "matplotlib",
+        "3.11.0"
+      ],
+      [
+        "matplotlib-inline",
+        "0.2.2"
+      ],
+      [
+        "mistune",
+        "3.3.3"
+      ],
+      [
+        "mpi4py",
+        "4.1.2"
+      ],
+      [
+        "nbclient",
+        "0.11.0"
+      ],
+      [
+        "nbconvert",
+        "7.17.1"
+      ],
+      [
+        "nbformat",
+        "5.10.4"
+      ],
+      [
+        "nest-asyncio2",
+        "1.7.2"
+      ],
+      [
+        "notebook",
+        "7.5.6"
+      ],
+      [
+        "notebook_shim",
+        "0.2.4"
+      ],
+      [
+        "numpy",
+        "2.2.6"
+      ],
+      [
+        "nvidia-cuda-nvrtc-cu12",
+        "12.9.86"
+      ],
+      [
+        "nvidia-cuda-runtime-cu12",
+        "12.9.79"
+      ],
+      [
+        "nvidia-curand-cu12",
+        "10.3.10.19"
+      ],
+      [
+        "packaging",
+        "26.2"
+      ],
+      [
+        "pandocfilters",
+        "1.5.1"
+      ],
+      [
+        "parso",
+        "0.8.7"
+      ],
+      [
+        "pexpect",
+        "4.9.0"
+      ],
+      [
+        "pillow",
+        "12.3.0"
+      ],
+      [
+        "pip",
+        "24.0"
+      ],
+      [
+        "platformdirs",
+        "4.10.0"
+      ],
+      [
+        "prometheus_client",
+        "0.25.0"
+      ],
+      [
+        "prompt_toolkit",
+        "3.0.52"
+      ],
+      [
+        "psutil",
+        "7.2.2"
+      ],
+      [
+        "ptyprocess",
+        "0.7.0"
+      ],
+      [
+        "pure_eval",
+        "0.2.3"
+      ],
+      [
+        "pycparser",
+        "3.0"
+      ],
+      [
+        "pyparsing",
+        "3.3.2"
+      ],
+      [
+        "python-dateutil",
+        "2.9.0.post0"
+      ],
+      [
+        "python-json-logger",
+        "4.1.0"
+      ],
+      [
+        "pyzmq",
+        "27.1.0"
+      ],
+      [
+        "qutip",
+        "5.3.0"
+      ],
+      [
+        "referencing",
+        "0.37.0"
+      ],
+      [
+        "requests",
+        "2.34.2"
+      ],
+      [
+        "rfc3339-validator",
+        "0.1.4"
+      ],
+      [
+        "rfc3986-validator",
+        "0.1.1"
+      ],
+      [
+        "rfc3987-syntax",
+        "1.1.0"
+      ],
+      [
+        "rpds-py",
+        "2026.6.3"
+      ],
+      [
+        "scipy",
+        "1.18.0"
+      ],
+      [
+        "setuptools",
+        "68.1.2"
+      ],
+      [
+        "six",
+        "1.17.0"
+      ],
+      [
+        "soupsieve",
+        "2.8.4"
+      ],
+      [
+        "stack-data",
+        "0.6.3"
+      ],
+      [
+        "terminado",
+        "0.18.1"
+      ],
+      [
+        "tinycss2",
+        "1.5.1"
+      ],
+      [
+        "tornado",
+        "6.5.7"
+      ],
+      [
+        "traitlets",
+        "5.15.1"
+      ],
+      [
+        "typing_extensions",
+        "4.16.0"
+      ],
+      [
+        "tzdata",
+        "2026.3"
+      ],
+      [
+        "uri-template",
+        "1.3.0"
+      ],
+      [
+        "urllib3",
+        "2.7.0"
+      ],
+      [
+        "wcwidth",
+        "0.8.2"
+      ],
+      [
+        "webcolors",
+        "25.10.0"
+      ],
+      [
+        "webencodings",
+        "0.5.1"
+      ],
+      [
+        "websocket-client",
+        "1.9.0"
+      ],
+      [
+        "wheel",
+        "0.42.0"
+      ]
+    ]
+  },
+  "negatives": [
+    {
+      "candidate_absent": true,
+      "exit_code": 1,
+      "mode": "invalid-input",
+      "stopped_observed": true
+    },
+    {
+      "candidate_absent": true,
+      "exit_code": 1,
+      "mode": "no-gpu",
+      "stopped_observed": true
+    }
+  ],
+  "owned_containers_absent": true,
+  "records": [
+    {
+      "artifact": {
+        "gates": [
+          [
+            "x",
+            0
+          ]
+        ],
+        "qubits": 3,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "100": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "ba2d39d701868fd68c58653525dd75519b0ae019981e024cd45333b5592c96b4",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+          "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 3,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "case": "x-first",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "x",
+            2
+          ]
+        ],
+        "qubits": 3,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "001": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "e151b11cea34837e2771526a00cde10d2a4a9889a8a1d8b351e83e15a54fccc0",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+          "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 3,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "case": "x-last",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "h",
+            0
+          ]
+        ],
+        "qubits": 3,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "000": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "e440f714aaf85c96e86fa4fcf83e82b47ce38e6b0d9f481dfc4fc3fa46172fe8",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+          "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 3,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "case": "interference",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ],
+        "qubits": 2,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "00": 8148,
+          "11": 8236
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "84fcc3651973929703707dc2c8290c77c97be4fe63972e80cc94a80bf778c45f",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+          "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 2,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "case": "bell",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            3
+          ],
+          [
+            "cx",
+            0,
+            4
+          ],
+          [
+            "cx",
+            0,
+            5
+          ],
+          [
+            "cx",
+            0,
+            6
+          ],
+          [
+            "cx",
+            0,
+            7
+          ]
+        ],
+        "qubits": 8,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "00000000": 8148,
+          "11111111": 8236
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "3534ae366c87775bdd61dc7362a117986aac8ea0339fcd037ebc80e39e811fd4",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+          "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 8,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "case": "ghz8",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            3
+          ],
+          [
+            "cx",
+            0,
+            3
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            1
+          ],
+          [
+            "h",
+            0
+          ]
+        ],
+        "qubits": 4,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "0000": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "9b3a43102ff94e609f9ea2b5a32af93d72aeaa4bf2f955cd29fe10dbaf56f081",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+          "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 4,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "nvidia"
+      },
+      "case": "inverse-ghz",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "x",
+            0
+          ]
+        ],
+        "qubits": 3,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "100": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "aa2a0c5d0810e60178662e60ec7ae445e01722c18ef7abc50fb5b6c58c1cfb4d",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-tensornet.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 3,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "case": "x-first",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "x",
+            2
+          ]
+        ],
+        "qubits": 3,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "001": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "f5253ddb80c17c54588f0fa147f2db915fe1b329b28c132706fc6a538310013d",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-tensornet.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 3,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "case": "x-last",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "h",
+            0
+          ]
+        ],
+        "qubits": 3,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "000": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "d641e9eac019f0c21770026185e6144635373b9faf7c73e33ea72dc165bd995f",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-tensornet.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 3,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "case": "interference",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ],
+        "qubits": 2,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "00": 8228,
+          "11": 8156
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "2b856aaded0281ce171a41ed891a0c26708f072679a3b8b6f1999c24e82987fb",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-tensornet.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 2,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "case": "bell",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            3
+          ],
+          [
+            "cx",
+            0,
+            4
+          ],
+          [
+            "cx",
+            0,
+            5
+          ],
+          [
+            "cx",
+            0,
+            6
+          ],
+          [
+            "cx",
+            0,
+            7
+          ]
+        ],
+        "qubits": 8,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "00000000": 8228,
+          "11111111": 8156
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "b646160d6735cf37e2e646816849af0478f101af0b6f93e46cee57533cb80df5",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-tensornet.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 8,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "case": "ghz8",
+      "exit_code": 0,
+      "stopped_observed": true
+    },
+    {
+      "artifact": {
+        "gates": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            3
+          ],
+          [
+            "cx",
+            0,
+            3
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            1
+          ],
+          [
+            "h",
+            0
+          ]
+        ],
+        "qubits": 4,
+        "schema": "qristal.cudaq-circuit/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "candidate": {
+        "adapter": "qristal.cudaq-workload/v1",
+        "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+        "bit_order": "logical-qubit-zero-first",
+        "counts": {
+          "0000": 16384
+        },
+        "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+        "gpu_count": 1,
+        "input_sha256": "056adfcf6e37d62e7e5ed3a8ffc2dea8334240b1be221bbc6514ae4e120b7df3",
+        "libraries": [
+          "/opt/nvidia/cudaq/lib/libnvqir-tensornet.so",
+          "/opt/nvidia/cudaq/lib/libnvqir.so",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+          "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+        ],
+        "qubits": 4,
+        "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+        "schema": "qristal.cudaq-candidate/v1",
+        "seed": 42,
+        "shots": 16384,
+        "target": "tensornet"
+      },
+      "case": "inverse-ghz",
+      "exit_code": 0,
+      "stopped_observed": true
+    }
+  ],
+  "recovery": {
+    "artifact": {
+      "gates": [
+        [
+          "x",
+          0
+        ]
+      ],
+      "qubits": 3,
+      "schema": "qristal.cudaq-circuit/v1",
+      "seed": 42,
+      "shots": 16384,
+      "target": "nvidia"
+    },
+    "candidate": {
+      "adapter": "qristal.cudaq-workload/v1",
+      "adapter_sha256": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+      "bit_order": "logical-qubit-zero-first",
+      "counts": {
+        "100": 16384
+      },
+      "cudaq_version": "CUDA-Q Version amd64-cu12-0.15.0 (https://github.com/NVIDIA/cuda-quantum f6d1f1d50d9cd4fef60011197cafe67c9035c3dc)",
+      "gpu_count": 1,
+      "input_sha256": "ba2d39d701868fd68c58653525dd75519b0ae019981e024cd45333b5592c96b4",
+      "libraries": [
+        "/opt/nvidia/cudaq/lib/libnvqir-custatevec-kernels.so",
+        "/opt/nvidia/cudaq/lib/libnvqir-cusvsim-fp64.so",
+        "/opt/nvidia/cudaq/lib/libnvqir.so",
+        "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcustatevec.so.1",
+        "/usr/local/lib/python3.12/dist-packages/cuquantum/lib/libcutensornet.so.2"
+      ],
+      "qubits": 3,
+      "runtime_image": "nvcr.io/nvidia/quantum/cuda-quantum@sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a",
+      "schema": "qristal.cudaq-candidate/v1",
+      "seed": 42,
+      "shots": 16384,
+      "target": "nvidia"
+    },
+    "case": "x-first",
+    "exit_code": 0,
+    "stopped_observed": true
+  },
+  "scope": "packaged standalone qualification; not hosted acceptance",
+  "sources": {
+    "adapter.py": "d279cc23b80f1d4a8e7923891823fb14a67c083363454744b0cb605019cc9a80",
+    "check_evidence.py": "64a0764cce9a660939f0765290acbc7ae6857e40fc33f3162a61df4f30471850",
+    "console.py": "d9c39b3fbedd1823acbbe5dd1fbf92b031c8fa4a8ad298725737f2118ec544b0",
+    "fault_workload.py": "f086351e76b256a9be8c601a621c2645c85eb8678e5fa1f0d4fe25bfd1dc769e",
+    "qualify.py": "7a1d30ab7f0509cbe9869691bfd9dcaabceef8866866ef8de7b1538ebfdd77a2",
+    "test_adapter.py": "b2874c0d3445af18634fbe58f94650b514d25f554fb2692096c7f1bd205a83a4",
+    "test_console.py": "8d2f237c8d144b8a5f9b3b8d95e0bb3c7c58608af9163e2fe069500659f738ff",
+    "test_evidence.py": "3e6e3f0822c55a68210f023b323ce5504bc7419f1496c0445669eda0087ec1c4"
+  }
+}

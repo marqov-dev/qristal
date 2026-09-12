@@ -1,0 +1,10 @@
+{
+  "observed_epoch": 1789182462.526685,
+  "error": "instance_ownership",
+  "instance": "i-0e6877c4d317c34b9",
+  "state": "terminated",
+  "client_token": "qb-proof-20d775dc944a4427b871a4ba26f2aa8e",
+  "subnet": null,
+  "cleanup_verified_at_failure": false,
+  "correction": "Allow absent subnet only for the already-bound exact instance in terminated state; require matching client token."
+}

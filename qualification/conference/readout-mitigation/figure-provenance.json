@@ -1,0 +1,9 @@
+{
+  "result_sha256": "6b3a870c483bd06a67e57ea333068c99fdbf63a23994bf0fdf16b4d1211f5fba",
+  "plot_source_sha256": "af7820e153c84c6b7b9cd61a3a8e9e40e73fd0da5bc0cfad4eb49d9c72cad0cf",
+  "intervals": "pointwise normal delta method including calibration variance",
+  "files": {
+    "readout-mitigation.png": "76644cea028edbd7ca49cb5105cda2534f47bd95687f6e74a297a0e495e1fd3c",
+    "readout-mitigation.svg": "f3afd747fd04f2fbdceb7f2c7160d27c34f2021daa762160ad952deb2b6434cc"
+  }
+}

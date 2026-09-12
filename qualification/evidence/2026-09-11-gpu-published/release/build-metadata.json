@@ -1,0 +1,245 @@
+{
+  "buildx.build.provenance": {
+    "builder": {
+      "id": "https://github.com/marqov-dev/qristal/actions/runs/34581422039/attempts/1"
+    },
+    "buildType": "https://mobyproject.org/buildkit@v1",
+    "materials": [
+      {
+        "uri": "pkg:docker/docker/buildkit-syft-scanner@stable-1?platform=linux%2Famd64",
+        "digest": {
+          "sha256": "ae4f3b554449e7e25548e7d8ccc029d17357348e30c6e3df01b92bc93654d6a9"
+        }
+      },
+      {
+        "uri": "pkg:docker/nvcr.io/nvidia/quantum/cuda-quantum?digest=sha256:cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a&platform=linux%2Famd64",
+        "digest": {
+          "sha256": "cfd58fc868708a8f05944b87e89cc69665436dbcead29214753607d6e1f43f4a"
+        }
+      }
+    ],
+    "invocation": {
+      "configSource": {
+        "entryPoint": "Dockerfile"
+      },
+      "parameters": {
+        "frontend": "dockerfile.v0",
+        "args": {
+          "force-network-mode": "none"
+        },
+        "locals": [
+          {
+            "name": "context"
+          },
+          {
+            "name": "dockerfile"
+          }
+        ],
+        "root": {
+          "configSource": {
+            "path": "Dockerfile"
+          },
+          "request": {
+            "args": {
+              "force-network-mode": "none",
+              "vcs:localdir:context": ".release/context",
+              "vcs:localdir:dockerfile": ".release/context",
+              "vcs:revision": "beecfb8fcc501c4cecefd9d12af3058ec8f1efe0",
+              "vcs:source": "https://github.com/marqov-dev/qristal"
+            }
+          }
+        },
+        "compatibilityVersion": 30
+      },
+      "environment": {
+        "dockerfileVersion": "1.26.0",
+        "github_actor": "ddri",
+        "github_actor_id": "958145",
+        "github_event_name": "workflow_dispatch",
+        "github_event_payload": {
+          "inputs": null,
+          "organization": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/235283802?v=4",
+            "description": "",
+            "events_url": "https://api.github.com/orgs/marqov-dev/events",
+            "hooks_url": "https://api.github.com/orgs/marqov-dev/hooks",
+            "id": 235283802,
+            "issues_url": "https://api.github.com/orgs/marqov-dev/issues",
+            "login": "marqov-dev",
+            "members_url": "https://api.github.com/orgs/marqov-dev/members{/member}",
+            "node_id": "O_kgDODgYlWg",
+            "public_members_url": "https://api.github.com/orgs/marqov-dev/public_members{/member}",
+            "repos_url": "https://api.github.com/orgs/marqov-dev/repos",
+            "url": "https://api.github.com/orgs/marqov-dev"
+          },
+          "ref": "refs/heads/main",
+          "repository": {
+            "allow_forking": true,
+            "archive_url": "https://api.github.com/repos/marqov-dev/qristal/{archive_format}{/ref}",
+            "archived": false,
+            "assignees_url": "https://api.github.com/repos/marqov-dev/qristal/assignees{/user}",
+            "blobs_url": "https://api.github.com/repos/marqov-dev/qristal/git/blobs{/sha}",
+            "branches_url": "https://api.github.com/repos/marqov-dev/qristal/branches{/branch}",
+            "clone_url": "https://github.com/marqov-dev/qristal.git",
+            "collaborators_url": "https://api.github.com/repos/marqov-dev/qristal/collaborators{/collaborator}",
+            "comments_url": "https://api.github.com/repos/marqov-dev/qristal/comments{/number}",
+            "commits_url": "https://api.github.com/repos/marqov-dev/qristal/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/marqov-dev/qristal/compare/{base}...{head}",
+            "contents_url": "https://api.github.com/repos/marqov-dev/qristal/contents/{+path}",
+            "contributors_url": "https://api.github.com/repos/marqov-dev/qristal/contributors",
+            "created_at": "2026-09-09T02:51:52Z",
+            "custom_properties": {},
+            "default_branch": "main",
+            "deployments_url": "https://api.github.com/repos/marqov-dev/qristal/deployments",
+            "description": "Qristal: hybrid quantum-classical C++/Python development platform from Quantum Brilliance",
+            "disabled": false,
+            "downloads_url": "https://api.github.com/repos/marqov-dev/qristal/downloads",
+            "events_url": "https://api.github.com/repos/marqov-dev/qristal/events",
+            "fork": true,
+            "forks": 0,
+            "forks_count": 0,
+            "forks_url": "https://api.github.com/repos/marqov-dev/qristal/forks",
+            "full_name": "marqov-dev/qristal",
+            "git_commits_url": "https://api.github.com/repos/marqov-dev/qristal/git/commits{/sha}",
+            "git_refs_url": "https://api.github.com/repos/marqov-dev/qristal/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/marqov-dev/qristal/git/tags{/sha}",
+            "git_url": "git://github.com/marqov-dev/qristal.git",
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_pages": false,
+            "has_projects": true,
+            "has_pull_requests": true,
+            "has_wiki": false,
+            "homepage": null,
+            "hooks_url": "https://api.github.com/repos/marqov-dev/qristal/hooks",
+            "html_url": "https://github.com/marqov-dev/qristal",
+            "id": 1362128250,
+            "is_template": false,
+            "issue_comment_url": "https://api.github.com/repos/marqov-dev/qristal/issues/comments{/number}",
+            "issue_events_url": "https://api.github.com/repos/marqov-dev/qristal/issues/events{/number}",
+            "issues_url": "https://api.github.com/repos/marqov-dev/qristal/issues{/number}",
+            "keys_url": "https://api.github.com/repos/marqov-dev/qristal/keys{/key_id}",
+            "labels_url": "https://api.github.com/repos/marqov-dev/qristal/labels{/name}",
+            "language": "Python",
+            "languages_url": "https://api.github.com/repos/marqov-dev/qristal/languages",
+            "license": {
+              "key": "other",
+              "name": "Other",
+              "node_id": "MDc6TGljZW5zZTA=",
+              "spdx_id": "NOASSERTION",
+              "url": null
+            },
+            "merges_url": "https://api.github.com/repos/marqov-dev/qristal/merges",
+            "milestones_url": "https://api.github.com/repos/marqov-dev/qristal/milestones{/number}",
+            "mirror_url": null,
+            "name": "qristal",
+            "node_id": "R_kgDOUTBteg",
+            "notifications_url": "https://api.github.com/repos/marqov-dev/qristal/notifications{?since,all,participating}",
+            "open_issues": 0,
+            "open_issues_count": 0,
+            "owner": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/235283802?v=4",
+              "events_url": "https://api.github.com/users/marqov-dev/events{/privacy}",
+              "followers_url": "https://api.github.com/users/marqov-dev/followers",
+              "following_url": "https://api.github.com/users/marqov-dev/following{/other_user}",
+              "gists_url": "https://api.github.com/users/marqov-dev/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/marqov-dev",
+              "id": 235283802,
+              "login": "marqov-dev",
+              "node_id": "O_kgDODgYlWg",
+              "organizations_url": "https://api.github.com/users/marqov-dev/orgs",
+              "received_events_url": "https://api.github.com/users/marqov-dev/received_events",
+              "repos_url": "https://api.github.com/users/marqov-dev/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/marqov-dev/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/marqov-dev/subscriptions",
+              "type": "Organization",
+              "url": "https://api.github.com/users/marqov-dev",
+              "user_view_type": "public"
+            },
+            "private": false,
+            "pull_request_creation_policy": "all",
+            "pulls_url": "https://api.github.com/repos/marqov-dev/qristal/pulls{/number}",
+            "pushed_at": "2026-09-11T08:50:24Z",
+            "releases_url": "https://api.github.com/repos/marqov-dev/qristal/releases{/id}",
+            "size": 1629,
+            "ssh_url": "git@github.com:marqov-dev/qristal.git",
+            "stargazers_count": 0,
+            "stargazers_url": "https://api.github.com/repos/marqov-dev/qristal/stargazers",
+            "statuses_url": "https://api.github.com/repos/marqov-dev/qristal/statuses/{sha}",
+            "subscribers_url": "https://api.github.com/repos/marqov-dev/qristal/subscribers",
+            "subscription_url": "https://api.github.com/repos/marqov-dev/qristal/subscription",
+            "svn_url": "https://github.com/marqov-dev/qristal",
+            "tags_url": "https://api.github.com/repos/marqov-dev/qristal/tags",
+            "teams_url": "https://api.github.com/repos/marqov-dev/qristal/teams",
+            "topics": [],
+            "trees_url": "https://api.github.com/repos/marqov-dev/qristal/git/trees{/sha}",
+            "updated_at": "2026-09-11T08:50:29Z",
+            "url": "https://api.github.com/repos/marqov-dev/qristal",
+            "visibility": "public",
+            "watchers": 0,
+            "watchers_count": 0,
+            "web_commit_signoff_required": false
+          },
+          "sender": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/958145?v=4",
+            "events_url": "https://api.github.com/users/ddri/events{/privacy}",
+            "followers_url": "https://api.github.com/users/ddri/followers",
+            "following_url": "https://api.github.com/users/ddri/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ddri/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/ddri",
+            "id": 958145,
+            "login": "ddri",
+            "node_id": "MDQ6VXNlcjk1ODE0NQ==",
+            "organizations_url": "https://api.github.com/users/ddri/orgs",
+            "received_events_url": "https://api.github.com/users/ddri/received_events",
+            "repos_url": "https://api.github.com/users/ddri/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/ddri/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ddri/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/ddri",
+            "user_view_type": "public"
+          },
+          "workflow": ".github/workflows/gpu-runtime-candidate.yml"
+        },
+        "github_job": "publish",
+        "github_ref": "refs/heads/main",
+        "github_ref_name": "main",
+        "github_ref_protected": "false",
+        "github_ref_type": "branch",
+        "github_repository": "marqov-dev/qristal",
+        "github_repository_id": "1362128250",
+        "github_repository_owner": "marqov-dev",
+        "github_repository_owner_id": "235283802",
+        "github_run_attempt": "1",
+        "github_run_id": "34581422039",
+        "github_run_number": "5",
+        "github_runner_arch": "X64",
+        "github_runner_environment": "github-hosted",
+        "github_runner_image_os": "ubuntu24",
+        "github_runner_image_version": "20260907.300.1",
+        "github_runner_name": "GitHub Actions 1000005953",
+        "github_runner_os": "Linux",
+        "github_runner_tracking_id": "github_b25c3a90-8433-4044-bf55-2d6b917fd200",
+        "github_server_url": "https://github.com",
+        "github_triggering_actor": "ddri",
+        "github_workflow": "GPU runtime candidate",
+        "github_workflow_ref": "marqov-dev/qristal/.github/workflows/gpu-runtime-candidate.yml@refs/heads/main",
+        "github_workflow_sha": "beecfb8fcc501c4cecefd9d12af3058ec8f1efe0",
+        "platform": "linux/amd64"
+      }
+    }
+  },
+  "buildx.build.ref": "builder-2d83b036-e271-4ac2-9099-740316b60981/builder-2d83b036-e271-4ac2-9099-740316b609810/l1cfle3lpbf2ji12rfired41h",
+  "containerimage.descriptor": {
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "digest": "sha256:ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409",
+    "size": 858
+  },
+  "containerimage.digest": "sha256:ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409",
+  "image.name": "ghcr.io/marqov-dev/qristal-cudaq-gpu:sha-beecfb8fcc501c4cecefd9d12af3058ec8f1efe0-run-34581422039-1"
+}

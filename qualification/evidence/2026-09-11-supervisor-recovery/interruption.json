@@ -1,0 +1,15 @@
+{
+  "exit_code": -9,
+  "mechanism": "SIGKILL of owned local supervisor after durable launch/volume IDs",
+  "observed_epoch": 1789181990.2161438,
+  "original_cleanup_until": 1789182858.696299,
+  "original_observe_until": 1789182558.696299,
+  "resources_at_interruption": {
+    "cleanup_verified": false,
+    "group": "sg-0b710515b7e147346",
+    "instance": "i-0e6877c4d317c34b9",
+    "volumes": [
+      "vol-089bdde40f6f2b071"
+    ]
+  }
+}
