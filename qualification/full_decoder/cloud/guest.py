@@ -35,6 +35,10 @@ try:
         '/work/build-core/algorithm_es/cppmicroservices_resources.cpp',
         '/work/build-core/algorithm_es/cppmicroservices_init.cpp']+INC+LIB+['-o','/proof/out/libalgorithm_es.so.1.8.1'])
     new=OUT/'libalgorithm_es.so.1.8.1'
+    # CMake's build.make performs this POST_BUILD step after linking. The
+    # generated cppmicroservices_resources.cpp is only a linker placeholder.
+    stage('core-plugin-bundle',['/work/install-xacc/bin/usResourceCompiler4',
+        '-b',str(new),'-z','/work/build-core/algorithm_es/res_0.zip'],30)
     for destination in ['/work/install-xacc/plugins/libalgorithm_es.so.1.8.1','/work/install-core/lib/libalgorithm_es.so.1.8.1']:
         shutil.copyfile(new,destination)
     report['core_plugin_sha256']=hashlib.sha256(new.read_bytes()).hexdigest()
@@ -47,6 +51,14 @@ try:
 except Exception as error:
     report['error']=type(error).__name__+':'+str(error)
 finally:
+    report['loaded_core_libraries']={}
+    for item in report['stages']:
+        for line in item.get('stdout','').splitlines():
+            if line.startswith('LOADED_CORE_LIBRARY: '):
+                path=pathlib.Path(line.removeprefix('LOADED_CORE_LIBRARY: '))
+                if str(path) in ('/work/install-xacc/plugins/libalgorithm_es.so.1.8.1',
+                                  '/work/install-core/lib/libalgorithm_es.so.1.8.1'):
+                    report['loaded_core_libraries'][str(path)]=hashlib.sha256(path.read_bytes()).hexdigest()
     report['binary_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.iterdir() if p.is_file() and p.suffix not in ('.stdout','.stderr')}
     raw=json.dumps(report,sort_keys=True,separators=(',',':')).encode()
     if len(raw)>120000: raise RuntimeError('report_bounds')

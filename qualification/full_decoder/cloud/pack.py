@@ -7,6 +7,7 @@ entries={
  'install-core/lib':'install-core/lib', 'install-core/include':'install-core/include',
  'install-xacc/lib':'install-xacc/lib', 'install-xacc/include':'install-xacc/include',
  'install-xacc/plugins':'install-xacc/plugins',
+ 'install-xacc/bin/usResourceCompiler4':'install-xacc/bin/usResourceCompiler4',
  'build-core/lib/libgtest.a':'build-core/lib/libgtest.a',
  'build-core/lib/libgtest_main.a':'build-core/lib/libgtest_main.a',
  'build-core/algorithm_es':'build-core/algorithm_es',

@@ -214,6 +214,26 @@ class Lifecycle(unittest.TestCase):
                 "State": {"Name": "terminated"},
             })
 
+    def test_bound_shutting_down_may_omit_subnet_but_not_change_token(self):
+        self.supervisor.launch(b"fixture")
+        retiring = copy.deepcopy(self.cloud.instance)
+        retiring['State']['Name'] = 'shutting-down'
+        del retiring['SubnetId']
+        self.supervisor.bind_instance(retiring)
+        retiring['ClientToken'] = 'different-token'
+        with self.assertRaisesRegex(ValueError, 'instance_ownership'):
+            self.supervisor.bind_instance(retiring)
+
+    def test_running_or_unbound_shutting_down_cannot_omit_subnet(self):
+        item = {'InstanceId': INSTANCE, 'ClientToken': PLAN['run'],
+                'State': {'Name': 'shutting-down'}}
+        with self.assertRaisesRegex(ValueError, 'instance_ownership'):
+            self.supervisor.bind_instance(item)
+        self.supervisor.launch(b'fixture')
+        item['State']['Name'] = 'running'
+        with self.assertRaisesRegex(ValueError, 'instance_ownership'):
+            self.supervisor.bind_instance(item)
+
     def test_clock_regression_rejected_on_restart(self):
         self.clock.sleep(-1)
         with self.assertRaisesRegex(ValueError, "clock_moved_backwards"):
