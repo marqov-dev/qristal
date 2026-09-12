@@ -1,8 +1,9 @@
-# Proposed full Decoder result contract and next bounded test
+# Full Decoder result contract and next bounded test
 
 Source audit: Decoder b34a94baa5bf4136d7021210a774d068c47d8126 and Core
-a5c3e5fa544c07d538974d3a289b19652d483848. This is a proposal, not implemented
-output behavior or a platform execution contract change.
+a5c3e5fa544c07d538974d3a289b19652d483848. The initial audit was a proposal. Decoder 4d330ba now implements the
+caller metadata and maximum-pair accumulator below; native integration remains
+unverified. This does not change the platform execution contract.
 
 ## Why forwarding existing fields is insufficient
 
@@ -13,7 +14,7 @@ fields need not describe the same candidate. Decoder currently tracks only
 strict improvements and never publishes them to its caller. It also overwrites
 the current threshold each trial while separately tracking a maximum.
 
-Proposed output: explicit initial threshold, best observed improving score,
+Implemented review-branch output: explicit initial threshold, best observed improving score,
 raw encoded string, whether an improving candidate was observed, trials attempted
 and method. Publish a score/string pair only from the same strict-improvement
 observation. If no improvement occurs, return an explicit no-improvement state;
@@ -44,3 +45,15 @@ and test this separately before advertising broader score widths. The current
 qualify this Core conversion or the full arithmetic circuit.
 
 No main-agent action, hosted enablement or release dependency is requested.
+
+## Current implementation and validation
+
+After all trials complete, the caller receives `initial-score`, `best-score`,
+`best-string`, `has-improving-candidate`, `trials-completed`, `method`, and
+`result-kind=quantized-search-observation`. No-improvement returns the initial
+threshold with an empty string and false candidate flag. Raw bits remain raw;
+there is no decoded-beam or normalized-probability claim.
+
+The ten result-reduction checks are now part of 53 passing standalone sanitizer
+checks. XACC-linked execution, plugin rebuild and the bounded oracle comparison
+remain next. The separate Core atoi conversion concern remains unresolved.

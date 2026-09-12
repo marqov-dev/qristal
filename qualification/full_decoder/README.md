@@ -56,3 +56,8 @@ cover the production register/score helper at Decoder b34a94b. Expanded XACC
 integration execution remains pending, distinct from the earlier table-only
 native pass. [Proposed result contract](RESULT-CONTRACT.md) records why an
 upstream score threshold and sampled string cannot always be forwarded as a pair.
+
+The result accumulator and caller metadata are implemented at Decoder 4d330ba;
+[53 standalone checks and syntax evidence](../evidence/2026-09-12-full-decoder/result-publication/README.md)
+pass. The expanded native integration remains deferred, and the Core integer
+conversion concern is unresolved. These repairs are bundled in Decoder PR #2.
