@@ -13,7 +13,7 @@ BASE=['c++','-std=c++20','-O1','-DNDEBUG']
 def stage(name, command, seconds=180):
     # Unprivileged compilation/execution in a fresh network namespace. The VM
     # contains no instance credentials; only /proof/out is writable to ubuntu.
-    prefix=['prlimit','--as=4294967296','--cpu=180','--nproc=256','--',
+    prefix=['prlimit','--as=4294967296','--cpu=180','--nproc=256','--core=0','--',
             'unshare','--net','--','runuser','-u','ubuntu','--','env','-i',
             'PATH=/usr/local/bin:/usr/bin:/bin','HOME=/tmp','OMP_NUM_THREADS=2','OPENBLAS_NUM_THREADS=2']
     item={'name':name,'command':command,'timeout_seconds':seconds}
@@ -29,6 +29,20 @@ def stage(name, command, seconds=180):
     return item
 
 try:
+    # Diagnostic subset: use unchanged public XACC implementations, with a
+    # distinct provider identity. No claim of a rebuilt full generators bundle.
+    stage('qft-provider-build',BASE+['-fPIC','-shared','-DUS_BUNDLE_NAME=marqov_qft_qualification',
+        '/work/xacc-qft/QFT.cpp','/work/xacc-qft/InverseQFT.cpp','/work/qft_activator.cpp',
+        '/work/build-core/algorithm_es/cppmicroservices_resources.cpp',
+        '/work/build-core/algorithm_es/cppmicroservices_init.cpp','-I/work/xacc-qft']+INC+LIB+
+        ['-o','/proof/out/libmarqov_qft_qualification.so'])
+    # Resource compiler uses a relative manifest entry so it is found by the bundle.
+    shutil.copyfile('/work/qft-manifest.json',OUT/'manifest.json')
+    stage('qft-provider-resources',['/bin/sh','-c',
+        'cd /proof/out && /work/install-xacc/bin/usResourceCompiler4 -o qft.zip -n marqov_qft_qualification -r manifest.json'],30)
+    stage('qft-provider-bundle',['/work/install-xacc/bin/usResourceCompiler4',
+        '-b','/proof/out/libmarqov_qft_qualification.so','-z','/proof/out/qft.zip'],30)
+    shutil.copyfile(OUT/'libmarqov_qft_qualification.so','/work/install-xacc/plugins/libmarqov_qft_qualification.so')
     stage('core-plugin-build',BASE+['-fPIC','-shared','-DUS_BUNDLE_NAME=algorithm_es_plugin_bundle',
         '/work/qristal-core/src/algorithms/exponential_search/exponential_search.cpp',
         '/work/qristal-core/src/algorithms/exponential_search/exponential_search_algo_activator.cpp',
@@ -66,7 +80,7 @@ finally:
                 if str(path) in ('/work/install-xacc/plugins/libalgorithm_es.so.1.8.1',
                                   '/work/install-core/lib/libalgorithm_es.so.1.8.1'):
                     report['loaded_core_libraries'][str(path)]=hashlib.sha256(path.read_bytes()).hexdigest()
-    report['binary_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.iterdir() if p.is_file() and p.suffix not in ('.stdout','.stderr')}
+    report['binary_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.iterdir() if p.is_file() and p.suffix not in ('.stdout','.stderr','.json','.zip')}
     raw=json.dumps(report,sort_keys=True,separators=(',',':')).encode()
     if len(raw)>120000: raise RuntimeError('report_bounds')
     data=base64.b64encode(zlib.compress(raw)).decode(); digest=hashlib.sha256(raw).hexdigest()

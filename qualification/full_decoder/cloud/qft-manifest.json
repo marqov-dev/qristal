@@ -1,0 +1,5 @@
+{
+  "bundle.symbolic_name": "marqov_qft_qualification",
+  "bundle.activator": true,
+  "bundle.name": "Qualification-only public XACC QFT provider"
+}

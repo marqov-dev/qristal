@@ -22,6 +22,11 @@ int main(int argc, char** argv) {
     if (loaded_search_libraries != 1)
       throw std::runtime_error("expected exactly one loaded Core search library");
 #endif
+    for (const std::string service : {"qft", "iqft"}) {
+      if (!xacc::hasService<xacc::Instruction>(service))
+        throw std::runtime_error("missing required public XACC service: " + service);
+      std::cout << "SERVICE_PRESENT: " << service << std::endl;
+    }
     auto backend = xacc::getAccelerator("sparse-sim", {{"shots",1}});
     qristal::QuantumDecoder decoder;
     std::vector<int> ancilla(15);

@@ -8,6 +8,7 @@ entries={
  'install-xacc/lib':'install-xacc/lib', 'install-xacc/include':'install-xacc/include',
  'install-xacc/plugins':'install-xacc/plugins',
  'install-xacc/bin/usResourceCompiler4':'install-xacc/bin/usResourceCompiler4',
+ 'xacc/quantum/plugins/circuits/qft':'xacc-qft',
  'build-core/lib/libgtest.a':'build-core/lib/libgtest.a',
  'build-core/lib/libgtest_main.a':'build-core/lib/libgtest_main.a',
  'build-core/algorithm_es':'build-core/algorithm_es',
@@ -20,9 +21,11 @@ entries={
  'qristal/qualification/runtime/bounded_process.py':'qualification/runtime/bounded_process.py',
  'qristal/qualification/full_decoder/tiny_result_smoke.cpp':'qualification/full_decoder/tiny_result_smoke.cpp',
  'qristal/qualification/full_decoder/cloud/guest.py':'guest.py',
+ 'qristal/qualification/full_decoder/cloud/qft_activator.cpp':'qft_activator.cpp',
+ 'qristal/qualification/full_decoder/cloud/qft-manifest.json':'qft-manifest.json',
  'qristal/qualification/install-toolchain.sh':'install-toolchain.sh',
 }
-manifest={'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder')},'entries':entries,'source_hashes':{}}
+manifest={'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
 for name in entries:
  path=ROOT/name
  if not path.exists(): raise RuntimeError('missing:'+name)
