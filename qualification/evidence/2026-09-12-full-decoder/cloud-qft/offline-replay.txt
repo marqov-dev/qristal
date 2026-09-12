@@ -1,0 +1,79 @@
+Checking full_decoder/test_*.py
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.005s
+
+OK
+Checking full_decoder/cloud/test_*.py
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.467s
+
+OK
+Checking conference/packet/test_*.py
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+OK
+Checking gpu_release/test_*.py
+...................................................
+----------------------------------------------------------------------
+Ran 51 tests in 0.862s
+
+OK
+Checking gpu_package/test_*.py
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.008s
+
+OK
+Checking gpu_adapter/test_*.py
+................
+----------------------------------------------------------------------
+Ran 16 tests in 0.004s
+
+OK
+Checking gpu_mapping/test_*.py
+............
+----------------------------------------------------------------------
+Ran 12 tests in 0.004s
+
+OK
+Checking readout_sweep/test_*.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+OK
+Checking readout_mitigation/test_*.py
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.013s
+
+OK
+Checking readout_drift/test_*.py
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.014s
+
+OK
+Checking readout_coverage/test_*.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.136s
+
+OK
+Checking microvm/test_check_evidence.py
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.015s
+
+OK
+Checking runtime/test_readout_evidence.py
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.030s
+
+OK
+All selected offline suites passed; no native experiment performed.

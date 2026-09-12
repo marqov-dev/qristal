@@ -5,6 +5,15 @@ the shared local Docker environment. Read [the predeclared plan](PLAN.md) first.
 The runner has fixed account, region, AMI, subnet, instance type and deadlines;
 it is deliberately not a general provisioning interface.
 
+Recorded sequence: [initial bundle failure](../../evidence/2026-09-12-full-decoder/cloud-initial/README.md),
+[bundle-corrected missing iqft](../../evidence/2026-09-12-full-decoder/cloud-bundle/README.md),
+[public QFT diagnostic timeout](../../evidence/2026-09-12-full-decoder/cloud-qft/README.md).
+All six initialization cases passed. No full Decoder or caller-result pass was
+obtained. All three VMs, exact disks/groups and transfer buckets were cleaned;
+the first needed supervisor resumption, the next two completed automatically.
+Current source includes the QFT provider diagnostic and a subsequently tested
+partial-output repair. The latter was **not** used in the retained native runs.
+
 From the independent Qristal checkout:
 
 ```sh

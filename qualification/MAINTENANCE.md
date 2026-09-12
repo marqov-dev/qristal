@@ -29,7 +29,7 @@ and orchestration burden without preserving an established working customer path
 | Aer CPU noise | 10 installed analytic noise fixtures; 11 restricted readout cases; 50-case sweep | Pulse/device models, correlated noise and general SPAM |
 | Aer MPS / density matrix | 6 circuits each on explicitly selected methods | Scaling, truncation semantics, performance and broader circuit families |
 | Integrations | 16 Qiskit 1.2 V1 checks, separate installed environment | Package distribution, V2, broader measurement/options semantics |
-| Decoder | 9 simplified fixtures on qpp/Aer/sparse-sim; installed C++ consumer | Full algorithm: bounded historical fixture timed out; correctness and caller result contract unqualified |
+| Decoder | 9 simplified fixtures on qpp/Aer/sparse-sim; installed C++ consumer; 6 current XACC-linked initialization tests passed in isolated CPU VMs | Full algorithm and caller-result correctness unqualified; native dependency diagnostics retained separately |
 | Readout mitigation | 26 native mitigation cases plus 40 native drift cases, independent calibration, signed correction | Broader drift, repeated native calibration, preparation/model mismatch |
 | Standalone CUDA-Q GPU | A10G nvidia fp64/tensornet, private published candidate | Other GPU/driver combinations, scale, long-kernel termination |
 | Core/CUDA-Q bridge | Source compatibility question | No native bridge proof; do not substitute standalone evidence |
@@ -39,6 +39,14 @@ and orchestration burden without preserving an established working customer path
 Sources: [installed](installed/README.md), [runtime](runtime/README.md),
 [methods](accelerators/README.md), [GPU publication](evidence/2026-09-11-gpu-published/README.md),
 [mitigation](readout_mitigation/README.md), [conference ledger](conference/README.md).
+
+The September 12 [CPU cloud diagnostics](full_decoder/cloud/README.md) separate
+native compilation, service registration, result semantics and resource cleanup.
+They identified a missing post-link bundle step in our new harness, then an
+omitted public XACC QFT dependency in the selected installed prefix. The original
+failed attempts remain evidence. Neither problem establishes a need for private
+QB code; neither justifies claiming the complete Decoder works. Restoration of a
+required service must still be followed by an independent mathematical check.
 
 ## Dependencies and release policy
 

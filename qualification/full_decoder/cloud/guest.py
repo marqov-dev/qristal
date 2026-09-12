@@ -1,7 +1,6 @@
 """Fixed isolated-VM build and test stages; no workload credentials or network."""
 import base64, hashlib, json, os, pathlib, shutil, sys, zlib
-sys.path.insert(0, '/work/qualification/runtime')
-from bounded_process import capture
+from capture_process import capture
 OUT=pathlib.Path('/proof/out')
 OUT.mkdir(parents=True, exist_ok=True)
 shutil.chown(OUT, user='ubuntu', group='ubuntu')
@@ -18,12 +17,14 @@ def stage(name, command, seconds=180):
             'PATH=/usr/local/bin:/usr/bin:/bin','HOME=/tmp','OMP_NUM_THREADS=2','OPENBLAS_NUM_THREADS=2']
     item={'name':name,'command':command,'timeout_seconds':seconds}
     try:
-        code,stdout,stderr=capture(prefix+command,timeout=seconds,stdout_limit=65536,stderr_limit=16384)
+        code,stdout,stderr=capture(prefix+command,timeout=seconds,stdout_limit=65536,stderr_limit=16384,retain_on_error=True)
         item.update(exit_code=code, stdout=stdout.decode(errors='replace')[-9000:], stderr=stderr.decode(errors='replace')[-3000:])
         (OUT/(name+'.stdout')).write_bytes(stdout)
         (OUT/(name+'.stderr')).write_bytes(stderr)
     except Exception as error:
         item['error']=type(error).__name__+':'+str(error)
+        item['partial_stdout']=getattr(error,'stdout',b'').decode(errors='replace')[-9000:]
+        item['partial_stderr']=getattr(error,'stderr',b'').decode(errors='replace')[-3000:]
     report['stages'].append(item)
     if item.get('exit_code') != 0: raise RuntimeError('stage_failed:'+name)
     return item
