@@ -1,0 +1,27 @@
+{
+  "decoder_revision": "4d330ba00d41d978a96ff9fbabc7066c3807eb72",
+  "checks": 53,
+  "exit_code": 0,
+  "platform": "macOS arm64",
+  "compiler": "Apple clang 17.0.0",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "flags": [
+    "-std=c++17",
+    "-O1",
+    "-DNDEBUG",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "xacc_native_execution": false,
+  "source_syntax_check": "passed with libc++ removed unary/binary function compatibility switch",
+  "source_sha256": {
+    "src/quantum_decoder.cpp": "53b8f0691b71d426dec7e2c5f83bb99e489b726b6baf9b61f87d0d5bb9164f48",
+    "include/qristal/decoder/result_accumulator.hpp": "468fb664c28349d76479bec92d7850259c81cc29fa5887852d0f213d50b9da3f",
+    "include/qristal/decoder/register_validation.hpp": "355d669aee55305b82e3bae352887cca726d49bb311b13344449d3867c4546c8",
+    "tests/RegisterValidationStandalone.cpp": "6896e3b08d4ad85e0aa790e4894ad65bd99226897aea96789536df615b729d5a"
+  }
+}
