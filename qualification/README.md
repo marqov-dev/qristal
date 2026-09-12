@@ -1,6 +1,6 @@
 # Public-source CPU qualification
 
-This directory is original community maintenance material. It does not establish a supported Qristal release. See ../STATUS.md for the boundaries of the evidence.
+This directory is original community maintenance material. It does not establish a supported Qristal release. See [the maintenance scope](MAINTENANCE.md) for the boundaries of the evidence.
 
 ## Prepare
 
