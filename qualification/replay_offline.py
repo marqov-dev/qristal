@@ -13,6 +13,7 @@ SUITES = (
     ("readout_sweep", (), "test_*.py"),
     ("readout_mitigation", (), "test_*.py"),
     ("readout_drift", (), "test_*.py"),
+    ("readout_coverage", (), "test_*.py"),
     ("microvm", (), "test_check_evidence.py"),
     ("runtime", (), "test_readout_evidence.py"),
 )

@@ -28,3 +28,12 @@ for sampling variance, not systematic calibration bias.
 Commit this protocol before execution. Run study.py --output NEW_DIRECTORY.
 A fresh synthetic study is optional; replay retained counts without random
 sampling using the checker. Native drift protocol remains separately pending.
+
+## Recorded result
+
+[Retained synthetic evidence](../evidence/2026-09-12-readout-coverage/README.md)
+contains all 10,000 repetition records. Stationary coverage was94.3–96.5%;
+both deliberately stale scenarios had0/1000 coverage per fixture. Do not interpret
+this as a native simulator failure or a general coverage guarantee.
+[Figure and provenance](../conference/readout-coverage) are suitable for a
+clearly labelled statistical-methods appendix to the conference report.

@@ -83,3 +83,15 @@ Potential article outline: inaccessible legacy dependencies → reproducible pub
 [Supported subset, dependencies and release gates](../MAINTENANCE.md) · [Conference walkthrough and questions](WALKTHROUGH.md).
 
 The [40-case drift protocol](../readout_drift/README.md) is committed; four offline tests pass. Native drift execution remains pending. The consolidated dependency-free replay passed 124 tests across nine suites. This is evidence replay, not a new CPU/GPU experiment. PR18 is merged; the platform execution boundary remains separate.
+
+## Synthetic uncertainty follow-up
+
+[Repeated-calibration study](../readout_coverage/README.md):
+10,000 synthetic calibration/measurement repetitions, separate from Qristal
+execution. Stationary interval coverage ranged94.3–96.5%; stale calibration
+produced0/1000 coverage per fixture in both chosen mismatch scenarios.
+[Counts and limitations](../evidence/2026-09-12-readout-coverage/README.md) ·
+[Coverage chart](readout-coverage).
+This illustrates why sampling intervals cannot cover systematic calibration bias.
+The medium/Bell stationary Wilson interval excludes nominal95%; no thresholds
+were tuned and no blanket coverage claim is made. The native drift run is pending.

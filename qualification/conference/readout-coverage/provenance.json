@@ -1,0 +1,6 @@
+{
+  "input_sha256": "638fd83f6d235e05670eb89b90d92e1ef14eb7b7db62afb8d5a310d0c520f7b5",
+  "plot_sha256": "95a45c9ad3850c3bac23c3fb287834151d859bab4438d244c383981538e167d5",
+  "matplotlib": "3.11.1",
+  "native_execution": false
+}
