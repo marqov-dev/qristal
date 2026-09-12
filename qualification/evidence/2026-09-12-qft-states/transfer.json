@@ -1,0 +1,17 @@
+{
+  "account": "090208085542",
+  "artifact": {
+    "bytes": 27442665,
+    "sha256": "0889aa39bbc3f32b4db367393650b0e78bf0a9a24d3a59eb43a0e7663a6035f8"
+  },
+  "bucket": "qb-proof-26b0197ef22b46f9b09fd56f21033dfa-cpu",
+  "bucket_attempted": true,
+  "cleanup_errors": [],
+  "group": "sg-05247dde4a3c9ea53",
+  "group_attempted": true,
+  "key": "cpu.tar.gz",
+  "region": "us-east-1",
+  "run": "qb-proof-26b0197ef22b46f9b09fd56f21033dfa",
+  "transfer_cleanup_verified": true,
+  "vm_cleanup_verified": true
+}

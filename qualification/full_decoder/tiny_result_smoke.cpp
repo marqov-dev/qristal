@@ -1,6 +1,7 @@
 #include <qristal/decoder/quantum_decoder.hpp>
 #include <iostream>
 #include <stdexcept>
+#include <chrono>
 #ifdef __linux__
 #include <link.h>
 #include <cstring>
@@ -8,8 +9,17 @@
 
 // Predeclared result-contract smoke. Run only under an external time/resource bound.
 int main(int argc, char** argv) {
+  std::cout << std::unitbuf;
+  const auto start = std::chrono::steady_clock::now();
+  auto checkpoint = [&](const char* label) {
+    std::cout << "CHECKPOINT " << label << " elapsed_ms="
+              << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now()-start).count()
+              << std::endl;
+  };
+  checkpoint("initialize_begin");
   xacc::Initialize(argc, argv);
   try {
+    checkpoint("initialize_complete");
 #ifdef __linux__
     int loaded_search_libraries = 0;
     dl_iterate_phdr([](dl_phdr_info* info, size_t, void* data) {
@@ -27,7 +37,11 @@ int main(int argc, char** argv) {
         throw std::runtime_error("missing required public XACC service: " + service);
       std::cout << "SERVICE_PRESENT: " << service << std::endl;
     }
+    if (!xacc::hasService<xacc::Accelerator>("sparse-sim") ||
+        !xacc::hasService<xacc::Algorithm>("exponential-search"))
+      throw std::runtime_error("required Decoder backend/algorithm missing");
     auto backend = xacc::getAccelerator("sparse-sim", {{"shots",1}});
+    checkpoint("services_ready");
     qristal::QuantumDecoder decoder;
     std::vector<int> ancilla(15);
     std::iota(ancilla.begin(), ancilla.end(), 9);
@@ -41,8 +55,11 @@ int main(int argc, char** argv) {
         {"qubits_beam_metric",std::vector<int>{5,6}},
         {"qubits_best_score",std::vector<int>{7,8}}, {"qubits_ancilla_pool",ancilla},
         {"qpu",backend}})) throw std::runtime_error("tiny fixture initialization rejected");
+    checkpoint("decoder_initialized");
     auto buffer = xacc::qalloc(24);
+    checkpoint("decoder_execute_begin");
     decoder.execute(buffer);
+    checkpoint("decoder_execute_complete");
     const auto info = buffer->getInformation();
     const int candidate_flag = info.at("has-improving-candidate").as<int>();
     if (candidate_flag != 0 && candidate_flag != 1)

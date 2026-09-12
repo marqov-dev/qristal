@@ -87,3 +87,11 @@ because the new harness omitted CMake's post-link bundle archive. Cleanup requir
 resuming the same supervisor and was then verified, without a replacement VM or
 deadline extension. A [separate packaging correction](cloud/BUNDLE-FOLLOWUP.md)
 restores that step; full Decoder correctness remains unqualified.
+
+After merged PR24, [70 native QFT/IQFT cases passed](../evidence/2026-09-12-qft-states/README.md),
+including independent complex-amplitude and round-trip comparisons. The next
+tiny Decoder trace retained qft/iqft availability and entry into exponential-search
+iteration 1 before the same 60-second timeout. No candidate or caller-result pass
+was retained. [The next source diagnostic](cloud/SEARCH-HOTSPOT.md) separates
+inverse expansion, reflection synthesis, cloning and backend execution before
+selecting a repair. No additional native run or time-limit extension followed.

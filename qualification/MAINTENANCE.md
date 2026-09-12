@@ -30,6 +30,7 @@ and orchestration burden without preserving an established working customer path
 | Aer MPS / density matrix | 6 circuits each on explicitly selected methods | Scaling, truncation semantics, performance and broader circuit families |
 | Integrations | 16 Qiskit 1.2 V1 checks, separate installed environment | Package distribution, V2, broader measurement/options semantics |
 | Decoder | 9 simplified fixtures on qpp/Aer/sparse-sim; installed C++ consumer; 6 current XACC-linked initialization tests passed in isolated CPU VMs | Full algorithm and caller-result correctness unqualified; native dependency diagnostics retained separately |
+| Public QFT/IQFT provider | 70 QPP complex-state fixtures, all basis inputs at 1–3 qubits; independent Fourier and round-trip checks | Qualification-only subset, not the full generators bundle; shifted registers, other sizes/backends and invalid inputs unqualified |
 | Readout mitigation | 26 native mitigation cases plus 40 native drift cases, independent calibration, signed correction | Broader drift, repeated native calibration, preparation/model mismatch |
 | Standalone CUDA-Q GPU | A10G nvidia fp64/tensornet, private published candidate | Other GPU/driver combinations, scale, long-kernel termination |
 | Core/CUDA-Q bridge | Source compatibility question | No native bridge proof; do not substitute standalone evidence |
@@ -47,6 +48,12 @@ omitted public XACC QFT dependency in the selected installed prefix. The origina
 failed attempts remain evidence. Neither problem establishes a need for private
 QB code; neither justifies claiming the complete Decoder works. Restoration of a
 required service must still be followed by an independent mathematical check.
+
+That check now [passes for the public QFT/IQFT subset](evidence/2026-09-12-qft-states/README.md).
+The bounded Decoder trace confirms service availability and entry into search
+iteration 1, but still times out before a result. A source audit identifies
+eager many-controlled-Z decomposition as a hypothesis to instrument, not a
+measured root cause or an accepted optimization.
 
 ## Dependencies and release policy
 
