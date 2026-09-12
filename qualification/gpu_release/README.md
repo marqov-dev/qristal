@@ -157,3 +157,56 @@ missing volume ID in the historical record. Wiring it into a future launch and
 cleanup supervisor, persisting the original deadline across process restart, and
 verifying that supervisor's native interruption/recovery remain bounded follow-up
 work. No new instance, image build or hosted backend was needed for these tests.
+
+## Single-instance launch and cleanup supervisor
+
+`supervisor.py` connects observation to a bounded operator-controlled lifecycle.
+An explicit plan binds account, region, AMI, subnet, dedicated security-group ID,
+instance type, disk size and one UUID-based `qb-proof-...` run token. The group must
+already exist, have no inbound rules and carry the exact `QBProofRun` tag. It is
+an owned disposable input: successful cleanup deletes it. Shared groups are not
+accepted. The operator provisions that group and the private bootstrap separately.
+
+`init` creates a new private journal directory before any launch. It records a
+bootstrap hash, absolute observation/cleanup deadlines and resource identities.
+The bootstrap itself is never copied into evidence. `run` starts one instance;
+`resume` observes the existing token/instance without launching; `cleanup`
+terminates only that instance, verifies its terminated state, verifies absence of
+the exact recorded volumes, then deletes and verifies absence of the owned group.
+The CLI takes an exclusive file lock to exclude concurrent operators.
+
+AWS [RunInstances idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html)
+is zonal when a subnet is selected. Every retry retains the same region, subnet,
+client token and complete launch request, with no automatic zone failover.
+[Eventual consistency](https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html)
+means an empty lookup cannot prove a recent launch failed or an instance terminated.
+An unresolved launch or missing volume identity leaves cleanup pending and cannot
+produce a successful cleanup record. Known IDs are flushed before console calls.
+The observation deadline and a separately bounded cleanup deadline survive restart;
+clock regression is rejected. Expired cleanup requires a separate reviewed recovery,
+not a silent budget extension. Guest-side shutdown remains an independent safeguard.
+
+```sh
+python3 qualification/gpu_release/supervisor.py init --directory /private/new-proof \
+  --plan /private/approved-plan.json --userdata /private/bootstrap.sh \
+  --seconds 600 --cleanup-seconds 300
+python3 qualification/gpu_release/supervisor.py run --directory /private/new-proof \
+  --userdata /private/bootstrap.sh
+# After an interrupted operator process:
+python3 qualification/gpu_release/supervisor.py resume --directory /private/new-proof
+# Explicit cleanup within the original cleanup deadline:
+python3 qualification/gpu_release/supervisor.py cleanup --directory /private/new-proof
+```
+
+Normal `run`/`resume` always attempt cleanup, including on observation failure.
+An abrupt process kill can bypass that finalizer; a later resume uses the saved
+identity/deadlines. `--once` deliberately checkpoints one observation and leaves
+cleanup pending; it is only for a supervised interruption rehearsal.
+
+Twelve added offline tests cover lost launch acknowledgement, identical retry
+requests, restart without duplicate launch, resource ownership, expired budgets,
+clock regression, delayed instance visibility, missing disk IDs and interrupted
+group cleanup. They are control-plane fixtures, not new simulator measurements.
+The smallest native test is one short-lived host with a GPU/driver health probe,
+an abrupt local-supervisor interruption, resume, and exact resource cleanup.
+It needs no container transfer, dependency installation or simulator rerun.
