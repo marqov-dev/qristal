@@ -1,8 +1,8 @@
 # Native Core build preparation
 
-Status: frozen materials and unexecuted stage/consumer recipes. This directory
-has no AWS runner and is not yet a complete native execution protocol. No Core
-configure/build/installation or runtime success is claimed.
+Status: frozen materials and a bounded, offline-tested native runner. See
+[PROTOCOL.md](PROTOCOL.md) for its exact execution and retention scope. No Core
+configure/build/installation or runtime success is claimed before a native run.
 
 `prepare.py CORE DEPENDENCIES XACC PYTHON OUTPUT` accepts the previously verified
 Core export, dependency preparation, archive-only XACC transport and acquired
@@ -41,20 +41,20 @@ are two distinct fixtures across two API paths. They have not been compiled or
 executed. Use explicit installed module/library paths and omit original source
 and build mounts. This is a QPP probe, not broader simulator qualification.
 
-## Before execution
+## Execution gate
 
-Finish a bounded nonroot/networkless container and disposable-host supervisor
-that calls input verification and audits, records actual CMake dependency
-selection, builds/installs, and runs the installed-only consumers. Retain full
-logs on failure as well as success, with exact resource cleanup. No stage shell
-alone supplies these controls.
+`package.py` binds the guest, operator dependencies, frozen inputs and toolchain
+recipe into one archive. `run.py` uses the existing disposable-VM lifecycle and
+verified output retrieval. The independent classifier requires all twenty stages,
+exact confinement, full archived logs, actual source selections and both installed
+consumer markers. The original XACC receipt is authoritative both before and
+after Core install; only declared plugin links may be added.
 
-Output retention must handle Core's absolute plugin symlinks into
-`/work/install-core/lib` explicitly. Do not relax the existing XACC archive
-verifier. A narrowly defined link normalization or a scope-bound verifier for
-both installation roots needs review and replay after transformation. Keep the
-original retained XACC archive unchanged.
+`core_output` normalizes only known Core plugin links to relative sibling paths
+before replay. It retains full failure logs or the complete successful output
+set, and does not weaken the earlier XACC verifier. The operator keeps a private
+bucket for recovery if retrieval cannot be verified; VM cleanup still runs.
 
-Only after that concrete protocol is reviewed should a new native Core experiment
-be launched. The previous approval and successful cleanup describe the completed
-XACC run; this source-only preparation created no new AWS resources.
+Offline tests and source/material assembly do not qualify native execution.
+A recorded native result and exact cleanup evidence remain required. See the
+protocol for the single-VM limits and command interface.

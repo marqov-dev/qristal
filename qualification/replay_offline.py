@@ -11,6 +11,8 @@ SUITES = (
     ("installed_inputs", (), "test_*.py"),
     ("core_dependencies", (), "test_*.py"),
     ("core_native", (), "test_*.py"),
+    ("core_selection", (), "test_*.py"),
+    ("core_output", (), "test_*.py"),
     ("antlr_wheel", (), "test_*.py"),
     ("source_build", (), "test_*.py"),
     ("source_provenance", (), "test_*.py"),

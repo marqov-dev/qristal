@@ -1,0 +1,15 @@
+{
+  "schema": "qb.core-runner-preparation/v1",
+  "archive": {
+    "bytes": 314255079,
+    "sha256": "c1b393fa0f5e33fd34764834704afb6e6f8151afe2ee5ac68df65bd20231b9b7"
+  },
+  "protocol_sha256": "75288704d43e179841e84d98155d0519d203de01ec08809925da135da2f1f705",
+  "materials_sha256": "ea09f873dda568d007c4a19147da7b0e74445c3e4a6110644bec3819f2c7248d",
+  "material_entries": 9302,
+  "source_commit": "a4616c9",
+  "offline_suites_passed": true,
+  "native_executed": false,
+  "native_qualified": false,
+  "cloud_state_directory_created": false
+}

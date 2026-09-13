@@ -14,7 +14,9 @@ for bell in (False, True):
                    + 'measure q[0] -> c[0]; measure q[1] -> c[1]; }')
     sim.run()
     counts = {}
-    for bits, count in sim.results.items():
+    result = sim.results
+    for bits in result:
+        count = result[bits]
         bits = tuple(bits)
         assert len(bits) == 2 and all(bit in (False, True) for bit in bits)
         assert isinstance(count, int) and not isinstance(count, bool) and count >= 0
