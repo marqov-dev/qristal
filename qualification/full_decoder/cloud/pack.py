@@ -2,6 +2,8 @@
 import hashlib,json,pathlib,subprocess,sys,tarfile
 HERE=pathlib.Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
+variant=sys.argv[2] if len(sys.argv)>2 else 'search'
+if variant not in ('search','mcz'): raise ValueError('unknown_variant')
 OUT=pathlib.Path(sys.argv[1]); OUT.mkdir()
 entries={
  'install-core/lib':'install-core/lib', 'install-core/include':'install-core/include',
@@ -27,7 +29,14 @@ entries={
  'qristal/qualification/full_decoder/cloud/qft-manifest.json':'qft-manifest.json',
  'qristal/qualification/install-toolchain.sh':'install-toolchain.sh',
 }
-manifest={'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
+if variant=='mcz':
+ del entries['qristal/qualification/full_decoder/cloud/guest.py']
+ entries.update({
+  'qristal/qualification/full_decoder/cloud/guest_mcz.py':'guest.py',
+  'qristal/qualification/full_decoder/cloud/mcz_checks.cpp':'mcz_checks.cpp',
+  'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
+ })
+manifest={'variant':variant,'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
 for name in entries:
  path=ROOT/name
  if not path.exists(): raise RuntimeError('missing:'+name)
