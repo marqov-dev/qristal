@@ -1,0 +1,8 @@
+{
+  "schema": "marqov.cpu-distribution-input/v1",
+  "draft_release_tag": "cpu-inputs-20260913",
+  "asset_name": "cpu.tar.gz",
+  "archive_sha256": "de37205ac56daf601b2cf8816175656da5ed943f5c95d986c8b1886f77c729cd",
+  "context_sha256": "75d2758d4740d499f19a2ab24958d138471466924e323d906c801d85e8dc8535",
+  "origin": "Captured installed binaries; original build provenance remains unverified"
+}
