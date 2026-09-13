@@ -1,6 +1,7 @@
 """Fixed isolated-VM build and test stages; no workload credentials or network."""
 import base64, hashlib, json, os, pathlib, shutil, sys, zlib
 from capture_process import capture
+from instrument_search import instrument
 OUT=pathlib.Path('/proof/out')
 OUT.mkdir(parents=True, exist_ok=True)
 shutil.chown(OUT, user='ubuntu', group='ubuntu')
@@ -30,6 +31,10 @@ def stage(name, command, seconds=180, retained_stdout=9000):
     return item
 
 try:
+    traced, patch, identity = instrument(pathlib.Path('/work/qristal-core/src/algorithms/exponential_search/exponential_search.cpp').read_bytes())
+    report['search_trace_identity'] = identity
+    (OUT/'exponential_search.traced.cpp').write_bytes(traced)
+    (OUT/'search-trace.patch').write_text(patch)
     # Diagnostic subset: use unchanged public XACC implementations, with a
     # distinct provider identity. No claim of a rebuilt full generators bundle.
     stage('qft-provider-build',BASE+['-fPIC','-shared','-DUS_BUNDLE_NAME=marqov_qft_qualification',
@@ -45,7 +50,7 @@ try:
         '-b','/proof/out/libmarqov_qft_qualification.so','-z','/proof/out/qft.zip'],30)
     shutil.copyfile(OUT/'libmarqov_qft_qualification.so','/work/install-xacc/plugins/libmarqov_qft_qualification.so')
     stage('core-plugin-build',BASE+['-fPIC','-shared','-DUS_BUNDLE_NAME=algorithm_es_plugin_bundle',
-        '/work/qristal-core/src/algorithms/exponential_search/exponential_search.cpp',
+        '/proof/out/exponential_search.traced.cpp',
         '/work/qristal-core/src/algorithms/exponential_search/exponential_search_algo_activator.cpp',
         '/work/build-core/algorithm_es/cppmicroservices_resources.cpp',
         '/work/build-core/algorithm_es/cppmicroservices_init.cpp']+INC+LIB+['-o','/proof/out/libalgorithm_es.so.1.8.1'])

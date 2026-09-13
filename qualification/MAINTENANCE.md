@@ -98,9 +98,14 @@ The existing component notices and release inventory are inputs to that review.
 ## Bounded work queue and completion criteria
 
 Reuse platform #1701 as the umbrella; issues in this fork are disabled.
+The current prioritized issue checklist is in #1701. Conference preparation is
+#2172; full Decoder timeout diagnosis and qualification are #2173. Neither is
+a prerequisite for the main SDK/compiler release.
 
 | Batch | Existing tracker | Concrete completion evidence |
 |---|---|---|
+| Conference preparation | #2172 | Refreshed walkthrough, verified offline export and project rehearsal |
+| Full Decoder | #2173 | Measured timeout stage, bounded repair, independent oracle, stochastic and installed-image gates |
 | Calibration drift — completed restricted model | #610 | 40 native cases passed; raw/stale/fresh counts, cleanup and chart retained in evidence/2026-09-12-readout-drift |
 | Coverage/model robustness | #610 | Predeclare independent repetitions, binomial coverage uncertainty and model-mismatch cases; record failures without retuning thresholds |
 | Public release packaging | #609, #640, #1585, #1839 | Clean acquisition, installed checks, exact CPU/GPU artifact smoke tests, notices and reproducibility limits |

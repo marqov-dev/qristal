@@ -1,0 +1,91 @@
+--- exponential_search.cpp
++++ exponential_search.traced.cpp
+@@ -162,6 +162,16 @@
+ void ExponentialSearch::execute(
+     const std::shared_ptr<xacc::AcceleratorBuffer> buffer) const {
+ 
++// QB_TRACE_BEGIN
++  const auto qb_trace_start = std::chrono::steady_clock::now();
++  const auto qb_trace = [&](const char* stage, long long count = -1) {
++    const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
++        std::chrono::steady_clock::now() - qb_trace_start).count();
++    std::cout << "SEARCH_TRACE " << stage << " elapsed_ms=" << ms
++              << " count=" << count << std::endl;
++  };
++  qb_trace("execute_begin");
++// QB_TRACE_END
+   auto gateRegistry = xacc::getService<xacc::IRProvider>("quantum");
+   std::shared_ptr<xacc::CompositeInstruction> state_prep;
+   if (state_prep_circuit_) {
+@@ -199,11 +209,23 @@
+ 
+     auto inv_sp = std::dynamic_pointer_cast<xacc::CompositeInstruction>(
+         xacc::getService<xacc::Instruction>("InverseCircuit"));
++// QB_TRACE_BEGIN
++    qb_trace("inverse_expand_begin");
++// QB_TRACE_END
+     const bool expand_ok_inv_sp = inv_sp->expand({{"circ", state_prep}});
+     assert(expand_ok_inv_sp);
++// QB_TRACE_BEGIN
++    qb_trace("inverse_expand_end", inv_sp->nInstructions());
++// QB_TRACE_END
+ 
+     std::vector<int> qubits_state_prep;
++// QB_TRACE_BEGIN
++    qb_trace("used_bits_begin");
++// QB_TRACE_END
+     auto qubits_state_prep_set = qristal::uniqueBitsQD(state_prep);
++// QB_TRACE_BEGIN
++    qb_trace("used_bits_end", qubits_state_prep_set.size());
++// QB_TRACE_END
+     for (auto bit : qubits_state_prep_set) {
+       qubits_state_prep.push_back(bit);
+     }
+@@ -224,7 +246,13 @@
+     for (int i = 0; i < qubits_state_prep.size() - 1; i++) {
+       controlled_bits.push_back(qubits_state_prep[i]);
+     }
++// QB_TRACE_BEGIN
++    qb_trace("mcz_expand_begin", controlled_bits.size());
++// QB_TRACE_END
+     mcz->expand({{"U", z_gate}, {"control-idx", controlled_bits}});
++// QB_TRACE_BEGIN
++    qb_trace("mcz_expand_end", mcz->nInstructions());
++// QB_TRACE_END
+     zero_reflection->addInstruction(mcz);
+ 
+     for (int q = 0; q < qubits_state_prep.size(); ++q) {
+@@ -232,6 +260,9 @@
+           gateRegistry->createInstruction("X", qubits_state_prep[q]));
+     }
+ 
++// QB_TRACE_BEGIN
++    qb_trace("amplification_begin", iterations);
++// QB_TRACE_END
+     // amplitude amplification
+     for (int count = 0; count < iterations; ++count) {
+ 
+@@ -250,6 +281,9 @@
+       exp_search_circuit->addInstruction(state_prep_clone);
+     }
+ 
++// QB_TRACE_BEGIN
++    qb_trace("amplification_end", exp_search_circuit->nInstructions());
++// QB_TRACE_END
+     std::vector<int> measured_indices;
+     for (int q = 0; q < qubits_string.size(); ++q) {
+       measured_indices.push_back(qubits_string[q]);
+@@ -273,7 +307,13 @@
+     srand((unsigned)time(0));
+     int seed = rand();
+     qpu_->updateConfiguration({{"shots", 1}, {"seed", seed}});
++// QB_TRACE_BEGIN
++    qb_trace("backend_execute_begin", exp_search_circuit->nInstructions());
++// QB_TRACE_END
+     qpu_->execute(temp_buffer_2, exp_search_circuit);
++// QB_TRACE_BEGIN
++    qb_trace("backend_execute_end");
++// QB_TRACE_END
+ //    temp_buffer_2->print();
+     assert(temp_buffer_2->getMeasurements().size() == 1);
+     bool is_msb = is_msb_func(qpu_); // const bool is_msb = qpu_->getBitOrder()
