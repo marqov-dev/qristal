@@ -7,9 +7,10 @@ name='marqov-qristal-runtime-'+uuid.uuid4().hex[:10]
 stage=root/'runtime-image-input';stage.mkdir(exist_ok=True)
 licenses=stage/'licenses';licenses.mkdir(exist_ok=True)
 shutil.copy2(here/'bell.qasm',root/'installed-checks/bell.qasm')
-sources={}
+# Checkout observations are not provenance for pre-existing installed binaries.
+observed_checkouts={}
 for repo in ['qristal','qristal-core','qristal-decoder','qristal-integrations','xacc']:
- sources[repo]=subprocess.check_output(['git','-C',str(root/repo),'rev-parse','HEAD'],text=True).strip()
+ observed_checkouts[repo]=subprocess.check_output(['git','-C',str(root/repo),'rev-parse','HEAD'],text=True).strip()
 # Preserve license/notice texts from public C++ source inputs, including nested dependencies.
 for top in ['qristal-core','qristal-decoder','qristal-integrations','xacc','deps']:
  for p in (root/top).rglob('*'):
@@ -19,7 +20,8 @@ for top in ['qristal-core','qristal-decoder','qristal-integrations','xacc','deps
 boost_license=licenses/'boost-1.75.0';boost_license.mkdir(exist_ok=True)
 with tarfile.open(root/'archives/boost_1_75_0.tar.bz2') as archive:
  (boost_license/'LICENSE_1_0.txt').write_bytes(archive.extractfile('boost_1_75_0/LICENSE_1_0.txt').read())
-(stage/'sources.json').write_text(json.dumps(sources,indent=2))
+provenance={'observed_checkouts':observed_checkouts,'installed_binary_provenance':'unverified','distribution_ready':False}
+(stage/'sources.json').write_text(json.dumps(provenance,indent=2))
 script=stage/'install.sh'
 script.write_text('''set -eu
 export DEBIAN_FRONTEND=noninteractive
@@ -46,7 +48,7 @@ try:
  for c in changes:cmd+=['--change',c]
  image=subprocess.check_output(cmd+[name],text=True).strip()
  call(['docker','cp',name+':/runtime-packages.txt',str(root/'runtime-packages.txt')],stdout=subprocess.DEVNULL)
- (root/'runtime-image.json').write_text(json.dumps({'image':image,'base':base,'sources':sources,'seconds':time.time()-start,'platform':'linux/amd64','published':False},indent=2))
+ (root/'runtime-image.json').write_text(json.dumps({'image':image,'base':base,'provenance':provenance,'seconds':time.time()-start,'platform':'linux/amd64','published':False},indent=2))
  print(image)
 finally:
  subprocess.run(['docker','rm','-f',name],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=15)

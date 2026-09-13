@@ -6,6 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 SUITES = (
+    ("distribution", (), "test_*.py"),
     ("full_decoder", (), "test_*.py"),
     ("full_decoder/cloud", (), "test_*.py"),
     ("conference/packet", (), "test_*.py"),
