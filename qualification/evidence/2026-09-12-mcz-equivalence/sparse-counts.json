@@ -1,0 +1,1266 @@
+[
+  {
+    "controls": 1,
+    "pattern": 0,
+    "mode": "direct",
+    "counts": {
+      "00": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 0,
+    "mode": "clone",
+    "counts": {
+      "00": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 0,
+    "mode": "inverse",
+    "counts": {
+      "00": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 0,
+    "mode": "pair",
+    "counts": {
+      "00": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 0,
+    "mode": "fallback",
+    "counts": {
+      "00": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 1,
+    "mode": "direct",
+    "counts": {
+      "11": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 1,
+    "mode": "clone",
+    "counts": {
+      "11": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 1,
+    "mode": "inverse",
+    "counts": {
+      "11": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 1,
+    "mode": "pair",
+    "counts": {
+      "10": 64
+    }
+  },
+  {
+    "controls": 1,
+    "pattern": 1,
+    "mode": "fallback",
+    "counts": {
+      "11": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 0,
+    "mode": "direct",
+    "counts": {
+      "000": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 0,
+    "mode": "clone",
+    "counts": {
+      "000": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 0,
+    "mode": "inverse",
+    "counts": {
+      "000": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 0,
+    "mode": "pair",
+    "counts": {
+      "000": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 0,
+    "mode": "fallback",
+    "counts": {
+      "000": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 1,
+    "mode": "direct",
+    "counts": {
+      "100": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 1,
+    "mode": "clone",
+    "counts": {
+      "100": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 1,
+    "mode": "inverse",
+    "counts": {
+      "100": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 1,
+    "mode": "pair",
+    "counts": {
+      "100": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 1,
+    "mode": "fallback",
+    "counts": {
+      "100": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 2,
+    "mode": "direct",
+    "counts": {
+      "010": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 2,
+    "mode": "clone",
+    "counts": {
+      "010": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 2,
+    "mode": "inverse",
+    "counts": {
+      "010": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 2,
+    "mode": "pair",
+    "counts": {
+      "010": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 2,
+    "mode": "fallback",
+    "counts": {
+      "010": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 3,
+    "mode": "direct",
+    "counts": {
+      "111": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 3,
+    "mode": "clone",
+    "counts": {
+      "111": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 3,
+    "mode": "inverse",
+    "counts": {
+      "111": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 3,
+    "mode": "pair",
+    "counts": {
+      "110": 64
+    }
+  },
+  {
+    "controls": 2,
+    "pattern": 3,
+    "mode": "fallback",
+    "counts": {
+      "111": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 0,
+    "mode": "direct",
+    "counts": {
+      "0000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 0,
+    "mode": "clone",
+    "counts": {
+      "0000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 0,
+    "mode": "inverse",
+    "counts": {
+      "0000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 0,
+    "mode": "pair",
+    "counts": {
+      "0000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 0,
+    "mode": "fallback",
+    "counts": {
+      "0000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 1,
+    "mode": "direct",
+    "counts": {
+      "1000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 1,
+    "mode": "clone",
+    "counts": {
+      "1000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 1,
+    "mode": "inverse",
+    "counts": {
+      "1000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 1,
+    "mode": "pair",
+    "counts": {
+      "1000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 1,
+    "mode": "fallback",
+    "counts": {
+      "1000": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 2,
+    "mode": "direct",
+    "counts": {
+      "0100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 2,
+    "mode": "clone",
+    "counts": {
+      "0100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 2,
+    "mode": "inverse",
+    "counts": {
+      "0100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 2,
+    "mode": "pair",
+    "counts": {
+      "0100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 2,
+    "mode": "fallback",
+    "counts": {
+      "0100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 3,
+    "mode": "direct",
+    "counts": {
+      "1100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 3,
+    "mode": "clone",
+    "counts": {
+      "1100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 3,
+    "mode": "inverse",
+    "counts": {
+      "1100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 3,
+    "mode": "pair",
+    "counts": {
+      "1100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 3,
+    "mode": "fallback",
+    "counts": {
+      "1100": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 4,
+    "mode": "direct",
+    "counts": {
+      "0010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 4,
+    "mode": "clone",
+    "counts": {
+      "0010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 4,
+    "mode": "inverse",
+    "counts": {
+      "0010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 4,
+    "mode": "pair",
+    "counts": {
+      "0010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 4,
+    "mode": "fallback",
+    "counts": {
+      "0010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 5,
+    "mode": "direct",
+    "counts": {
+      "1010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 5,
+    "mode": "clone",
+    "counts": {
+      "1010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 5,
+    "mode": "inverse",
+    "counts": {
+      "1010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 5,
+    "mode": "pair",
+    "counts": {
+      "1010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 5,
+    "mode": "fallback",
+    "counts": {
+      "1010": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 6,
+    "mode": "direct",
+    "counts": {
+      "0110": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 6,
+    "mode": "clone",
+    "counts": {
+      "0110": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 6,
+    "mode": "inverse",
+    "counts": {
+      "0110": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 6,
+    "mode": "pair",
+    "counts": {
+      "0110": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 6,
+    "mode": "fallback",
+    "counts": {
+      "0110": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 7,
+    "mode": "direct",
+    "counts": {
+      "1111": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 7,
+    "mode": "clone",
+    "counts": {
+      "1111": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 7,
+    "mode": "inverse",
+    "counts": {
+      "1111": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 7,
+    "mode": "pair",
+    "counts": {
+      "1110": 64
+    }
+  },
+  {
+    "controls": 3,
+    "pattern": 7,
+    "mode": "fallback",
+    "counts": {
+      "1111": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 0,
+    "mode": "direct",
+    "counts": {
+      "00000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 0,
+    "mode": "clone",
+    "counts": {
+      "00000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 0,
+    "mode": "inverse",
+    "counts": {
+      "00000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 0,
+    "mode": "pair",
+    "counts": {
+      "00000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 0,
+    "mode": "fallback",
+    "counts": {
+      "00000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 1,
+    "mode": "direct",
+    "counts": {
+      "10000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 1,
+    "mode": "clone",
+    "counts": {
+      "10000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 1,
+    "mode": "inverse",
+    "counts": {
+      "10000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 1,
+    "mode": "pair",
+    "counts": {
+      "10000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 1,
+    "mode": "fallback",
+    "counts": {
+      "10000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 2,
+    "mode": "direct",
+    "counts": {
+      "01000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 2,
+    "mode": "clone",
+    "counts": {
+      "01000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 2,
+    "mode": "inverse",
+    "counts": {
+      "01000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 2,
+    "mode": "pair",
+    "counts": {
+      "01000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 2,
+    "mode": "fallback",
+    "counts": {
+      "01000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 3,
+    "mode": "direct",
+    "counts": {
+      "11000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 3,
+    "mode": "clone",
+    "counts": {
+      "11000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 3,
+    "mode": "inverse",
+    "counts": {
+      "11000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 3,
+    "mode": "pair",
+    "counts": {
+      "11000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 3,
+    "mode": "fallback",
+    "counts": {
+      "11000": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 4,
+    "mode": "direct",
+    "counts": {
+      "00100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 4,
+    "mode": "clone",
+    "counts": {
+      "00100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 4,
+    "mode": "inverse",
+    "counts": {
+      "00100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 4,
+    "mode": "pair",
+    "counts": {
+      "00100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 4,
+    "mode": "fallback",
+    "counts": {
+      "00100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 5,
+    "mode": "direct",
+    "counts": {
+      "10100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 5,
+    "mode": "clone",
+    "counts": {
+      "10100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 5,
+    "mode": "inverse",
+    "counts": {
+      "10100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 5,
+    "mode": "pair",
+    "counts": {
+      "10100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 5,
+    "mode": "fallback",
+    "counts": {
+      "10100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 6,
+    "mode": "direct",
+    "counts": {
+      "01100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 6,
+    "mode": "clone",
+    "counts": {
+      "01100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 6,
+    "mode": "inverse",
+    "counts": {
+      "01100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 6,
+    "mode": "pair",
+    "counts": {
+      "01100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 6,
+    "mode": "fallback",
+    "counts": {
+      "01100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 7,
+    "mode": "direct",
+    "counts": {
+      "11100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 7,
+    "mode": "clone",
+    "counts": {
+      "11100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 7,
+    "mode": "inverse",
+    "counts": {
+      "11100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 7,
+    "mode": "pair",
+    "counts": {
+      "11100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 7,
+    "mode": "fallback",
+    "counts": {
+      "11100": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 8,
+    "mode": "direct",
+    "counts": {
+      "00010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 8,
+    "mode": "clone",
+    "counts": {
+      "00010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 8,
+    "mode": "inverse",
+    "counts": {
+      "00010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 8,
+    "mode": "pair",
+    "counts": {
+      "00010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 8,
+    "mode": "fallback",
+    "counts": {
+      "00010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 9,
+    "mode": "direct",
+    "counts": {
+      "10010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 9,
+    "mode": "clone",
+    "counts": {
+      "10010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 9,
+    "mode": "inverse",
+    "counts": {
+      "10010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 9,
+    "mode": "pair",
+    "counts": {
+      "10010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 9,
+    "mode": "fallback",
+    "counts": {
+      "10010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 10,
+    "mode": "direct",
+    "counts": {
+      "01010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 10,
+    "mode": "clone",
+    "counts": {
+      "01010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 10,
+    "mode": "inverse",
+    "counts": {
+      "01010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 10,
+    "mode": "pair",
+    "counts": {
+      "01010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 10,
+    "mode": "fallback",
+    "counts": {
+      "01010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 11,
+    "mode": "direct",
+    "counts": {
+      "11010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 11,
+    "mode": "clone",
+    "counts": {
+      "11010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 11,
+    "mode": "inverse",
+    "counts": {
+      "11010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 11,
+    "mode": "pair",
+    "counts": {
+      "11010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 11,
+    "mode": "fallback",
+    "counts": {
+      "11010": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 12,
+    "mode": "direct",
+    "counts": {
+      "00110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 12,
+    "mode": "clone",
+    "counts": {
+      "00110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 12,
+    "mode": "inverse",
+    "counts": {
+      "00110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 12,
+    "mode": "pair",
+    "counts": {
+      "00110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 12,
+    "mode": "fallback",
+    "counts": {
+      "00110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 13,
+    "mode": "direct",
+    "counts": {
+      "10110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 13,
+    "mode": "clone",
+    "counts": {
+      "10110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 13,
+    "mode": "inverse",
+    "counts": {
+      "10110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 13,
+    "mode": "pair",
+    "counts": {
+      "10110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 13,
+    "mode": "fallback",
+    "counts": {
+      "10110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 14,
+    "mode": "direct",
+    "counts": {
+      "01110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 14,
+    "mode": "clone",
+    "counts": {
+      "01110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 14,
+    "mode": "inverse",
+    "counts": {
+      "01110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 14,
+    "mode": "pair",
+    "counts": {
+      "01110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 14,
+    "mode": "fallback",
+    "counts": {
+      "01110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 15,
+    "mode": "direct",
+    "counts": {
+      "11111": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 15,
+    "mode": "clone",
+    "counts": {
+      "11111": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 15,
+    "mode": "inverse",
+    "counts": {
+      "11111": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 15,
+    "mode": "pair",
+    "counts": {
+      "11110": 64
+    }
+  },
+  {
+    "controls": 4,
+    "pattern": 15,
+    "mode": "fallback",
+    "counts": {
+      "11111": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262143,
+    "mode": "direct",
+    "counts": {
+      "1111111111111111111": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262143,
+    "mode": "clone",
+    "counts": {
+      "1111111111111111111": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262143,
+    "mode": "inverse",
+    "counts": {
+      "1111111111111111111": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262143,
+    "mode": "pair",
+    "counts": {
+      "1111111111111111110": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262142,
+    "mode": "direct",
+    "counts": {
+      "0111111111111111110": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262142,
+    "mode": "clone",
+    "counts": {
+      "0111111111111111110": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262142,
+    "mode": "inverse",
+    "counts": {
+      "0111111111111111110": 64
+    }
+  },
+  {
+    "controls": 18,
+    "pattern": 262142,
+    "mode": "pair",
+    "counts": {
+      "0111111111111111110": 64
+    }
+  }
+]

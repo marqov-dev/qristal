@@ -1,0 +1,22 @@
+{
+  "qpp": {
+    "cases": 42,
+    "maximum_complex_error": 3.2987125042640323e-16
+  },
+  "sparse": {
+    "cases": 158,
+    "shots_per_execution": 64,
+    "repetitions_per_case": 2
+  },
+  "rejected_inputs": 10,
+  "cleanup_verified": true,
+  "full_decoder_qualified": false,
+  "prototype_only": true,
+  "source_revisions": {
+    "qristal": "acbf69de3c7a8548919129d04826c1c8fe277f67",
+    "qristal-core": "bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a",
+    "qristal-decoder": "a58df0cf7eff0c6002aa3fed27ae6b18fdcea036",
+    "xacc": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3"
+  },
+  "executable_sha256": "1e9e62a560bbcb938ec1a5fc85c9d0bde58af80a22d8fd1c9ae5b562eef8af5d"
+}
