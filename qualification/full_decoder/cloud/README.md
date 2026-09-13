@@ -20,6 +20,11 @@ and the Decoder timeout retained its first-search-iteration checkpoint. Read the
 per-experiment records for exact versions; the earlier timeout remains missing
 its partial output. Full Decoder still has no successful result observation.
 
+The [trace-only follow-up](SEARCH-TRACE-PROTOCOL.md) now
+[locates the timeout inside 18-control Z expansion](../../evidence/2026-09-12-search-trace/README.md).
+Current guest code builds the hash-bound traced source; removing the marked
+insertions reproduces the original Core source. It is diagnostic code only.
+
 From the independent Qristal checkout:
 
 ```sh

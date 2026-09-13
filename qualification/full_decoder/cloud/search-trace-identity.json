@@ -1,0 +1,7 @@
+{
+  "source_sha256": "acc3dd0ec7297aaf56479c35b7ff86fdf73f042bb25e5317a52a21718922bd98",
+  "traced_sha256": "8adbf4ef6eb561e5982f8b5697babc79208bbd45802846ac8c800e0dc758c4a8",
+  "patch_sha256": "02be22e9a7db6af3040ea97b23938e04b725af65850abb1a8b7c9a0d4ed474e3",
+  "algorithm_statements_unchanged": true,
+  "counts_are_top_level_instructions": true
+}

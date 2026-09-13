@@ -22,7 +22,12 @@ show roughly96% reduction in aggregate observable error. Explain the wider error
 bars under strong noise and the rejection of an unstable calibration. This is a
 restricted classical readout model, not a claim about physical QB hardware.
 
-**3:00 — CPU and GPU alternatives.** Show Bell/GHZ across five methods. Three CPU
+**2:40 — Calibration can go stale.** Show the native drift chart. Fresh correction
+reduced aggregate error by approximately 95–98%; stale correction worsened two
+settings, reaching 4.45 times the raw error when the underlying noise improved.
+Distinguish this 40-case native experiment from the separate synthetic coverage study.
+
+**3:20 — CPU and GPU alternatives.** Show Bell/GHZ across five methods. Three CPU
 methods and two standalone CUDA-Q GPU targets passed small-circuit correctness.
 The GPU used A10G; these charts do not compare speed or establish maximum capacity.
 
@@ -45,8 +50,9 @@ No partnership or endorsement exists merely because this report exists.
   admission and result acceptance are not yet enabled by this work.
 - **Can you maintain it?** The evidence supports a bounded subset. The maintenance
   plan defines release gates, dependency responsibilities and unqualified paths.
-- **What is next scientifically?** A predeclared stale-versus-fresh calibration
-  experiment is prepared, with no native result claimed yet.
+- **What is next scientifically?** The 40-case native calibration-drift experiment
+  is complete. Next are repeated native calibrations, model mismatch and carefully
+  scoped scaling measurements.
 - **Is everything Apache2?** The public forks and the entire assembled runtime
   are different licensing scopes. Dependency notices and distribution review matter.
 
@@ -54,7 +60,16 @@ No partnership or endorsement exists merely because this report exists.
 
 The versioned conference directory contains PNG/SVG figures and provenance.
 Keep the retained experiment links next to each claim. The report itself can be
-shown without launching compute; a downloaded report is a useful manual backup.
+shown without launching compute. Export the self-contained five-chart HTML and
+allowlisted evidence ZIP using [the packet instructions](packet/README.md); run
+the archive verifier after copying. Embedded figures need no network.
+
+Optional technical appendix: 70 native QFT/IQFT complex-state checks passed at
+1–3 qubits. Show the numerical table and saved vector provenance in the report.
+Full Decoder still times out in its first search iteration; service restoration
+and QFT correctness do not establish a completed Decoder result.
+
+Tracking: platform #2172 (conference), #2173 (full Decoder), #1701 (priority queue).
 
 Article outline: public dependency recovery; installed-only evidence; analytic noise
 tests; independent mitigation and uncertainty; public GPU alternatives; packaging

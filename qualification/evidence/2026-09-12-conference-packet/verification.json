@@ -1,0 +1,18 @@
+{
+  "five_embedded_pngs": true,
+  "remote_render_dependencies": [],
+  "browser_visual_check": "blocked_by_file_URL_policy",
+  "source_revision": "f3fb61adc87cf1b9c9bec46451ac0c8c51b116da",
+  "packet_sha256": "951c083f20213ca78930d6dd9177ed848d0160ea7c04951c141f9d79fd7d6c69",
+  "manifest_sha256": "ab3c707cdb6e121b3376d2f1cb9197ceaa0d71143ccd6f1e5ffdf85980623f72",
+  "evidence_files": 24,
+  "archive_integrity": "verified",
+  "report_check": {
+    "project": "776ca156-9051-4fcb-8aca-202e78a94cac",
+    "loaded_image_count": 5,
+    "qft_heading_present": true,
+    "native_drift_heading_present": true,
+    "ui_build": "fff9303",
+    "hosted_execution_tested": false
+  }
+}

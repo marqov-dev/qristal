@@ -19,6 +19,7 @@ entries={
  'qristal-decoder/src/quantum_decoder.cpp':'qristal-decoder/src/quantum_decoder.cpp',
  'qristal-decoder/tests/FullDecoderInputValidation.cpp':'qristal-decoder/tests/FullDecoderInputValidation.cpp',
  'qristal/qualification/full_decoder/cloud/capture_process.py':'capture_process.py',
+ 'qristal/qualification/full_decoder/cloud/instrument_search.py':'instrument_search.py',
  'qristal/qualification/full_decoder/tiny_result_smoke.cpp':'qualification/full_decoder/tiny_result_smoke.cpp',
  'qristal/qualification/full_decoder/cloud/guest.py':'guest.py',
  'qristal/qualification/full_decoder/cloud/qft_activator.cpp':'qft_activator.cpp',
