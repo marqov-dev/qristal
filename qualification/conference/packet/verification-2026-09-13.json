@@ -1,0 +1,11 @@
+{
+  "source_revision": "ed61e37b07d675bf64adc4c9f6254dbf4d6741e3",
+  "evidence_files": 25,
+  "packet_sha256": "4afdf23128ce1c1ecdbfa5e8cf3e4c45b6e43be92d064f83ebf7485b2308f5ee",
+  "original_and_copied_zip_hashes_verified": true,
+  "embedded_png_charts": 5,
+  "static_remote_rendering_assets": 0,
+  "visual_offline_rehearsal": "pending_human",
+  "local_file_browser_inspection": "previously blocked by file-URL policy; no workaround attempted",
+  "native_execution": false
+}
