@@ -55,7 +55,16 @@ iteration 1, but still times out before a result. A source audit identifies
 eager many-controlled-Z decomposition as a hypothesis. The subsequent
 [trace-only native probe](evidence/2026-09-12-search-trace/README.md) locates the
 timeout inside an 18-control Z expansion, before backend execution. Its internal
-CPU/allocation cost and a semantics-preserving repair remain unqualified.
+CPU/allocation cost and a full-fixture repair remain unqualified.
+The [controlled-Z prototype](evidence/2026-09-12-mcz-equivalence/README.md) now
+passes 42 complex-state cases, 158 sparse interference cases and 10 input
+rejections after an initial enabled-state failure. This is an internal prototype,
+not a generic Circuit API or production Core change. Its scope/mapping limitations
+and remaining integration gates are explicit. The subsequent
+[full-fixture derivative](evidence/2026-09-12-mcz-decoder/README.md) completes MCZ
+construction and one backend sample, then times out during a second backend call.
+The first backend call took about 34.6 seconds; no caller-result completion is
+claimed. Backend-stage profiling is now the next bounded diagnostic.
 
 ## Dependencies and release policy
 

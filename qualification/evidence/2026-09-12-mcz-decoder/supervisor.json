@@ -1,0 +1,20 @@
+{
+  "cleanup_until": 1789262264.102636,
+  "last_instance_state": "terminated",
+  "last_seen": 1789260977.455672,
+  "launch_attempted": true,
+  "observe_until": 1789261964.102636,
+  "phase": "cleaned",
+  "plan": {
+    "account": "090208085542",
+    "group": "sg-09bd61037c4086b4c",
+    "image": "ami-05a3e9423ae4d7a19",
+    "instance_type": "m7i.large",
+    "region": "us-east-1",
+    "root_gib": 20,
+    "run": "qb-proof-90f94e0b3a56408d942e82317f39283b",
+    "subnet": "subnet-01fb5ff873d16c141",
+    "vpc": "vpc-0c8ff9e3276495a4c"
+  },
+  "userdata_sha256": "ce87d8853103d622f890301f308ccffee5113b93f9e61b64e5570e6b1faab2a1"
+}

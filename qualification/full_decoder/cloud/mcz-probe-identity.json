@@ -1,0 +1,9 @@
+{
+  "original_sha256": "acc3dd0ec7297aaf56479c35b7ff86fdf73f042bb25e5317a52a21718922bd98",
+  "traced_predecessor_sha256": "8adbf4ef6eb561e5982f8b5697babc79208bbd45802846ac8c800e0dc758c4a8",
+  "derived_sha256": "c5a964365d07979be48d568577f3c9eff1fa9aa1959b5879bf800da1565ba60e",
+  "patch_sha256": "7df6446594fbd90b5d832de576dbce2b36c0d54ca8f0f3925fc5627fe571f0eb",
+  "header_sha256": "2aaed48725e109b6d0de1399da57f583683efcffeed01ce17d2c94e80872deba",
+  "prototype_only": true,
+  "original_decomposition_retained_for_other_backends": true
+}
