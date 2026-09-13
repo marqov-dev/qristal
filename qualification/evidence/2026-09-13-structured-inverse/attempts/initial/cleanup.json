@@ -1,0 +1,11 @@
+{
+  "group_absent": true,
+  "group_id": "audit-alias-0d90bc4874754900b0fe0589aa2db3b6",
+  "instance_id": "audit-alias-6e01ebe7abd2450eb6040046e0b84d82",
+  "instance_termination_observed": true,
+  "no_launch_attempted": false,
+  "volume_ids": [
+    "audit-alias-e17a3e348c6f4981a218e36f96602715"
+  ],
+  "volumes_absent": true
+}

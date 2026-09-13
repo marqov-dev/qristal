@@ -1,0 +1,17 @@
+{
+  "account": "audit-alias-a0a74380a34545158cb71d3237fc4ede",
+  "artifact": {
+    "bytes": 26840683,
+    "sha256": "2cadf1a769bd6c08c4c2b1914f321c11c9ff988de48407dd31f00fcff44da6ba"
+  },
+  "bucket": "audit-alias-e0ca7661cd34459580eb10ada17f436b",
+  "bucket_attempted": true,
+  "cleanup_errors": [],
+  "group": "audit-alias-0d90bc4874754900b0fe0589aa2db3b6",
+  "group_attempted": true,
+  "key": "cpu.tar.gz",
+  "region": "us-east-1",
+  "run": "audit-alias-cf14d5d3115048598511d189533dbbc8",
+  "transfer_cleanup_verified": true,
+  "vm_cleanup_verified": true
+}
