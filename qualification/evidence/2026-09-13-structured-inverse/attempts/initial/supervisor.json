@@ -1,0 +1,20 @@
+{
+  "cleanup_until": 1789265663.1753678,
+  "last_instance_state": "terminated",
+  "last_seen": 1789264296.065537,
+  "launch_attempted": true,
+  "observe_until": 1789265363.1753678,
+  "phase": "cleaned",
+  "plan": {
+    "account": "audit-alias-a0a74380a34545158cb71d3237fc4ede",
+    "group": "audit-alias-0d90bc4874754900b0fe0589aa2db3b6",
+    "image": "audit-alias-5acefb0d7a3e42a9952df9b11a74cb0f",
+    "instance_type": "m7i.large",
+    "region": "us-east-1",
+    "root_gib": 20,
+    "run": "audit-alias-cf14d5d3115048598511d189533dbbc8",
+    "subnet": "audit-alias-e9ea32edb45e4a239f092a4b825b93f2",
+    "vpc": "audit-alias-46dd394075d140d5aa92db8902fbcaf0"
+  },
+  "userdata_sha256": "7c2742e81ef0e4a3bad8657e07ae76b134486dc73b496dbb0a0757f43a3c31fc"
+}

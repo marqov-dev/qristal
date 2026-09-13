@@ -31,7 +31,7 @@ def stage(name, command, seconds=180, retained_stdout=9000):
 
 try:
     stage('inverse-build',['c++','-std=c++20','-O1','-DNDEBUG','/work/inverse_checks.cpp']+INC+LIB+['-o','/proof/out/inverse-checks'])
-    for mode,marker in [('negative','PASS: 12 inverse rejected inputs'),('qpp','PASS: 160 controlled inverse complex-state cases'),('sparse','PASS: 20 sparse controlled inverse roundtrips')]:
+    for mode,marker in [('negative','PASS: 12 inverse rejected inputs'),('qpp','PASS: 160 controlled inverse complex-state cases'),('sparse','PASS: 20 sparse inverse interference cases')]:
         result=stage('inverse-'+mode,['/proof/out/inverse-checks',mode],60,60000)
         if marker not in result['stdout']: raise RuntimeError('missing_pass_marker:'+mode)
 except Exception as error:

@@ -64,3 +64,18 @@ One existing bounded CPU VM protocol; compile ≤180 s, each test mode ≤60 s,
 unchanged observation/cleanup limits. Only the standalone consumer is compiled;
 installed simulator libraries are reused and their loaded hashes recorded. This
 experiment does not execute the full Decoder or qualify the installed image.
+
+The first attempt compiled and passed 12 input rejections, but QPP failed the
+first nested controlled-Ry case (error 0.0428301). Source inspection confirmed
+this selected QPP visitor only shortcuts controlled X/Y/Z; empty H/Rx/Ry/Rz
+metadata is skipped. The prototype had assumed the broader sparse visitor subset
+also applied to QPP. This attempt and cleanup remain retained.
+
+The next separately declared run explicitly lowers H/rotation metadata to the
+existing decomposition for QPP; sparse-sim receives direct metadata. The same
+160-case complex-state inventory and 1e-10 bound remain. Add 20 inverse-only sparse
+interference cases: complex product preparation, controlled inverse, H on target,
+16,384 shots, every outcome within 0.025 absolute probability of the independent
+dense model. This prevents a pair of omitted forward/inverse operations from
+passing only roundtrip checks. No fixed seed is claimed for this sparse backend.
+These sampling cases are separate from the existing 20 exact 64-shot roundtrips.

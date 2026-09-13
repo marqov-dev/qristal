@@ -52,6 +52,22 @@ Ptr primitive_inverse(Layout l,std::string name,double angle) {
   while(it.hasNext()){auto leaf=it.next();if(leaf->isEnabled()&&!leaf->isComposite())flat->addInstruction(leaf->clone());}
   require(flat->nInstructions()>0,"fallback_empty");return flat;
 }
+// Selected QPP only accepts direct controlled X/Y/Z. Lower H/rotations to
+// the existing primitive decomposition, retaining the tested inverse metadata.
+std::shared_ptr<xacc::Instruction> lower_qpp(std::shared_ptr<xacc::Instruction> input) {
+  if(!input->isEnabled())return gates->createComposite("disabled_lowered");
+  if(!input->isComposite())return input->clone();
+  if(auto mod=dynamic_cast<xacc::quantum::ControlModifier*>(input.get())) {
+    auto base=composite(mod->getBaseInstruction());auto gate=base->getInstruction(0);
+    if(gate->name()=="X"||gate->name()=="Y"||gate->name()=="Z")return input->clone();
+    std::vector<int> controls;for(auto [reg,bit]:mod->getControlQubits()){require(reg=="q","lower_register");controls.push_back(bit);}
+    auto block=std::dynamic_pointer_cast<xacc::CompositeInstruction>(xacc::getService<xacc::Instruction>("C-U"));
+    require(block&&block->expand({{"U",base},{"control-idx",controls}}),"lower_failed");return block;
+  }
+  auto result=gates->createComposite("qpp_lowered");
+  for(auto child:composite(input)->getInstructions())result->addInstruction(lower_qpp(child));
+  return result;
+}
 void check_qpp() {
   auto qpp=xacc::getAccelerator("qpp");int cases=0;double all_max=0;
   for(size_t li=0;li<layouts.size();++li)for(size_t oi=0;oi<ops.size();++oi)
@@ -81,6 +97,7 @@ void check_qpp() {
       circuit->addInstruction(inverse);
       if(mode!="roundtrip"&&mode!="disabled")expected=apply(expected,effective,name,-angle);
     }
+    circuit=composite(lower_qpp(circuit));
     double error=0;
     for(int repeat=0;repeat<2;++repeat) {
       qpp->execute(xacc::qalloc(l.n),circuit);
@@ -114,6 +131,28 @@ void check_sparse() {
     ++cases;
   }
   std::cout<<"PASS: "<<cases<<" sparse controlled inverse roundtrips, each repeated twice"<<std::endl;
+  auto interference=xacc::getAccelerator("sparse-sim",{{"shots",16384}});
+  int phase_cases=0;
+  for(size_t li=0;li<layouts.size();++li)for(size_t oi=0;oi<ops.size();++oi) {
+    auto l=layouts[li];auto [name,angle]=ops[oi];auto circuit=gates->createComposite("sparse_inverse_phase");
+    for(int bit=0;bit<l.n;++bit){circuit->addInstruction(gates->createInstruction("H",{size_t(bit)}));circuit->addInstruction(gates->createInstruction("Rz",{size_t(bit)},{.13*(bit+1)}));}
+    auto forward=std::make_shared<DirectControlled>(l.n,l.controls,l.target,name,angle);
+    circuit->addInstruction(structured_inverse(forward,l.n));
+    circuit->addInstruction(gates->createInstruction("H",{size_t(l.target)}));
+    for(int bit=0;bit<l.n;++bit)circuit->addInstruction(gates->createInstruction("Measure",{size_t(bit)}));
+    auto expected=apply(apply(preparation(l.n),l,name,-angle),Layout{l.n,{},l.target},"H",0);
+    auto buffer=xacc::qalloc(l.n);interference->execute(buffer,circuit);auto counts=buffer->getMeasurementCounts();
+    double maximum=0;int total=0;
+    std::cout<<"INVERSE_SPARSE {\"layout\":"<<li<<",\"operation\":"<<oi<<",\"counts\":[";
+    for(int x=0;x<(1<<l.n);++x) {
+      std::string bits;for(int bit=0;bit<l.n;++bit)bits+=((x>>bit)&1)?'1':'0';
+      int count=counts[bits];total+=count;maximum=std::max(maximum,std::abs(count/16384.-std::norm(expected[x])));
+      if(x)std::cout<<',';std::cout<<count;
+    }
+    std::cout<<"]}"<<std::endl;require(total==16384&&maximum<.025,"sparse_inverse_interference");++phase_cases;
+  }
+  std::cout<<"PASS: "<<phase_cases<<" sparse inverse interference cases"<<std::endl;
+
 }
 void check_negative() {
   int count=0;auto rejects=[&](auto fn){bool caught=false;try{fn();}catch(const std::invalid_argument&){caught=true;}require(caught,"expected_rejection");++count;};
