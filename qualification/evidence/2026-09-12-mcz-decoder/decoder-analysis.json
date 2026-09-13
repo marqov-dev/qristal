@@ -1,0 +1,127 @@
+{
+  "classification": "not_completed",
+  "caller_contract_completed": false,
+  "full_decoder_qualified": false,
+  "prototype_only": true,
+  "tiny_error": "ProcessError:process_timeout",
+  "tiny_exit_code": null,
+  "checkpoints": [
+    {
+      "stage": "execute_begin",
+      "elapsed_ms": 0,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_begin",
+      "elapsed_ms": 5,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_end",
+      "elapsed_ms": 3406,
+      "count": 95271
+    },
+    {
+      "stage": "used_bits_begin",
+      "elapsed_ms": 3406,
+      "count": -1
+    },
+    {
+      "stage": "used_bits_end",
+      "elapsed_ms": 3424,
+      "count": 19
+    },
+    {
+      "stage": "mcz_expand_begin",
+      "elapsed_ms": 3426,
+      "count": 18
+    },
+    {
+      "stage": "mcz_expand_end",
+      "elapsed_ms": 3426,
+      "count": 0
+    },
+    {
+      "stage": "amplification_begin",
+      "elapsed_ms": 3428,
+      "count": 1
+    },
+    {
+      "stage": "amplification_end",
+      "elapsed_ms": 3429,
+      "count": 5
+    },
+    {
+      "stage": "backend_execute_begin",
+      "elapsed_ms": 3430,
+      "count": 8
+    },
+    {
+      "stage": "backend_execute_end",
+      "elapsed_ms": 38003,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_begin",
+      "elapsed_ms": 38025,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_end",
+      "elapsed_ms": 41387,
+      "count": 95271
+    },
+    {
+      "stage": "used_bits_begin",
+      "elapsed_ms": 41387,
+      "count": -1
+    },
+    {
+      "stage": "used_bits_end",
+      "elapsed_ms": 41404,
+      "count": 19
+    },
+    {
+      "stage": "mcz_expand_begin",
+      "elapsed_ms": 41407,
+      "count": 18
+    },
+    {
+      "stage": "mcz_expand_end",
+      "elapsed_ms": 41407,
+      "count": 0
+    },
+    {
+      "stage": "amplification_begin",
+      "elapsed_ms": 41409,
+      "count": 1
+    },
+    {
+      "stage": "amplification_end",
+      "elapsed_ms": 41410,
+      "count": 5
+    },
+    {
+      "stage": "backend_execute_begin",
+      "elapsed_ms": 41411,
+      "count": 8
+    }
+  ],
+  "last_checkpoint": {
+    "stage": "backend_execute_begin",
+    "elapsed_ms": 41411,
+    "count": 8
+  },
+  "observed_mcz_completions": 2,
+  "observed_backend_completions": 1,
+  "cleanup_verified": true,
+  "source_identity": {
+    "original_sha256": "acc3dd0ec7297aaf56479c35b7ff86fdf73f042bb25e5317a52a21718922bd98",
+    "traced_predecessor_sha256": "8adbf4ef6eb561e5982f8b5697babc79208bbd45802846ac8c800e0dc758c4a8",
+    "derived_sha256": "c5a964365d07979be48d568577f3c9eff1fa9aa1959b5879bf800da1565ba60e",
+    "patch_sha256": "7df6446594fbd90b5d832de576dbce2b36c0d54ca8f0f3925fc5627fe571f0eb",
+    "header_sha256": "2aaed48725e109b6d0de1399da57f583683efcffeed01ce17d2c94e80872deba",
+    "prototype_only": true,
+    "original_decomposition_retained_for_other_backends": true
+  }
+}

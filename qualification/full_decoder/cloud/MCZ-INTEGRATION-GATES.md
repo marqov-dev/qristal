@@ -47,3 +47,12 @@ Public Core bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a:
 
 Do not restore legacy orchestration, interrupt the release agent, or treat this
 as an SDK/compiler release prerequisite. Platform #2173 owns these gates.
+
+## Full-fixture observation now retained
+
+The first experimental derivative completed two MCZ constructions and one backend
+sample before its unchanged 60-second timeout during the second backend call.
+The [record](../../evidence/2026-09-12-mcz-decoder/README.md) localizes the next
+slow stage to backend traversal/simulation (first call 34,573 ms). No completed
+caller result exists. Profile backend work before selecting another optimization;
+retain the same time/trial constraints and independent mathematical gates.

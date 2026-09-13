@@ -81,3 +81,16 @@ Do not infer successful cleanup from a stopped observer.
 Offline lifecycle tests inject failures before launch, during launch/observation,
 and during VM cleanup. They verify that transfer cleanup still runs and that
 signed URLs do not enter retained records. They launch no AWS resources.
+
+## Controlled-Z follow-up variants
+
+The [MCZ protocol](MCZ-PROTOCOL.md) and [native evidence](../../evidence/2026-09-12-mcz-equivalence/README.md)
+qualify an internal Z-only metadata prototype after retaining its initial
+enabled-state failure. `pack.py NEW_DIRECTORY mcz` runs that bounded subset.
+The separate [full-fixture protocol](MCZ-DECODER-PROTOCOL.md) uses
+`pack.py NEW_DIRECTORY mcz-decoder` to build an experimental sparse-sim Core
+derivative in the guest. Neither variant changes the default trace-only pack,
+local installed runtime or shared platform/SDK checkout.
+
+The [integration gates](MCZ-INTEGRATION-GATES.md) retain serialization, generic IR,
+mapping, unsupported backend, stochastic and installed-image limitations.
