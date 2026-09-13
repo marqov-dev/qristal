@@ -94,6 +94,10 @@ System package discovery can bypass a source override; retain the actual selecti
 
 ## Next evidence gate
 
+[Native materials and stage preparation](../core_native/README.md) now assembles
+the verified inputs and proposes installed-only fixtures. It is not yet the
+bounded native supervisor or a successful Core build.
+
 After the blockers are resolved, run one bounded native offline configure/build,
 install into fresh prefixes, and use installed-only Core QPP fixtures and a CMake
 consumer. Retain complete source/dependency/patch/toolchain receipts and installed
