@@ -1,0 +1,15 @@
+{
+  "schema": "qb.executed-multipart-operator/v1",
+  "upload_seconds": 600,
+  "abort_seconds": 90,
+  "files": {
+    "multipart_transport.py": {
+      "bytes": 10714,
+      "sha256": "8bb646abedb7fc6d0d5b721e9ebfd7b5dfe3bfc223f6562dd8874d97c81b94fb"
+    },
+    "test_multipart_transport.py": {
+      "bytes": 9759,
+      "sha256": "8fddfdd991938beaf3576f108f8b99cd716916018e2e3f923697694ab4af5d47"
+    }
+  }
+}
