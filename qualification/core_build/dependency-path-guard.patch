@@ -1,0 +1,21 @@
+--- a/cmake/add_dependency.cmake
++++ b/cmake/add_dependency.cmake
+@@ -18,7 +18,5 @@
+-  file(REAL_PATH ${CMAKE_INSTALL_PREFIX} INSTALL_DIR)
+-  file(REAL_PATH ${PATH} PACKAGE_DIR)
+-  string(FIND "${PACKAGE_DIR}" "${INSTALL_DIR}" POSITION)
+-  if (POSITION EQUAL 0)
+-    set(${RESULT} ON)
+-  else()
+-    set(${RESULT} OFF)
++  set(${RESULT} OFF)
++  if (NOT "${PATH}" STREQUAL "" AND NOT "${PATH}" MATCHES "(^|-)NOTFOUND$")
++    file(REAL_PATH "${CMAKE_INSTALL_PREFIX}" INSTALL_DIR)
++    file(REAL_PATH "${PATH}" PACKAGE_DIR)
++    cmake_path(IS_PREFIX INSTALL_DIR "${PACKAGE_DIR}" NORMALIZE ${RESULT})
+@@ -81 +79 @@
+-  is_in_install_path(${${arg_FIND_PACKAGE_NAME}_DIR} WAS_INSTALLED_BY_QRISTAL)
++  is_in_install_path("${${arg_FIND_PACKAGE_NAME}_DIR}" WAS_INSTALLED_BY_QRISTAL)
+@@ -84 +82 @@
+-    is_in_install_path(${${arg_FIND_PACKAGE_ADDITIONAL_RESULT_PATH_VAR}} WAS_INSTALLED_BY_QRISTAL)
++    is_in_install_path("${${arg_FIND_PACKAGE_ADDITIONAL_RESULT_PATH_VAR}}" WAS_INSTALLED_BY_QRISTAL)

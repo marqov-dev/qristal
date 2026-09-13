@@ -4,7 +4,7 @@ Run with the same PREPARED_ARTIFACT NEW_STATE arguments as run.py. The upload
 child gets 3600 seconds total, two workers and 8 MiB parts. Failure triggers an
 independent at-most-90-second abort child for the exact persisted upload ID.
 No VM is launched by this module itself; unchanged run.py continues only after
-verified completion. The prior pinned input completed AWS transfer; this revised input awaits a new run.
+verified completion. This module has not been exercised against AWS.
 
 IAM: create/upload/complete use s3:PutObject; verification uses s3:GetObject;
 failure cleanup additionally requires s3:AbortMultipartUpload and
@@ -29,8 +29,8 @@ import subprocess
 import sys
 
 HERE = Path(__file__).resolve().parent
-SHA256 = '52c90c0db488806109d381410d23978e973b32446c2e080780f9aba666659650'
-BYTES = 314255620
+SHA256 = 'c1b393fa0f5e33fd34764834704afb6e6f8151afe2ee5ac68df65bd20231b9b7'
+BYTES = 314255079
 PART_BYTES = 8 * 1024 * 1024
 WORKERS = 2
 ACCOUNT = '090208085542'

@@ -1,0 +1,22 @@
+{
+  "schema": "qb.core-multipart-transport/v1",
+  "bucket": "core-native-bucket",
+  "key": "cpu.tar.gz",
+  "account": "proof-account",
+  "region": "us-east-1",
+  "payload_sha256": "c1b393fa0f5e33fd34764834704afb6e6f8151afe2ee5ac68df65bd20231b9b7",
+  "payload_bytes": 314255079,
+  "wrapper_sha256": "803bd52b8e451472e730dcebf5480fd02ca1e615e6666377fabfc40cf6e03db6",
+  "part_bytes": 8388608,
+  "workers": 2,
+  "upload_seconds": 3600,
+  "abort_seconds": 90,
+  "phase": "complete",
+  "verified": true,
+  "create_attempted": true,
+  "upload_id": "core-native-upload",
+  "parts_received": 38,
+  "parts": 38,
+  "upload_process_timeout": false,
+  "upload_process_exit": 0
+}

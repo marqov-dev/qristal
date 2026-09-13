@@ -1,7 +1,7 @@
 # Exact-package multipart transport
 
-`multipart_transport.py` is an optional operator-only fallback for the approved
-314,255,079-byte Core archive after two single-request uploads reached their
+`multipart_transport.py` is an optional operator-only fallback for the pinned
+Core archive after two single-request uploads reached their
 600-second limit before VM launch. It does not change the archive, guest,
 fixtures, native stages, or existing protocol-bound operator files.
 
@@ -38,3 +38,9 @@ redacted permission failures, missing upload identity, wrong checksums and lost
 completion responses. These tests establish operator behavior, not AWS success
 or native Core qualification. Native observations belong in the evidence index
 once the run has returned and cleanup is verified.
+
+The current wrapper targets the corrected path-guard input recorded in
+[corrected-package.json](../evidence/2026-09-13-core-native-configure/corrected-package.json).
+The successful prior transport operator is preserved with its native evidence.
+The original single-VM experiment is complete; the corrected package has not
+been executed and requires a new bounded run authorization.

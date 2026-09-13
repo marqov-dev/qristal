@@ -17,8 +17,8 @@ spec.loader.exec_module(multipart)
 
 class MultipartTests(unittest.TestCase):
     def test_exact_production_identity(self):
-        self.assertEqual(multipart.SHA256, '52c90c0db488806109d381410d23978e973b32446c2e080780f9aba666659650')
-        self.assertEqual(multipart.BYTES, 314255620)
+        self.assertEqual(multipart.SHA256, 'c1b393fa0f5e33fd34764834704afb6e6f8151afe2ee5ac68df65bd20231b9b7')
+        self.assertEqual(multipart.BYTES, 314255079)
         self.assertEqual(multipart.WORKERS, 2)
         self.assertEqual(multipart.PART_BYTES, 8 * 1024 * 1024)
 

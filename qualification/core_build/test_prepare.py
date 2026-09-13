@@ -22,23 +22,31 @@ class PreparationTests(unittest.TestCase):
         self.source = source / 'dependencies.cmake'
         self.version_source = prepare.version.OLD + b'# Project\n'
         (source.parent / 'CMakeLists.txt').write_bytes(self.version_source)
+        self.path_source = prepare.dependency_path.OLD + b'\n'.join(old for old, new in prepare.dependency_path.CALLS) + b'\n'
+        (source / 'add_dependency.cmake').write_bytes(self.path_source)
         receipt = {'source': {'commit': prepare.SOURCE_COMMIT, 'tree': 'fixture', 'entries': [
             {'path': 'cmake/dependencies.cmake', 'mode': '100644', 'git_blob': 'fixture',
              'sha256': prepare.sha(self.original), 'bytes': len(self.original)},
             {'path': 'CMakeLists.txt', 'mode': '100644', 'git_blob': 'fixture',
-             'sha256': prepare.sha(self.version_source), 'bytes': len(self.version_source)}]}}
+             'sha256': prepare.sha(self.version_source), 'bytes': len(self.version_source)},
+            {'path': 'cmake/add_dependency.cmake', 'mode': '100644', 'git_blob': 'fixture',
+             'sha256': prepare.sha(self.path_source), 'bytes': len(self.path_source)}]}}
         raw = json.dumps(receipt).encode()
         (self.inputs / 'core-source.json').write_bytes(raw)
         self.addCleanup(patch.stopall)
         patch.object(prepare, 'RECEIPT_SHA256', prepare.sha(raw)).start()
         patch.object(prepare, 'DEPENDENCIES_SHA256', prepare.sha(self.original)).start()
         patch.object(prepare.version, 'SOURCE_SHA256', prepare.sha(self.version_source)).start()
+        patch.object(prepare.dependency_path, 'SOURCE_SHA256', prepare.sha(self.path_source)).start()
         tools = self.root / 'tools'; tools.mkdir()
         (tools / 'eigen-build-staging.patch').write_bytes(prepare.PATCH)
         changed = self.version_source.replace(prepare.version.OLD, prepare.version.NEW)
         (tools / 'exported-version.patch').write_text(''.join(difflib.unified_diff(
             self.version_source.decode().splitlines(True), changed.decode().splitlines(True),
             fromfile='a/CMakeLists.txt', tofile='b/CMakeLists.txt')))
+        (tools / 'dependency-path-guard.patch').write_text(''.join(difflib.unified_diff(
+            self.path_source.decode().splitlines(True), prepare.dependency_path.transform(self.path_source).decode().splitlines(True),
+            fromfile='a/cmake/add_dependency.cmake', tofile='b/cmake/add_dependency.cmake', n=0)))
         patch.object(prepare, 'HERE', tools).start()
 
     def test_only_dependency_location_changes_and_receipt_is_not_build(self):
@@ -53,6 +61,8 @@ class PreparationTests(unittest.TestCase):
         self.assertEqual((self.inputs / 'qristal-core/CMakeLists.txt').read_bytes(), self.version_source)
         self.assertFalse(result['configured'])
         self.assertFalse(result['native_qualified'])
+        self.assertEqual(result['derived_dependency_path_sha256'], prepare.sha(prepare.dependency_path.transform(self.path_source)))
+        self.assertEqual((self.inputs / 'qristal-core/cmake/add_dependency.cmake').read_bytes(), self.path_source)
         effective_raw = (output / 'effective-source.json').read_bytes()
         self.assertEqual(result['effective_manifest_sha256'], prepare.sha(effective_raw))
         effective = json.loads(effective_raw)
@@ -66,6 +76,12 @@ class PreparationTests(unittest.TestCase):
     def test_modified_version_patch_rejected_before_output(self):
         (prepare.HERE / 'exported-version.patch').write_text('unreviewed')
         with self.assertRaisesRegex(ValueError, 'version patch'):
+            prepare.prepare(self.inputs, self.root / 'result')
+        self.assertFalse((self.root / 'result').exists())
+
+    def test_modified_dependency_path_patch_rejected_before_output(self):
+        (prepare.HERE / 'dependency-path-guard.patch').write_text('unreviewed')
+        with self.assertRaisesRegex(ValueError, 'dependency path patch'):
             prepare.prepare(self.inputs, self.root / 'result')
         self.assertFalse((self.root / 'result').exists())
 

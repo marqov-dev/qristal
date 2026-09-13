@@ -1,0 +1,17 @@
+{
+  "account": "proof-account",
+  "artifact": {
+    "bytes": 314255079,
+    "sha256": "c1b393fa0f5e33fd34764834704afb6e6f8151afe2ee5ac68df65bd20231b9b7"
+  },
+  "bucket": "core-native-bucket",
+  "bucket_attempted": true,
+  "cleanup_errors": [],
+  "group": "core-native-group",
+  "group_attempted": true,
+  "key": "cpu.tar.gz",
+  "region": "us-east-1",
+  "run": "core-native-run",
+  "transfer_cleanup_verified": true,
+  "vm_cleanup_verified": true
+}

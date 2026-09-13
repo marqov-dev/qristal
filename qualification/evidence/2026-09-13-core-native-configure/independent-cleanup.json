@@ -1,0 +1,7 @@
+{
+  "instance_terminated": true,
+  "volumes_absent": true,
+  "security_group_absent": true,
+  "bucket_absent": true,
+  "independently_verified": true
+}
