@@ -1,0 +1,22 @@
+{
+  "schema": "marqov.core-preparation/v1",
+  "source_commit": "a5c3e5fa544c07d538974d3a289b19652d483848",
+  "source_receipt_sha256": "904ae7ddb228aac54027ad313ae1d9a28f927479297b4e978145abcbc888d642",
+  "patch_sha256": "0cdc178209370363d2ce9f0366e8af9589e3973cdda8b88046b5e0c4adbd164b",
+  "transformation": "Eigen temporary install moved to Core binary directory",
+  "source_version": "1.8.1",
+  "version_patch_sha256": "b498d6dee7c8e5db388a7520dc17a7b3204aea64c63510539b2915298828ff29",
+  "original_version_file_sha256": "7f9ee9ef437b81471fbb01450fd7f099b1e6af19700d3dd34ee6ebb2cb6740db",
+  "derived_version_file_sha256": "a245a946bb750e55294fd3a8e1133e99d72f40d9b7d387b70ec1be98943554d8",
+  "original_dependency_sha256": "ffd6f15444d7dd885b38a66b23651eee535a49f931f331226fe01507d7e43840",
+  "derived_dependency_sha256": "342cc2bcf56d5c90944cc4e332d20e70f258e72e6f27a258778f7080408d93b1",
+  "effective_manifest_sha256": "c5353f54ef26f65a21417516926ac3b027e766a0ecf20036400604dbcaffd405",
+  "configured": false,
+  "native_qualified": false,
+  "published": false,
+  "remaining_blockers": [
+    "offline dependency selection",
+    "hashed Python wheelhouse",
+    "retained fresh XACC install"
+  ]
+}

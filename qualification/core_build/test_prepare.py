@@ -1,4 +1,5 @@
 import hashlib
+import difflib
 import json
 from pathlib import Path
 import tempfile
@@ -19,14 +20,26 @@ class PreparationTests(unittest.TestCase):
         self.original = b'# fixture\n' * 87 + prepare.OLD + b'# retained install behavior\n'
         (source / 'dependencies.cmake').write_bytes(self.original)
         self.source = source / 'dependencies.cmake'
+        self.version_source = prepare.version.OLD + b'# Project\n'
+        (source.parent / 'CMakeLists.txt').write_bytes(self.version_source)
         receipt = {'source': {'commit': prepare.SOURCE_COMMIT, 'tree': 'fixture', 'entries': [
             {'path': 'cmake/dependencies.cmake', 'mode': '100644', 'git_blob': 'fixture',
-             'sha256': prepare.sha(self.original), 'bytes': len(self.original)}]}}
+             'sha256': prepare.sha(self.original), 'bytes': len(self.original)},
+            {'path': 'CMakeLists.txt', 'mode': '100644', 'git_blob': 'fixture',
+             'sha256': prepare.sha(self.version_source), 'bytes': len(self.version_source)}]}}
         raw = json.dumps(receipt).encode()
         (self.inputs / 'core-source.json').write_bytes(raw)
         self.addCleanup(patch.stopall)
         patch.object(prepare, 'RECEIPT_SHA256', prepare.sha(raw)).start()
         patch.object(prepare, 'DEPENDENCIES_SHA256', prepare.sha(self.original)).start()
+        patch.object(prepare.version, 'SOURCE_SHA256', prepare.sha(self.version_source)).start()
+        tools = self.root / 'tools'; tools.mkdir()
+        (tools / 'eigen-build-staging.patch').write_bytes(prepare.PATCH)
+        changed = self.version_source.replace(prepare.version.OLD, prepare.version.NEW)
+        (tools / 'exported-version.patch').write_text(''.join(difflib.unified_diff(
+            self.version_source.decode().splitlines(True), changed.decode().splitlines(True),
+            fromfile='a/CMakeLists.txt', tofile='b/CMakeLists.txt')))
+        patch.object(prepare, 'HERE', tools).start()
 
     def test_only_dependency_location_changes_and_receipt_is_not_build(self):
         output = self.root / 'result'
@@ -35,6 +48,9 @@ class PreparationTests(unittest.TestCase):
         changed = (output / 'qristal-core/cmake/dependencies.cmake').read_bytes()
         self.assertEqual(changed, self.original.replace(prepare.OLD, prepare.NEW))
         self.assertEqual(result['derived_dependency_sha256'], prepare.sha(changed))
+        self.assertEqual(result['source_version'], '1.8.1')
+        self.assertNotIn('git describe', (output / 'qristal-core/CMakeLists.txt').read_text())
+        self.assertEqual((self.inputs / 'qristal-core/CMakeLists.txt').read_bytes(), self.version_source)
         self.assertFalse(result['configured'])
         self.assertFalse(result['native_qualified'])
         effective_raw = (output / 'effective-source.json').read_bytes()
@@ -46,6 +62,16 @@ class PreparationTests(unittest.TestCase):
         (output / 'qristal-core/cmake/dependencies.cmake').write_bytes(b'changed afterward')
         with self.assertRaises(ValueError):
             prepare.source_export.verify_tree(output / 'qristal-core', effective)
+
+    def test_modified_version_patch_rejected_before_output(self):
+        (prepare.HERE / 'exported-version.patch').write_text('unreviewed')
+        with self.assertRaisesRegex(ValueError, 'version patch'):
+            prepare.prepare(self.inputs, self.root / 'result')
+        self.assertFalse((self.root / 'result').exists())
+
+    def test_modified_version_source_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'version source'):
+            prepare.version.transform(self.version_source + b'changed')
 
     def test_modified_source_rejected_before_output(self):
         self.source.write_bytes(self.original + b'extra')
