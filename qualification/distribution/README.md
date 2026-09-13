@@ -73,3 +73,8 @@ thereby admitted to hosted execution. See the [current demonstration scope](../c
 Track packaging under platform issues #609, #640, #1585 and #1839; GPU follow-up
 under #691. Conference evidence remains #2172/#1701. Decoder research is #2173
 and proceeds separately. Do not close these wider issues on catalog delivery.
+
+The [CPU staging increment](../cpu_package/README.md) now provides an explicit OCI
+context and installed-byte receipt. [Real local staging evidence](../evidence/2026-09-13-cpu-staging/README.md)
+records successful assembly of the context; the clean image build and native
+qualification remain pending. This does not change the catalog's available artifacts.

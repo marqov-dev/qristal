@@ -1,0 +1,25 @@
+{
+  "schema": "marqov.cpu-staging-observation/v1",
+  "baseline_revision": "06a43524371c6df6d8f882fac17e4be84afecf9c",
+  "context_record_sha256": "75d2758d4740d499f19a2ab24958d138471466924e323d906c801d85e8dc8535",
+  "context": {
+    "schema": "marqov.cpu-context/v1",
+    "files": {
+      "Dockerfile": "b202961f26d27f829b762873fdb158bd27a7c687395694363b585770b3551fe4",
+      "apt-runtime.txt": "3d72c8cec28c7c5da150ed3f80c502340f3471d7b398350c34e48ee9c289ef3c",
+      "inputs.json": "326639d1d44b2f386c0dce6fb69875aa8498c7b9662d30a209e3e350bb2e90f6",
+      "payload-inventory.json": "0f80b111b91556f88a869dc8d74fc148974566b61d28f3d594fd79091b801e13"
+    },
+    "native_qualified": false,
+    "published": false
+  },
+  "input_groups": 14,
+  "payload_regular_files": 28289,
+  "payload_links": 30,
+  "validator_sha256": "78a4524acf3df6dfae7afbf27fb9355f5305084a4d8ff41d954e3c346a5649fb",
+  "verified": true,
+  "docker_executed": false,
+  "native_qualified": false,
+  "published": false,
+  "build_origin": "observed_installed_bytes_not_verified_build_origin"
+}
