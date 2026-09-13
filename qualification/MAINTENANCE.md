@@ -72,6 +72,16 @@ full caller fixture still times out; structure-preserving inversion is a candida
 but forward preparation also needs attention. Two failed reporting attempts and
 all three exact cleanups are retained.
 
+The [controlled inverse experiment](evidence/2026-09-13-structured-inverse/README.md)
+adds 140 candidate complex-state cases, 20 direct sparse interference cases,
+20 repeated sparse roundtrips and 12 input rejections. It caught our incorrect
+assumption about QPP direct-control support, then four exact-phase discrepancies
+in legacy controlled-Rx fallback. Those standalone discrepancies are global phase,
+not demonstrated wrong probabilities or decoded results. The candidate uses
+explicit QPP lowering; neither a full Decoder speedup nor generic IR compatibility
+is established. [Preparation and phase audit](full_decoder/cloud/PREPARATION-AUDIT.md)
+defines the next bounded work.
+
 ## Dependencies and release policy
 
 The selected CPU toolchain is Ubuntu 22.04, GCC11.4 and Python3.10.12/linux-amd64.

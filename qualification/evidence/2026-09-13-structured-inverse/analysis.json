@@ -1,0 +1,190 @@
+{
+  "qpp": {
+    "candidate_matrix_cases": 140,
+    "independently_replayed_vectors": 40,
+    "candidate_vectors": 20,
+    "legacy_vectors": 20,
+    "max_candidate_complex_error": 1.7554167342883506e-16,
+    "legacy_observations": [
+      {
+        "layout": 0,
+        "operation": 0,
+        "error": 5.551115123125783e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -6.017521239965673e-17,
+        "diagnostic_phase_aligned_error": 1.1443916996305594e-16
+      },
+      {
+        "layout": 0,
+        "operation": 1,
+        "error": 5.551115123125783e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -6.017521239965673e-17,
+        "diagnostic_phase_aligned_error": 1.1443916996305594e-16
+      },
+      {
+        "layout": 0,
+        "operation": 2,
+        "error": 5.551115123125783e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -6.017521239965673e-17,
+        "diagnostic_phase_aligned_error": 1.1443916996305594e-16
+      },
+      {
+        "layout": 0,
+        "operation": 3,
+        "error": 1.1443916996305594e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -1.91378165487042e-17,
+        "diagnostic_phase_aligned_error": 1.1188630228279524e-16
+      },
+      {
+        "layout": 0,
+        "operation": 4,
+        "error": 0.28289654927140356,
+        "matches_exact_oracle": false,
+        "diagnostic_phase_angle": 0.7853981633974483,
+        "diagnostic_phase_aligned_error": 1.0007415106216802e-16
+      },
+      {
+        "layout": 0,
+        "operation": 5,
+        "error": 0.28289654927140356,
+        "matches_exact_oracle": false,
+        "diagnostic_phase_angle": 0.7853981633974482,
+        "diagnostic_phase_aligned_error": 1.3877787807814457e-16
+      },
+      {
+        "layout": 0,
+        "operation": 6,
+        "error": 5.721958498152797e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 3.7493477015777685e-17,
+        "diagnostic_phase_aligned_error": 1.1443916996305594e-16
+      },
+      {
+        "layout": 0,
+        "operation": 7,
+        "error": 6.206335383118183e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 1.1553218553276557e-16,
+        "diagnostic_phase_aligned_error": 1.2911750880923164e-16
+      },
+      {
+        "layout": 0,
+        "operation": 8,
+        "error": 5.721958498152797e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 3.967724236128406e-17,
+        "diagnostic_phase_aligned_error": 5.721958498152797e-17
+      },
+      {
+        "layout": 0,
+        "operation": 9,
+        "error": 5.551115123125783e-17,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -9.297650668793719e-17,
+        "diagnostic_phase_aligned_error": 6.206335383118183e-17
+      },
+      {
+        "layout": 1,
+        "operation": 0,
+        "error": 1.3877787807814457e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -8.618539934890762e-17,
+        "diagnostic_phase_aligned_error": 7.850462293418876e-17
+      },
+      {
+        "layout": 1,
+        "operation": 1,
+        "error": 1.4946834900704541e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -8.618539934890762e-17,
+        "diagnostic_phase_aligned_error": 1.1443916996305594e-16
+      },
+      {
+        "layout": 1,
+        "operation": 2,
+        "error": 2.0206364052201326e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": -8.618539934890762e-17,
+        "diagnostic_phase_aligned_error": 1.415262216750919e-16
+      },
+      {
+        "layout": 1,
+        "operation": 3,
+        "error": 2.779024842816778e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 1.568353744719728e-16,
+        "diagnostic_phase_aligned_error": 1.1780803309511844e-16
+      },
+      {
+        "layout": 1,
+        "operation": 4,
+        "error": 0.10403464653958251,
+        "matches_exact_oracle": false,
+        "diagnostic_phase_angle": 0.39269908169872436,
+        "diagnostic_phase_aligned_error": 1.7554167342883506e-16
+      },
+      {
+        "layout": 1,
+        "operation": 5,
+        "error": 0.10403464653958254,
+        "matches_exact_oracle": false,
+        "diagnostic_phase_angle": 0.3926990816987249,
+        "diagnostic_phase_aligned_error": 3.1031676915590914e-16
+      },
+      {
+        "layout": 1,
+        "operation": 6,
+        "error": 2.2591401799415137e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 2.051732867334371e-16,
+        "diagnostic_phase_aligned_error": 1.9279638981753172e-16
+      },
+      {
+        "layout": 1,
+        "operation": 7,
+        "error": 2.498001805406602e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 1.2979620158669747e-16,
+        "diagnostic_phase_aligned_error": 1.6184142622847344e-16
+      },
+      {
+        "layout": 1,
+        "operation": 8,
+        "error": 2.0407899217551515e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 2.1976569191140786e-18,
+        "diagnostic_phase_aligned_error": 1.0838898772828417e-16
+      },
+      {
+        "layout": 1,
+        "operation": 9,
+        "error": 2.0407899217551515e-16,
+        "matches_exact_oracle": true,
+        "diagnostic_phase_angle": 2.1976569191140786e-18,
+        "diagnostic_phase_aligned_error": 8.777083671441753e-17
+      }
+    ],
+    "legacy_mismatches": 4
+  },
+  "sparse_native_roundtrips": 20,
+  "sparse_interference": {
+    "cases": 20,
+    "shots": 16384,
+    "max_probability_residual": 0.00987752226443589,
+    "tolerance": 0.025
+  },
+  "rejected_inputs": 12,
+  "cleanup_verified": true,
+  "full_decoder_qualified": false,
+  "prototype_only": true,
+  "source_revisions": {
+    "qristal": "97b2cbca255ee50982a20e2d56f9dcc54fa0e2b9",
+    "qristal-core": "bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a",
+    "qristal-decoder": "a58df0cf7eff0c6002aa3fed27ae6b18fdcea036",
+    "xacc": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3"
+  },
+  "executable_sha256": "87e6f54a5c5fb32ae182ab68c973607ea2ec2f7d5605253dc13f669f9cf0fedc"
+}
