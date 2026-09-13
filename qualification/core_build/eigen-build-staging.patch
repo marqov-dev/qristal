@@ -1,0 +1,5 @@
+--- a/cmake/dependencies.cmake
++++ b/cmake/dependencies.cmake
+@@ -88 +88 @@
+-set(Eigen3_INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/deps/eigen3)
++set(Eigen3_INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/deps/eigen3)
