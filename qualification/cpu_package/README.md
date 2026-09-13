@@ -70,3 +70,35 @@ The next provenance increment must bind installed bytes to actual build receipts
 from controlled source acquisition/compilation. Then add registry publication,
 SBOM/attestations and acquisition verification. This batch supplies staging and
 checks, not those remaining release gates.
+
+## Isolated native runner
+
+The [predeclared native plan](NATIVE-PLAN.md) uses the existing fixed CPU VM
+supervisor rather than shared Docker. From the independent checkout:
+
+```sh
+python3 -B qualification/cpu_package/pack_native.py /tmp/cpu-context /tmp/cpu-native-artifact
+python3 -B qualification/cpu_package/run_native.py /tmp/cpu-native-artifact /tmp/cpu-native-run
+```
+
+Packing creates an archive of the checked context and exactly three named harness
+files. Running uses the existing AWS session and creates the plan's single VM,
+private transfer bucket and dedicated security group. The runner enforces the
+original deadline and verifies exact cleanup. These commands execute an experiment;
+they do not publish an image. Never run the cloud step as an offline CI test.
+
+A recovered report can contain a bootstrap, build or test failure. After recovery,
+use `check_native.py REPORT MANIFEST` to distinguish a pass from failure; the
+manifest is the packer's `manifest.json`. Independently retain and verify the
+supervisor's cleanup records. Script hashes bind the precise harness, while the
+context record binds the staged bytes. Future harness changes require new evidence
+or verification against the historical source revision.
+
+## Recorded native result
+
+The [13 September native experiment](../evidence/2026-09-13-cpu-oci/README.md)
+built this context in102.90seconds and passed the ten existing test groups in
+4.48seconds. Exact VM/disk/group/transfer cleanup passed. The image was disposable
+and was not exported or published. The inherited GPU-negative invocation rejected
+a missing program before reaching backend selection; that specific rejection
+remains unverified. Read the evidence limits before using this as a release claim.

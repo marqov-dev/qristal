@@ -1,0 +1,15 @@
+{
+  "schema": "marqov.cpu-oci-evidence/v1",
+  "execution_source": "47753cd",
+  "identifiers": "AWS identifiers pseudonymized consistently; exact originals retained privately",
+  "files": {
+    "archive.json": "73d74e0302075f7829270f20ed7aca599965d693a54af8937e483dfcd6714bfc",
+    "result.json": "02f77c9dee743a093ab00e2d6c8392cbc23259d33e22a078016ff151a3855e1a",
+    "supervisor.json": "37a85d8b6b55adcdee9bc80aadc30b61ddada2edaaeacd30489e773174a8fddb",
+    "transfer.json": "2dc51fc2fdcc6a493f87988c7bc4165948a5ece86a08d63387a6a0ec39d6e135",
+    "recovered.json": "70b2e9357e1ca21f90ef88b59a0540c114b389ce56fc069e43170df86652a5c8",
+    "resources.json": "d29f351dbde3fb649656eac25299179f716ff928a883a57679e51c7b01860b6e",
+    "cleanup.json": "4db53e6d464b24794e08a01bdb3a5743206d3055b00b804252d5352e1de3a5b9",
+    "native-manifest.json": "5a4278de7dd46f18cd3b73a7c11fda0c305f37d648970d251dff3efac42fad62"
+  }
+}
