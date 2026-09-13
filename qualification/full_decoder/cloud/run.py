@@ -22,6 +22,7 @@ from observer import atomic_json
 REGION = 'us-east-1'
 ACCOUNT = '090208085542'
 VPC = 'vpc-0c8ff9e3276495a4c'
+UPLOAD_TIMEOUT = 90
 
 
 class ApiError(RuntimeError):
@@ -38,7 +39,7 @@ def aws(service, operation, params):
             result = subprocess.run(
                 ['aws', service, operation, '--region', REGION, '--output', 'json',
                  '--cli-input-json', 'file://' + request.name] + extra,
-                capture_output=True, text=True, timeout=90,
+                capture_output=True, text=True, timeout=UPLOAD_TIMEOUT if operation == 'put-object' else 90,
                 env=dict(os.environ, AWS_PAGER='', AWS_MAX_ATTEMPTS='3'))
         except subprocess.TimeoutExpired:
             raise ApiError(operation + ':timeout') from None

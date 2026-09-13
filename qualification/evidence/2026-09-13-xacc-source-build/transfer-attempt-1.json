@@ -1,0 +1,14 @@
+{
+  "artifact": {
+    "bytes": 279735953,
+    "sha256": "8fce99039dfbab2ce7e77b0b960610d752b30dc5d7ba58c671b0ff6a268c253f"
+  },
+  "bucket_attempted": true,
+  "group_attempted": false,
+  "error": "ApiError:put-object:timeout",
+  "transfer_cleanup_verified": true,
+  "cleanup_errors": [],
+  "attempt": "transfer-1",
+  "native_started": false,
+  "source": "9b93a11ae43b5dbf895614d0f5954c160a7468b2"
+}

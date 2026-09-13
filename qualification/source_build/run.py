@@ -29,6 +29,7 @@ def bootstrap(url, digest):
 
 
 if __name__ == '__main__':
+    lifecycle.UPLOAD_TIMEOUT = 300
     lifecycle.SupervisorBase = lifecycle.Supervisor
     lifecycle.Supervisor = SourceSupervisor
     lifecycle.bootstrap = bootstrap

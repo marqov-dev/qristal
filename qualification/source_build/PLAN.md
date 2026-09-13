@@ -39,3 +39,9 @@ not itself a pass: `native_passed` must be true and all stages must exit zero,
 with containers removed. VM, exact disk/group and transfer cleanup are separately
 verified. No claim of CPU candidate promotion, all-simulator reconstruction,
 full Decoder qualification, or hosted platform admission follows from this run.
+
+Transfer-only attempt 1 hit the default 90-second PutObject timeout. No VM or
+security group was created; private transfer cleanup passed. Attempt 2 sets an
+explicit 300-second upload bound before launch. Guest/compilation/observation
+bounds remain unchanged. This is a new recorded transfer attempt, not a deadline
+extension of a running VM or a second native launch.
