@@ -73,7 +73,7 @@ try:
     result=stage('input-tests',['/proof/out/input-tests','--gtest_filter=FullDecoderInputValidation.*'],60)
     if '[  PASSED  ] 6 tests.' not in result['stdout']: raise RuntimeError('required_tests_not_passed')
     stage('tiny-build',BASE+['/work/qristal-decoder/src/quantum_decoder.cpp','/work/qualification/full_decoder/tiny_result_smoke.cpp']+INC+LIB+['-o','/proof/out/tiny-smoke'])
-    tiny=stage('tiny-result',['/proof/out/tiny-smoke'],60)
+    tiny=stage('tiny-result',['/proof/out/tiny-smoke'],60,55000)
     loaded=[line.removeprefix('LOADED_CORE_LIBRARY: ') for line in tiny['stdout'].splitlines()
             if line.startswith('LOADED_CORE_LIBRARY: ')]
     if len(loaded)!=1 or loaded[0] not in ('/work/install-xacc/plugins/libalgorithm_es.so.1.8.1',

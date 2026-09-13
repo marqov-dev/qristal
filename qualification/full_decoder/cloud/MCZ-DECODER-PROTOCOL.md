@@ -18,6 +18,10 @@ other backend name retains the original expansion call. The prototype is not
 installed or published as a general Circuit API. It is not used for serialization,
 flattening or bit remapping in this full-fixture path.
 
+Retain up to 55,000 stdout bytes from the full fixture so early loaded-library
+identity is not lost if additional trials print more output. The existing
+65,536-byte process-output and 120,000-byte total report bounds remain enforced.
+
 Record original, trace-predecessor, derived source, unified patch and header hashes;
 bind the loaded Core path/hash to the built derivative. Restore the public QFT
 provider as in earlier probes, rerun 70 phase-sensitive QFT and six initialization
