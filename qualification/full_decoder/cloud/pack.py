@@ -3,7 +3,7 @@ import hashlib,json,pathlib,subprocess,sys,tarfile
 HERE=pathlib.Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
 variant=sys.argv[2] if len(sys.argv)>2 else 'search'
-if variant not in ('search','mcz','mcz-decoder','backend-profile','structured-inverse'): raise ValueError('unknown_variant')
+if variant not in ('search','mcz','mcz-decoder','backend-profile','structured-inverse','phase-composition'): raise ValueError('unknown_variant')
 OUT=pathlib.Path(sys.argv[1]); OUT.mkdir()
 entries={
  'install-core/lib':'install-core/lib', 'install-core/include':'install-core/include',
@@ -60,6 +60,17 @@ if variant=='structured-inverse':
   'qristal/qualification/full_decoder/cloud/inverse_checks.cpp':'inverse_checks.cpp',
   'qristal/qualification/full_decoder/cloud/structured_inverse.hpp':'structured_inverse.hpp',
   'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
+ })
+if variant=='phase-composition':
+ del entries['qristal/qualification/full_decoder/cloud/guest.py']
+ entries.update({
+  'qristal/qualification/full_decoder/cloud/inverse_checks.cpp':'inverse_checks.cpp',
+  'qristal/qualification/full_decoder/cloud/structured_inverse.hpp':'structured_inverse.hpp',
+  'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
+  'qristal/qualification/full_decoder/cloud/instrument_preparation.py':'instrument_preparation.py',
+  'qristal/qualification/full_decoder/cloud/preparation_inventory.hpp':'preparation_inventory.hpp',
+  'qristal/qualification/full_decoder/cloud/guest_phase_composition.py':'guest.py',
+  'qristal/qualification/full_decoder/cloud/phase_composition_checks.cpp':'phase_composition_checks.cpp',
  })
 manifest={'variant':variant,'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
 for name in entries:

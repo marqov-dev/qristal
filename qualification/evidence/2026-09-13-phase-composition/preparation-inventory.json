@@ -1,0 +1,117 @@
+[
+  {
+    "kind": "preparation",
+    "index": 0,
+    "name": "state_prep",
+    "nodes": 95425,
+    "primitive_leaves": 95271,
+    "eligible_control_blocks": 41,
+    "estimated_sparse_visits": 93426,
+    "composite_names": {
+      "C-U": 61,
+      "CanonicalAmplitudeEstimation": 8,
+      "CompareBeamOracle": 2,
+      "CompareGT": 2,
+      "ControlledSubtraction": 2,
+      "ControlledSwap": 8,
+      "DecoderKernel": 1,
+      "GeneralisedMCX": 5,
+      "InverseCircuit": 14,
+      "MeanValueFinder": 2,
+      "PhaseEstimation": 8,
+      "ProperFractionDivision": 2,
+      "QPrime": 5,
+      "RippleCarryAdder": 4,
+      "SuperpositionAdder": 1,
+      "UPrime": 5,
+      "WPrime": 5,
+      "grover_op": 4,
+      "oracle": 4,
+      "state_prep": 5,
+      "to_be_undone": 2,
+      "zero_reflection": 4
+    }
+  },
+  {
+    "kind": "child",
+    "index": 0,
+    "name": "WPrime",
+    "nodes": 8,
+    "primitive_leaves": 5,
+    "eligible_control_blocks": 2,
+    "estimated_sparse_visits": 6,
+    "composite_names": {
+      "C-U": 2,
+      "WPrime": 1
+    }
+  },
+  {
+    "kind": "child",
+    "index": 1,
+    "name": "UPrime",
+    "nodes": 3,
+    "primitive_leaves": 2,
+    "eligible_control_blocks": 0,
+    "estimated_sparse_visits": 3,
+    "composite_names": {
+      "UPrime": 1
+    }
+  },
+  {
+    "kind": "child",
+    "index": 2,
+    "name": "QPrime",
+    "nodes": 3,
+    "primitive_leaves": 2,
+    "eligible_control_blocks": 0,
+    "estimated_sparse_visits": 3,
+    "composite_names": {
+      "QPrime": 1
+    }
+  },
+  {
+    "kind": "child",
+    "index": 3,
+    "name": "DecoderKernel",
+    "nodes": 95410,
+    "primitive_leaves": 95262,
+    "eligible_control_blocks": 39,
+    "estimated_sparse_visits": 93413,
+    "composite_names": {
+      "C-U": 59,
+      "CanonicalAmplitudeEstimation": 8,
+      "CompareBeamOracle": 2,
+      "CompareGT": 2,
+      "ControlledSubtraction": 2,
+      "ControlledSwap": 8,
+      "DecoderKernel": 1,
+      "GeneralisedMCX": 5,
+      "InverseCircuit": 14,
+      "MeanValueFinder": 2,
+      "PhaseEstimation": 8,
+      "ProperFractionDivision": 2,
+      "QPrime": 4,
+      "RippleCarryAdder": 4,
+      "SuperpositionAdder": 1,
+      "UPrime": 4,
+      "WPrime": 4,
+      "grover_op": 4,
+      "oracle": 4,
+      "state_prep": 4,
+      "to_be_undone": 2,
+      "zero_reflection": 4
+    }
+  },
+  {
+    "kind": "legacy_inverse",
+    "index": 0,
+    "name": "InverseCircuit",
+    "nodes": 95272,
+    "primitive_leaves": 95271,
+    "eligible_control_blocks": 0,
+    "estimated_sparse_visits": 95272,
+    "composite_names": {
+      "InverseCircuit": 1
+    }
+  }
+]
