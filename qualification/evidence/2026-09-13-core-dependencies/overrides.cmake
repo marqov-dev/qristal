@@ -1,0 +1,13 @@
+# Source selections only; configure must verify actual system/CPM resolution.
+set(CPM_SOURCE_CACHE "${CMAKE_CURRENT_LIST_DIR}/cache" CACHE PATH "Captured CPM cache" FORCE)
+set(CPM_nlohmann_json_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/nlohmann_json" CACHE PATH "Verified source override" FORCE)
+set(CPM_autodiff_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/autodiff" CACHE PATH "Verified source override" FORCE)
+set(CPM_cpr_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/cpr" CACHE PATH "Verified source override" FORCE)
+set(CPM_pybind11_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/pybind11" CACHE PATH "Verified source override" FORCE)
+set(CPM_Eigen3_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/eigen3" CACHE PATH "Verified source override" FORCE)
+set(CPM_yamlcpp_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/yamlcpp" CACHE PATH "Verified source override" FORCE)
+set(CPM_range-v3_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/range-v3" CACHE PATH "Verified source override" FORCE)
+set(CPM_cppitertools_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/cppitertools" CACHE PATH "Verified source override" FORCE)
+set(CPM_googletest_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/googletest" CACHE PATH "Verified source override" FORCE)
+set(CPM_cereal_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/cereal" CACHE PATH "Verified source override" FORCE)
+set(CPM_args_SOURCE "${CMAKE_CURRENT_LIST_DIR}/deps/args" CACHE PATH "Verified source override" FORCE)
