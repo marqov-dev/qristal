@@ -3,7 +3,7 @@ import hashlib,json,pathlib,subprocess,sys,tarfile
 HERE=pathlib.Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
 variant=sys.argv[2] if len(sys.argv)>2 else 'search'
-if variant not in ('search','mcz','mcz-decoder','backend-profile'): raise ValueError('unknown_variant')
+if variant not in ('search','mcz','mcz-decoder','backend-profile','structured-inverse'): raise ValueError('unknown_variant')
 OUT=pathlib.Path(sys.argv[1]); OUT.mkdir()
 entries={
  'install-core/lib':'install-core/lib', 'install-core/include':'install-core/include',
@@ -53,6 +53,14 @@ if variant=='backend-profile':
   'qristal/qualification/full_decoder/cloud/tiny_profile_smoke.cpp':'qualification/full_decoder/tiny_result_smoke.cpp',
  })
  del entries['qristal/qualification/full_decoder/tiny_result_smoke.cpp']
+if variant=='structured-inverse':
+ entries={k:v for k,v in entries.items() if k.startswith('install-') or k.endswith(('capture_process.py','install-toolchain.sh'))}
+ entries.update({
+  'qristal/qualification/full_decoder/cloud/guest_inverse.py':'guest.py',
+  'qristal/qualification/full_decoder/cloud/inverse_checks.cpp':'inverse_checks.cpp',
+  'qristal/qualification/full_decoder/cloud/structured_inverse.hpp':'structured_inverse.hpp',
+  'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
+ })
 manifest={'variant':variant,'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
 for name in entries:
  path=ROOT/name

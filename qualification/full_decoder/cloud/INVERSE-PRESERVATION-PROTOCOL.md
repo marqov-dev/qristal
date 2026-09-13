@@ -41,3 +41,26 @@ structure-preserving inverse candidate; they do not prove it is faster or correc
 Even a faster completed caller result is followed by independent caller-oracle,
 stochastic-success, installed-plugin and exact distributable-image gates. This
 work remains independent of platform admission, SDK/compiler and hosted release.
+
+## First native equivalence experiment (after PR28)
+
+`structured_inverse.hpp` is a qualification-only helper for seven explicitly
+supported single-target gate names. It validates q-register controls, uses fresh
+base instructions and preserves controlled metadata while reversing nested order.
+It rejects unsupported leaf gates, opaque empty composites and malformed input.
+It does not implement the full preparation gate vocabulary (U, CPhase, CH, etc.).
+
+Predeclared inventory: 160 QPP complex-state cases = two layouts × ten operations
+(X/Y/Z/H and signed Rx/Ry/Rz) × eight modes. Every exact IR runs twice. Modes:
+direct inverse, populated upstream C-U inverse, roundtrip, clone, disabled clone,
+active-set-changing mapping, forced primitive inverse and nested inverse. Native
+independent dense matrices require max absolute complex error <1e-10 without
+phase fitting. Retain vectors for the 40 direct/primitive inverse cases for
+independent Python replay; other cases retain native errors and source-bound
+matrix assertions. Twenty sparse roundtrips each run twice with exactly 64 zero
+counts required. Twelve malformed-input cases must reject.
+
+One existing bounded CPU VM protocol; compile ≤180 s, each test mode ≤60 s,
+unchanged observation/cleanup limits. Only the standalone consumer is compiled;
+installed simulator libraries are reused and their loaded hashes recorded. This
+experiment does not execute the full Decoder or qualify the installed image.
