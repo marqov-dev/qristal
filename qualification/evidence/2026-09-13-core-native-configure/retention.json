@@ -1,0 +1,14 @@
+{
+  "account": "proof-account",
+  "archive_sha256": "5735663a9b24251566b3e8896367a840a048e89e16f622cdff9d40ff88a3946f",
+  "bucket": "core-native-bucket",
+  "entries": 10,
+  "key": "source-output.tar.gz",
+  "native": {
+    "native_passed": false,
+    "reason": "native report did not pass",
+    "schema": "qb.core-native-classification/v1"
+  },
+  "native_passed": false,
+  "verified": true
+}

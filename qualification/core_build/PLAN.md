@@ -27,12 +27,41 @@ commit. This preserves the original configure-time version choice for the locked
 revision; it does not claim an unmodified upstream release or authenticate a
 publisher. Git discovery remains available to other dependency helpers.
 
-The Eigen zero-context patch and version unified diff are review artifacts. The helper applies the equivalent
+The Eigen and dependency-path zero-context patches and version unified diff are review artifacts. The helper applies the equivalent
 exact byte replacement only after checking the complete original file SHA256;
 it checks the patch bytes too. Manual `git apply` would require `--unidiff-zero`.
 Both copies are verified before editing, then the derived copy is verified against
 its effective byte manifest. Its changed files do not retain pristine Git blob
 identities; the effective manifest does not claim to be the original Git tree.
+
+The third transformation addresses the first native configure failure in
+`cmake/add_dependency.cmake`: a missing package path expanded to no macro argument
+at line 81. Both existing `is_in_install_path` calls now quote their path arguments;
+both already had a result argument, and those result arguments are preserved.
+The helper initializes the result OFF and skips `REAL_PATH` for empty/unset paths,
+`NOTFOUND`, and names ending in `-NOTFOUND`. Valid paths and the installation
+prefix are quoted when canonicalized. `cmake_path(IS_PREFIX ... NORMALIZE)` checks
+path-component boundaries, avoiding the former string-prefix false positive for
+`/install-sibling` versus `/install`. Its syntax is supported since CMake3.20 and
+by the builder's CMake3.22.1; see the
+[CMake3.22 command reference](https://cmake.org/cmake/help/v3.22/command/cmake_path.html).
+
+This transform accepts only original file SHA256
+`a1f682dcd200418ed36c584a86ed7b4733870b2c525d734f6673ba0440bfa76c`.
+The resulting file SHA256 is
+`37480e0849a7cb4865ae3189213c67e979696853f98b723e8e1db46d29530502`.
+`dependency-path-guard.patch` is checked against the exact generated diff before
+preparation writes any output. The receipt separately binds original/derived file
+hashes and patch hash, and the effective manifest records the third changed file.
+Forced find-package flags and CPM source-selection audits remain unchanged.
+
+The regression extracts only this macro and its two call sites into a minimal
+`cmake -P` script; it never includes CPM, configures Core or builds a library.
+Cases cover empty, unset, NOTFOUND, identical, child, outside, prefix-sibling and
+space-containing paths. Locally the CMake test skips if no existing executable
+is available. CI must set `QB_REQUIRE_CMAKE_TESTS=1` to make missing CMake fatal;
+`QB_CMAKE` may identify an existing executable. Native configure success remains
+unverified until the separately frozen experiment is rerun.
 
 ```sh
 python3 -B qualification/core_build/prepare.py /path/to/pristine-core-inputs /new/outside/path

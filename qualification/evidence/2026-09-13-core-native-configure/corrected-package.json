@@ -1,0 +1,9 @@
+{
+  "bytes": 314255620,
+  "sha256": "52c90c0db488806109d381410d23978e973b32446c2e080780f9aba666659650",
+  "protocol_sha256": "488f8140eaef1df5994e1ddffd065c0a99ea3acd5bd0f3e0df95f4ff08b7c8e8",
+  "materials_sha256": "5ac9648aac91aee44ffa24697b65de3a886917cf6a261f354bbd9c65464f90b1",
+  "executed": false,
+  "prior_single_vm_completed": true,
+  "new_vm_approval_pending": true
+}

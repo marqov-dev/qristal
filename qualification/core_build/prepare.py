@@ -8,6 +8,7 @@ import shutil
 import sys
 import difflib
 import version
+import dependency_path
 
 HERE = Path(__file__).resolve().parent
 SOURCE_COMMIT = 'a5c3e5fa544c07d538974d3a289b19652d483848'
@@ -60,6 +61,14 @@ def prepare(inputs, output):
         changed_version.decode().splitlines(True), fromfile='a/CMakeLists.txt', tofile='b/CMakeLists.txt')).encode()
     if version_patch != expected_patch:
         raise ValueError('unexpected version patch')
+    original_path = (source / 'cmake/add_dependency.cmake').read_bytes()
+    changed_path = dependency_path.transform(original_path)
+    path_patch = (HERE / 'dependency-path-guard.patch').read_bytes()
+    expected_path_patch = ''.join(difflib.unified_diff(original_path.decode().splitlines(True),
+        changed_path.decode().splitlines(True), fromfile='a/cmake/add_dependency.cmake',
+        tofile='b/cmake/add_dependency.cmake', n=0)).encode()
+    if path_patch != expected_path_patch:
+        raise ValueError('unexpected dependency path patch')
     output.mkdir(parents=True)
     derived = output / 'qristal-core'
     shutil.copytree(source, derived, symlinks=True)
@@ -67,6 +76,7 @@ def prepare(inputs, output):
     source_export.verify_tree(derived, receipt['source'])
     (derived / 'cmake/dependencies.cmake').write_bytes(changed)
     (derived / 'CMakeLists.txt').write_bytes(changed_version)
+    (derived / 'cmake/add_dependency.cmake').write_bytes(changed_path)
     effective = json.loads(json.dumps(receipt['source']))
     entry = next(e for e in effective['entries'] if e['path'] == 'cmake/dependencies.cmake')
     entry.update(sha256=sha(changed), bytes=len(changed))
@@ -77,6 +87,9 @@ def prepare(inputs, output):
     version_entry = next(e for e in effective['entries'] if e['path'] == 'CMakeLists.txt')
     version_entry.update(sha256=sha(changed_version), bytes=len(changed_version))
     version_entry.pop('git_blob')
+    path_entry = next(e for e in effective['entries'] if e['path'] == 'cmake/add_dependency.cmake')
+    path_entry.update(sha256=sha(changed_path), bytes=len(changed_path))
+    path_entry.pop('git_blob')
     source_export.verify_tree(derived, effective)
     effective_bytes = (json.dumps(effective, sort_keys=True, indent=2) + '\n').encode()
     (output / 'effective-source.json').write_bytes(effective_bytes)
@@ -87,6 +100,8 @@ def prepare(inputs, output):
               'original_version_file_sha256': sha(original_version),
               'derived_version_file_sha256': sha(changed_version),
               'original_dependency_sha256': sha(original), 'derived_dependency_sha256': sha(changed),
+              'dependency_path_patch_sha256': sha(path_patch),
+              'original_dependency_path_sha256': sha(original_path), 'derived_dependency_path_sha256': sha(changed_path),
               'effective_manifest_sha256': sha(effective_bytes),
               'configured': False, 'native_qualified': False, 'published': False,
               'remaining_blockers': ['offline dependency selection',

@@ -16,6 +16,8 @@ jobs:
         with:
           persist-credentials: false
       - name: Replay retained evidence and boundary tests
+        env:
+          QB_REQUIRE_CMAKE_TESTS: "1"
         run: python3 -B qualification/replay_offline.py
       - name: Export and verify offline conference packet
         run: |

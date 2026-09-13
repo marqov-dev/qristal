@@ -36,7 +36,7 @@ def prepare(core, dependencies, xacc, python, output):
         raise ValueError('output must be new and outside inputs')
     core_receipt = record(core / 'preparation.json')
     if (core_receipt['source_commit'] != 'a5c3e5fa544c07d538974d3a289b19652d483848'
-            or sha(core / 'effective-source.json') != 'c5353f54ef26f65a21417516926ac3b027e766a0ecf20036400604dbcaffd405'):
+            or sha(core / 'effective-source.json') != '0859817a11e89e38c987ec17b0ce9c7d6c5c5ab1caca79bf6afe3499b1d564be'):
         raise ValueError('Core identity')
     export.verify_tree(core / 'qristal-core', record(core / 'effective-source.json'))
     # Bind preparation to the independently retained actual dependency receipt.
