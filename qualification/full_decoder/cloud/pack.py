@@ -3,7 +3,7 @@ import hashlib,json,pathlib,subprocess,sys,tarfile
 HERE=pathlib.Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
 variant=sys.argv[2] if len(sys.argv)>2 else 'search'
-if variant not in ('search','mcz','mcz-decoder','backend-profile','structured-inverse','phase-composition'): raise ValueError('unknown_variant')
+if variant not in ('search','mcz','mcz-decoder','backend-profile','structured-inverse','phase-composition','sparse-state'): raise ValueError('unknown_variant')
 OUT=pathlib.Path(sys.argv[1]); OUT.mkdir()
 entries={
  'install-core/lib':'install-core/lib', 'install-core/include':'install-core/include',
@@ -36,14 +36,14 @@ if variant=='mcz':
   'qristal/qualification/full_decoder/cloud/mcz_checks.cpp':'mcz_checks.cpp',
   'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
  })
-if variant in ('mcz-decoder','backend-profile'):
+if variant in ('mcz-decoder','backend-profile','sparse-state'):
  del entries['qristal/qualification/full_decoder/cloud/guest.py']
  entries.update({
   'qristal/qualification/full_decoder/cloud/guest_mcz_decoder.py':'guest.py',
   'qristal/qualification/full_decoder/cloud/patch_mcz.py':'patch_mcz.py',
   'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
  })
-if variant=='backend-profile':
+if variant in ('backend-profile','sparse-state'):
  del entries['qristal/qualification/full_decoder/cloud/guest_mcz_decoder.py']
  entries.update({
   'qristal/qualification/full_decoder/cloud/guest_backend_profile.py':'guest.py',
@@ -71,6 +71,13 @@ if variant=='phase-composition':
   'qristal/qualification/full_decoder/cloud/preparation_inventory.hpp':'preparation_inventory.hpp',
   'qristal/qualification/full_decoder/cloud/guest_phase_composition.py':'guest.py',
   'qristal/qualification/full_decoder/cloud/phase_composition_checks.cpp':'phase_composition_checks.cpp',
+ })
+if variant=='sparse-state':
+ del entries['qristal/qualification/full_decoder/cloud/guest_backend_profile.py']
+ entries.update({
+  'qristal/qualification/full_decoder/cloud/guest_state_probe.py':'guest.py',
+  'qristal/qualification/full_decoder/cloud/instrument_state.py':'instrument_state.py',
+  'qristal/qualification/full_decoder/cloud/state_neutrality.cpp':'state_neutrality.cpp',
  })
 manifest={'variant':variant,'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
 for name in entries:

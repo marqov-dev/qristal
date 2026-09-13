@@ -1,0 +1,13 @@
+# Stored sparse-state probe protocol
+
+Parent plan: SPARSE-STATE-PROBE-PLAN.md. PR30 merged at 5caf589e9792acab44cc63fa3a97d814f18f0349. This experiment implements the observation-neutrality and matched state/queue portions first; deeper hierarchical inventory remains follow-up if the state measurements warrant it.
+
+One owned m7i.large under the existing 1200-second observer and 300-second cleanup windows. Unchanged 24-qubit/four-trial Decoder fixture; each native consumer limited to 60 seconds, 4 GiB address space, non-root and no network. Compile stages remain 180 seconds. No local dependencies or Docker builds.
+
+Rebuild the same sparse source twice with GCC11/C++20/O1. Baseline uses the unchanged header/visitor. Observed uses only hash-bound, reversible additions: stored wavefunction size, queued phase/permutation operations and pending H/Rx/Ry flags, sampled every 8192 visited nodes and at phase boundaries. Both use the same diagnostic direct-MCZ Core derivative and public QFT provider. No gate/pruning/seed changes, explicit queue flush or state dump in observations. Baseline runs first, so timing ratios are descriptive and order/stochastic effects are uncontrolled; no performance qualification.
+
+Before the observed full run, compare six fixed gate sequences twice each (12 cases), with 100 repeated observations after each of 18 operations. Sequences include queued H/X/Y/Z/Rx/Ry/Rz/CX. Require nonempty pending queues, unchanged snapshots and final complex-state differences below 1e-12 against a no-observation route. Final state collection deliberately flushes both routes equally. These are direct simulator operation-sequence tests, not a new general XACC IR/clone qualification. Native test failure stops the observed experiment.
+
+A full-fixture timeout is retained as an incomplete result, never a passed Decoder. Each stage binds the actually installed sparse plugin hash while that plugin is present; a final shared path must not misattribute baseline identity to the later replacement. Source/derived hashes, executable hashes, filtered checksummed console and exact resource cleanup remain required. Existing 70 QFT and six initialization results are reused as prior evidence, not rerun or newly counted here.
+
+Interpretation: stored entries are not exact support after pending operations; sampled maxima are lower bounds on peak stored entries. High state counts may motivate a backend comparison or algorithm simplification but do not by themselves identify an incorrect algorithm or justify changing its semantics. No production Core, runtime lock, hosted admission or shared platform/SDK changes.
