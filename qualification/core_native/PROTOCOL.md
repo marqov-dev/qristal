@@ -6,7 +6,7 @@ retained. Keep packaging and hosted-admission claims separate.
 
 ## Exact scope
 
-One m7i.large CPU VM in account 090208085542/us-east-1, encrypted 20 GiB root,
+One m7i.large CPU VM in the existing proof account/us-east-1, encrypted 20 GiB root,
 new no-inbound security group in the existing proof VPC; no instance profile.
 The existing supervisor enforces a 3,600-second observation and 300-second cleanup
 window, plus guest shutdown. No shared platform infrastructure is changed.
