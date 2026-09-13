@@ -1,0 +1,1498 @@
+{
+  "classification": "not_completed",
+  "caller_contract_completed": false,
+  "full_decoder_qualified": false,
+  "prototype_only": true,
+  "tiny_error": "ProcessError:process_timeout",
+  "tiny_exit_code": null,
+  "checkpoints": [
+    {
+      "stage": "execute_begin",
+      "elapsed_ms": 0,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_begin",
+      "elapsed_ms": 5,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_end",
+      "elapsed_ms": 3543,
+      "count": 95271
+    },
+    {
+      "stage": "used_bits_begin",
+      "elapsed_ms": 3543,
+      "count": -1
+    },
+    {
+      "stage": "used_bits_end",
+      "elapsed_ms": 3561,
+      "count": 19
+    },
+    {
+      "stage": "mcz_expand_begin",
+      "elapsed_ms": 3563,
+      "count": 18
+    },
+    {
+      "stage": "mcz_expand_end",
+      "elapsed_ms": 3563,
+      "count": 0
+    },
+    {
+      "stage": "amplification_begin",
+      "elapsed_ms": 3565,
+      "count": 1
+    },
+    {
+      "stage": "amplification_end",
+      "elapsed_ms": 3566,
+      "count": 5
+    },
+    {
+      "stage": "backend_execute_begin",
+      "elapsed_ms": 3567,
+      "count": 8
+    },
+    {
+      "stage": "backend_execute_end",
+      "elapsed_ms": 40307,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_begin",
+      "elapsed_ms": 40337,
+      "count": -1
+    },
+    {
+      "stage": "inverse_expand_end",
+      "elapsed_ms": 43851,
+      "count": 95271
+    },
+    {
+      "stage": "used_bits_begin",
+      "elapsed_ms": 43852,
+      "count": -1
+    },
+    {
+      "stage": "used_bits_end",
+      "elapsed_ms": 43869,
+      "count": 19
+    },
+    {
+      "stage": "mcz_expand_begin",
+      "elapsed_ms": 43872,
+      "count": 18
+    },
+    {
+      "stage": "mcz_expand_end",
+      "elapsed_ms": 43872,
+      "count": 0
+    },
+    {
+      "stage": "amplification_begin",
+      "elapsed_ms": 43874,
+      "count": 1
+    },
+    {
+      "stage": "amplification_end",
+      "elapsed_ms": 43875,
+      "count": 5
+    },
+    {
+      "stage": "backend_execute_begin",
+      "elapsed_ms": 43876,
+      "count": 8
+    }
+  ],
+  "last_checkpoint": {
+    "stage": "backend_execute_begin",
+    "elapsed_ms": 43876,
+    "count": 8
+  },
+  "observed_mcz_completions": 2,
+  "observed_backend_completions": 1,
+  "cleanup_verified": true,
+  "source_identity": {
+    "original_sha256": "acc3dd0ec7297aaf56479c35b7ff86fdf73f042bb25e5317a52a21718922bd98",
+    "traced_predecessor_sha256": "8adbf4ef6eb561e5982f8b5697babc79208bbd45802846ac8c800e0dc758c4a8",
+    "derived_sha256": "c5a964365d07979be48d568577f3c9eff1fa9aa1959b5879bf800da1565ba60e",
+    "patch_sha256": "7df6446594fbd90b5d832de576dbce2b36c0d54ca8f0f3925fc5627fe571f0eb",
+    "header_sha256": "2aaed48725e109b6d0de1399da57f583683efcffeed01ce17d2c94e80872deba",
+    "prototype_only": true,
+    "original_decomposition_retained_for_other_backends": true
+  },
+  "backend_calls": [
+    {
+      "points": [
+        {
+          "elapsed_us": 7,
+          "phase": 0,
+          "nodes": 0,
+          "enabled": 0,
+          "accepts": 0,
+          "event": "begin"
+        },
+        {
+          "elapsed_us": 8467947,
+          "phase": 0,
+          "nodes": 95427,
+          "enabled": 93427,
+          "accepts": 93427,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 8472220,
+          "phase": 1,
+          "nodes": 95589,
+          "enabled": 93469,
+          "accepts": 93469,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 14495523,
+          "phase": 2,
+          "nodes": 131072,
+          "enabled": 128952,
+          "accepts": 128952,
+          "event": "progress"
+        },
+        {
+          "elapsed_us": 27169483,
+          "phase": 2,
+          "nodes": 190861,
+          "enabled": 188741,
+          "accepts": 188741,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 27169894,
+          "phase": 3,
+          "nodes": 190901,
+          "enabled": 188781,
+          "accepts": 188781,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 33817690,
+          "phase": 4,
+          "nodes": 262144,
+          "enabled": 258452,
+          "accepts": 258452,
+          "event": "progress"
+        },
+        {
+          "elapsed_us": 36739594,
+          "phase": 4,
+          "nodes": 286326,
+          "enabled": 282207,
+          "accepts": 282207,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 36739704,
+          "phase": 5,
+          "nodes": 286327,
+          "enabled": 282208,
+          "accepts": 282207,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 36739711,
+          "phase": 6,
+          "nodes": 286328,
+          "enabled": 282209,
+          "accepts": 282207,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 36739718,
+          "phase": 7,
+          "nodes": 286328,
+          "enabled": 282210,
+          "accepts": 282207,
+          "event": "sample_begin"
+        },
+        {
+          "elapsed_us": 36740031,
+          "phase": 7,
+          "nodes": 286328,
+          "enabled": 282210,
+          "accepts": 282207,
+          "event": "sample_end"
+        }
+      ],
+      "costs": [
+        {
+          "phase": 0,
+          "gate": "C-U",
+          "calls": 61,
+          "accept_ns": 1594254
+        },
+        {
+          "phase": 0,
+          "gate": "CH",
+          "calls": 480,
+          "accept_ns": 813040030
+        },
+        {
+          "phase": 0,
+          "gate": "CNOT",
+          "calls": 36932,
+          "accept_ns": 294706392
+        },
+        {
+          "phase": 0,
+          "gate": "CPhase",
+          "calls": 1288,
+          "accept_ns": 1467802075
+        },
+        {
+          "phase": 0,
+          "gate": "CZ",
+          "calls": 16,
+          "accept_ns": 30245
+        },
+        {
+          "phase": 0,
+          "gate": "CanonicalAmplitudeEstimation",
+          "calls": 8,
+          "accept_ns": 12312
+        },
+        {
+          "phase": 0,
+          "gate": "CompareBeamOracle",
+          "calls": 2,
+          "accept_ns": 1318
+        },
+        {
+          "phase": 0,
+          "gate": "CompareGT",
+          "calls": 2,
+          "accept_ns": 734
+        },
+        {
+          "phase": 0,
+          "gate": "ControlledSubtraction",
+          "calls": 2,
+          "accept_ns": 1129
+        },
+        {
+          "phase": 0,
+          "gate": "ControlledSwap",
+          "calls": 8,
+          "accept_ns": 4547
+        },
+        {
+          "phase": 0,
+          "gate": "DecoderKernel",
+          "calls": 1,
+          "accept_ns": 1497
+        },
+        {
+          "phase": 0,
+          "gate": "GeneralisedMCX",
+          "calls": 5,
+          "accept_ns": 2052
+        },
+        {
+          "phase": 0,
+          "gate": "H",
+          "calls": 9441,
+          "accept_ns": 5899182
+        },
+        {
+          "phase": 0,
+          "gate": "InverseCircuit",
+          "calls": 14,
+          "accept_ns": 15548
+        },
+        {
+          "phase": 0,
+          "gate": "MeanValueFinder",
+          "calls": 2,
+          "accept_ns": 1312
+        },
+        {
+          "phase": 0,
+          "gate": "PhaseEstimation",
+          "calls": 8,
+          "accept_ns": 4411
+        },
+        {
+          "phase": 0,
+          "gate": "ProperFractionDivision",
+          "calls": 2,
+          "accept_ns": 1023
+        },
+        {
+          "phase": 0,
+          "gate": "QPrime",
+          "calls": 5,
+          "accept_ns": 2074
+        },
+        {
+          "phase": 0,
+          "gate": "RippleCarryAdder",
+          "calls": 4,
+          "accept_ns": 1707
+        },
+        {
+          "phase": 0,
+          "gate": "Rz",
+          "calls": 3728,
+          "accept_ns": 1183019468
+        },
+        {
+          "phase": 0,
+          "gate": "SuperpositionAdder",
+          "calls": 1,
+          "accept_ns": 441
+        },
+        {
+          "phase": 0,
+          "gate": "T",
+          "calls": 16542,
+          "accept_ns": 307728044
+        },
+        {
+          "phase": 0,
+          "gate": "Tdg",
+          "calls": 16246,
+          "accept_ns": 2791053237
+        },
+        {
+          "phase": 0,
+          "gate": "U",
+          "calls": 8304,
+          "accept_ns": 1574155245
+        },
+        {
+          "phase": 0,
+          "gate": "UPrime",
+          "calls": 5,
+          "accept_ns": 2927
+        },
+        {
+          "phase": 0,
+          "gate": "WPrime",
+          "calls": 5,
+          "accept_ns": 4508
+        },
+        {
+          "phase": 0,
+          "gate": "X",
+          "calls": 295,
+          "accept_ns": 180665
+        },
+        {
+          "phase": 0,
+          "gate": "__TEMP__EXP__SEARCH__",
+          "calls": 1,
+          "accept_ns": 3706
+        },
+        {
+          "phase": 0,
+          "gate": "grover_op",
+          "calls": 4,
+          "accept_ns": 6601
+        },
+        {
+          "phase": 0,
+          "gate": "oracle",
+          "calls": 4,
+          "accept_ns": 1903
+        },
+        {
+          "phase": 0,
+          "gate": "state_prep",
+          "calls": 5,
+          "accept_ns": 2596
+        },
+        {
+          "phase": 0,
+          "gate": "to_be_undone",
+          "calls": 2,
+          "accept_ns": 4538
+        },
+        {
+          "phase": 0,
+          "gate": "zero_reflection",
+          "calls": 4,
+          "accept_ns": 3164
+        },
+        {
+          "phase": 1,
+          "gate": "C-U",
+          "calls": 8,
+          "accept_ns": 217764
+        },
+        {
+          "phase": 1,
+          "gate": "CNOT",
+          "calls": 17,
+          "accept_ns": 11293
+        },
+        {
+          "phase": 1,
+          "gate": "CompareGT",
+          "calls": 1,
+          "accept_ns": 906
+        },
+        {
+          "phase": 1,
+          "gate": "H",
+          "calls": 2,
+          "accept_ns": 2121
+        },
+        {
+          "phase": 1,
+          "gate": "RippleCarryAdder",
+          "calls": 2,
+          "accept_ns": 993
+        },
+        {
+          "phase": 1,
+          "gate": "X",
+          "calls": 10,
+          "accept_ns": 6022
+        },
+        {
+          "phase": 1,
+          "gate": "oracle",
+          "calls": 2,
+          "accept_ns": 2457
+        },
+        {
+          "phase": 2,
+          "gate": "CH",
+          "calls": 180,
+          "accept_ns": 595988874
+        },
+        {
+          "phase": 2,
+          "gate": "CNOT",
+          "calls": 14078,
+          "accept_ns": 268446062
+        },
+        {
+          "phase": 2,
+          "gate": "CPhase",
+          "calls": 476,
+          "accept_ns": 1114531228
+        },
+        {
+          "phase": 2,
+          "gate": "CZ",
+          "calls": 5,
+          "accept_ns": 7746
+        },
+        {
+          "phase": 2,
+          "gate": "H",
+          "calls": 3543,
+          "accept_ns": 2384596
+        },
+        {
+          "phase": 2,
+          "gate": "InverseCircuit",
+          "calls": 1,
+          "accept_ns": 2274
+        },
+        {
+          "phase": 2,
+          "gate": "Rz",
+          "calls": 1422,
+          "accept_ns": 1079549186
+        },
+        {
+          "phase": 2,
+          "gate": "T",
+          "calls": 6337,
+          "accept_ns": 80010376
+        },
+        {
+          "phase": 2,
+          "gate": "Tdg",
+          "calls": 5969,
+          "accept_ns": 2001077676
+        },
+        {
+          "phase": 2,
+          "gate": "U",
+          "calls": 3386,
+          "accept_ns": 870424559
+        },
+        {
+          "phase": 2,
+          "gate": "X",
+          "calls": 86,
+          "accept_ns": 55099
+        },
+        {
+          "phase": 2,
+          "gate": "CH",
+          "calls": 300,
+          "accept_ns": 1167140079
+        },
+        {
+          "phase": 2,
+          "gate": "CNOT",
+          "calls": 23758,
+          "accept_ns": 346909524
+        },
+        {
+          "phase": 2,
+          "gate": "CPhase",
+          "calls": 812,
+          "accept_ns": 2249745208
+        },
+        {
+          "phase": 2,
+          "gate": "CZ",
+          "calls": 11,
+          "accept_ns": 21560
+        },
+        {
+          "phase": 2,
+          "gate": "H",
+          "calls": 5952,
+          "accept_ns": 3994937
+        },
+        {
+          "phase": 2,
+          "gate": "Rz",
+          "calls": 2306,
+          "accept_ns": 1394185696
+        },
+        {
+          "phase": 2,
+          "gate": "T",
+          "calls": 9978,
+          "accept_ns": 647026843
+        },
+        {
+          "phase": 2,
+          "gate": "Tdg",
+          "calls": 10665,
+          "accept_ns": 4179799104
+        },
+        {
+          "phase": 2,
+          "gate": "U",
+          "calls": 5798,
+          "accept_ns": 2665253662
+        },
+        {
+          "phase": 2,
+          "gate": "X",
+          "calls": 209,
+          "accept_ns": 120656
+        },
+        {
+          "phase": 3,
+          "gate": "C-U",
+          "calls": 1,
+          "accept_ns": 321335
+        },
+        {
+          "phase": 3,
+          "gate": "X",
+          "calls": 38,
+          "accept_ns": 23433
+        },
+        {
+          "phase": 3,
+          "gate": "ZR",
+          "calls": 1,
+          "accept_ns": 2174
+        },
+        {
+          "phase": 4,
+          "gate": "C-U",
+          "calls": 55,
+          "accept_ns": 1216805
+        },
+        {
+          "phase": 4,
+          "gate": "CH",
+          "calls": 353,
+          "accept_ns": 670029410
+        },
+        {
+          "phase": 4,
+          "gate": "CNOT",
+          "calls": 27544,
+          "accept_ns": 195408550
+        },
+        {
+          "phase": 4,
+          "gate": "CPhase",
+          "calls": 945,
+          "accept_ns": 1134602817
+        },
+        {
+          "phase": 4,
+          "gate": "CZ",
+          "calls": 12,
+          "accept_ns": 29150
+        },
+        {
+          "phase": 4,
+          "gate": "CanonicalAmplitudeEstimation",
+          "calls": 6,
+          "accept_ns": 9686
+        },
+        {
+          "phase": 4,
+          "gate": "CompareBeamOracle",
+          "calls": 2,
+          "accept_ns": 1792
+        },
+        {
+          "phase": 4,
+          "gate": "CompareGT",
+          "calls": 2,
+          "accept_ns": 923
+        },
+        {
+          "phase": 4,
+          "gate": "ControlledSubtraction",
+          "calls": 2,
+          "accept_ns": 1331
+        },
+        {
+          "phase": 4,
+          "gate": "ControlledSwap",
+          "calls": 8,
+          "accept_ns": 4560
+        },
+        {
+          "phase": 4,
+          "gate": "DecoderKernel",
+          "calls": 1,
+          "accept_ns": 1439
+        },
+        {
+          "phase": 4,
+          "gate": "GeneralisedMCX",
+          "calls": 4,
+          "accept_ns": 1752
+        },
+        {
+          "phase": 4,
+          "gate": "H",
+          "calls": 7030,
+          "accept_ns": 4613128
+        },
+        {
+          "phase": 4,
+          "gate": "InverseCircuit",
+          "calls": 10,
+          "accept_ns": 17611
+        },
+        {
+          "phase": 4,
+          "gate": "MeanValueFinder",
+          "calls": 2,
+          "accept_ns": 1288
+        },
+        {
+          "phase": 4,
+          "gate": "PhaseEstimation",
+          "calls": 6,
+          "accept_ns": 3413
+        },
+        {
+          "phase": 4,
+          "gate": "ProperFractionDivision",
+          "calls": 2,
+          "accept_ns": 1119
+        },
+        {
+          "phase": 4,
+          "gate": "QPrime",
+          "calls": 4,
+          "accept_ns": 1883
+        },
+        {
+          "phase": 4,
+          "gate": "RippleCarryAdder",
+          "calls": 4,
+          "accept_ns": 1623
+        },
+        {
+          "phase": 4,
+          "gate": "Rz",
+          "calls": 2796,
+          "accept_ns": 785382279
+        },
+        {
+          "phase": 4,
+          "gate": "SuperpositionAdder",
+          "calls": 1,
+          "accept_ns": 521
+        },
+        {
+          "phase": 4,
+          "gate": "T",
+          "calls": 12316,
+          "accept_ns": 320757066
+        },
+        {
+          "phase": 4,
+          "gate": "Tdg",
+          "calls": 12093,
+          "accept_ns": 2160195677
+        },
+        {
+          "phase": 4,
+          "gate": "U",
+          "calls": 6228,
+          "accept_ns": 1346692138
+        },
+        {
+          "phase": 4,
+          "gate": "UPrime",
+          "calls": 4,
+          "accept_ns": 2381
+        },
+        {
+          "phase": 4,
+          "gate": "WPrime",
+          "calls": 4,
+          "accept_ns": 3989
+        },
+        {
+          "phase": 4,
+          "gate": "X",
+          "calls": 223,
+          "accept_ns": 132613
+        },
+        {
+          "phase": 4,
+          "gate": "grover_op",
+          "calls": 3,
+          "accept_ns": 8308
+        },
+        {
+          "phase": 4,
+          "gate": "oracle",
+          "calls": 3,
+          "accept_ns": 1408
+        },
+        {
+          "phase": 4,
+          "gate": "state_prep",
+          "calls": 4,
+          "accept_ns": 2408
+        },
+        {
+          "phase": 4,
+          "gate": "to_be_undone",
+          "calls": 1,
+          "accept_ns": 2439
+        },
+        {
+          "phase": 4,
+          "gate": "zero_reflection",
+          "calls": 3,
+          "accept_ns": 2482
+        },
+        {
+          "phase": 4,
+          "gate": "C-U",
+          "calls": 6,
+          "accept_ns": 545635
+        },
+        {
+          "phase": 4,
+          "gate": "CH",
+          "calls": 127,
+          "accept_ns": 318844574
+        },
+        {
+          "phase": 4,
+          "gate": "CNOT",
+          "calls": 9388,
+          "accept_ns": 134552925
+        },
+        {
+          "phase": 4,
+          "gate": "CPhase",
+          "calls": 343,
+          "accept_ns": 543533641
+        },
+        {
+          "phase": 4,
+          "gate": "CZ",
+          "calls": 4,
+          "accept_ns": 8046
+        },
+        {
+          "phase": 4,
+          "gate": "CanonicalAmplitudeEstimation",
+          "calls": 2,
+          "accept_ns": 4248
+        },
+        {
+          "phase": 4,
+          "gate": "GeneralisedMCX",
+          "calls": 1,
+          "accept_ns": 515
+        },
+        {
+          "phase": 4,
+          "gate": "H",
+          "calls": 2411,
+          "accept_ns": 1652347
+        },
+        {
+          "phase": 4,
+          "gate": "InverseCircuit",
+          "calls": 4,
+          "accept_ns": 5403
+        },
+        {
+          "phase": 4,
+          "gate": "PhaseEstimation",
+          "calls": 2,
+          "accept_ns": 1177
+        },
+        {
+          "phase": 4,
+          "gate": "QPrime",
+          "calls": 1,
+          "accept_ns": 426
+        },
+        {
+          "phase": 4,
+          "gate": "Rz",
+          "calls": 932,
+          "accept_ns": 539516883
+        },
+        {
+          "phase": 4,
+          "gate": "T",
+          "calls": 4226,
+          "accept_ns": 30347678
+        },
+        {
+          "phase": 4,
+          "gate": "Tdg",
+          "calls": 4153,
+          "accept_ns": 949685077
+        },
+        {
+          "phase": 4,
+          "gate": "U",
+          "calls": 2076,
+          "accept_ns": 394852254
+        },
+        {
+          "phase": 4,
+          "gate": "UPrime",
+          "calls": 1,
+          "accept_ns": 604
+        },
+        {
+          "phase": 4,
+          "gate": "WPrime",
+          "calls": 1,
+          "accept_ns": 1020
+        },
+        {
+          "phase": 4,
+          "gate": "X",
+          "calls": 72,
+          "accept_ns": 39111
+        },
+        {
+          "phase": 4,
+          "gate": "grover_op",
+          "calls": 1,
+          "accept_ns": 1874
+        },
+        {
+          "phase": 4,
+          "gate": "oracle",
+          "calls": 1,
+          "accept_ns": 455
+        },
+        {
+          "phase": 4,
+          "gate": "state_prep",
+          "calls": 1,
+          "accept_ns": 503
+        },
+        {
+          "phase": 4,
+          "gate": "to_be_undone",
+          "calls": 1,
+          "accept_ns": 3045
+        },
+        {
+          "phase": 4,
+          "gate": "zero_reflection",
+          "calls": 1,
+          "accept_ns": 1182
+        }
+      ],
+      "totals_by_gate": {
+        "C-U": {
+          "calls": 131,
+          "accept_ns": 3895793
+        },
+        "CH": {
+          "calls": 1440,
+          "accept_ns": 3565042967
+        },
+        "CNOT": {
+          "calls": 111717,
+          "accept_ns": 1240034746
+        },
+        "CPhase": {
+          "calls": 3864,
+          "accept_ns": 6510214969
+        },
+        "CZ": {
+          "calls": 48,
+          "accept_ns": 96747
+        },
+        "CanonicalAmplitudeEstimation": {
+          "calls": 16,
+          "accept_ns": 26246
+        },
+        "CompareBeamOracle": {
+          "calls": 4,
+          "accept_ns": 3110
+        },
+        "CompareGT": {
+          "calls": 5,
+          "accept_ns": 2563
+        },
+        "ControlledSubtraction": {
+          "calls": 4,
+          "accept_ns": 2460
+        },
+        "ControlledSwap": {
+          "calls": 16,
+          "accept_ns": 9107
+        },
+        "DecoderKernel": {
+          "calls": 2,
+          "accept_ns": 2936
+        },
+        "GeneralisedMCX": {
+          "calls": 10,
+          "accept_ns": 4319
+        },
+        "H": {
+          "calls": 28379,
+          "accept_ns": 18546311
+        },
+        "InverseCircuit": {
+          "calls": 29,
+          "accept_ns": 40836
+        },
+        "MeanValueFinder": {
+          "calls": 4,
+          "accept_ns": 2600
+        },
+        "PhaseEstimation": {
+          "calls": 16,
+          "accept_ns": 9001
+        },
+        "ProperFractionDivision": {
+          "calls": 4,
+          "accept_ns": 2142
+        },
+        "QPrime": {
+          "calls": 10,
+          "accept_ns": 4383
+        },
+        "RippleCarryAdder": {
+          "calls": 10,
+          "accept_ns": 4323
+        },
+        "Rz": {
+          "calls": 11184,
+          "accept_ns": 4981653512
+        },
+        "SuperpositionAdder": {
+          "calls": 2,
+          "accept_ns": 962
+        },
+        "T": {
+          "calls": 49399,
+          "accept_ns": 1385870007
+        },
+        "Tdg": {
+          "calls": 49126,
+          "accept_ns": 12081810771
+        },
+        "U": {
+          "calls": 25792,
+          "accept_ns": 6851377858
+        },
+        "UPrime": {
+          "calls": 10,
+          "accept_ns": 5912
+        },
+        "WPrime": {
+          "calls": 10,
+          "accept_ns": 9517
+        },
+        "X": {
+          "calls": 933,
+          "accept_ns": 557599
+        },
+        "__TEMP__EXP__SEARCH__": {
+          "calls": 1,
+          "accept_ns": 3706
+        },
+        "grover_op": {
+          "calls": 8,
+          "accept_ns": 16783
+        },
+        "oracle": {
+          "calls": 10,
+          "accept_ns": 6223
+        },
+        "state_prep": {
+          "calls": 10,
+          "accept_ns": 5507
+        },
+        "to_be_undone": {
+          "calls": 4,
+          "accept_ns": 10022
+        },
+        "zero_reflection": {
+          "calls": 8,
+          "accept_ns": 6828
+        },
+        "ZR": {
+          "calls": 1,
+          "accept_ns": 2174
+        }
+      },
+      "sampling_completed": true
+    },
+    {
+      "points": [
+        {
+          "elapsed_us": 2,
+          "phase": 0,
+          "nodes": 0,
+          "enabled": 0,
+          "accepts": 0,
+          "event": "begin"
+        },
+        {
+          "elapsed_us": 8679982,
+          "phase": 0,
+          "nodes": 95427,
+          "enabled": 93427,
+          "accepts": 93427,
+          "event": "phase_end"
+        },
+        {
+          "elapsed_us": 8684598,
+          "phase": 1,
+          "nodes": 95589,
+          "enabled": 93469,
+          "accepts": 93469,
+          "event": "phase_end"
+        }
+      ],
+      "costs": [
+        {
+          "phase": 0,
+          "gate": "C-U",
+          "calls": 61,
+          "accept_ns": 1628424
+        },
+        {
+          "phase": 0,
+          "gate": "CH",
+          "calls": 480,
+          "accept_ns": 864832134
+        },
+        {
+          "phase": 0,
+          "gate": "CNOT",
+          "calls": 36932,
+          "accept_ns": 313999782
+        },
+        {
+          "phase": 0,
+          "gate": "CPhase",
+          "calls": 1288,
+          "accept_ns": 1496099348
+        },
+        {
+          "phase": 0,
+          "gate": "CZ",
+          "calls": 16,
+          "accept_ns": 29484
+        },
+        {
+          "phase": 0,
+          "gate": "CanonicalAmplitudeEstimation",
+          "calls": 8,
+          "accept_ns": 12176
+        },
+        {
+          "phase": 0,
+          "gate": "CompareBeamOracle",
+          "calls": 2,
+          "accept_ns": 1141
+        },
+        {
+          "phase": 0,
+          "gate": "CompareGT",
+          "calls": 2,
+          "accept_ns": 966
+        },
+        {
+          "phase": 0,
+          "gate": "ControlledSubtraction",
+          "calls": 2,
+          "accept_ns": 1093
+        },
+        {
+          "phase": 0,
+          "gate": "ControlledSwap",
+          "calls": 8,
+          "accept_ns": 4144
+        },
+        {
+          "phase": 0,
+          "gate": "DecoderKernel",
+          "calls": 1,
+          "accept_ns": 1322
+        },
+        {
+          "phase": 0,
+          "gate": "GeneralisedMCX",
+          "calls": 5,
+          "accept_ns": 2293
+        },
+        {
+          "phase": 0,
+          "gate": "H",
+          "calls": 9441,
+          "accept_ns": 5888737
+        },
+        {
+          "phase": 0,
+          "gate": "InverseCircuit",
+          "calls": 14,
+          "accept_ns": 26927
+        },
+        {
+          "phase": 0,
+          "gate": "MeanValueFinder",
+          "calls": 2,
+          "accept_ns": 1280
+        },
+        {
+          "phase": 0,
+          "gate": "PhaseEstimation",
+          "calls": 8,
+          "accept_ns": 4552
+        },
+        {
+          "phase": 0,
+          "gate": "ProperFractionDivision",
+          "calls": 2,
+          "accept_ns": 1027
+        },
+        {
+          "phase": 0,
+          "gate": "QPrime",
+          "calls": 5,
+          "accept_ns": 2118
+        },
+        {
+          "phase": 0,
+          "gate": "RippleCarryAdder",
+          "calls": 4,
+          "accept_ns": 1644
+        },
+        {
+          "phase": 0,
+          "gate": "Rz",
+          "calls": 3728,
+          "accept_ns": 1227396040
+        },
+        {
+          "phase": 0,
+          "gate": "SuperpositionAdder",
+          "calls": 1,
+          "accept_ns": 516
+        },
+        {
+          "phase": 0,
+          "gate": "T",
+          "calls": 16542,
+          "accept_ns": 310143470
+        },
+        {
+          "phase": 0,
+          "gate": "Tdg",
+          "calls": 16246,
+          "accept_ns": 2839800495
+        },
+        {
+          "phase": 0,
+          "gate": "U",
+          "calls": 8304,
+          "accept_ns": 1590192269
+        },
+        {
+          "phase": 0,
+          "gate": "UPrime",
+          "calls": 5,
+          "accept_ns": 2935
+        },
+        {
+          "phase": 0,
+          "gate": "WPrime",
+          "calls": 5,
+          "accept_ns": 4586
+        },
+        {
+          "phase": 0,
+          "gate": "X",
+          "calls": 295,
+          "accept_ns": 158549
+        },
+        {
+          "phase": 0,
+          "gate": "__TEMP__EXP__SEARCH__",
+          "calls": 1,
+          "accept_ns": 3283
+        },
+        {
+          "phase": 0,
+          "gate": "grover_op",
+          "calls": 4,
+          "accept_ns": 6677
+        },
+        {
+          "phase": 0,
+          "gate": "oracle",
+          "calls": 4,
+          "accept_ns": 1827
+        },
+        {
+          "phase": 0,
+          "gate": "state_prep",
+          "calls": 5,
+          "accept_ns": 2529
+        },
+        {
+          "phase": 0,
+          "gate": "to_be_undone",
+          "calls": 2,
+          "accept_ns": 3525
+        },
+        {
+          "phase": 0,
+          "gate": "zero_reflection",
+          "calls": 4,
+          "accept_ns": 4028
+        },
+        {
+          "phase": 1,
+          "gate": "C-U",
+          "calls": 8,
+          "accept_ns": 224934
+        },
+        {
+          "phase": 1,
+          "gate": "CNOT",
+          "calls": 17,
+          "accept_ns": 12329
+        },
+        {
+          "phase": 1,
+          "gate": "CompareGT",
+          "calls": 1,
+          "accept_ns": 1104
+        },
+        {
+          "phase": 1,
+          "gate": "H",
+          "calls": 2,
+          "accept_ns": 1403
+        },
+        {
+          "phase": 1,
+          "gate": "RippleCarryAdder",
+          "calls": 2,
+          "accept_ns": 1125
+        },
+        {
+          "phase": 1,
+          "gate": "X",
+          "calls": 10,
+          "accept_ns": 7091
+        },
+        {
+          "phase": 1,
+          "gate": "oracle",
+          "calls": 2,
+          "accept_ns": 2518
+        }
+      ],
+      "totals_by_gate": {
+        "C-U": {
+          "calls": 69,
+          "accept_ns": 1853358
+        },
+        "CH": {
+          "calls": 480,
+          "accept_ns": 864832134
+        },
+        "CNOT": {
+          "calls": 36949,
+          "accept_ns": 314012111
+        },
+        "CPhase": {
+          "calls": 1288,
+          "accept_ns": 1496099348
+        },
+        "CZ": {
+          "calls": 16,
+          "accept_ns": 29484
+        },
+        "CanonicalAmplitudeEstimation": {
+          "calls": 8,
+          "accept_ns": 12176
+        },
+        "CompareBeamOracle": {
+          "calls": 2,
+          "accept_ns": 1141
+        },
+        "CompareGT": {
+          "calls": 3,
+          "accept_ns": 2070
+        },
+        "ControlledSubtraction": {
+          "calls": 2,
+          "accept_ns": 1093
+        },
+        "ControlledSwap": {
+          "calls": 8,
+          "accept_ns": 4144
+        },
+        "DecoderKernel": {
+          "calls": 1,
+          "accept_ns": 1322
+        },
+        "GeneralisedMCX": {
+          "calls": 5,
+          "accept_ns": 2293
+        },
+        "H": {
+          "calls": 9443,
+          "accept_ns": 5890140
+        },
+        "InverseCircuit": {
+          "calls": 14,
+          "accept_ns": 26927
+        },
+        "MeanValueFinder": {
+          "calls": 2,
+          "accept_ns": 1280
+        },
+        "PhaseEstimation": {
+          "calls": 8,
+          "accept_ns": 4552
+        },
+        "ProperFractionDivision": {
+          "calls": 2,
+          "accept_ns": 1027
+        },
+        "QPrime": {
+          "calls": 5,
+          "accept_ns": 2118
+        },
+        "RippleCarryAdder": {
+          "calls": 6,
+          "accept_ns": 2769
+        },
+        "Rz": {
+          "calls": 3728,
+          "accept_ns": 1227396040
+        },
+        "SuperpositionAdder": {
+          "calls": 1,
+          "accept_ns": 516
+        },
+        "T": {
+          "calls": 16542,
+          "accept_ns": 310143470
+        },
+        "Tdg": {
+          "calls": 16246,
+          "accept_ns": 2839800495
+        },
+        "U": {
+          "calls": 8304,
+          "accept_ns": 1590192269
+        },
+        "UPrime": {
+          "calls": 5,
+          "accept_ns": 2935
+        },
+        "WPrime": {
+          "calls": 5,
+          "accept_ns": 4586
+        },
+        "X": {
+          "calls": 305,
+          "accept_ns": 165640
+        },
+        "__TEMP__EXP__SEARCH__": {
+          "calls": 1,
+          "accept_ns": 3283
+        },
+        "grover_op": {
+          "calls": 4,
+          "accept_ns": 6677
+        },
+        "oracle": {
+          "calls": 6,
+          "accept_ns": 4345
+        },
+        "state_prep": {
+          "calls": 5,
+          "accept_ns": 2529
+        },
+        "to_be_undone": {
+          "calls": 2,
+          "accept_ns": 3525
+        },
+        "zero_reflection": {
+          "calls": 4,
+          "accept_ns": 4028
+        }
+      },
+      "sampling_completed": false
+    }
+  ],
+  "sparse_identity": {
+    "source_sha256": "09101fcad5a63a09ba349f188fa9d66677a933a20f55c51251231f181120fc2f",
+    "derived_sha256": "1cf746f4576fdc904d492c2a10a6687228fe74cc97754585d651abc80ad37bcf",
+    "patch_sha256": "83d4008a70234bf844a238dbdaf50c7ab02e56ed3e2bac3d47bd4e109131278a",
+    "algorithm_statements_unchanged": true
+  },
+  "sparse_plugin_sha256": "e63f3c2655c49aa55751a62c3bb333ec60ba0e5ec514f9093dd680b387fd09ae",
+  "timing_is_diagnostic": true,
+  "amplitude_counts_measured": false
+}
