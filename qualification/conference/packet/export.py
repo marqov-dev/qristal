@@ -11,6 +11,7 @@ import zipfile
 QUAL = Path(__file__).resolve().parents[2]
 FILES = (
     "MAINTENANCE.md",
+    "conference/CURRENT.md",
     "conference/readout-drift/readout-drift.png",
     "conference/readout-drift/provenance.json",
     "evidence/2026-09-12-readout-drift/result.json",
@@ -70,6 +71,13 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px;bor
 The research connects scientific correctness, noise estimation and reliable execution.</p>
 <p class="note">These are saved experiments, not hosted Marqov job results or QB hardware measurements.
 The commercial QB Emulator and internal vQPU are outside this work. No partnership or endorsement is implied.</p>
+<h2>Start here</h2>
+<p>Show the noise and calibration experiments, compare CPU/GPU correlations, then
+explain the packaging and maintenance work. These are useful public software
+capabilities we can validate together, with hosted integration as a separate next step.</p>
+<p>Full Decoder is an optional sequence-decoding research track. Its latest bounded
+runs remain incomplete; separate scientific-research and engineering agents are
+investigating it. It does not block these demonstrations or the platform release.</p>
 <h2>1. The same circuit family across CPU and GPU methods</h2>
 <p>QPP, Aer MPS and density matrix, plus CUDA-Q state-vector and tensor-network targets,
 passed selected native fixtures. The GPU observations used NVIDIA A10G.
@@ -81,7 +89,7 @@ This compares correctness, not speed or maximum capacity.</p>''']
     parts.append(figure("conference/readout-mitigation/readout-mitigation.png","Native CPU mitigation, restricted stationary q0 readout model. Approximate intervals include calibration uncertainty. This is not full SPAM or device calibration."))
     parts.append('<h2>4. A small error bar can miss calibration bias</h2><p>This separate synthetic study used 10,000 independently sampled calibration/measurement repetitions. Stationary coverage ranged from 94.3% to 96.5%; both deliberately stale scenarios had zero covered intervals in 1,000 repetitions per fixture. Sampling uncertainty does not include model mismatch.</p>')
     parts.append(figure("conference/readout-coverage/coverage.png","Synthetic multinomial sampling only — no Qristal or hardware execution. Wilson whiskers quantify Monte Carlo uncertainty in coverage; general coverage is not established."))
-    parts.append('<h2>5. Fresh calibration restores the native estimates</h2><p>The predeclared 40-case Qristal/Aer experiment passed. Fresh calibration reduced aggregate error by approximately95–98%. Stale calibration worsened two settings; with improved noise it produced4.45times the raw error.</p>')
+    parts.append('<h2>5. Fresh calibration restores the native estimates</h2><p>The predeclared 40-case Qristal/Aer experiment passed. Fresh calibration reduced aggregate error by approximately 95–98%. Stale calibration worsened two settings; with improved noise it produced 4.45 times the raw error.</p>')
     parts.append(figure("conference/readout-drift/readout-drift.png","Native Qristal/Aer observations: same held-out counts with stale and fresh calibration. Sampling intervals exclude systematic drift bias."))
     parts.append('''<h2>6. What is ready, and what remains</h2>
 <table><tr><th>Evidence retained</th><th>Remaining boundary</th></tr>
@@ -91,7 +99,7 @@ This compares correctness, not speed or maximum capacity.</p>''']
 <tr><td>Native stationary mitigation and synthetic coverage study</td><td>Broader noise models, scaling and physical calibration</td></tr></table>
 <h2>Partnership discussion</h2><p>Useful next conversations include public examples, maintenance boundaries,
 upstream feedback and future hardware or commercial-plugin comparisons.</p>''')
-    parts.append(f'<p><a href="{root}conference">Versioned research ledger</a> · <a href="{root}MAINTENANCE.md">Support and release gates</a> · <a href="https://app.marqov.ai/projects/776ca156-9051-4fcb-8aca-202e78a94cac/report">Marqov project report</a></p><footer>Packet source revision: {html.escape(revision)}. Embedded figures work offline. Linked repositories and Marqov require network access. Included evidence is a selected research subset, not the entire qualification archive.</footer></main></html>')
+    parts.append(f'<p><a href="{root}conference/CURRENT.md">Current conference summary</a> · <a href="{root}conference">Versioned research ledger</a> · <a href="{root}MAINTENANCE.md">Support and release gates</a> · <a href="https://app.marqov.ai/projects/776ca156-9051-4fcb-8aca-202e78a94cac/report">Marqov project report</a></p><footer>Packet source revision: {html.escape(revision)}. Embedded figures work offline. Linked repositories and Marqov require network access. Included evidence is a selected research subset, not the entire qualification archive.</footer></main></html>')
     return "\n".join(parts).encode()
 
 

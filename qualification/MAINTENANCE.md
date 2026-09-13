@@ -1,7 +1,7 @@
 # Maintained simulation subset and release gates
 
-Audit baseline: Qristal main deb37d4a6dcfd05131592021c73b8c948bf37609
-(merged PR18). Historical native evidence retains its original revisions.
+Current status baseline: Qristal main43755ba213aa04c4cd40b8479040b034c740a80e
+(merged PR31, 13 September 2026). Historical native evidence retains its original revisions.
 This document defines the proposed maintenance scope, not a supported release.
 
 ## Repair, replace or retire
@@ -81,6 +81,24 @@ not demonstrated wrong probabilities or decoded results. The candidate uses
 explicit QPP lowering; neither a full Decoder speedup nor generic IR compatibility
 is established. [Preparation and phase audit](full_decoder/cloud/PREPARATION-AUDIT.md)
 defines the next bounded work.
+
+## Latest Decoder boundary and independent ownership
+
+The [actual preparation inventory](evidence/2026-09-13-phase-composition/README.md)
+finds only about a2% traversal difference for narrow controlled-block preservation.
+The specific further-control phase experiment did not show an observable probability
+error; do not infer a wrong decoded answer from the earlier global-phase mismatch.
+The [stored-state probe](evidence/2026-09-13-sparse-state/README.md) passed observation
+neutrality checks and sampled transient state growth. The
+[O3 comparison](evidence/2026-09-13-sparse-state-o3/README.md) did not resolve the
+60-second caller timeout. Both configurations remain diagnostic, not promoted runtimes.
+
+Two independent Claude Code lanes now cover Decoder scientific research and targeted
+engineering. Their future findings are subject to review and native qualification.
+Full Decoder remains optional to the public simulator offering and platform release.
+The coordinator owns the broader CPU/GPU subset, distribution and conference work.
+Use [the current conference summary](conference/CURRENT.md) for the short account;
+chronological findings above remain available as the investigation record.
 
 ## Dependencies and release policy
 
