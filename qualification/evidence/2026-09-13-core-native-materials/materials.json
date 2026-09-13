@@ -1,0 +1,12 @@
+{
+  "schema": "qb.core-native-materials/v1",
+  "core_commit": "a5c3e5fa544c07d538974d3a289b19652d483848",
+  "core_manifest_sha256": "c5353f54ef26f65a21417516926ac3b027e766a0ecf20036400604dbcaffd405",
+  "dependency_receipt_sha256": "4ba157cdac418f57d2fab1b3dbbd817ef400307ea97331142cc4b66063956a06",
+  "xacc_archive_sha256": "b4569c7ca587c3a1fcbaa5e87a4606792c9a0904e2d15c5c2ef03a83b3088bb5",
+  "wheel_count": 50,
+  "python_lock_sha256": "3a31198f92bb5d1267dc9c5b22b3361179f074d29c8b8936742ea741ab72135d",
+  "configured": false,
+  "built": false,
+  "executed": false
+}
