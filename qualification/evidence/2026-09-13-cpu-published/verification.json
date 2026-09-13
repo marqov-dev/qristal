@@ -1,0 +1,10 @@
+{
+  "schema": "marqov.cpu-acquired-qualification/v1",
+  "registry_image": "ghcr.io/marqov-dev/qristal-cpu@sha256:c500987ef91ab0e0d3dd32ea75436785308ae1603c221762291d9c13dff431c5",
+  "configuration": "sha256:343e330ac7d2b40e81542c13c18753a233661f82c923b03ff772271e3d903402",
+  "native_passed": true,
+  "backend_rejection_verified": true,
+  "inventory_exported": true,
+  "attestations": "extracted_predicates_checked_not_raw_subject_binding",
+  "hosted_available": false
+}

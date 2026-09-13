@@ -13,7 +13,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_rejects_promotion_and_identity_changes(self):
         for index, key, value in [(0,'access','public_registry'),(0,'identity','sha256:wrong'),
-                                  (1,'access','public_registry'),(1,'identity','sha256:wrong')]:
+                                  (1,'access','public_registry'),(1,'identity','sha256:wrong'),
+                                  (2,'access','public_registry'),(2,'identity','sha256:wrong')]:
             with self.subTest(index=index, key=key):
                 data = copy.deepcopy(self.catalog)
                 data['artifacts'][index][key] = value
@@ -31,3 +32,20 @@ class CatalogTests(unittest.TestCase):
                 data['hosted_available'] = True
             with self.assertRaises(ValueError):
                 verify(data)
+
+    def test_duplicate_and_missing_artifacts_rejected(self):
+        for change in ('duplicate','missing'):
+            data=copy.deepcopy(self.catalog)
+            if change=='duplicate':data['artifacts'].append(copy.deepcopy(data['artifacts'][-1]))
+            else:data['artifacts'].pop()
+            with self.assertRaises(ValueError):verify(data)
+
+    def test_swapped_cpu_gpu_evidence_rejected(self):
+        data=copy.deepcopy(self.catalog)
+        data['artifacts'][2]['evidence']=data['artifacts'][1]['evidence']
+        with self.assertRaises(ValueError):verify(data)
+
+    def test_wrong_bundle_scope_pointer_rejected(self):
+        data=copy.deepcopy(self.catalog)
+        data['artifacts'][2]['capabilities']=data['artifacts'][0]['capabilities']
+        with self.assertRaises(ValueError):verify(data)

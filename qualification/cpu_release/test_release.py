@@ -114,3 +114,14 @@ class DeliveryTests(unittest.TestCase):
                 write('release-context.json',context)
                 write('platform-manifest.json',{'config':{'digest':'sha256:'+'d'*64}})
                 with self.assertRaises(ValueError):verifier.verify(root)
+
+    def test_retained_release_and_compressed_shadow_rejection(self):
+        import shutil
+        spec=importlib.util.spec_from_file_location('cpu_retention_test',HERE/'retained.py')
+        retained=importlib.util.module_from_spec(spec);spec.loader.exec_module(retained)
+        source=HERE.parent/'evidence/2026-09-13-cpu-published'
+        self.assertTrue(retained.verify(source)['native_passed'])
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)/'bundle';shutil.copytree(source,root)
+            (root/'sbom.json').write_text('{}')
+            with self.assertRaisesRegex(ValueError,'ambiguous_stored_record'):retained.verify(root)

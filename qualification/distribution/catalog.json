@@ -1,6 +1,6 @@
 {
   "schema": "marqov.runtime-catalog/v1",
-  "catalog_version": "2026-09-13.1",
+  "catalog_version": "2026-09-13.2",
   "hosted_available": false,
   "artifacts": [
     {
@@ -19,6 +19,18 @@
       "access": "private_registry",
       "evidence": "evidence/2026-09-11-gpu-published/release/release.json",
       "qualification": "evidence/2026-09-11-gpu-published/result.json"
+    },
+    {
+      "id": "cpu-registry-2026-09-13",
+      "identity": "ghcr.io/marqov-dev/qristal-cpu@sha256:c500987ef91ab0e0d3dd32ea75436785308ae1603c221762291d9c13dff431c5",
+      "identity_kind": "registry_index",
+      "access": "private_registry",
+      "evidence": "evidence/2026-09-13-cpu-published/release.json",
+      "qualification": "evidence/2026-09-13-cpu-published/verification.json",
+      "capabilities": "evidence/2026-09-13-cpu-published/acquired/image-capabilities.log",
+      "inventory": "evidence/2026-09-13-cpu-published/inventory.json",
+      "visibility": "evidence/2026-09-13-cpu-published/package-visibility.json",
+      "records": "evidence/2026-09-13-cpu-published/records.json"
     }
   ],
   "records": {
@@ -26,6 +38,12 @@
     "evidence/2026-09-09-runtime-image/image-tests.json": "0fe2e8429399dcb93ecc1e003976acf64732c9829d1efd6309bd5ab13f25fa20",
     "evidence/2026-09-09-runtime-image/image-capabilities.log": "03b24bd74a153f79a607e4255e0c4afd43b4a0b23cf0fc7a6ac6fbf205694200",
     "evidence/2026-09-11-gpu-published/release/release.json": "0523f0f2cc172edbc64c6a9ce32f73cd7e876704f78eed39d032acefc3701e53",
-    "evidence/2026-09-11-gpu-published/result.json": "aca48bbd5efd5202acdc5d2cb1b6f086dd3447a504fa578407c1ba50de54ed53"
+    "evidence/2026-09-11-gpu-published/result.json": "aca48bbd5efd5202acdc5d2cb1b6f086dd3447a504fa578407c1ba50de54ed53",
+    "evidence/2026-09-13-cpu-published/release.json": "e399107a79874749f40c375d199a2915aeafe9e281757b3038839399b0c921cf",
+    "evidence/2026-09-13-cpu-published/verification.json": "e7ef96dddd388c8b48e0b4bf4a5a0b5243a58aef36f1e6c5bb443be539dabcb6",
+    "evidence/2026-09-13-cpu-published/acquired/image-capabilities.log": "03b24bd74a153f79a607e4255e0c4afd43b4a0b23cf0fc7a6ac6fbf205694200",
+    "evidence/2026-09-13-cpu-published/inventory.json": "6bb8d7deb362e13632d2558b4fea129de3ed3a445bef3fd8e0f2900c1c0f9547",
+    "evidence/2026-09-13-cpu-published/package-visibility.json": "cd367c370ed8d0c68388037a6294be9d44d6aa963a7c43c22821b556e2ff9833",
+    "evidence/2026-09-13-cpu-published/records.json": "3cf520b64ff608fdfed4e30acef593b7d35ec3cc4d263caeb93233a8fec79a1a"
   }
 }

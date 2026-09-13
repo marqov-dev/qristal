@@ -6,16 +6,17 @@ can progress independently of Marqov's hosted execution integration.
 
 ## Available artifacts
 
-[Catalog 2026-09-13.1](catalog.json) indexes existing observations, not a new binary
-release. Its version identifies the catalog; it is not a simulator version.
+[Catalog 2026-09-13.2](catalog.json) indexes historical observations and authenticated registry candidates. Its version identifies the catalog; it is not a simulator version.
 
 | Artifact | Availability | Recorded scope |
 | --- | --- | --- |
-| Public CPU runtime, 9 September | Local image only; no registry pull URL | QPP/Aer CLI, ideal/noisy Bell examples, 43 installed functional fixtures, ten image test groups |
+| Historical public CPU runtime, 9 September | Local image only; no registry pull URL | QPP/Aer CLI, ideal/noisy Bell examples, 43 installed functional fixtures, ten image test groups |
+| Maintained CPU candidate, 13 September | Private GHCR digest; registry access required |43 functional fixtures, corrected backend rejection, acquired image inventory |
 | Standalone CUDA-Q GPU runtime, 11 September | Private GHCR digest; registry access required | A10G, nvidia fp64/tensornet, twelve circuits, two negatives, three context faults and recovery |
 
-CPU identity is a local configuration digest. GPU identity is a registry index
-with separately checked platform-manifest/configuration bindings. They are not
+The historical CPU identity is a local configuration digest. Both published
+CPU/GPU identities are registry indexes with separately checked platform-manifest
+and configuration bindings. They are not
 interchangeable. Historical evidence is preserved without changing its original
 publication status. Run the dependency-free catalog and retained GPU checks:
 
@@ -25,7 +26,7 @@ python3 -B qualification/distribution/check.py
 
 This checks consistency with saved observations, not current registry access,
 publisher authenticity or a fresh hardware run. The hashes bind selected records;
-the existing GPU checker verifies the deeper provenance and native evidence.
+the existing GPU and CPU checkers replay the deeper identity and native evidence.
 
 ## Using what exists
 
@@ -51,42 +52,41 @@ helpers. Their overlay evidence does not mean those helpers are baked into the
 commercial Emulator and internal vQPU are outside this catalog. Neither image is
 thereby admitted to hosted execution. See the [current demonstration scope](../conference/CURRENT.md).
 
-## Next delivery increments
+## Current CPU candidate
 
-1. **CPU assembly:** capture verified installed-input hashes and build receipts;
-   stage those inputs explicitly in a clean OCI recipe. Current checkout revisions
-   cannot establish the provenance of old installed binaries. The legacy builder
-   now labels them as observations and marks binary provenance unverified.
-2. **CPU exact-artifact qualification:** bake the intended CLI/helpers; rerun the
-   existing 43 fixtures and all advertised CLI/negative/isolation checks without
-   source overlays. Record installed components, notices and build provenance.
-   Publish only with exact registry identity and follow-up acquisition verification.
-3. **GPU distribution:** reuse the already tested digest while payload is unchanged.
-   Complete component redistribution/access review before public availability;
-   source Apache-2.0 does not license the whole NVIDIA/OS image. Retain upstream
-   notices and the existing SPDX/provenance records.
-4. **Versioned iteration:** each binary change receives a new immutable digest,
-   release notes and updated qualification evidence. Preserve prior failures and
-   limits. Platform integration consumes this catalog later through its execution
-   contract; it does not block standalone packaging.
+The [published CPU result](../evidence/2026-09-13-cpu-published/README.md) records
+successful prepublication and acquired-digest matrices. On a trusted Linux amd64
+Docker host with registry access, authenticate through your normal GHCR login and
+pull the exact candidate:
 
-Track packaging under platform issues #609, #640, #1585 and #1839; GPU follow-up
-under #691. Conference evidence remains #2172/#1701. Decoder research is #2173
-and proceeds separately. Do not close these wider issues on catalog delivery.
+```sh
+CPU_IMAGE=ghcr.io/marqov-dev/qristal-cpu@sha256:c500987ef91ab0e0d3dd32ea75436785308ae1603c221762291d9c13dff431c5
+docker pull "$CPU_IMAGE"
+docker run --rm --pull never --platform linux/amd64 --network none \
+  --cpus 2 --memory 4g --memory-swap 4g --pids-limit 256 --read-only \
+  --tmpfs /tmp:rw,exec,size=128m --cap-drop ALL --security-opt no-new-privileges \
+  "$CPU_IMAGE" --qasm /checks/bell.qasm
+```
 
-The [CPU staging increment](../cpu_package/README.md) now provides an explicit OCI
-context and installed-byte receipt. [Real local staging evidence](../evidence/2026-09-13-cpu-staging/README.md)
-records successful assembly of the context; the clean image build and native
-qualification remain pending. This does not change the catalog's available artifacts.
+No GPU is needed. This is a restricted simulation CLI, not a general Python
+notebook or hosted job protocol. Existing registry authorization is required;
+this guide does not grant access. The package/source licenses and component
+notices remain distinct from public redistribution clearance.
 
-The [first clean CPU OCI native build](../evidence/2026-09-13-cpu-oci/README.md)
-subsequently passed the existing matrix with exact resource cleanup. Its image was
-not exported from the disposable VM. Registry delivery, inventory export and the
-corrected backend-negative test are the next increment; no new downloadable
-artifact is implied.
+## Remaining delivery increments
 
-The [CPU delivery workflow](../cpu_release/README.md) prepares corrected backend
-rejection, inventory export and acquired-digest tests. It has not published an
-image: the prerequisite installed-input draft upload was rejected by automatic
-approval review and awaits explicit transfer authorization. Existing binary
-availability is unchanged.
+1. Bind installed bytes to controlled source acquisition, build and install
+   receipts. The first candidate still labels original binary build provenance
+   unverified; packaging source revisions do not fill that gap.
+2. Review component redistribution and public availability using retained
+   inventories/notices. Keep the draft input unpublished until deliberately
+   replaced or retired; do not turn it into a supported release accidentally.
+3. Preserve prior artifact identities and verification contracts when updating
+   matrix, payload or dependencies; rerun native acquired-digest checks for each
+   changed binary. Retain failures and limits.
+4. Keep platform integration on its execution contract and independent schedule.
+   Full Decoder, original GPU bridge and broader noise/scale are separate gates.
+
+Packaging tracking remains #609, #640, #1585 and #1839; GPU follow-up #691;
+conference #2172/#1701; Decoder #2173. This candidate does not complete those
+broader issues or imply partnership, public endorsement or hosted admission.

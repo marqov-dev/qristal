@@ -1,0 +1,893 @@
+{
+  "SLSA": {
+    "buildDefinition": {
+      "buildType": "https://github.com/moby/buildkit/blob/master/docs/attestations/slsa-definitions.md",
+      "externalParameters": {
+        "configSource": {
+          "path": "Dockerfile"
+        },
+        "request": {
+          "compatibilityVersion": 30,
+          "frontend": "dockerfile.v0",
+          "locals": [
+            {
+              "name": "context"
+            },
+            {
+              "name": "dockerfile"
+            }
+          ],
+          "root": {
+            "configSource": {
+              "path": "Dockerfile"
+            },
+            "request": {
+              "args": {
+                "vcs:localdir:context": ".cpu-release/context",
+                "vcs:localdir:dockerfile": ".cpu-release/context",
+                "vcs:revision": "bb1ccc1601ce6962101cfa87f2c44d4f7ffebc91",
+                "vcs:source": "https://github.com/marqov-dev/qristal"
+              }
+            }
+          }
+        }
+      },
+      "internalParameters": {
+        "buildConfig": {
+          "digestMapping": {
+            "sha256:0cc7df3cb76d1f6fbadf3e29abe6fdc498fede8d01c8cfc40db3c15abb108aa1": "step7",
+            "sha256:0f2b9c6afb2c3b7778dc5d2b5a04b74ce4afbb71b5c308d54d1b32f96f3d45c9": "step1",
+            "sha256:3004c19006faf6d4a509dca0d0786153b4c6e9b824750a735094ce399b12787e": "step3",
+            "sha256:34e64db7a4dac1f9dd4c8569783aef861369181c882a3a04ccaea4edf57a9897": "step6",
+            "sha256:5481911f0663a10005ae78788f1d395492540b3bf6da4307dfb816b4b6e5ed3f": "step2",
+            "sha256:7791f61efe2bac0e8415d669516cd1d5b46ae14b0e99e627768fa7d749093d20": "step4",
+            "sha256:b0c10caf783a4fead55519570bd0834d561e5e4672149535b7c9fc579805d633": "step0",
+            "sha256:be020b322dc5fca856011aa09fa6312003df20a3df1b365b66f5f92d9e1cc0de": "step5",
+            "sha256:ccef450fa4e8b51915bb4fe6e4a3c8df473cd7195de872f1e92be8f5cc9b32b0": "step8"
+          },
+          "llbDefinition": [
+            {
+              "id": "step0",
+              "op": {
+                "Op": {
+                  "source": {
+                    "identifier": "docker-image://docker.io/library/ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d"
+                  }
+                },
+                "constraints": {},
+                "platform": {
+                  "Architecture": "amd64",
+                  "OS": "linux"
+                }
+              }
+            },
+            {
+              "id": "step1",
+              "op": {
+                "Op": {
+                  "source": {
+                    "attrs": {
+                      "local.followpaths": "[\"apt-runtime.txt\",\"inputs.json\",\"payload\",\"payload-inventory.json\"]",
+                      "local.sharedkeyhint": "context"
+                    },
+                    "identifier": "local://context"
+                  }
+                },
+                "constraints": {}
+              }
+            },
+            {
+              "id": "step2",
+              "inputs": [
+                "step0:0",
+                "step1:0"
+              ],
+              "op": {
+                "Op": {
+                  "file": {
+                    "actions": [
+                      {
+                        "Action": {
+                          "copy": {
+                            "allowEmptyWildcard": true,
+                            "allowWildcard": true,
+                            "createDestPath": true,
+                            "dest": "/tmp/apt-runtime.txt",
+                            "dirCopyContents": true,
+                            "followSymlink": true,
+                            "mode": -1,
+                            "src": "/apt-runtime.txt",
+                            "timestamp": -1
+                          }
+                        },
+                        "input": 0,
+                        "output": 0,
+                        "secondaryInput": 1
+                      }
+                    ]
+                  }
+                },
+                "constraints": {}
+              }
+            },
+            {
+              "id": "step3",
+              "inputs": [
+                "step2:0"
+              ],
+              "op": {
+                "Op": {
+                  "exec": {
+                    "meta": {
+                      "args": [
+                        "/bin/sh",
+                        "-c",
+                        "apt-get update -qq     \u0026\u0026 DEBIAN_FRONTEND=noninteractive xargs apt-get install -y --no-install-recommends \u003c /tmp/apt-runtime.txt     \u0026\u0026 dpkg-query -W -f='${binary:Package}\\t${Version}\\n' \u003e /runtime-packages.txt     \u0026\u0026 apt-get clean     \u0026\u0026 rm -rf /var/lib/apt/lists/* /tmp/apt-runtime.txt"
+                      ],
+                      "cwd": "/",
+                      "env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                      ],
+                      "removeMountStubsRecursive": true
+                    },
+                    "mounts": [
+                      {
+                        "dest": "/"
+                      }
+                    ]
+                  }
+                },
+                "constraints": {},
+                "platform": {
+                  "Architecture": "amd64",
+                  "OS": "linux"
+                }
+              }
+            },
+            {
+              "id": "step4",
+              "inputs": [
+                "step3:0",
+                "step1:0"
+              ],
+              "op": {
+                "Op": {
+                  "file": {
+                    "actions": [
+                      {
+                        "Action": {
+                          "copy": {
+                            "allowEmptyWildcard": true,
+                            "allowWildcard": true,
+                            "createDestPath": true,
+                            "dest": "/",
+                            "dirCopyContents": true,
+                            "followSymlink": true,
+                            "mode": -1,
+                            "src": "/payload",
+                            "timestamp": -1
+                          }
+                        },
+                        "input": 0,
+                        "output": 0,
+                        "secondaryInput": 1
+                      }
+                    ]
+                  }
+                },
+                "constraints": {}
+              }
+            },
+            {
+              "id": "step5",
+              "inputs": [
+                "step4:0",
+                "step1:0"
+              ],
+              "op": {
+                "Op": {
+                  "file": {
+                    "actions": [
+                      {
+                        "Action": {
+                          "copy": {
+                            "allowEmptyWildcard": true,
+                            "allowWildcard": true,
+                            "createDestPath": true,
+                            "dest": "/opt/qristal/",
+                            "dirCopyContents": true,
+                            "followSymlink": true,
+                            "mode": -1,
+                            "src": "/inputs.json",
+                            "timestamp": -1
+                          }
+                        },
+                        "input": 0,
+                        "output": -1,
+                        "secondaryInput": 1
+                      },
+                      {
+                        "Action": {
+                          "copy": {
+                            "allowEmptyWildcard": true,
+                            "allowWildcard": true,
+                            "createDestPath": true,
+                            "dest": "/opt/qristal/",
+                            "dirCopyContents": true,
+                            "followSymlink": true,
+                            "mode": -1,
+                            "src": "/payload-inventory.json",
+                            "timestamp": -1
+                          }
+                        },
+                        "input": 2,
+                        "output": 0,
+                        "secondaryInput": 1
+                      }
+                    ]
+                  }
+                },
+                "constraints": {}
+              }
+            },
+            {
+              "id": "step6",
+              "inputs": [
+                "step5:0"
+              ],
+              "op": {
+                "Op": {
+                  "exec": {
+                    "meta": {
+                      "args": [
+                        "/bin/sh",
+                        "-c",
+                        "printf '{}\\n' \u003e /opt/qristal/empty-backends.yaml"
+                      ],
+                      "cwd": "/",
+                      "env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                      ],
+                      "removeMountStubsRecursive": true
+                    },
+                    "mounts": [
+                      {
+                        "dest": "/"
+                      }
+                    ]
+                  }
+                },
+                "constraints": {},
+                "platform": {
+                  "Architecture": "amd64",
+                  "OS": "linux"
+                }
+              }
+            },
+            {
+              "id": "step7",
+              "inputs": [
+                "step6:0"
+              ],
+              "op": {
+                "Op": {
+                  "file": {
+                    "actions": [
+                      {
+                        "Action": {
+                          "mkdir": {
+                            "makeParents": true,
+                            "mode": 493,
+                            "owner": {
+                              "group": {
+                                "User": {
+                                  "byId": 65532
+                                }
+                              },
+                              "user": {
+                                "User": {
+                                  "byId": 65532
+                                }
+                              }
+                            },
+                            "path": "/tmp",
+                            "timestamp": -1
+                          }
+                        },
+                        "input": 0,
+                        "output": 0,
+                        "secondaryInput": -1
+                      }
+                    ]
+                  }
+                },
+                "constraints": {}
+              }
+            },
+            {
+              "id": "step8",
+              "inputs": [
+                "step7:0"
+              ],
+              "op": {
+                "Op": {}
+              }
+            }
+          ]
+        },
+        "builderPlatform": "linux/amd64",
+        "dockerfileVersion": "1.26.0",
+        "github_actor": "ddri",
+        "github_actor_id": "958145",
+        "github_event_name": "workflow_dispatch",
+        "github_event_payload": {
+          "inputs": null,
+          "organization": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/235283802?v=4",
+            "description": "",
+            "events_url": "https://api.github.com/orgs/marqov-dev/events",
+            "hooks_url": "https://api.github.com/orgs/marqov-dev/hooks",
+            "id": 235283802,
+            "issues_url": "https://api.github.com/orgs/marqov-dev/issues",
+            "login": "marqov-dev",
+            "members_url": "https://api.github.com/orgs/marqov-dev/members{/member}",
+            "node_id": "O_kgDODgYlWg",
+            "public_members_url": "https://api.github.com/orgs/marqov-dev/public_members{/member}",
+            "repos_url": "https://api.github.com/orgs/marqov-dev/repos",
+            "url": "https://api.github.com/orgs/marqov-dev"
+          },
+          "ref": "refs/heads/main",
+          "repository": {
+            "allow_forking": true,
+            "archive_url": "https://api.github.com/repos/marqov-dev/qristal/{archive_format}{/ref}",
+            "archived": false,
+            "assignees_url": "https://api.github.com/repos/marqov-dev/qristal/assignees{/user}",
+            "blobs_url": "https://api.github.com/repos/marqov-dev/qristal/git/blobs{/sha}",
+            "branches_url": "https://api.github.com/repos/marqov-dev/qristal/branches{/branch}",
+            "clone_url": "https://github.com/marqov-dev/qristal.git",
+            "collaborators_url": "https://api.github.com/repos/marqov-dev/qristal/collaborators{/collaborator}",
+            "comments_url": "https://api.github.com/repos/marqov-dev/qristal/comments{/number}",
+            "commits_url": "https://api.github.com/repos/marqov-dev/qristal/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/marqov-dev/qristal/compare/{base}...{head}",
+            "contents_url": "https://api.github.com/repos/marqov-dev/qristal/contents/{+path}",
+            "contributors_url": "https://api.github.com/repos/marqov-dev/qristal/contributors",
+            "created_at": "2026-09-09T02:51:52Z",
+            "custom_properties": {},
+            "default_branch": "main",
+            "deployments_url": "https://api.github.com/repos/marqov-dev/qristal/deployments",
+            "description": "Qristal: hybrid quantum-classical C++/Python development platform from Quantum Brilliance",
+            "disabled": false,
+            "downloads_url": "https://api.github.com/repos/marqov-dev/qristal/downloads",
+            "events_url": "https://api.github.com/repos/marqov-dev/qristal/events",
+            "fork": true,
+            "forks": 0,
+            "forks_count": 0,
+            "forks_url": "https://api.github.com/repos/marqov-dev/qristal/forks",
+            "full_name": "marqov-dev/qristal",
+            "git_commits_url": "https://api.github.com/repos/marqov-dev/qristal/git/commits{/sha}",
+            "git_refs_url": "https://api.github.com/repos/marqov-dev/qristal/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/marqov-dev/qristal/git/tags{/sha}",
+            "git_url": "git://github.com/marqov-dev/qristal.git",
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_pages": false,
+            "has_projects": true,
+            "has_pull_requests": true,
+            "has_wiki": false,
+            "homepage": null,
+            "hooks_url": "https://api.github.com/repos/marqov-dev/qristal/hooks",
+            "html_url": "https://github.com/marqov-dev/qristal",
+            "id": 1362128250,
+            "is_template": false,
+            "issue_comment_url": "https://api.github.com/repos/marqov-dev/qristal/issues/comments{/number}",
+            "issue_events_url": "https://api.github.com/repos/marqov-dev/qristal/issues/events{/number}",
+            "issues_url": "https://api.github.com/repos/marqov-dev/qristal/issues{/number}",
+            "keys_url": "https://api.github.com/repos/marqov-dev/qristal/keys{/key_id}",
+            "labels_url": "https://api.github.com/repos/marqov-dev/qristal/labels{/name}",
+            "language": "Python",
+            "languages_url": "https://api.github.com/repos/marqov-dev/qristal/languages",
+            "license": {
+              "key": "other",
+              "name": "Other",
+              "node_id": "MDc6TGljZW5zZTA=",
+              "spdx_id": "NOASSERTION",
+              "url": null
+            },
+            "merges_url": "https://api.github.com/repos/marqov-dev/qristal/merges",
+            "milestones_url": "https://api.github.com/repos/marqov-dev/qristal/milestones{/number}",
+            "mirror_url": null,
+            "name": "qristal",
+            "node_id": "R_kgDOUTBteg",
+            "notifications_url": "https://api.github.com/repos/marqov-dev/qristal/notifications{?since,all,participating}",
+            "open_issues": 0,
+            "open_issues_count": 0,
+            "owner": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/235283802?v=4",
+              "events_url": "https://api.github.com/users/marqov-dev/events{/privacy}",
+              "followers_url": "https://api.github.com/users/marqov-dev/followers",
+              "following_url": "https://api.github.com/users/marqov-dev/following{/other_user}",
+              "gists_url": "https://api.github.com/users/marqov-dev/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/marqov-dev",
+              "id": 235283802,
+              "login": "marqov-dev",
+              "node_id": "O_kgDODgYlWg",
+              "organizations_url": "https://api.github.com/users/marqov-dev/orgs",
+              "received_events_url": "https://api.github.com/users/marqov-dev/received_events",
+              "repos_url": "https://api.github.com/users/marqov-dev/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/marqov-dev/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/marqov-dev/subscriptions",
+              "type": "Organization",
+              "url": "https://api.github.com/users/marqov-dev",
+              "user_view_type": "public"
+            },
+            "private": false,
+            "pull_request_creation_policy": "all",
+            "pulls_url": "https://api.github.com/repos/marqov-dev/qristal/pulls{/number}",
+            "pushed_at": "2026-09-13T06:49:57Z",
+            "releases_url": "https://api.github.com/repos/marqov-dev/qristal/releases{/id}",
+            "size": 4464,
+            "ssh_url": "git@github.com:marqov-dev/qristal.git",
+            "stargazers_count": 0,
+            "stargazers_url": "https://api.github.com/repos/marqov-dev/qristal/stargazers",
+            "statuses_url": "https://api.github.com/repos/marqov-dev/qristal/statuses/{sha}",
+            "subscribers_url": "https://api.github.com/repos/marqov-dev/qristal/subscribers",
+            "subscription_url": "https://api.github.com/repos/marqov-dev/qristal/subscription",
+            "svn_url": "https://github.com/marqov-dev/qristal",
+            "tags_url": "https://api.github.com/repos/marqov-dev/qristal/tags",
+            "teams_url": "https://api.github.com/repos/marqov-dev/qristal/teams",
+            "topics": [],
+            "trees_url": "https://api.github.com/repos/marqov-dev/qristal/git/trees{/sha}",
+            "updated_at": "2026-09-13T06:49:58Z",
+            "url": "https://api.github.com/repos/marqov-dev/qristal",
+            "visibility": "public",
+            "watchers": 0,
+            "watchers_count": 0,
+            "web_commit_signoff_required": false
+          },
+          "sender": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/958145?v=4",
+            "events_url": "https://api.github.com/users/ddri/events{/privacy}",
+            "followers_url": "https://api.github.com/users/ddri/followers",
+            "following_url": "https://api.github.com/users/ddri/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ddri/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/ddri",
+            "id": 958145,
+            "login": "ddri",
+            "node_id": "MDQ6VXNlcjk1ODE0NQ==",
+            "organizations_url": "https://api.github.com/users/ddri/orgs",
+            "received_events_url": "https://api.github.com/users/ddri/received_events",
+            "repos_url": "https://api.github.com/users/ddri/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/ddri/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ddri/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/ddri",
+            "user_view_type": "public"
+          },
+          "workflow": ".github/workflows/cpu-runtime-candidate.yml"
+        },
+        "github_job": "candidate",
+        "github_ref": "refs/heads/main",
+        "github_ref_name": "main",
+        "github_ref_protected": "false",
+        "github_ref_type": "branch",
+        "github_repository": "marqov-dev/qristal",
+        "github_repository_id": "1362128250",
+        "github_repository_owner": "marqov-dev",
+        "github_repository_owner_id": "235283802",
+        "github_run_attempt": "1",
+        "github_run_id": "34743836599",
+        "github_run_number": "1",
+        "github_runner_arch": "X64",
+        "github_runner_environment": "github-hosted",
+        "github_runner_image_os": "ubuntu24",
+        "github_runner_image_version": "20260907.300.1",
+        "github_runner_name": "GitHub Actions 1000006101",
+        "github_runner_os": "Linux",
+        "github_runner_tracking_id": "github_a1d5176f-5883-4151-906f-7dc1f90bc374",
+        "github_server_url": "https://github.com",
+        "github_triggering_actor": "ddri",
+        "github_workflow": "CPU runtime candidate",
+        "github_workflow_ref": "marqov-dev/qristal/.github/workflows/cpu-runtime-candidate.yml@refs/heads/main",
+        "github_workflow_sha": "bb1ccc1601ce6962101cfa87f2c44d4f7ffebc91"
+      },
+      "resolvedDependencies": [
+        {
+          "digest": {
+            "sha256": "ae4f3b554449e7e25548e7d8ccc029d17357348e30c6e3df01b92bc93654d6a9"
+          },
+          "uri": "pkg:docker/docker/buildkit-syft-scanner@stable-1?platform=linux%2Famd64"
+        },
+        {
+          "digest": {
+            "sha256": "4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d"
+          },
+          "uri": "pkg:docker/ubuntu?digest=sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d\u0026platform=linux%2Famd64"
+        }
+      ]
+    },
+    "runDetails": {
+      "builder": {
+        "id": "https://github.com/marqov-dev/qristal/actions/runs/34743836599/attempts/1"
+      },
+      "metadata": {
+        "buildkit_completeness": {
+          "request": true,
+          "resolvedDependencies": false
+        },
+        "buildkit_metadata": {
+          "layers": {
+            "step0:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                }
+              ]
+            ],
+            "step2:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                },
+                {
+                  "digest": "sha256:100cba359f8bc393faa7ad11244b2415e44c4ff84bad308923cc033be64e1921",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 292
+                }
+              ]
+            ],
+            "step3:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                },
+                {
+                  "digest": "sha256:100cba359f8bc393faa7ad11244b2415e44c4ff84bad308923cc033be64e1921",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 292
+                },
+                {
+                  "digest": "sha256:9154136ac504458c7a2106fd2d8ad8bcd96f05c49bbc7dbd6fb56d05aacd6732",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 33129298
+                }
+              ]
+            ],
+            "step4:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                },
+                {
+                  "digest": "sha256:100cba359f8bc393faa7ad11244b2415e44c4ff84bad308923cc033be64e1921",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 292
+                },
+                {
+                  "digest": "sha256:9154136ac504458c7a2106fd2d8ad8bcd96f05c49bbc7dbd6fb56d05aacd6732",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 33129298
+                },
+                {
+                  "digest": "sha256:7f141276176b8c89d8eae3a4e9498d99d29bdda79409f612710686c1d33309f7",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 357290297
+                }
+              ]
+            ],
+            "step5:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                },
+                {
+                  "digest": "sha256:100cba359f8bc393faa7ad11244b2415e44c4ff84bad308923cc033be64e1921",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 292
+                },
+                {
+                  "digest": "sha256:9154136ac504458c7a2106fd2d8ad8bcd96f05c49bbc7dbd6fb56d05aacd6732",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 33129298
+                },
+                {
+                  "digest": "sha256:7f141276176b8c89d8eae3a4e9498d99d29bdda79409f612710686c1d33309f7",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 357290297
+                },
+                {
+                  "digest": "sha256:188a17e760420ff335dd86f21cfa71f30e2a6ed37457f17cf23c07aa1c0e5f3f",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 2467997
+                }
+              ]
+            ],
+            "step6:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                },
+                {
+                  "digest": "sha256:100cba359f8bc393faa7ad11244b2415e44c4ff84bad308923cc033be64e1921",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 292
+                },
+                {
+                  "digest": "sha256:9154136ac504458c7a2106fd2d8ad8bcd96f05c49bbc7dbd6fb56d05aacd6732",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 33129298
+                },
+                {
+                  "digest": "sha256:7f141276176b8c89d8eae3a4e9498d99d29bdda79409f612710686c1d33309f7",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 357290297
+                },
+                {
+                  "digest": "sha256:188a17e760420ff335dd86f21cfa71f30e2a6ed37457f17cf23c07aa1c0e5f3f",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 2467997
+                },
+                {
+                  "digest": "sha256:2866d3718fe610b505b2d086962b1f375e32549273f9d5d9d634b9a3a800ce25",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 175
+                }
+              ]
+            ],
+            "step7:0": [
+              [
+                {
+                  "digest": "sha256:40d16f30db405106ef8074779bdf41f012465c2a785bbeaa2eab9f2081099b47",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 29736684
+                },
+                {
+                  "digest": "sha256:100cba359f8bc393faa7ad11244b2415e44c4ff84bad308923cc033be64e1921",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 292
+                },
+                {
+                  "digest": "sha256:9154136ac504458c7a2106fd2d8ad8bcd96f05c49bbc7dbd6fb56d05aacd6732",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 33129298
+                },
+                {
+                  "digest": "sha256:7f141276176b8c89d8eae3a4e9498d99d29bdda79409f612710686c1d33309f7",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 357290297
+                },
+                {
+                  "digest": "sha256:188a17e760420ff335dd86f21cfa71f30e2a6ed37457f17cf23c07aa1c0e5f3f",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 2467997
+                },
+                {
+                  "digest": "sha256:2866d3718fe610b505b2d086962b1f375e32549273f9d5d9d634b9a3a800ce25",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 175
+                },
+                {
+                  "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+                  "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+                  "size": 32
+                }
+              ]
+            ]
+          },
+          "source": {
+            "infos": [
+              {
+                "data": "RlJPTSB1YnVudHVAc2hhMjU2OjRmODM4YWRjNzE4MWQ5MDM5YWM3OTVhN2QwYWJhMDVhOWJkOWVjZDQ4MGQyOTQ0ODMxNjljNWRlZjk4M2I2NGQKQ09QWSBhcHQtcnVudGltZS50eHQgL3RtcC9hcHQtcnVudGltZS50eHQKUlVOIGFwdC1nZXQgdXBkYXRlIC1xcSBcCiAgICAmJiBERUJJQU5fRlJPTlRFTkQ9bm9uaW50ZXJhY3RpdmUgeGFyZ3MgYXB0LWdldCBpbnN0YWxsIC15IC0tbm8taW5zdGFsbC1yZWNvbW1lbmRzIDwgL3RtcC9hcHQtcnVudGltZS50eHQgXAogICAgJiYgZHBrZy1xdWVyeSAtVyAtZj0nJHtiaW5hcnk6UGFja2FnZX1cdCR7VmVyc2lvbn1cbicgPiAvcnVudGltZS1wYWNrYWdlcy50eHQgXAogICAgJiYgYXB0LWdldCBjbGVhbiBcCiAgICAmJiBybSAtcmYgL3Zhci9saWIvYXB0L2xpc3RzLyogL3RtcC9hcHQtcnVudGltZS50eHQKQ09QWSBwYXlsb2FkLyAvCkNPUFkgaW5wdXRzLmpzb24gcGF5bG9hZC1pbnZlbnRvcnkuanNvbiAvb3B0L3FyaXN0YWwvClJVTiBwcmludGYgJ3t9XG4nID4gL29wdC9xcmlzdGFsL2VtcHR5LWJhY2tlbmRzLnlhbWwKRU5WIEhPTUU9L3RtcCBQWVRIT05OT1VTRVJTSVRFPTEgUFlUSE9OUEFUSD0vd29yay9pbnN0YWxsLWNvcmUvbGliOi9ydW50aW1lL3B5dGhvbi1jb3JlOi93b3JrL2luc3RhbGwtaW50ZWdyYXRpb25zIE9NUF9OVU1fVEhSRUFEUz0yIE9QRU5CTEFTX05VTV9USFJFQURTPTIKVVNFUiA2NTUzMjo2NTUzMgpXT1JLRElSIC90bXAKRU5UUllQT0lOVCBbInB5dGhvbjMiLCAiL29wdC9xcmlzdGFsL3J1bnRpbWUucHkiXQpDTUQgWyItLWNhcGFiaWxpdGllcyJdCkxBQkVMIG9yZy5vcGVuY29udGFpbmVycy5pbWFnZS50aXRsZT0iUXJpc3RhbCBwdWJsaWMgQ1BVIGV4cGVyaW1lbnRhbCBydW50aW1lIgoKTEFCRUwgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZT0iaHR0cHM6Ly9naXRodWIuY29tL21hcnFvdi1kZXYvcXJpc3RhbCIKTEFCRUwgb3JnLm9wZW5jb250YWluZXJzLmltYWdlLnJldmlzaW9uPSJiYjFjY2MxNjAxY2U2OTYyMTAxY2ZhODdmMmM0NGQ0ZjdmZmViYzkxIgo=",
+                "digestMapping": {
+                  "sha256:01632b0acf402f09b89a19d502e6bc8f65bee8704edaa2ea46476fe2e742ee3d": "step0",
+                  "sha256:66193fcb9360680227fe8c5cbb6e7247f98866825c7a8d74838d53efa32efab7": "step1"
+                },
+                "filename": "Dockerfile",
+                "language": "Dockerfile",
+                "llbDefinition": [
+                  {
+                    "id": "step0",
+                    "op": {
+                      "Op": {
+                        "source": {
+                          "attrs": {
+                            "local.differ": "none",
+                            "local.followpaths": "[\"Dockerfile\",\"Dockerfile.dockerignore\",\"dockerfile\"]",
+                            "local.sharedkeyhint": "dockerfile"
+                          },
+                          "identifier": "local://dockerfile"
+                        }
+                      },
+                      "constraints": {}
+                    }
+                  },
+                  {
+                    "id": "step1",
+                    "inputs": [
+                      "step0:0"
+                    ],
+                    "op": {
+                      "Op": {}
+                    }
+                  }
+                ]
+              }
+            ],
+            "locations": {
+              "step0": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 1
+                        },
+                        "start": {
+                          "line": 1
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "step1": {},
+              "step2": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 2
+                        },
+                        "start": {
+                          "line": 2
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "step3": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 3
+                        },
+                        "start": {
+                          "line": 3
+                        }
+                      },
+                      {
+                        "end": {
+                          "line": 4
+                        },
+                        "start": {
+                          "line": 4
+                        }
+                      },
+                      {
+                        "end": {
+                          "line": 5
+                        },
+                        "start": {
+                          "line": 5
+                        }
+                      },
+                      {
+                        "end": {
+                          "line": 6
+                        },
+                        "start": {
+                          "line": 6
+                        }
+                      },
+                      {
+                        "end": {
+                          "line": 7
+                        },
+                        "start": {
+                          "line": 7
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "step4": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 8
+                        },
+                        "start": {
+                          "line": 8
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "step5": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 9
+                        },
+                        "start": {
+                          "line": 9
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "step6": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 10
+                        },
+                        "start": {
+                          "line": 10
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "step7": {
+                "locations": [
+                  {
+                    "ranges": [
+                      {
+                        "end": {
+                          "line": 13
+                        },
+                        "start": {
+                          "line": 13
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "vcs": {
+            "localdir:context": ".cpu-release/context",
+            "localdir:dockerfile": ".cpu-release/context",
+            "revision": "bb1ccc1601ce6962101cfa87f2c44d4f7ffebc91",
+            "source": "https://github.com/marqov-dev/qristal"
+          }
+        },
+        "finishedOn": "2026-09-13T06:55:12.484498243Z",
+        "invocationId": "y3bfr35zrowreeb8igujwbjpa",
+        "startedOn": "2026-09-13T06:54:58.666307382Z"
+      }
+    }
+  }
+}

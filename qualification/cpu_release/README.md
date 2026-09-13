@@ -6,22 +6,16 @@ historical source-bound harness or reclassifying its earlier result.
 
 ## Current status
 
-Source and offline tests are prepared. The real local archive was checksum-checked
-and extracted into a derived context. No candidate was published and the new
-matrix/inventory collector have not yet run natively.
+The first [published and acquired CPU candidate](../evidence/2026-09-13-cpu-published/README.md)
+passed both native matrices, corrected backend rejection, inventory export and
+independent retained-evidence replay. Package visibility is private. The candidate
+is available to authenticated maintainers and is not a hosted platform runtime.
 
-The input archive remains local. Automatic approval review rejected its attempted
-upload to an unpublished GitHub release because installed-binary contents and
-redistribution rights were not established. The rejection happened before the
-upload command ran. Do not dispatch the workflow until this specific transfer is
-authorized and the exact asset is uploaded. No alternative transfer was attempted.
-
-Requested input transfer: the existing353,060,408-byte `cpu.tar.gz`, SHA256
-`de37205ac56daf601b2cf8816175656da5ed943f5c95d986c8b1886f77c729cd`, to an unpublished
-`cpu-inputs-20260913` draft release in `marqov-dev/qristal`. It contains the captured
-installed CPU payload and named native harness, including retained component
-notices. It does not establish the original build provenance or redistribution
-clearance. Do not publish the draft as a user release.
+The353,060,408-byte input archive was uploaded after the user specifically approved
+that transfer. It remains in the unpublished `cpu-inputs-20260913` draft release.
+The earlier automatic approval rejection is retained in PR36's history; it is no
+longer a transfer blocker. Approval to transfer does not establish redistribution
+clearance or original binary build provenance.
 
 ## Workflow
 
@@ -50,7 +44,7 @@ unpublished draft; `packages:write` supports candidate publication. The job runs
 only on this repository's main branch by manual dispatch, with a35minute bound.
 Historical CPU/GPU evidence and available-artifact catalog remain unchanged.
 
-Once the input transfer is authorized/completed and this workflow is merged:
+For a future authorized candidate build from main:
 
 ```sh
 gh workflow run cpu-runtime-candidate.yml --repo marqov-dev/qristal --ref main
