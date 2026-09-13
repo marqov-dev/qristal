@@ -6,15 +6,15 @@
   "observe_until": 1789324505.324987,
   "phase": "cleaned",
   "plan": {
-    "account": "090208085542",
-    "group": "sg-0f262656be0a792d9",
-    "image": "ami-05a3e9423ae4d7a19",
+    "account": "000000000000",
+    "group": "sg-00000000000000001",
+    "image": "ami-00000000000000001",
     "instance_type": "m7i.large",
     "region": "us-east-1",
     "root_gib": 20,
-    "run": "qb-proof-4cd8afed8b054a28bb59cbc200a16a2a",
-    "subnet": "subnet-01fb5ff873d16c141",
-    "vpc": "vpc-0c8ff9e3276495a4c"
+    "run": "qb-proof-00000000000000000000000000000001",
+    "subnet": "subnet-00000000000000001",
+    "vpc": "vpc-00000000000000001"
   },
   "userdata_sha256": "38e661eeceb36295c2c88c4817872f627fd38fdd4f0bfac866bcc19333433104"
 }

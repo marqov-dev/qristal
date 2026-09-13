@@ -1,7 +1,7 @@
 # Fresh XACC build with retained installation
 
-The user explicitly approved this single temporary CPU run in AWS account
-`090208085542`, `us-east-1`. The source-build input archive is unchanged from the
+The user explicitly approved this single temporary CPU run in the approved AWS account in
+`us-east-1`. The source-build input archive is unchanged from the
 previous successful out-of-tree experiment; its identity is retained here.
 The wrapper implementation was merged in PR38; Core preparation commit `20bc27b`
 adds no change to the native guest or wrapper.
@@ -33,9 +33,11 @@ nested field as the overall retention outcome.
 
 ## Cleanup and remaining scope
 
-`cleanup.json` and `resources.json` verify termination/deletion of the exact VM,
+`vm-cleanup.json`, `cleanup.json` and `resources.json` record termination/deletion of the exact VM,
 root disk, security group and private transfer bucket, with no cleanup errors.
-No signed URLs or credentials are retained in this evidence.
+AWS resource identifiers in retained lifecycle records are consistently pseudonymized;
+raw records remain local. The aliases preserve cross-record relationships but cannot
+be used to query AWS. No signed URLs or credentials are retained in this evidence.
 
 This establishes a freshly built, verified installed artifact at its original
 `/work/install-xacc` prefix. It does not establish relocatability or replay after

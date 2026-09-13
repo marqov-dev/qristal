@@ -1,7 +1,7 @@
 {
-  "account": "090208085542",
+  "account": "000000000000",
   "archive_sha256": "b4569c7ca587c3a1fcbaa5e87a4606792c9a0904e2d15c5c2ef03a83b3088bb5",
-  "bucket": "qb-proof-4cd8afed8b054a28bb59cbc200a16a2a-cpu",
+  "bucket": "qb-proof-00000000000000000000000000000001-cpu",
   "files": 3525,
   "key": "source-output.tar.gz",
   "native": {

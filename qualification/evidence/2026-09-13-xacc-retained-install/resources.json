@@ -1,8 +1,8 @@
 {
   "cleanup_verified": true,
-  "group": "sg-0f262656be0a792d9",
-  "instance": "i-0d1b530b4bd8ee8a1",
+  "group": "sg-00000000000000001",
+  "instance": "i-00000000000000001",
   "volumes": [
-    "vol-041356aba365b4aa1"
+    "vol-00000000000000001"
   ]
 }
