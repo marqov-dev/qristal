@@ -1,0 +1,31 @@
+{
+  "schema": "marqov.cpu-release-context/v1",
+  "source_revision": "bb1ccc1601ce6962101cfa87f2c44d4f7ffebc91",
+  "parent": {
+    "schema": "marqov.cpu-distribution-input/v1",
+    "draft_release_tag": "cpu-inputs-20260913",
+    "asset_name": "cpu.tar.gz",
+    "archive_sha256": "de37205ac56daf601b2cf8816175656da5ed943f5c95d986c8b1886f77c729cd",
+    "context_sha256": "75d2758d4740d499f19a2ab24958d138471466924e323d906c801d85e8dc8535",
+    "origin": "Captured installed binaries; original build provenance remains unverified"
+  },
+  "context": {
+    "schema": "marqov.cpu-context/v1",
+    "files": {
+      "Dockerfile": "ef66adca6087cff7fe60c66c3186f0e411fe5c54dc655abadf919d3938bd5ce2",
+      "apt-runtime.txt": "3d72c8cec28c7c5da150ed3f80c502340f3471d7b398350c34e48ee9c289ef3c",
+      "inputs.json": "326639d1d44b2f386c0dce6fb69875aa8498c7b9662d30a209e3e350bb2e90f6",
+      "payload-inventory.json": "979dc518f30af6969c4b5aabdd4f4489dd552cc2558f83d6f37916751b9dcde7"
+    },
+    "native_qualified": false,
+    "published": false
+  },
+  "inventory_sha256": "71b75f8fec7a1b5157db2001c7a4d8d2cb2f2dc80cc9fb06838afd831c9d9d5b",
+  "payload_hashes": {
+    "runtime.py": "8e39de398ea8117e74200026813e54f48304aa9c297d6d6fb2e5b7f9678b91f4",
+    "adapter.py": "af1be0aeddf17191560e6aadb85b130b6fdb31eb61a246f9b238e006127a2754",
+    "capabilities.json": "a2f565f3a25ec69cce18a4cc3e441dbe899f7abc454eb91d6bc6a2ff048030f2"
+  },
+  "matrix_sha256": "6448acae09974bda2aadb1e8ccb819751f757a6037cec0181839c0168eecef43",
+  "installed_binary_origin": "unverified"
+}

@@ -1,7 +1,7 @@
 # Maintained simulation subset and release gates
 
-Current status baseline: Qristal main43755ba213aa04c4cd40b8479040b034c740a80e
-(merged PR31, 13 September 2026). Historical native evidence retains its original revisions.
+Current status baseline: Qristal mainbb1ccc1601ce6962101cfa87f2c44d4f7ffebc91
+(merged PR36, 13 September 2026), plus its successful CPU publication run34743836599. Historical native evidence retains its original revisions.
 This document defines the proposed maintenance scope, not a supported release.
 
 ## Repair, replace or retire
@@ -10,7 +10,10 @@ This document defines the proposed maintenance scope, not a supported release.
 Retain useful QPP/Aer simulation, local noise and selected integration/decoder
 capabilities. Do not restore the old poll-loop worker or SDK Python-version
 bypasses. The rebuilt CPU runtime has installed-only and compiler-free image
-evidence, but remains a local artifact requiring a distribution/release gate.
+evidence and now a private registry candidate with acquired-image checks, corrected
+backend rejection and inventory export. Public distribution, original binary
+build provenance and hosted admission remain separate gates. See the
+[CPU publication evidence](evidence/2026-09-13-cpu-published/README.md).
 
 **GPU: replace the legacy image with the qualified standalone CUDA-Q candidate.**
 The published private candidate passed on A10G for nvidia fp64 and tensornet.
@@ -175,3 +178,10 @@ evidence and boundary logic; it is not a fresh simulation or a security audit.
 [Read-only bridge/TNQVM audit](accelerators/COMPATIBILITY-AUDIT.md) identifies
 the exact Core compiler-discovery, library-layout, test-selection and
 Fortran/OpenBLAS/MPI boundaries for the next isolated compatibility probes.
+
+
+The [controlled-source gate and audit](source_provenance/README.md) now document
+the next provenance boundary. It checks pristine inputs before declared patches;
+it does not establish the origin of inherited installed binaries. The first
+proposed rebuild isolates XACC/QPP before extending the receipt chain to Core,
+Decoder and the two Python environments. Existing research checkouts are preserved.

@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-13",
+  "claim": "clean_git_object_export_not_compilation_or_binary_provenance",
+  "components": [
+    {
+      "component": "xacc",
+      "commit": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3",
+      "tree": "606688234266e08c18d44cd4826f16afa39f9eb8",
+      "files": 9196,
+      "bytes": 382070115,
+      "submodules": 13,
+      "receipt": "xacc-source.json.gz",
+      "receipt_sha256": "02996a1228c36eea1326aee7806d349654f464393bd44f61a48bf0a94ccd2b99",
+      "stored_sha256": "03b54e7f1e8902eab0c0db165e2ef41ef3c8604ac424ee08c090a482b512f137"
+    },
+    {
+      "component": "googletest",
+      "commit": "58d77fa8070e8cec2dc1ed015d66b454c8d78850",
+      "tree": "14091e7a6617a77ba5e2c78daba65c31a9fbe325",
+      "files": 242,
+      "bytes": 3944990,
+      "submodules": 0,
+      "receipt": "googletest-source.json.gz",
+      "receipt_sha256": "c03cdee0864dd2e44a05aad9a9d7bf3f47671ebefa0fea5b74117cc76679208c",
+      "stored_sha256": "f4ab0d44cb18799f7d25fdca8b1d36122d654c5976104ca2bf6846c4a187907e"
+    }
+  ],
+  "materials": [
+    {
+      "path": "xacc-cpu.patch",
+      "bytes": 4675,
+      "sha256": "b8093e588cce232ba3ae61f544f76c53e1908284783b03f9534e3606771497f4"
+    },
+    {
+      "path": "cppmicroservices.patch",
+      "bytes": 776,
+      "sha256": "0bba6f79b6b7944c2f276149aa152c29f4d033ebb0878fbf6b7f65f2e93a562e"
+    },
+    {
+      "path": "acz_qpp_smoke.cpp",
+      "bytes": 2492,
+      "sha256": "9ec40be8b4cf30f9ad7c68ceb145340fc2e8fc2f84dcf8a52ebbc067faa168f6"
+    },
+    {
+      "path": "install-toolchain.sh",
+      "bytes": 452,
+      "sha256": "84c984b8dae5801ed276d5db90ab0a1f6426802ba043d5d2d7a18c1f5186cce1"
+    },
+    {
+      "path": "source-lock.json",
+      "bytes": 1678,
+      "sha256": "663230ea07f430b69252902f8d53b41e27c169cb0902752ce139c5317817697c"
+    },
+    {
+      "path": "archives/boost_1_75_0.tar.bz2",
+      "bytes": 121849575,
+      "sha256": "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb"
+    }
+  ],
+  "patches_applied": false,
+  "independent_source_reverification": "passed",
+  "tool_hashes": {
+    "check.py": "80e5ca0200b3ea644bf0375c58e323b78834dbc269775ffbca6e8e8a4d029d92",
+    "export.py": "cea6946019eb31146d195080b62f915dba61b066f15732c27db2b2aa61ec5c6a"
+  }
+}

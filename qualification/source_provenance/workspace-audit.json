@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-13",
+  "qualification_baseline": "1c9c7aea5a9ac18cc71a7d6a985460171e9f62a5",
+  "claim": "read_only_prepatch_source_audit_not_binary_provenance",
+  "components": [
+    {
+      "component": "xacc",
+      "requested_commit": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3",
+      "observed_head": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3",
+      "outcome": "rejected",
+      "reason": "undeclared files present (including ignored files)",
+      "top_level_entries": null
+    },
+    {
+      "component": "qristal-core",
+      "requested_commit": "a5c3e5fa544c07d538974d3a289b19652d483848",
+      "observed_head": "bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a",
+      "outcome": "rejected",
+      "reason": "HEAD differs from requested commit",
+      "top_level_entries": null
+    },
+    {
+      "component": "qristal-decoder",
+      "requested_commit": "13bb8f80f98bd259196834a13817c23ec02480e6",
+      "observed_head": "a58df0cf7eff0c6002aa3fed27ae6b18fdcea036",
+      "outcome": "rejected",
+      "reason": "HEAD differs from requested commit",
+      "top_level_entries": null
+    },
+    {
+      "component": "qristal-integrations",
+      "requested_commit": "16e4941ef5ad8476ad971a366ecce91e5ea5bd45",
+      "observed_head": "16e4941ef5ad8476ad971a366ecce91e5ea5bd45",
+      "outcome": "pass",
+      "reason": "clean pre-patch source only",
+      "top_level_entries": 49
+    }
+  ]
+}

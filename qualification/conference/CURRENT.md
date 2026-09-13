@@ -1,7 +1,8 @@
 # Quantum Brilliance × Marqov: what we can demonstrate
 
 Updated 13 September 2026. Evidence baseline: Qristal main
-`43755ba213aa04c4cd40b8479040b034c740a80e` (PR31 merged).
+`bb1ccc1601ce6962101cfa87f2c44d4f7ffebc91` (PR36 merged), plus its
+successful CPU candidate publication and acquired-image run34743836599.
 This is an experimental public-software maintenance project. No QB partnership
 or endorsement is claimed.
 
@@ -16,10 +17,11 @@ supported public distribution remain separate gates.
 |---|---|---|
 | One circuit family, five simulation methods | Six analytic cases each on QPP, Aer MPS, Aer density matrix, CUDA-Q nvidia fp64 and CUDA-Q tensornet; GPU runs used A10G | Speed advantage, maximum capacity, the older Core GPU bridge, or QB hardware performance |
 | Readout noise and fresh calibration | 50 sweep cases, 26 calibration/mitigation executions and 40 drift cases; fresh calibration improves estimates in the tested model | Full SPAM, correlated/device noise, or universal accuracy improvement |
-| Packaging and recovery | Exact private GPU candidate tested natively; bounded fault/recovery evidence with original failures and cleanup records | Public distribution, long-running CUDA-kernel interruption, multi-tenant security or admitted hosted Marqov jobs |
+| Packaging and recovery | Exact private CPU and GPU candidates tested natively; bounded fault/recovery evidence with original failures and cleanup records | Public distribution, long-running CUDA-kernel interruption, multi-tenant security or admitted hosted Marqov jobs |
 
 Evidence: [CPU/GPU methods](../accelerators/README.md),
 [GPU published candidate](../evidence/2026-09-11-gpu-published/README.md),
+[CPU published candidate](../evidence/2026-09-13-cpu-published/README.md),
 [mitigation](../evidence/2026-09-12-readout-mitigation/README.md),
 [drift](../evidence/2026-09-12-readout-drift/README.md).
 
@@ -37,6 +39,12 @@ requirements use separate environments. Standalone upstream CUDA-Q supplies the
 demonstrated GPU alternative. These runtimes can sit behind an isolated execution
 adapter; they do not require relaxing the platform SDK's Python requirement or
 restoring historical polling workers.
+
+The CPU candidate now has43 functional fixtures, corrected unsupported-backend
+rejection, package inventories and retained SPDX metadata against its acquired
+registry identity. Authenticated maintainers can pull it using the
+[artifact catalog and run guide](../distribution/README.md). It is not yet a
+publicly supported package or an admitted hosted runtime.
 
 The public QFT/IQFT provider also passed 70 phase-sensitive small QPP checks.
 That is optional technical appendix material, alongside source and artifact
@@ -79,8 +87,9 @@ browser inspection was blocked by file-URL policy and was not worked around.
 
 - Complete the human conference walkthrough and keep the verified downloadable
   backup available (#2172).
-- Finish candidate distribution/acquisition/notice and exact CPU-artifact gates
-  (#609/#640), keeping source forks distinct from licensing of the assembled runtime.
+- Build on the completed private CPU/GPU publication and acquired-image gates:
+  finish source-to-binary provenance, redistribution review and the public access
+  decision (#609/#640). Keep source forks distinct from assembled-runtime licenses.
 - Qualify or explicitly leave unsupported the older Core GPU bridge and TNQVM
   (#691/#1701). Standalone CUDA-Q evidence cannot substitute for these paths.
 - Integrate through the platform owner's current admission/result/lifecycle

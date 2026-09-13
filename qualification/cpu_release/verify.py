@@ -1,5 +1,6 @@
 """Bind acquired CPU tests, inventory and attestations to registry identity."""
 import hashlib
+import gzip
 import importlib.util
 import json
 from pathlib import Path
@@ -21,7 +22,10 @@ def read_inputs():return json.loads((HERE/'inputs.json').read_text())
 
 
 def verify(root):
-    def read(name):return json.loads((root/name).read_text())
+    def read(name):
+        path=root/name
+        raw=path.read_bytes() if path.exists() else gzip.decompress((root/(name+'.gz')).read_bytes())
+        return json.loads(raw)
     def digest(name):return 'sha256:'+hashlib.sha256((root/name).read_bytes()).hexdigest()
     release=read('release.json'); context=read('release-context.json'); index=read('registry-index.json')
     if (release['schema']!='marqov.cpu-release/v1' or release['status']!='published_candidate_pending_acquired_checks'

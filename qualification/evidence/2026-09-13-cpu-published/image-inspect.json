@@ -1,0 +1,80 @@
+[
+    {
+        "Id": "sha256:343e330ac7d2b40e81542c13c18753a233661f82c923b03ff772271e3d903402",
+        "RepoTags": [
+            "qristal-cpu:check"
+        ],
+        "RepoDigests": [
+            "ghcr.io/marqov-dev/qristal-cpu@sha256:c500987ef91ab0e0d3dd32ea75436785308ae1603c221762291d9c13dff431c5"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-13T06:53:57.782489265Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "65532:65532",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "HOME=/tmp",
+                "PYTHONNOUSERSITE=1",
+                "PYTHONPATH=/work/install-core/lib:/runtime/python-core:/work/install-integrations",
+                "OMP_NUM_THREADS=2",
+                "OPENBLAS_NUM_THREADS=2"
+            ],
+            "Cmd": [
+                "--capabilities"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/tmp",
+            "Entrypoint": [
+                "python3",
+                "/opt/qristal/runtime.py"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.revision": "bb1ccc1601ce6962101cfa87f2c44d4f7ffebc91",
+                "org.opencontainers.image.source": "https://github.com/marqov-dev/qristal",
+                "org.opencontainers.image.title": "Qristal public CPU experimental runtime",
+                "org.opencontainers.image.version": "22.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1294408311,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/b32ff0d3ebc23700352e71a534abd80e50b5f0b7774bf0b766a72aa7435e583b/diff:/var/lib/docker/overlay2/849c4631f2f2f1826dcf3998b654abe4a581b76bf5418c609f3fc6876c9b092c/diff:/var/lib/docker/overlay2/7658980f4499cc0cce9f3e3e83975da41b95d28db0d8c4cc335c91aa4739a525/diff:/var/lib/docker/overlay2/1afc0ae411ce29c7eed71f796b3cd62672734d9bc0a7da8b2e19b8da045d3a07/diff:/var/lib/docker/overlay2/16737f2610d396ffcf9b5ea2b9dfa8f0480eb42558fd808c0fc1e91b8537924f/diff:/var/lib/docker/overlay2/2ef13270dfe0c4eba09a912728f517285aace23c4659233842380b1619a91ea6/diff",
+                "MergedDir": "/var/lib/docker/overlay2/45720bdee43847622ce5f312f81339d4c8e8b8deaf5389c81919e96ace37e96d/merged",
+                "UpperDir": "/var/lib/docker/overlay2/45720bdee43847622ce5f312f81339d4c8e8b8deaf5389c81919e96ace37e96d/diff",
+                "WorkDir": "/var/lib/docker/overlay2/45720bdee43847622ce5f312f81339d4c8e8b8deaf5389c81919e96ace37e96d/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8bba68e7621928237aa6d6e2c680cb9572c942ee23c2adabd22016bb67cb938d",
+                "sha256:da3636b118be2fc1bbd04dce31527958d949427bfefa479325f11f1dc963086a",
+                "sha256:7fbfc7f6e0b671c82a5f05edaa59422567d37d6a5af98a08df9861d51c1fffd5",
+                "sha256:527a978b2c90d5080f547e1d00d9a2c56e65ee39195bb344fc6c2ecb13261623",
+                "sha256:c5c8680acad9ad2b7bb7ba4ad08c40046630814b1b600e1c7dea2606c06dc736",
+                "sha256:d85ee357bc55948ecf33d86566b4624c9a26fbd111d081889629f47fc4e4f7aa",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
