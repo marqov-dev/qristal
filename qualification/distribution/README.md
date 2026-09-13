@@ -84,3 +84,9 @@ subsequently passed the existing matrix with exact resource cleanup. Its image w
 not exported from the disposable VM. Registry delivery, inventory export and the
 corrected backend-negative test are the next increment; no new downloadable
 artifact is implied.
+
+The [CPU delivery workflow](../cpu_release/README.md) prepares corrected backend
+rejection, inventory export and acquired-digest tests. It has not published an
+image: the prerequisite installed-input draft upload was rejected by automatic
+approval review and awaits explicit transfer authorization. Existing binary
+availability is unchanged.

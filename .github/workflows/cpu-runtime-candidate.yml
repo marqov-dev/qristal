@@ -1,0 +1,94 @@
+name: CPU runtime candidate
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cpu-runtime-candidate
+  cancel-in-progress: false
+jobs:
+  candidate:
+    if: github.ref == 'refs/heads/main' && github.repository == 'marqov-dev/qristal'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: write # Read unpublished draft assets; token is used only in acquisition.
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Acquire fixed draft input asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir .cpu-input
+          gh release view cpu-inputs-20260913 --json isDraft --jq '.isDraft' | python3 -c 'import sys; assert sys.stdin.read().strip() == "true"'
+          gh release download cpu-inputs-20260913 --pattern cpu.tar.gz --dir .cpu-input
+      - name: Verify and stage release context
+        run: python3 -B qualification/cpu_release/prepare.py .cpu-input/cpu.tar.gz .cpu-release --revision "$GITHUB_SHA"
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+      - name: Build candidate for native checks
+        id: check-build
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
+        with:
+          context: .cpu-release/context
+          platforms: linux/amd64
+          load: true
+          provenance: false
+          tags: qristal-cpu:check
+      - name: Check candidate before publication
+        env:
+          IMAGE_ID: ${{ steps.check-build.outputs.imageid }}
+        run: python3 -B qualification/cpu_release/matrix.py --image "$IMAGE_ID" --output .cpu-release/prepublish
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish candidate with attestations
+        id: publish
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
+        with:
+          context: .cpu-release/context
+          platforms: linux/amd64
+          push: true
+          provenance: mode=max
+          sbom: true
+          tags: ghcr.io/marqov-dev/qristal-cpu:sha-${{ github.sha }}-run-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Acquire and test exact published identity
+        env:
+          DIGEST: ${{ steps.publish.outputs.digest }}
+          BUILD_METADATA: ${{ steps.publish.outputs.metadata }}
+        run: |
+          python3 qualification/cpu_release/record.py
+          docker pull "ghcr.io/marqov-dev/qristal-cpu@$DIGEST"
+          IMAGE_ID=$(docker image inspect "ghcr.io/marqov-dev/qristal-cpu@$DIGEST" --format '{{.Id}}')
+          python3 -B qualification/cpu_release/matrix.py --image "$IMAGE_ID" --output .cpu-release/acquired
+          docker run --rm --network none --read-only --cpus 2 --memory 4g --memory-swap 4g --pids-limit 256 --cap-drop ALL --security-opt no-new-privileges --entrypoint python3 "$IMAGE_ID" /opt/qristal/inventory.py > .cpu-release/inventory.json
+          docker image inspect "$IMAGE_ID" > .cpu-release/image-inspect.json
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cpu@$DIGEST" --raw > .cpu-release/registry-index.json
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cpu@$DIGEST" --format '{{ json .SBOM }}' > .cpu-release/sbom.json
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cpu@$DIGEST" --format '{{ json .Provenance }}' > .cpu-release/provenance.json
+          PLATFORM_DIGEST=$(python3 -c 'import json; d=json.load(open(".cpu-release/registry-index.json")); m=[m for m in d["manifests"] if m.get("platform",{}).get("os")=="linux" and m.get("platform",{}).get("architecture")=="amd64"]; assert len(m)==1; print(m[0]["digest"])')
+          docker buildx imagetools inspect "ghcr.io/marqov-dev/qristal-cpu@$PLATFORM_DIGEST" --raw > .cpu-release/platform-manifest.json
+          python3 -B qualification/cpu_release/verify.py .cpu-release
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cpu-candidate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .cpu-release/release-context.json
+            .cpu-release/release.json
+            .cpu-release/build-metadata.json
+            .cpu-release/prepublish/
+            .cpu-release/acquired/
+            .cpu-release/inventory.json
+            .cpu-release/image-inspect.json
+            .cpu-release/platform-manifest.json
+            .cpu-release/registry-index.json
+            .cpu-release/sbom.json
+            .cpu-release/provenance.json
+            .cpu-release/verification.json
+          retention-days: 90
+          if-no-files-found: error
