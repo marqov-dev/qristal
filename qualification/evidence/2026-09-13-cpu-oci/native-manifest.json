@@ -1,0 +1,9 @@
+{
+  "schema": "marqov.cpu-native-input/v1",
+  "context_sha256": "75d2758d4740d499f19a2ab24958d138471466924e323d906c801d85e8dc8535",
+  "files": {
+    "stage.py": "78a4524acf3df6dfae7afbf27fb9355f5305084a4d8ff41d954e3c346a5649fb",
+    "guest.py": "5db849a7a4dd8beb563552b08d05a5b0e3db04c339a62c1bbcebc52b33f4c7be",
+    "qristal/qualification/runtime/test_image.py": "19ed9b70309a196676500636f801c52f72697ec0f35c58bec4af9a62d5115a39"
+  }
+}

@@ -78,3 +78,9 @@ The [CPU staging increment](../cpu_package/README.md) now provides an explicit O
 context and installed-byte receipt. [Real local staging evidence](../evidence/2026-09-13-cpu-staging/README.md)
 records successful assembly of the context; the clean image build and native
 qualification remain pending. This does not change the catalog's available artifacts.
+
+The [first clean CPU OCI native build](../evidence/2026-09-13-cpu-oci/README.md)
+subsequently passed the existing matrix with exact resource cleanup. Its image was
+not exported from the disposable VM. Registry delivery, inventory export and the
+corrected backend-negative test are the next increment; no new downloadable
+artifact is implied.

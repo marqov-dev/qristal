@@ -1,0 +1,20 @@
+{
+  "cleanup_until": 1789281190.30462,
+  "last_instance_state": "terminated",
+  "last_seen": 1789279898.799386,
+  "launch_attempted": true,
+  "observe_until": 1789280890.30462,
+  "phase": "cleaned",
+  "plan": {
+    "account": "000000000000",
+    "group": "sg-00000000000000001",
+    "image": "ami-00000000000000001",
+    "instance_type": "m7i.large",
+    "region": "us-east-1",
+    "root_gib": 20,
+    "run": "qb-proof-00000000000000000000000000000001",
+    "subnet": "subnet-00000000000000001",
+    "vpc": "vpc-00000000000000001"
+  },
+  "userdata_sha256": "e704b7ac65d3bf5c4b62dbc1082c3f51804f1f7ed0b7fe2e07b60a4b4cb8dc8c"
+}
