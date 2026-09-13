@@ -6,6 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 SUITES = (
+    ("source_build", (), "test_*.py"),
     ("source_provenance", (), "test_*.py"),
     ("cpu_release", (), "test_*.py"),
     ("cpu_package", (), "test_*.py"),
