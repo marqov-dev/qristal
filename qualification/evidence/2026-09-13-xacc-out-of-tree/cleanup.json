@@ -1,0 +1,10 @@
+{
+  "group_absent": true,
+  "instance_termination_observed": true,
+  "no_launch_attempted": false,
+  "volumes_absent": true,
+  "exact_volume_count": 1,
+  "vm_cleanup_verified": true,
+  "transfer_cleanup_verified": true,
+  "cleanup_errors": []
+}

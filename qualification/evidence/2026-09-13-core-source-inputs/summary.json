@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "date": "2026-09-13",
+  "claim": "clean_source_inputs_only_not_native_build",
+  "core_commit": "a5c3e5fa544c07d538974d3a289b19652d483848",
+  "historical_eigen_install_fix_is_ancestor": true,
+  "source_only_reverification": "passed",
+  "components": [
+    {
+      "receipt": "core-source.json.gz",
+      "commit": "a5c3e5fa544c07d538974d3a289b19652d483848",
+      "tree": "a99239043feebaf9b4d48096f9d0f3cedbfa8f4b",
+      "top_level_entries": 576,
+      "sha256": "904ae7ddb228aac54027ad313ae1d9a28f927479297b4e978145abcbc888d642",
+      "stored_sha256": "cfe0090ca2f08eedf150d7f9cf4768ed3f94c9eb277e4b3c0f6598619c982183"
+    },
+    {
+      "receipt": "args.json.gz",
+      "commit": "016aa8a054dd88b8e1d2a020466ce38f310444cc",
+      "tree": "1ba500e6ed05d4eb3caca740c33bb1e63e245971",
+      "top_level_entries": 33,
+      "sha256": "f4b8d3e8be120d77703c21f6cb0914594df18516c39aa55eab9a5e31388adecc",
+      "stored_sha256": "85c43f00e53fbd533828ec42fda2e5ae2c99d8da2f40c453da6a2876f07caa00"
+    },
+    {
+      "receipt": "autodiff.json.gz",
+      "commit": "79d833fe734b83af9af7ccc448bd996266e59a9b",
+      "tree": "7a1361de6123745bff58ead5b7f0b4068d79c1bc",
+      "top_level_entries": 144,
+      "sha256": "c436fb85c7e97561dfdbf9f734e4d60316b443cfdad7852f88bf213d58006b3e",
+      "stored_sha256": "f655635fcb5529ebfc8a9cee43b701ae4dd779d735d47da98f1a0a1e812281f5"
+    },
+    {
+      "receipt": "cereal.json.gz",
+      "commit": "ebef1e929807629befafbb2918ea1a08c7194554",
+      "tree": "287b7fdeff3cde510d3b1c7b4891aa7f4cc84243",
+      "top_level_entries": 209,
+      "sha256": "ad42802685ed835edebbcec46854430600a8d226ee34228feaf98b2f3d9bea61",
+      "stored_sha256": "ed1609ab6391a4b93c7bd6bad1671b6dc1e8b86040361554bd970b0c61ed29b8"
+    },
+    {
+      "receipt": "cppitertools.json.gz",
+      "commit": "539a5be8359c4330b3f88ed1821f32bb5c89f5f6",
+      "tree": "b8f41100d83dcd95f6ceb2a25a30878a2d4e9271",
+      "top_level_entries": 120,
+      "sha256": "897adbff274cf7b6db4561ae64b3b07d489f1a913eaef7448ebe63559dd5028b",
+      "stored_sha256": "3649b2c91d570269e0f85ec3ebb118eb776100c1871b58101038decd9b152efd"
+    },
+    {
+      "receipt": "cpr.json.gz",
+      "commit": "da40186618909b1a7363d4e4495aa899c6e0eb75",
+      "tree": "e93fbf93780468e038c95ad5abe3fbfaf8b67d59",
+      "top_level_entries": 190,
+      "sha256": "551221208862ac0fde3e4da6e6b99a90c2d733c2f4f5ea6994dea8ffaac9e1b8",
+      "stored_sha256": "638bb3e4b1e1a98a6a86a8669cbb61570191873c5bf085e10f3991788109b702"
+    },
+    {
+      "receipt": "eigen3.json.gz",
+      "commit": "157756130a154b8b819090fa16bb7f7f3bd5211f",
+      "tree": "6ac2d083561ccabac0e5aa193c48de09fc4bbe64",
+      "top_level_entries": 1784,
+      "sha256": "2442378d2f45b16b26bd7bfd4f548e24cfef62de2f3f40babc1df64753ebcfba",
+      "stored_sha256": "da79d0ea0d39cbf47e4b10c058f2a7a22880d0054c03b62f008debb57f2c4091"
+    },
+    {
+      "receipt": "googletest.json.gz",
+      "commit": "52eb8108c5bdec04579160ae17225d66034bd723",
+      "tree": "ad23b2ceac4a6eef2278c48545b62ffc1f0c134a",
+      "top_level_entries": 250,
+      "sha256": "5f9f499060e48594462a39abcf4092db9318eed70f6b8935f9353986a94dceb7",
+      "stored_sha256": "d7772764bea70193f7ae1ad39b92cff969f7e569e905637effad346498f15156"
+    },
+    {
+      "receipt": "nlohmann_json.json.gz",
+      "commit": "8968adcd53951b652f9f480ad62e66dc2714b061",
+      "tree": "0b75ad74b633769cf6a8dcca507a66fd421175ae",
+      "top_level_entries": 1458,
+      "sha256": "09e3c0cab9079ece29a5520c7dda90870b3ea2445dd93a9ecb4eb9386c41363f",
+      "stored_sha256": "1d17f8e8067f93dd47f02e1ad95c1882725008c85570ea8760879f8ab17d572c"
+    },
+    {
+      "receipt": "pybind11.json.gz",
+      "commit": "3e9dfa2866941655c56877882565e7577de6fc7b",
+      "tree": "71639d98bdca46278d848394c740115be106a1ef",
+      "top_level_entries": 262,
+      "sha256": "c4f1ef13bcabbf26809d8d532167030da0aad3c9d766741c930ac56dff862a20",
+      "stored_sha256": "1296ad1fee833ba5cc67cfae315a340d6cadd56a6dcf371c76bb39732ef484a2"
+    },
+    {
+      "receipt": "range-v3.json.gz",
+      "commit": "a81477931a8aa2ad025c6bda0609f38e09e4d7ec",
+      "tree": "feef28f1ff1daed8e780401bc09acd5e0c975ec2",
+      "top_level_entries": 667,
+      "sha256": "d99383e032e1a8fc295379912b6fad89501c2667b60b0c057ae179691e903ff7",
+      "stored_sha256": "c7c61b89a0fff7c4ee771f08a5e0776a8a84e8764bbfafdd00b8bfa554d873f2"
+    },
+    {
+      "receipt": "yamlcpp.json.gz",
+      "commit": "2f86d13775d119edbb69af52e5f566fd65c6953b",
+      "tree": "f88e3584e8a8c454dc9224c5c842ae338e13abdf",
+      "top_level_entries": 394,
+      "sha256": "b58e75ba18d830d5ce4ebef9c1a66bbb882a65fff31b92a471f9dc5d0b60b333",
+      "stored_sha256": "6f5210542eb569aa5a075159897ac184df2917b539054d9694d77cc4d14d8c8a"
+    }
+  ],
+  "materials": [
+    {
+      "name": "CPM_0.36.0.cmake",
+      "sha256": "179600d59f0e7528a18a98e8ed086a21930a05cbe6f56c9f279978599c16f427",
+      "bytes": 35202
+    },
+    {
+      "name": "eigen.patch",
+      "sha256": "b08427c38c41439410468a969ab87b428c119412c821fd7d6c2d6030abd706dd",
+      "bytes": 17599
+    },
+    {
+      "name": "core-python-constraints.txt",
+      "sha256": "757b8ab4574719f8a1476361e53c6961a0f92b054af27fcfb0389084fa4a9f46",
+      "bytes": 939
+    },
+    {
+      "name": "integrations-requirements-cpu.txt",
+      "sha256": "6f83681a0115d42c32b96d40bc512fa7ed325bbb039d534b37fd5aadba4ab6b6",
+      "bytes": 268
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "nlohmann_json",
+      "commit": "8968adcd53951b652f9f480ad62e66dc2714b061",
+      "cache_key": "c0ddea98dd99624f51929177740dbc9c2c7898de",
+      "entries": 1458
+    },
+    {
+      "name": "autodiff",
+      "commit": "79d833fe734b83af9af7ccc448bd996266e59a9b",
+      "cache_key": "7252516da2ee8a94c4dc25bc57b07309f09ff0e2",
+      "entries": 144
+    },
+    {
+      "name": "cpr",
+      "commit": "da40186618909b1a7363d4e4495aa899c6e0eb75",
+      "cache_key": "226d8d9e15df7b2f6cc82ca8b65860739ffe6c6e",
+      "entries": 190
+    },
+    {
+      "name": "pybind11",
+      "commit": "3e9dfa2866941655c56877882565e7577de6fc7b",
+      "cache_key": "84f4f40d58053d9a4e94e9709d93fa07e9eb3439",
+      "entries": 262
+    },
+    {
+      "name": "eigen3",
+      "commit": "157756130a154b8b819090fa16bb7f7f3bd5211f",
+      "cache_key": "3c806de9ccad1d4bcbbb741d21e21a08f67c8d04",
+      "entries": 1784
+    },
+    {
+      "name": "yamlcpp",
+      "commit": "2f86d13775d119edbb69af52e5f566fd65c6953b",
+      "cache_key": "d119db98ac4b2030dac2749aa6c75842134a6051",
+      "entries": 394
+    },
+    {
+      "name": "range-v3",
+      "commit": "a81477931a8aa2ad025c6bda0609f38e09e4d7ec",
+      "cache_key": "c7042f84d5198c6c2266bf6a4eb359019dc83699",
+      "entries": 667
+    },
+    {
+      "name": "cppitertools",
+      "commit": "539a5be8359c4330b3f88ed1821f32bb5c89f5f6",
+      "cache_key": "d434edcaa4e7747a40dc19c2b5fdcc87cce0292f",
+      "entries": 120
+    },
+    {
+      "name": "googletest",
+      "commit": "52eb8108c5bdec04579160ae17225d66034bd723",
+      "cache_key": "1aceeb1edcf0e5921c95e1fd1d7d8034132b5528",
+      "entries": 250
+    },
+    {
+      "name": "cereal",
+      "commit": "ebef1e929807629befafbb2918ea1a08c7194554",
+      "cache_key": "360ffbd52b3e1563ed65dfe4e1f5bc17cdd0e37f",
+      "entries": 209
+    },
+    {
+      "name": "args",
+      "commit": "016aa8a054dd88b8e1d2a020466ce38f310444cc",
+      "cache_key": "ab85b487acb949e2b658105646501d1da3925112",
+      "entries": 33
+    }
+  ]
+}

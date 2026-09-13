@@ -1,0 +1,7 @@
+{
+  "native_passed": true,
+  "scope": "fresh XACC build and installed-only consumer",
+  "builder_image": "sha256:2bafff979be8b62ef7c64db7c032dc06288b967efaae68c2c81919e37c437297",
+  "published": false,
+  "complete_install_artifact_retained": false
+}

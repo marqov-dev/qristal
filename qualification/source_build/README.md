@@ -36,3 +36,10 @@ The [first native result](../evidence/2026-09-13-xacc-source-build/README.md)
 reached offline compilation but failed on ANTLR source-tree output. It did not
 reach installed tests. Current preparation includes a separate output-directory
 correction for the next run; read its recorded outcome before claiming success.
+
+The [second native result](../evidence/2026-09-13-xacc-out-of-tree/README.md)
+passed the fresh build and installed-only consumer. Complete linkage was recovered
+from overlapping log edges and checked against its full SHA-256. The installation
+was not exported; reusable artifact retention and fresh Core remain next gates.
+[Core source inputs](../evidence/2026-09-13-core-source-inputs/README.md) are ready
+as source receipts only.

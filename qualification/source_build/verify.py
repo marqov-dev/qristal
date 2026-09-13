@@ -11,6 +11,21 @@ LIMITS = {'builder':600, 'inventory':60, 'configure':300, 'build':900,
           'installed-linkage':60, 'installed-test':60}
 
 
+def complete_log(stage):
+    """Recover only a complete hash-matching log from retained edges."""
+    head, tail = stage.get('head', ''), stage.get('tail', '')
+    digest = stage.get('log_sha256')
+    candidates = [tail, head]
+    for overlap in range(min(len(head), len(tail)) + 1):
+        if overlap == 0 or head[-overlap:] == tail[:overlap]:
+            candidates.append(head + tail[overlap:])
+    matches = {text for text in candidates
+               if hashlib.sha256(text.encode()).hexdigest() == digest}
+    if len(matches) != 1:
+        raise ValueError('incomplete retained log')
+    return matches.pop()
+
+
 def verify(report, manifest_bytes):
     if report.get('kind') != 'qb-xacc-fresh-source-v1':
         raise ValueError('report kind')
@@ -82,8 +97,8 @@ def verify(report, manifest_bytes):
     test = report['stages']['installed-test']['tail']
     if 'PASS: ACZ registered' not in test or '[error]' in test:
         raise ValueError('installed test marker')
-    linkage = report['stages']['installed-linkage']['tail']
-    if len(linkage) >= 2200 or 'not found' in linkage or '/work/build-xacc' in linkage:
+    linkage = complete_log(report['stages']['installed-linkage'])
+    if 'not found' in linkage or '/work/build-xacc' in linkage:
         raise ValueError('installed linkage')
     for key in ('consumer_sha256','installed_manifest_sha256'):
         if not re.fullmatch('[a-f0-9]{64}',report.get(key,'')):
