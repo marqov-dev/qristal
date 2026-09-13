@@ -1,0 +1,32 @@
+{
+  "kind": "qb-antlr-static-input-inspection",
+  "built": false,
+  "source_sha256": "31f5abdc7faf16a1a6e9bf2eb31565d004359b821b09944436a34361929ae85a",
+  "inspected": {
+    "antlr4-python3-runtime-4.9.2/MANIFEST.in": {
+      "bytes": 46,
+      "sha256": "0c40080d4ae8d7ec11ff70ad36efd16ab8ffc2a17b8269b975210b8aa399244a"
+    },
+    "antlr4-python3-runtime-4.9.2/PKG-INFO": {
+      "bytes": 282,
+      "sha256": "5b520700e110b9704dd251ac9b38063dfaad289c785bed3bbecaa16134b9d08b"
+    },
+    "antlr4-python3-runtime-4.9.2/setup.cfg": {
+      "bytes": 38,
+      "sha256": "1c473cbaee8da5fc46e7f0158794af5cea4414c34a3cf3f180c2001f5e38bd3e"
+    },
+    "antlr4-python3-runtime-4.9.2/setup.py": {
+      "bytes": 527,
+      "sha256": "3fdeef1ce56979cba4cb199069ac2d5fe84295e65a1350ba7ac03326e520d11b"
+    },
+    "antlr4-python3-runtime-4.9.2/src/antlr4_python3_runtime.egg-info/PKG-INFO": {
+      "bytes": 282,
+      "sha256": "5b520700e110b9704dd251ac9b38063dfaad289c785bed3bbecaa16134b9d08b"
+    }
+  },
+  "recipe_sha256": {
+    "recipe.py": "5c4e21164bec8346331beec0f689d1289160345df784040825aeb65c4533fd10",
+    "build.sh": "717cbce4662d212104df5320c652ba2487816635a86b6e796d75c40cd0dd327e",
+    "inputs.json": "2ac5f76e533f1621a9fb2754aa1e8e8771763e2d09c16e74ab32bebefe538bcb"
+  }
+}
