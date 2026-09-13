@@ -1,0 +1,31 @@
+{
+  "schema": "marqov.runtime-catalog/v1",
+  "catalog_version": "2026-09-13.1",
+  "hosted_available": false,
+  "artifacts": [
+    {
+      "id": "cpu-local-2026-09-09",
+      "identity": "sha256:92b35c67ee1858c2825711eb58a95f76171a9c4f2a34eb7680d2b52ca80bbab4",
+      "identity_kind": "local_image_configuration",
+      "access": "local_only",
+      "evidence": "evidence/2026-09-09-runtime-image/runtime-image.json",
+      "qualification": "evidence/2026-09-09-runtime-image/image-tests.json",
+      "capabilities": "evidence/2026-09-09-runtime-image/image-capabilities.log"
+    },
+    {
+      "id": "cudaq-gpu-2026-09-11",
+      "identity": "ghcr.io/marqov-dev/qristal-cudaq-gpu@sha256:ecb6923fa1465650453de810c938eb949f809abbc1361831f0e0e14d84e95409",
+      "identity_kind": "registry_index",
+      "access": "private_registry",
+      "evidence": "evidence/2026-09-11-gpu-published/release/release.json",
+      "qualification": "evidence/2026-09-11-gpu-published/result.json"
+    }
+  ],
+  "records": {
+    "evidence/2026-09-09-runtime-image/runtime-image.json": "ab24488ea2434348b774912bb7b300e098ced9ea4a98d5cb4cd23c6193f31b8e",
+    "evidence/2026-09-09-runtime-image/image-tests.json": "0fe2e8429399dcb93ecc1e003976acf64732c9829d1efd6309bd5ab13f25fa20",
+    "evidence/2026-09-09-runtime-image/image-capabilities.log": "03b24bd74a153f79a607e4255e0c4afd43b4a0b23cf0fc7a6ac6fbf205694200",
+    "evidence/2026-09-11-gpu-published/release/release.json": "0523f0f2cc172edbc64c6a9ce32f73cd7e876704f78eed39d032acefc3701e53",
+    "evidence/2026-09-11-gpu-published/result.json": "aca48bbd5efd5202acdc5d2cb1b6f086dd3447a504fa578407c1ba50de54ed53"
+  }
+}

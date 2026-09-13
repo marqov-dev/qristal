@@ -268,3 +268,12 @@ This does not widen any Marqov hosted schema or enable a backend selector. The
 previous four-artifact preparation-binding helper is still ideal-only; a hosted
 noise material/acceptance binding requires a separate agreed contract. Noisy options
 are bound to exact bytes in `LocalObservation`, not attested by the native result.
+
+## Distribution provenance boundary
+
+The legacy local assembler now records checkout revisions as `observed_checkouts`
+and explicitly marks installed-binary provenance unverified. Existing install
+prefixes may predate those checkouts. Historical evidence files remain unchanged;
+their source fields must be interpreted with their original build records.
+A verified install manifest and clean assembly recipe are required before the
+next CPU distribution. See the [versioned artifact catalog](../distribution/README.md).
