@@ -1,0 +1,359 @@
+{
+  "neutrality": {
+    "cases": 12,
+    "queued_checkpoints": 216,
+    "max_complex_difference": 0
+  },
+  "calls": [
+    {
+      "sampling_completed": true,
+      "observations": 51,
+      "phases": [
+        {
+          "phase": 0,
+          "samples": 13,
+          "first": {
+            "event": "begin",
+            "phase": 0,
+            "nodes": 0,
+            "elapsed_us": 16,
+            "states": 1,
+            "operations": 0,
+            "h": 0,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 0,
+            "nodes": 95427,
+            "elapsed_us": 8683572,
+            "states": 640,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 20480,
+          "sampled_max_queued_operations": 12
+        },
+        {
+          "phase": 1,
+          "samples": 2,
+          "first": {
+            "event": "phase_begin",
+            "phase": 1,
+            "nodes": 95427,
+            "elapsed_us": 8683583,
+            "states": 640,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 1,
+            "nodes": 95589,
+            "elapsed_us": 8687751,
+            "states": 160,
+            "operations": 27,
+            "h": 6,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 640,
+          "sampled_max_queued_operations": 27
+        },
+        {
+          "phase": 2,
+          "samples": 14,
+          "first": {
+            "event": "phase_begin",
+            "phase": 2,
+            "nodes": 95589,
+            "elapsed_us": 8687761,
+            "states": 160,
+            "operations": 27,
+            "h": 6,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 2,
+            "nodes": 190861,
+            "elapsed_us": 28706120,
+            "states": 256,
+            "operations": 6,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 24576,
+          "sampled_max_queued_operations": 27
+        },
+        {
+          "phase": 3,
+          "samples": 2,
+          "first": {
+            "event": "phase_begin",
+            "phase": 3,
+            "nodes": 190861,
+            "elapsed_us": 28706131,
+            "states": 256,
+            "operations": 6,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 3,
+            "nodes": 190901,
+            "elapsed_us": 28706502,
+            "states": 4,
+            "operations": 20,
+            "h": 0,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 256,
+          "sampled_max_queued_operations": 20
+        },
+        {
+          "phase": 4,
+          "samples": 13,
+          "first": {
+            "event": "phase_begin",
+            "phase": 4,
+            "nodes": 190901,
+            "elapsed_us": 28706512,
+            "states": 4,
+            "operations": 20,
+            "h": 0,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 4,
+            "nodes": 286326,
+            "elapsed_us": 37525561,
+            "states": 512,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 24576,
+          "sampled_max_queued_operations": 20
+        },
+        {
+          "phase": 5,
+          "samples": 2,
+          "first": {
+            "event": "phase_begin",
+            "phase": 5,
+            "nodes": 286326,
+            "elapsed_us": 37525573,
+            "states": 512,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 5,
+            "nodes": 286327,
+            "elapsed_us": 37525588,
+            "states": 512,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 512,
+          "sampled_max_queued_operations": 4
+        },
+        {
+          "phase": 6,
+          "samples": 2,
+          "first": {
+            "event": "phase_begin",
+            "phase": 6,
+            "nodes": 286327,
+            "elapsed_us": 37525596,
+            "states": 512,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 6,
+            "nodes": 286328,
+            "elapsed_us": 37525606,
+            "states": 512,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 512,
+          "sampled_max_queued_operations": 4
+        },
+        {
+          "phase": 7,
+          "samples": 3,
+          "first": {
+            "event": "phase_begin",
+            "phase": 7,
+            "nodes": 286328,
+            "elapsed_us": 37525615,
+            "states": 512,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "sample_end",
+            "phase": 7,
+            "nodes": 286328,
+            "elapsed_us": 37525951,
+            "states": 7,
+            "operations": 0,
+            "h": 0,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 512,
+          "sampled_max_queued_operations": 4
+        }
+      ]
+    },
+    {
+      "sampling_completed": false,
+      "observations": 20,
+      "phases": [
+        {
+          "phase": 0,
+          "samples": 13,
+          "first": {
+            "event": "begin",
+            "phase": 0,
+            "nodes": 0,
+            "elapsed_us": 11,
+            "states": 1,
+            "operations": 0,
+            "h": 0,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 0,
+            "nodes": 95427,
+            "elapsed_us": 8684121,
+            "states": 640,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 20480,
+          "sampled_max_queued_operations": 12
+        },
+        {
+          "phase": 1,
+          "samples": 2,
+          "first": {
+            "event": "phase_begin",
+            "phase": 1,
+            "nodes": 95427,
+            "elapsed_us": 8684132,
+            "states": 640,
+            "operations": 4,
+            "h": 8,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "phase_end",
+            "phase": 1,
+            "nodes": 95589,
+            "elapsed_us": 8688379,
+            "states": 160,
+            "operations": 27,
+            "h": 6,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 640,
+          "sampled_max_queued_operations": 27
+        },
+        {
+          "phase": 2,
+          "samples": 5,
+          "first": {
+            "event": "phase_begin",
+            "phase": 2,
+            "nodes": 95589,
+            "elapsed_us": 8688389,
+            "states": 160,
+            "operations": 27,
+            "h": 6,
+            "rx": 0,
+            "ry": 0
+          },
+          "last": {
+            "event": "sample",
+            "phase": 2,
+            "nodes": 122880,
+            "elapsed_us": 12365404,
+            "states": 10240,
+            "operations": 2,
+            "h": 9,
+            "rx": 0,
+            "ry": 0
+          },
+          "sampled_max_stored_states": 10240,
+          "sampled_max_queued_operations": 27
+        }
+      ]
+    }
+  ],
+  "full_fixture": {
+    "baseline": {
+      "timed_out": true,
+      "caller_contract_passed": false,
+      "oracle_candidate_observed": false,
+      "completed_call_ms": [
+        37290
+      ],
+      "incomplete_call_started": true
+    },
+    "observed": {
+      "timed_out": true,
+      "caller_contract_passed": false,
+      "oracle_candidate_observed": false,
+      "completed_call_ms": [
+        37526
+      ],
+      "incomplete_call_started": true
+    }
+  },
+  "cleanup_verified": true,
+  "full_decoder_qualified": false,
+  "prototype_only": true,
+  "source_revisions": {
+    "qristal": "a37e157f9cc0ac07723fb70e0d92934cfbc80826",
+    "qristal-core": "bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a",
+    "qristal-decoder": "a58df0cf7eff0c6002aa3fed27ae6b18fdcea036",
+    "xacc": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3"
+  },
+  "executable_sha256": "d02390c3c975b9f9f71115cdc3a1774d2e58964ea5831d195e282311e1dd9f8e"
+}
