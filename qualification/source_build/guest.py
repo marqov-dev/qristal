@@ -26,7 +26,7 @@ def run(command, seconds, name):
             code = None
             timeout = True
     return {'command': command, 'exit': code, 'timeout': timeout, 'seconds': time.monotonic() - start,
-            'log_sha256': sha(log), 'tail': log.read_text(errors='replace')[-2200:]}
+            'log_sha256': sha(log), 'head': log.read_text(errors='replace')[:800], 'tail': log.read_text(errors='replace')[-2200:]}
 
 
 def emit(report):

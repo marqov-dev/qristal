@@ -85,6 +85,10 @@ def prepare(inputs, output):
         subprocess.run(['git', 'apply', '--check', str(patch)], cwd=target, check=True, capture_output=True)
         subprocess.run(['git', 'apply', str(patch)], cwd=target, check=True, capture_output=True)
         transformations.append({'patch': name, 'sha256': sha(patch), 'target': str(target.relative_to(work))})
+    patch = HERE / 'xacc-build-output.patch'
+    subprocess.run(['git', 'apply', '--check', str(patch)], cwd=work / 'xacc', check=True, capture_output=True)
+    subprocess.run(['git', 'apply', str(patch)], cwd=work / 'xacc', check=True, capture_output=True)
+    transformations.append({'patch': patch.name, 'sha256': sha(patch), 'target': 'xacc'})
     shutil.copyfile(inputs / 'qualification-inputs/acz_qpp_smoke.cpp', work / 'acz_qpp_smoke.cpp')
     shutil.copyfile(inputs / 'qualification-inputs/install-toolchain.sh', work / 'install-toolchain.sh')
     shutil.copyfile(HERE / 'guest.py', work / 'guest.py')

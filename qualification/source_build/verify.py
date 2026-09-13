@@ -18,7 +18,7 @@ def verify(report, manifest_bytes):
         if report.get('native_passed') is True:
             raise ValueError('conflicting success and failure')
         return {'native_passed': False, 'reason': report.get('error', 'bootstrap failure'),
-                'completed_stages': list(report.get('stages', {}))}
+                'recorded_stages': list(report.get('stages', {}))}
     manifest = json.loads(manifest_bytes)
     if (manifest.get('schema') != 'qb.source-build-input/v1'
             or hashlib.sha256(manifest_bytes).hexdigest() != report.get('manifest_sha256')):
@@ -33,7 +33,8 @@ def verify(report, manifest_bytes):
     materials = {x['path']: x['sha256'] for x in summary_data['materials']}
     if manifest.get('transformations') != [
         {'patch': 'xacc-cpu.patch', 'sha256': materials['xacc-cpu.patch'], 'target': 'xacc'},
-        {'patch': 'cppmicroservices.patch', 'sha256': materials['cppmicroservices.patch'], 'target': 'xacc/tpls/cppmicroservices'}]:
+        {'patch': 'cppmicroservices.patch', 'sha256': materials['cppmicroservices.patch'], 'target': 'xacc/tpls/cppmicroservices'},
+        {'patch': 'xacc-build-output.patch', 'sha256': hashlib.sha256((here / 'xacc-build-output.patch').read_bytes()).hexdigest(), 'target': 'xacc'}]:
         raise ValueError('transformation identities')
     if report.get('native_passed') is not True or set(report.get('stages', {})) != set(LIMITS):
         raise ValueError('incomplete stage set')

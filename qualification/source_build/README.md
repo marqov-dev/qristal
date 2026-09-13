@@ -11,7 +11,7 @@ python3 -B qualification/source_build/run.py /tmp/new-source-artifact /tmp/new-s
 ```
 
 Preparation verifies the retained clean manifests, copies the two source trees
-into a new directory, reapplies only the two named patches and copies only the
+into a new directory, applies the two compatibility patches and the recorded build-output patch and copies only the
 named Boost archive. It verifies the copied source bytes before patching and
 records the effective input file/link/directory identities afterward. Non-root
 readability and traversal are checked before packing. Patches do not alter the
@@ -31,3 +31,8 @@ Only checksummed result chunks are recovered; full guest logs/installations are
 not exported. Recovery and cleanup success do not imply native tests passed.
 The report must identify which stage failed or confirm all required stages before
 making a narrower qualification claim. This does not publish a new runtime.
+
+The [first native result](../evidence/2026-09-13-xacc-source-build/README.md)
+reached offline compilation but failed on ANTLR source-tree output. It did not
+reach installed tests. Current preparation includes a separate output-directory
+correction for the next run; read its recorded outcome before claiming success.

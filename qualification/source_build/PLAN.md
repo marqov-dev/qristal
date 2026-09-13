@@ -45,3 +45,16 @@ security group was created; private transfer cleanup passed. Attempt 2 sets an
 explicit 300-second upload bound before launch. Guest/compilation/observation
 bounds remain unchanged. This is a new recorded transfer attempt, not a deadline
 extension of a running VM or a second native launch.
+
+## Second native protocol, after the first VM was cleaned
+
+The first VM built its public toolchain (86.24 s) and configured offline (24.52 s),
+but compilation failed after 10.10 s when ANTLR created a source-tree dist directory.
+No build/runtime/install pass was obtained. Exact VM/disk/group and transfer
+cleanup passed. The new xacc-build-output.patch moves the ANTLR output and all
+eight CMake files referencing source/dist into CMAKE_BINARY_DIR/dist. It changes
+output placement only; source mounts stay read-only. The patch is recorded as a
+third named transformation. A new input archive and new native attempt use the
+same 3600/300-second lifecycle and per-stage limits. Stage heads are retained as
+well as tails to preserve compiler version output. This is an explicitly revised
+experiment, not an automatic replacement or extension of the original VM.
