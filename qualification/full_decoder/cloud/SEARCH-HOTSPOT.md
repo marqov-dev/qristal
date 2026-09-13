@@ -48,3 +48,12 @@ same fixture and 60-second bound; no algorithm, backend, threshold or time-limit
 change. Only after the hot stage is observed should a separate bounded repair
 and small phase-sensitive equivalence test be selected. No additional native
 run was performed for this source audit.
+
+## Subsequent native observation
+
+The [trace-only experiment](../../evidence/2026-09-12-search-trace/README.md)
+observed 19 used qubits and 18 controls. Inverse expansion completed; MCZ expansion
+began at 3,507 ms after search entry and did not finish before the fixture timeout.
+Backend execution was not reached. The stage is now measured, while its internal
+CPU/allocation cause and any alternative representation remain unqualified.
+Keep the earlier hypothesis and hypothetical-count table as historical reasoning.

@@ -52,8 +52,10 @@ required service must still be followed by an independent mathematical check.
 That check now [passes for the public QFT/IQFT subset](evidence/2026-09-12-qft-states/README.md).
 The bounded Decoder trace confirms service availability and entry into search
 iteration 1, but still times out before a result. A source audit identifies
-eager many-controlled-Z decomposition as a hypothesis to instrument, not a
-measured root cause or an accepted optimization.
+eager many-controlled-Z decomposition as a hypothesis. The subsequent
+[trace-only native probe](evidence/2026-09-12-search-trace/README.md) locates the
+timeout inside an 18-control Z expansion, before backend execution. Its internal
+CPU/allocation cost and a semantics-preserving repair remain unqualified.
 
 ## Dependencies and release policy
 
