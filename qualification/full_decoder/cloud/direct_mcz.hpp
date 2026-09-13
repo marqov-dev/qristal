@@ -23,12 +23,16 @@ inline void validate(int n, const std::vector<int>& controls, int target) {
 class DirectMCZ final : public xacc::quantum::Circuit,
                         public xacc::quantum::ControlModifier {
   int n_, target_;
+  bool enabled_ = true;
   std::vector<int> controls_;
 public:
   DirectMCZ(int n, std::vector<int> controls, int target)
       : Circuit("C-U"), n_(n), target_(target), controls_(std::move(controls)) {
     validate(n_, controls_, target_);
   }
+  bool isEnabled() override { return enabled_; }
+  void enable() override { enabled_ = true; }
+  void disable() override { enabled_ = false; }
   std::shared_ptr<xacc::Instruction> getBaseInstruction() const override {
     auto gates = xacc::getIRProvider("quantum");
     auto base = gates->createComposite("z_gate");

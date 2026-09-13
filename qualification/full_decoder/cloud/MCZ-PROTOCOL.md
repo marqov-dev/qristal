@@ -58,3 +58,13 @@ stochastic characterization and installed-plugin/image qualification.
 
 Pack with `python3 -B qualification/full_decoder/cloud/pack.py NEW_DIRECTORY mcz`;
 run using the existing bounded cloud/run.py and a new run directory.
+
+## Follow-up after the first negative gate
+
+The first native source af426fd compiled but failed clone_lost_disabled; no QPP
+or sparse fixtures ran. Circuit::disable operates on children and Instruction's
+default isEnabled is always true. Our empty-block prototype must override all
+three enabled-state methods. A separate new source revision adds a private bool
+and explicit isEnabled/enable/disable methods only. The original fixture set,
+thresholds, process/VM limits and cleanup policy remain unchanged. Retain both
+attempts; do not relabel the first failure as successful qualification.
