@@ -178,3 +178,10 @@ evidence and boundary logic; it is not a fresh simulation or a security audit.
 [Read-only bridge/TNQVM audit](accelerators/COMPATIBILITY-AUDIT.md) identifies
 the exact Core compiler-discovery, library-layout, test-selection and
 Fortran/OpenBLAS/MPI boundaries for the next isolated compatibility probes.
+
+
+The [controlled-source gate and audit](source_provenance/README.md) now document
+the next provenance boundary. It checks pristine inputs before declared patches;
+it does not establish the origin of inherited installed binaries. The first
+proposed rebuild isolates XACC/QPP before extending the receipt chain to Core,
+Decoder and the two Python environments. Existing research checkouts are preserved.
