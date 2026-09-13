@@ -1,0 +1,8 @@
+{
+  "cleanup_verified": true,
+  "group": "audit-alias-38f3ca888f434c828766dbb0acf746f1",
+  "instance": "audit-alias-c998c16a43d6411b824bf480b950e18c",
+  "volumes": [
+    "audit-alias-7a15e013ecd24f96ae090acbf6fdb376"
+  ]
+}

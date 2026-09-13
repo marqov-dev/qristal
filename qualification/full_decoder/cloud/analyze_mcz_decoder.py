@@ -9,14 +9,14 @@ from analyze_search import checkpoints
 HERE=Path(__file__).resolve().parent
 
 
-def analyze(root):
+def analyze(root, *, expected_variant='mcz-decoder'):
     root=Path(root)
     _,qft=analyze_qft(root)
     report=json.loads((root/'result.json').read_text())
     expected=json.loads((HERE/'mcz-probe-identity.json').read_text())
     if report.get('mcz_probe_identity')!=expected:raise ValueError('probe_identity')
     manifest=report['source_manifest']
-    if manifest.get('variant')!='mcz-decoder':raise ValueError('probe_variant')
+    if manifest.get('variant')!=expected_variant:raise ValueError('probe_variant')
     hashes=manifest['source_hashes']
     if (hashes.get('qristal-core/src/algorithms/exponential_search/exponential_search.cpp')!=expected['original_sha256'] or
         hashes.get('qristal/qualification/full_decoder/cloud/direct_mcz.hpp')!=expected['header_sha256']):

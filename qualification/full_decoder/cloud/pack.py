@@ -3,7 +3,7 @@ import hashlib,json,pathlib,subprocess,sys,tarfile
 HERE=pathlib.Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
 variant=sys.argv[2] if len(sys.argv)>2 else 'search'
-if variant not in ('search','mcz','mcz-decoder'): raise ValueError('unknown_variant')
+if variant not in ('search','mcz','mcz-decoder','backend-profile'): raise ValueError('unknown_variant')
 OUT=pathlib.Path(sys.argv[1]); OUT.mkdir()
 entries={
  'install-core/lib':'install-core/lib', 'install-core/include':'install-core/include',
@@ -36,13 +36,23 @@ if variant=='mcz':
   'qristal/qualification/full_decoder/cloud/mcz_checks.cpp':'mcz_checks.cpp',
   'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
  })
-if variant=='mcz-decoder':
+if variant in ('mcz-decoder','backend-profile'):
  del entries['qristal/qualification/full_decoder/cloud/guest.py']
  entries.update({
   'qristal/qualification/full_decoder/cloud/guest_mcz_decoder.py':'guest.py',
   'qristal/qualification/full_decoder/cloud/patch_mcz.py':'patch_mcz.py',
   'qristal/qualification/full_decoder/cloud/direct_mcz.hpp':'direct_mcz.hpp',
  })
+if variant=='backend-profile':
+ del entries['qristal/qualification/full_decoder/cloud/guest_mcz_decoder.py']
+ entries.update({
+  'qristal/qualification/full_decoder/cloud/guest_backend_profile.py':'guest.py',
+  'qristal/qualification/full_decoder/cloud/instrument_sparse.py':'instrument_sparse.py',
+  'qristal-core/src/backends/sims/microsoft/sparse-sim/SparseStateVecAccelerator.cpp':'SparseStateVecAccelerator.cpp',
+  'build-core/sparse_simulator':'build-core/sparse_simulator',
+  'qristal/qualification/full_decoder/cloud/tiny_profile_smoke.cpp':'qualification/full_decoder/tiny_result_smoke.cpp',
+ })
+ del entries['qristal/qualification/full_decoder/tiny_result_smoke.cpp']
 manifest={'variant':variant,'revisions':{repo:subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT/repo).decode().strip() for repo in ('qristal','qristal-core','qristal-decoder','xacc')},'entries':entries,'source_hashes':{}}
 for name in entries:
  path=ROOT/name

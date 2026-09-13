@@ -64,7 +64,13 @@ and remaining integration gates are explicit. The subsequent
 [full-fixture derivative](evidence/2026-09-12-mcz-decoder/README.md) completes MCZ
 construction and one backend sample, then times out during a second backend call.
 The first backend call took about 34.6 seconds; no caller-result completion is
-claimed. Backend-stage profiling is now the next bounded diagnostic.
+claimed. The subsequent [backend profile](evidence/2026-09-12-backend-profile/README.md)
+locates about 18.7 seconds in inverse preparation and 18.0 seconds across the two
+forward-preparation passes, with only 0.313 ms in sampling. Almost all elapsed
+backend time is within visitor calls, including deferred simulator work. The
+full caller fixture still times out; structure-preserving inversion is a candidate,
+but forward preparation also needs attention. Two failed reporting attempts and
+all three exact cleanups are retained.
 
 ## Dependencies and release policy
 
