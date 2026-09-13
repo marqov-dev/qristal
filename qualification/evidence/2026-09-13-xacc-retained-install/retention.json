@@ -1,0 +1,15 @@
+{
+  "account": "000000000000",
+  "archive_sha256": "b4569c7ca587c3a1fcbaa5e87a4606792c9a0904e2d15c5c2ef03a83b3088bb5",
+  "bucket": "qb-proof-00000000000000000000000000000001-cpu",
+  "files": 3525,
+  "key": "source-output.tar.gz",
+  "native": {
+    "builder_image": "sha256:059434f36f032738f779238824afee1bb6bb6362b17cb24041819692a7421d83",
+    "complete_install_artifact_retained": false,
+    "native_passed": true,
+    "published": false,
+    "scope": "fresh XACC build and installed-only consumer"
+  },
+  "verified": true
+}

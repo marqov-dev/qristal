@@ -1,4 +1,4 @@
-"""Prepare one reviewed Core source transformation; never configure or build it."""
+"""Prepare reviewed Core source transformations; never configure or build it."""
 import argparse
 import hashlib
 import importlib.util
@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 import shutil
 import sys
+import difflib
+import version
 
 HERE = Path(__file__).resolve().parent
 SOURCE_COMMIT = 'a5c3e5fa544c07d538974d3a289b19652d483848'
@@ -51,12 +53,20 @@ def prepare(inputs, output):
         raise ValueError('unexpected transformation patch')
     original = (source / 'cmake/dependencies.cmake').read_bytes()
     changed = transform(original)
+    original_version = (source / 'CMakeLists.txt').read_bytes()
+    changed_version = version.transform(original_version)
+    version_patch = (HERE / 'exported-version.patch').read_bytes()
+    expected_patch = ''.join(difflib.unified_diff(original_version.decode().splitlines(True),
+        changed_version.decode().splitlines(True), fromfile='a/CMakeLists.txt', tofile='b/CMakeLists.txt')).encode()
+    if version_patch != expected_patch:
+        raise ValueError('unexpected version patch')
     output.mkdir(parents=True)
     derived = output / 'qristal-core'
     shutil.copytree(source, derived, symlinks=True)
     # Verify the copied bytes before transforming; never reuse or edit inputs.
     source_export.verify_tree(derived, receipt['source'])
     (derived / 'cmake/dependencies.cmake').write_bytes(changed)
+    (derived / 'CMakeLists.txt').write_bytes(changed_version)
     effective = json.loads(json.dumps(receipt['source']))
     entry = next(e for e in effective['entries'] if e['path'] == 'cmake/dependencies.cmake')
     entry.update(sha256=sha(changed), bytes=len(changed))
@@ -64,16 +74,22 @@ def prepare(inputs, output):
     effective.pop('commit')
     effective.pop('tree')
     entry.pop('git_blob')
+    version_entry = next(e for e in effective['entries'] if e['path'] == 'CMakeLists.txt')
+    version_entry.update(sha256=sha(changed_version), bytes=len(changed_version))
+    version_entry.pop('git_blob')
     source_export.verify_tree(derived, effective)
     effective_bytes = (json.dumps(effective, sort_keys=True, indent=2) + '\n').encode()
     (output / 'effective-source.json').write_bytes(effective_bytes)
     record = {'schema': 'marqov.core-preparation/v1', 'source_commit': SOURCE_COMMIT,
               'source_receipt_sha256': sha(raw), 'patch_sha256': sha(patch),
               'transformation': 'Eigen temporary install moved to Core binary directory',
+              'source_version': '1.8.1', 'version_patch_sha256': sha(version_patch),
+              'original_version_file_sha256': sha(original_version),
+              'derived_version_file_sha256': sha(changed_version),
               'original_dependency_sha256': sha(original), 'derived_dependency_sha256': sha(changed),
               'effective_manifest_sha256': sha(effective_bytes),
               'configured': False, 'native_qualified': False, 'published': False,
-              'remaining_blockers': ['exported source version selection', 'offline dependency selection',
+              'remaining_blockers': ['offline dependency selection',
                                      'hashed Python wheelhouse', 'retained fresh XACC install']}
     (output / 'preparation.json').write_text(json.dumps(record, indent=2) + '\n')
     return record

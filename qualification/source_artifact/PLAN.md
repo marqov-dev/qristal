@@ -1,8 +1,8 @@
 # Fresh XACC output retention protocol
 
 This wrapper preserves the qualified `source_build` guest byte-for-byte. It adds
-an external emit hook after workload containers have been removed. It is an
-unexecuted protocol until native evidence is retained. It does not publish a
+an external emit hook after workload containers have been removed. The first native run passed; see
+`../evidence/2026-09-13-xacc-retained-install/README.md` for its exact scope. It does not publish a
 runtime or establish portability of its absolute `/work/install-xacc` paths.
 
 Run with an existing prepared source-build artifact and a new operator state

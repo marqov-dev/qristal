@@ -1,0 +1,11 @@
+{
+  "files": {
+    "archive.py": "0dc925bc33a2db3db6976fcdb87fdccae8a5fa3bba5b7e261137b9d37e003590",
+    "guest.py": "abe5d5084bf67c64b659ac51e253578390d4676da801970c5a84916bf5aa42e5",
+    "requirements-operator.txt": "3d6e5d1d388d75c63cd7b11e45b63423632d2e9c5e57b2cd09145410746959d3",
+    "run.py": "fa4ef39cfc5f5fc7c1d21b576d0df1986b192e91c4e681fc3d427ca7ef70f75f",
+    "verify.py": "bf90a53fd7249a227c9c6e3a40001cefd543754a86c3209c93ce7ef853fd2ed6"
+  },
+  "output_key": "source-output.tar.gz",
+  "schema": "qb.source-artifact-wrapper/v1"
+}
