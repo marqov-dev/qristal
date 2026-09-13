@@ -99,6 +99,27 @@ class ExportTests(unittest.TestCase):
             module.export_tree(self.root, self.git('rev-parse', 'HEAD').strip(), self.output())
 
 class RetainedExportTests(unittest.TestCase):
+    def test_core_receipts_match_retained_commit_map(self):
+        import gzip
+        import hashlib
+        import json
+        root = Path(__file__).resolve().parents[1] / 'evidence/2026-09-13-core-source-inputs'
+        summary = json.loads((root / 'summary.json').read_text())
+        expected = {item['name']: item['commit'] for item in summary['dependencies']}
+        expected['core-source'] = summary['core_commit']
+        self.assertEqual(len(expected), 12)
+        self.assertEqual({item['receipt'][:-8] for item in summary['components']}, set(expected))
+        for item in summary['components']:
+            stored = (root / item['receipt']).read_bytes()
+            raw = gzip.decompress(stored)
+            self.assertEqual(hashlib.sha256(stored).hexdigest(), item['stored_sha256'])
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), item['sha256'])
+            source = json.loads(raw)['source']
+            self.assertEqual(source['commit'], expected[item['receipt'][:-8]])
+            self.assertEqual(source['commit'], item['commit'])
+            self.assertEqual(source['tree'], item['tree'])
+            self.assertEqual(len(source['entries']), item['top_level_entries'])
+
     def test_retained_receipt_hashes_and_counts(self):
         import gzip
         import hashlib

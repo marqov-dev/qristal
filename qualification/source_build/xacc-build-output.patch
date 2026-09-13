@@ -1,0 +1,113 @@
+--- a/python/compiler/CMakeLists.txt
++++ b/python/compiler/CMakeLists.txt
+@@ -13,9 +13,9 @@
+ 
+ set(LIBRARY_NAME xacc-pyxasm-compiler)
+ 
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+ if (APPLE)
+-  set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++  set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+ endif()
+ 
+ file (GLOB_RECURSE HEADERS *.hpp generated/*.hpp)
+--- a/quantum/observable/fermion/CMakeLists.txt
++++ b/quantum/observable/fermion/CMakeLists.txt
+@@ -54,11 +54,11 @@
+                          manifest.json)
+ 
+ if(APPLE)
+-   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc PRIVATE CppMicroServices ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc PRIVATE CppMicroServices ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+    set_target_properties(${LIBRARY_NAME} PROPERTIES INSTALL_RPATH "@loader_path")
+    set_target_properties(${LIBRARY_NAME} PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
+ else()
+-   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc PRIVATE CppMicroServices ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc PRIVATE CppMicroServices ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+    set_target_properties(${LIBRARY_NAME} PROPERTIES INSTALL_RPATH "$ORIGIN")
+    set_target_properties(${LIBRARY_NAME} PROPERTIES LINK_FLAGS "-shared")
+ endif()
+--- a/quantum/observable/pauli/CMakeLists.txt
++++ b/quantum/observable/pauli/CMakeLists.txt
+@@ -54,11 +54,11 @@
+                          manifest.json)
+ 
+ if(APPLE)
+-   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+    set_target_properties(${LIBRARY_NAME} PROPERTIES INSTALL_RPATH "@loader_path")
+    set_target_properties(${LIBRARY_NAME} PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
+ else()
+-   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc PRIVATE ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++   target_link_libraries(${LIBRARY_NAME} PUBLIC xacc PRIVATE ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+    set_target_properties(${LIBRARY_NAME} PROPERTIES INSTALL_RPATH "$ORIGIN")
+    set_target_properties(${LIBRARY_NAME} PROPERTIES LINK_FLAGS "-shared")
+ endif()
+--- a/quantum/plugins/dwave/CMakeLists.txt
++++ b/quantum/plugins/dwave/CMakeLists.txt
+@@ -14,9 +14,9 @@
+ 
+ set(LIBRARY_NAME xacc-dwave)
+ 
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+ if (APPLE)
+-  set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++  set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+ endif()
+ 
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-format-security")
+--- a/quantum/plugins/ibm/CMakeLists.txt
++++ b/quantum/plugins/ibm/CMakeLists.txt
+@@ -15,9 +15,9 @@
+ 
+ set(LIBRARY_NAME xacc-ibm)
+ 
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+ if (APPLE)
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+ endif()
+ file(GLOB SRC
+           accelerator/IBMAccelerator.cpp
+--- a/quantum/plugins/rigetti/CMakeLists.txt
++++ b/quantum/plugins/rigetti/CMakeLists.txt
+@@ -11,9 +11,9 @@
+ #   Alexander J. McCaskey - initial API and implementation
+ # *******************************************************************************/
+ set(LIBRARY_NAME xacc-rigetti)
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+ if (APPLE)
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+ endif()
+ file(GLOB SRC
+           RigettiActivator.cpp
+--- a/quantum/plugins/xasm/CMakeLists.txt
++++ b/quantum/plugins/xasm/CMakeLists.txt
+@@ -12,9 +12,9 @@
+ # *******************************************************************************/
+ set(LIBRARY_NAME xacc-xasm-compiler)
+ 
+-set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.so)
++set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.so)
+ if (APPLE)
+-  set(ANTLR_LIB ${CMAKE_SOURCE_DIR}/dist/libantlr4-runtime.dylib)
++  set(ANTLR_LIB ${CMAKE_BINARY_DIR}/dist/libantlr4-runtime.dylib)
+ endif()
+ 
+ file(GLOB SRC
+--- a/tpls/antlr/runtime/CMakeLists.txt
++++ b/tpls/antlr/runtime/CMakeLists.txt
+@@ -24,7 +24,7 @@
+ 
+ add_library(antlr4_shared SHARED ${libantlrcpp_SRC})
+ 
+-set(LIB_OUTPUT_DIR "${CMAKE_HOME_DIRECTORY}/dist") # put generated libraries here.
++set(LIB_OUTPUT_DIR "${CMAKE_BINARY_DIR}/dist") # put generated libraries here.
+ message(STATUS "Output libraries to ${LIB_OUTPUT_DIR}")
+ 
+ # make sure 'make' works fine even if ${LIB_OUTPUT_DIR} is deleted.

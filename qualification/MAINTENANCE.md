@@ -185,3 +185,8 @@ the next provenance boundary. It checks pristine inputs before declared patches;
 it does not establish the origin of inherited installed binaries. The first
 proposed rebuild isolates XACC/QPP before extending the receipt chain to Core,
 Decoder and the two Python environments. Existing research checkouts are preserved.
+
+The [fresh XACC source-build protocol](source_build/README.md) prepares named
+patches and a separately compiled installed-only consumer on the isolated CPU
+lifecycle. Consult its retained outcome before claiming the native run passed;
+its protocol and offline preparation tests alone are not compilation evidence.

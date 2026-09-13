@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "guest_source_commit": "9b93a11ae43b5dbf895614d0f5954c160a7468b2",
+  "runner_source_commit": "d7004ec9bdfa4de022bb65229d6d5c0eeb9fa9dd",
+  "manifest_sha256": "fc8503877459913a3aed280c1368dc06d40ccf21df88b42ddb2f3012f0554ee8",
+  "stored_manifest_sha256": "3943a7f7b9fc8e587287b08bcb3eb9816ee505d9407bd3464537d876b1131495",
+  "archive": {
+    "sha256": "8fce99039dfbab2ce7e77b0b960610d752b30dc5d7ba58c671b0ff6a268c253f",
+    "bytes": 279735953
+  },
+  "source_reconstruction_baseline": "8d1258cd5f21c85163bc832ada097e83bef9f6ed"
+}

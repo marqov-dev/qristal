@@ -1,0 +1,212 @@
+{
+  "schema": "qb.python-artifact-inputs/v1",
+  "target": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.10.12",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "25.1.0",
+    "platform_system": "Linux",
+    "platform_version": "Darwin Kernel Version 25.1.0: Mon Oct 20 19:34:03 PDT 2025; root:xnu-12377.41.6~2/RELEASE_ARM64_T8142",
+    "python_full_version": "3.10.12",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.10",
+    "sys_platform": "linux",
+    "extra": ""
+  },
+  "metadata_checker_packaging_version": "26.3",
+  "wheels": [
+    {
+      "name": "dill",
+      "version": "0.4.1",
+      "filename": "dill-0.4.1-py3-none-any.whl",
+      "bytes": 120019,
+      "sha256": "1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "objgraph>=1.7.2; extra == \"graph\"",
+        "gprof2dot>=2022.7.29; extra == \"profile\""
+      ]
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "filename": "mpmath-1.3.0-py3-none-any.whl",
+      "bytes": 536198,
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "requires_python": null,
+      "requires_dist": [
+        "pytest (>=4.6) ; extra == 'develop'",
+        "pycodestyle ; extra == 'develop'",
+        "pytest-cov ; extra == 'develop'",
+        "codecov ; extra == 'develop'",
+        "wheel ; extra == 'develop'",
+        "sphinx ; extra == 'docs'",
+        "gmpy2 (>=2.1.0a4) ; (platform_python_implementation != \"PyPy\") and extra == 'gmpy'",
+        "pytest (>=4.6) ; extra == 'tests'"
+      ]
+    },
+    {
+      "name": "numpy",
+      "version": "1.26.4",
+      "filename": "numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 18240889,
+      "sha256": "ffa75af20b44f8dba823498024771d5ac50620e6915abac414251bd971b4529f",
+      "requires_python": ">=3.9",
+      "requires_dist": []
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "bytes": 229892,
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7",
+      "requires_dist": [
+        "six >=1.5"
+      ]
+    },
+    {
+      "name": "qiskit",
+      "version": "1.2.0",
+      "filename": "qiskit-1.2.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 4753078,
+      "sha256": "1ad1658bbaf147a44e555ba87f7e139ae3b2ded1284e5073ec2a32dc08b32d41",
+      "requires_python": ">=3.8",
+      "requires_dist": [
+        "rustworkx>=0.15.0",
+        "numpy<3,>=1.17",
+        "scipy>=1.5",
+        "sympy>=1.3",
+        "dill>=0.3",
+        "python-dateutil>=2.8.0",
+        "stevedore>=3.0.0",
+        "typing-extensions",
+        "symengine>=0.11",
+        "qiskit[crosstalk-pass,csp-layout-pass,qasm3-import,visualization]; extra == \"all\"",
+        "z3-solver>=4.7; extra == \"crosstalk-pass\"",
+        "python-constraint>=1.4; extra == \"csp-layout-pass\"",
+        "qiskit-qasm3-import>=0.1.0; extra == \"qasm3-import\"",
+        "matplotlib>=3.3; extra == \"visualization\"",
+        "pydot; extra == \"visualization\"",
+        "Pillow>=4.2.1; extra == \"visualization\"",
+        "pylatexenc>=1.4; extra == \"visualization\"",
+        "seaborn>=0.9.0; extra == \"visualization\""
+      ]
+    },
+    {
+      "name": "rustworkx",
+      "version": "0.18.1",
+      "filename": "rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "bytes": 2366881,
+      "sha256": "1ebd2441a51c68a784df8c62dc2e6f1a9f58c0eb1c2e21fd59776e08f55c0c0b",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "numpy>=1.16.0,<3",
+        "matplotlib>=3.0 ; extra == 'all'",
+        "pillow>=5.4 ; extra == 'all'",
+        "pillow>=5.4 ; extra == 'graphviz'",
+        "matplotlib>=3.0 ; extra == 'mpl'"
+      ]
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.3",
+      "filename": "scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 37662964,
+      "sha256": "9e2abc762b0811e09a0d3258abee2d98e0c703eee49464ce0069590846f31d40",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "numpy<2.5,>=1.23.5",
+        "pytest; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-timeout; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "asv; extra == \"test\"",
+        "mpmath; extra == \"test\"",
+        "gmpy2; extra == \"test\"",
+        "threadpoolctl; extra == \"test\"",
+        "scikit-umfpack; extra == \"test\"",
+        "pooch; extra == \"test\"",
+        "hypothesis>=6.30; extra == \"test\"",
+        "array-api-strict<2.1.1,>=2.0; extra == \"test\"",
+        "Cython; extra == \"test\"",
+        "meson; extra == \"test\"",
+        "ninja; sys_platform != \"emscripten\" and extra == \"test\"",
+        "sphinx<8.0.0,>=5.0.0; extra == \"doc\"",
+        "intersphinx_registry; extra == \"doc\"",
+        "pydata-sphinx-theme>=0.15.2; extra == \"doc\"",
+        "sphinx-copybutton; extra == \"doc\"",
+        "sphinx-design>=0.4.0; extra == \"doc\"",
+        "matplotlib>=3.5; extra == \"doc\"",
+        "numpydoc; extra == \"doc\"",
+        "jupytext; extra == \"doc\"",
+        "myst-nb; extra == \"doc\"",
+        "pooch; extra == \"doc\"",
+        "jupyterlite-sphinx>=0.19.1; extra == \"doc\"",
+        "jupyterlite-pyodide-kernel; extra == \"doc\"",
+        "mypy==1.10.0; extra == \"dev\"",
+        "typing_extensions; extra == \"dev\"",
+        "types-psutil; extra == \"dev\"",
+        "pycodestyle; extra == \"dev\"",
+        "ruff>=0.0.292; extra == \"dev\"",
+        "cython-lint>=0.12.2; extra == \"dev\"",
+        "rich-click; extra == \"dev\"",
+        "doit>=0.36.0; extra == \"dev\"",
+        "pydevtool; extra == \"dev\""
+      ]
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "bytes": 11050,
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+      "requires_dist": []
+    },
+    {
+      "name": "stevedore",
+      "version": "5.8.0",
+      "filename": "stevedore-5.8.0-py3-none-any.whl",
+      "bytes": 54553,
+      "sha256": "88eede9e66ca80e34085b9174e2327da2c61ac91f24f70e41c3ad76e4bb4872b",
+      "requires_python": ">=3.10",
+      "requires_dist": []
+    },
+    {
+      "name": "symengine",
+      "version": "0.14.1",
+      "filename": "symengine-0.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 50356243,
+      "sha256": "dbb14724ab6a6844d04adbd48d7aadcadfe4974193e87eedac93963a6e88bf53",
+      "requires_python": ">=3.9,<4",
+      "requires_dist": []
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "filename": "sympy-1.14.0-py3-none-any.whl",
+      "bytes": 6299353,
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "mpmath<1.4,>=1.1.0",
+        "pytest>=7.1.0; extra == \"dev\"",
+        "hypothesis>=6.70.0; extra == \"dev\""
+      ]
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "requires_python": ">=3.9",
+      "requires_dist": []
+    }
+  ],
+  "unmet_base_requirements": [],
+  "installed": false,
+  "native_qualified": false
+}
