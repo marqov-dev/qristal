@@ -1,0 +1,130 @@
+{
+  "binary_sha256": {
+    "inverse-checks": "7d29d5145255697fe578286fffbe40a601e2e5c50880233c0db2f9dfbf9e8a21"
+  },
+  "error": "RuntimeError:stage_failed:inverse-qpp",
+  "kind": "qb-inverse-isolated-cpu-vm",
+  "loaded_runtime_libraries": {
+    "/work/install-core/lib/libcore.so.1.8.1": "a212a77ab0b5eb2649a5581b81c89e8da5d1056a9707f44ae4a052b1fb615c3b",
+    "/work/install-core/lib/libnoise.so.1.8.1": "561f9071266a7b5c5a646b17c0287c18361db761eb06d0e5af464129464a02ad",
+    "/work/install-core/lib/libyaml-cpp.so.0.8": "55dab794b0fae963f0aa65ad77a91ab4d0626123bbec7cf26121c0b4911c1ac6",
+    "/work/install-xacc/lib/libCppMicroServices.so.4.0.0": "8a6ed1e0b26136a53792997efe8f3fcddc9eb41dd2db65254c945bccfb268193",
+    "/work/install-xacc/lib/libantlr4-runtime.so.SOVERSION": "3279b8571f2f43d452ca7947480384d43ed95a3391731fd490ecd25403bb5e90",
+    "/work/install-xacc/lib/libxacc-fermion.so": "57cf47efafcda917653ee3d062bdb6e0e5df9151a57c1e3cce806297b7ae3357",
+    "/work/install-xacc/lib/libxacc-pauli.so": "30cd75088fb2e94bf095441bbce0d4fdc7b26b01c152ee18f9177a53a031e56b",
+    "/work/install-xacc/lib/libxacc-quantum-annealing.so": "6f8d37f8dc99a00d3d3b6b7cdd661a11e70e48ca48453dee397d27bc5f642dda",
+    "/work/install-xacc/lib/libxacc-quantum-gate.so": "fbf5c9e65408de12be60d086dc8aeed75cda144ea386b2e1ff95b48621544fb2",
+    "/work/install-xacc/lib/libxacc.so": "e45010e4bd5c8c4ac3632d97505a281e86ceab0ff6c32b9cca50a84587676149",
+    "/work/install-xacc/plugins/../lib/libnlopt.so.0": "cb15fe9bda141d6bff1112380da7aaf34583684f41d8879e23d6cd0460ea0c81",
+    "/work/install-xacc/plugins/../lib/libxacc-py-aer-adapter.so": "ee51e836b039e1c50ba2203643badd7d27d0528b7d42d3281408c782e27bd2f3",
+    "/work/install-xacc/plugins/libalgorithm_ae.so.1.8.1": "a6b21acb078092caa3705f0d07c7d135ffe025fe81e93873587d3f29e1208e35",
+    "/work/install-xacc/plugins/libalgorithm_es.so.1.8.1": "59f8b858ae13e7c2dee9b7e2506a053aa581de5c7ce5258387ff9645de5d96cd",
+    "/work/install-xacc/plugins/libaws_braket.so.1.8.1": "c1265748ea17b6c642e96462947ea39db4a60f0dd19e01acb1bef23d3d217033",
+    "/work/install-xacc/plugins/libcircuits.so.1.8.1": "750aa31326f353fb51583de39df82f8b11c68a86e8b76b8cff3a57d800aa337b",
+    "/work/install-xacc/plugins/libdecoder.so.1.8.1": "2390dd91eb60fba8d91e66e30e4abb79593e7de1d4c38d76ccdff7fefb8d2011",
+    "/work/install-xacc/plugins/libqb_gateset_transpiler.so.1.8.1": "7983bbb14de3782858e2a49457030660f730e3a815545d089620fcf255e0b5d2",
+    "/work/install-xacc/plugins/libqb_qobj_compiler.so.1.8.1": "f22e135bb8657a26e9a0817df65d3971da9c25ddf1f893b1129c362363bdaa36",
+    "/work/install-xacc/plugins/libsimplified_decoder.so.1.8.1": "10329cd1178a34d4de40206562968a79aeb5803fcba76be8c348e7cc97182e57",
+    "/work/install-xacc/plugins/libsparse_simulator.so.1.8.1": "ac1eb63ff061b4047fe500daf333b85b4c27fdce1fc7ccde34f57f920c69b066",
+    "/work/install-xacc/plugins/libuccsd.so.1.8.1": "43171f1f2b99fddb2f087d168413790880b262f5476631f3c77327fdf844b120",
+    "/work/install-xacc/plugins/libvqe.so.1.8.1": "f7f0fa8be5d52b8d7062924933a4e43663fc7973a79a0c44caf812cc89a2a5ab",
+    "/work/install-xacc/plugins/libxacc-aer.so": "d48f19e0df7b84fd6feb38fe8851c6cdf7494edd742ae091b5d1dc686bc13787",
+    "/work/install-xacc/plugins/libxacc-algorithm-qpe.so": "40ca45c97d430ad91d4a0115b983028a721b74f7134ae4ef534dc3c0f1fe9661",
+    "/work/install-xacc/plugins/libxacc-circuit-optimizers.so": "d23b27b62d4c318d1e704e91bbb812e31a567a71c0b70138cace7e891a04c394",
+    "/work/install-xacc/plugins/libxacc-exprtk-parsing.so": "268cf37eaaed3cd43a8be98093906a026245d66eacda10a626a1947066389ab6",
+    "/work/install-xacc/plugins/libxacc-graph.so": "d9a2a0b4ba3a506a7827403ce4612dbe6874c9dced55f7dc9dab676a952c31ba",
+    "/work/install-xacc/plugins/libxacc-ibm.so": "434cf7d54db4d84c6c91a5956af5451765b638d734775aecaa26efb8dc587560",
+    "/work/install-xacc/plugins/libxacc-ini-config-parsing.so": "9a4b08575f493d92a61f260d7e97447c61a56d6df4366b84324aa901e89110ca",
+    "/work/install-xacc/plugins/libxacc-mlpack.so": "8e82389f2c72bef2f60ce468f7eb78b4b013130820a420bf6b3cca78dffbf46b",
+    "/work/install-xacc/plugins/libxacc-observable-transforms.so": "4be906b72cb5e800f1dd3d6e8b7fabbc9c1f5cdbd03bb28bc7ba502123f6a83e",
+    "/work/install-xacc/plugins/libxacc-optimizer-nlopt.so": "dfa3c61faf17125e9cd4681b88f121993096987444d4172bf94f79033e2eaeda",
+    "/work/install-xacc/plugins/libxacc-qpp.so": "8a18f07c08506adb5f6c671300893613428ed03006f80a07cc298c5974fec92c",
+    "/work/install-xacc/plugins/libxacc-qsearch-optimizer.so": "c869742a3d89ba44f0bf142a261e587a4c7a7b9a7762b3fa02710a781815aa98",
+    "/work/install-xacc/plugins/libxacc-quantum-irprovider.so": "eaf63f4c4322837d3ac15769de44b13093e54d8c795acb32efbdfea4ef6e3fa1",
+    "/work/install-xacc/plugins/libxacc-staq-compiler.so": "cb0535a94e2353942ab208e12f6c2c1a5741fab8513723484a4c292d4b87a573",
+    "/work/install-xacc/plugins/libxacc-xasm-compiler.so": "dfb8d0fb0741a602ca5274c2adba293af6a442d1c21ff70152988b53af8f0d99"
+  },
+  "source_manifest": {
+    "entries": {
+      "install-core/include": "install-core/include",
+      "install-core/lib": "install-core/lib",
+      "install-xacc/bin/usResourceCompiler4": "install-xacc/bin/usResourceCompiler4",
+      "install-xacc/include": "install-xacc/include",
+      "install-xacc/lib": "install-xacc/lib",
+      "install-xacc/plugins": "install-xacc/plugins",
+      "qristal/qualification/full_decoder/cloud/capture_process.py": "capture_process.py",
+      "qristal/qualification/full_decoder/cloud/direct_mcz.hpp": "direct_mcz.hpp",
+      "qristal/qualification/full_decoder/cloud/guest_inverse.py": "guest.py",
+      "qristal/qualification/full_decoder/cloud/inverse_checks.cpp": "inverse_checks.cpp",
+      "qristal/qualification/full_decoder/cloud/structured_inverse.hpp": "structured_inverse.hpp",
+      "qristal/qualification/install-toolchain.sh": "install-toolchain.sh"
+    },
+    "revisions": {
+      "qristal": "1936671a863b8e9abdd392f6c527f55aa3f30e45",
+      "qristal-core": "bd3a8e2808562bcd65d3e2bb9d03a970a8517d7a",
+      "qristal-decoder": "a58df0cf7eff0c6002aa3fed27ae6b18fdcea036",
+      "xacc": "d1edaa7ae53edc7e335f46d33160f93d6020aaa3"
+    },
+    "source_hashes": {
+      "qristal/qualification/full_decoder/cloud/capture_process.py": "c58faeb7025e7f0aefb1358b8f8d80c62dfa63668690ce5d743fb2f026c49e7c",
+      "qristal/qualification/full_decoder/cloud/direct_mcz.hpp": "2aaed48725e109b6d0de1399da57f583683efcffeed01ce17d2c94e80872deba",
+      "qristal/qualification/full_decoder/cloud/guest_inverse.py": "fe457f3c198691cef69b350001324afcaf87c227b1b8c5348f58d7fad288d92a",
+      "qristal/qualification/full_decoder/cloud/inverse_checks.cpp": "d81d0f0cdf41d4dc26a37eca3fc5a0e5dec8380ff1ff8b848c9d5a385132de1e",
+      "qristal/qualification/full_decoder/cloud/structured_inverse.hpp": "bd95967eca093cd3098a59b1225eb8e885a6580b8d2885b5847395dd9831c9eb",
+      "qristal/qualification/install-toolchain.sh": "84c984b8dae5801ed276d5db90ab0a1f6426802ba043d5d2d7a18c1f5186cce1"
+    },
+    "variant": "structured-inverse"
+  },
+  "stages": [
+    {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O1",
+        "-DNDEBUG",
+        "/work/inverse_checks.cpp",
+        "-I/work/install-xacc/include/xacc",
+        "-I/work/install-xacc/include/quantum/gate",
+        "-I/work/install-xacc/include",
+        "-I/work/install-xacc/include/cppmicroservices4",
+        "-I/work/qristal-core/include",
+        "-L/work/install-xacc/lib",
+        "-Wl,-rpath,/work/install-xacc/lib",
+        "-lxacc",
+        "-lxacc-quantum-gate",
+        "-lCppMicroServices",
+        "-ldl",
+        "-lpthread",
+        "-o",
+        "/proof/out/inverse-checks"
+      ],
+      "exit_code": 0,
+      "name": "inverse-build",
+      "stderr": "",
+      "stdout": "",
+      "timeout_seconds": 180
+    },
+    {
+      "command": [
+        "/proof/out/inverse-checks",
+        "negative"
+      ],
+      "exit_code": 0,
+      "name": "inverse-negative",
+      "stderr": "",
+      "stdout": "LOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-quantum-gate.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libCppMicroServices.so.4.0.0\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-pauli.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-fermion.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libantlr4-runtime.so.SOVERSION\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-quantum-annealing.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libalgorithm_ae.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libalgorithm_es.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libaws_braket.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-core/lib/libcore.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-core/lib/libnoise.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-core/lib/libyaml-cpp.so.0.8\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libcircuits.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libdecoder.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libqb_gateset_transpiler.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libqb_qobj_compiler.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libsimplified_decoder.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libsparse_simulator.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libuccsd.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libvqe.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-aer.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/../lib/libxacc-py-aer-adapter.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-algorithm-qpe.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-circuit-optimizers.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-exprtk-parsing.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-graph.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-ibm.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-ini-config-parsing.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-mlpack.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-observable-transforms.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-optimizer-nlopt.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/../lib/libnlopt.so.0\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-qpp.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-qsearch-optimizer.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-quantum-irprovider.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-staq-compiler.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-xasm-compiler.so\nPASS: 12 inverse rejected inputs\n",
+      "timeout_seconds": 60
+    },
+    {
+      "command": [
+        "/proof/out/inverse-checks",
+        "qpp"
+      ],
+      "exit_code": 1,
+      "name": "inverse-qpp",
+      "stderr": "CASE layout=0 operation=4 mode=inverse error=0.282897\nFAIL: complex_inverse_mismatch\n",
+      "stdout": "LOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-quantum-gate.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libCppMicroServices.so.4.0.0\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-pauli.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-fermion.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libantlr4-runtime.so.SOVERSION\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/lib/libxacc-quantum-annealing.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libalgorithm_ae.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libalgorithm_es.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libaws_braket.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-core/lib/libcore.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-core/lib/libnoise.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-core/lib/libyaml-cpp.so.0.8\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libcircuits.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libdecoder.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libqb_gateset_transpiler.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libqb_qobj_compiler.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libsimplified_decoder.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libsparse_simulator.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libuccsd.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libvqe.so.1.8.1\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-aer.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/../lib/libxacc-py-aer-adapter.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-algorithm-qpe.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-circuit-optimizers.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-exprtk-parsing.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-graph.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-ibm.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-ini-config-parsing.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-mlpack.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-observable-transforms.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-optimizer-nlopt.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/../lib/libnlopt.so.0\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-qpp.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-qsearch-optimizer.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-quantum-irprovider.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-staq-compiler.so\nLOADED_RUNTIME_LIBRARY: /work/install-xacc/plugins/libxacc-xasm-compiler.so\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"inverse\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[0.35355339059327373,-1.3877787807814457e-17],[0.35057006950595065,-0.04583259065984515],[0.34167045340481689,-0.09089170077706149],[0.35355339059327373,1.3877787807814457e-17],[0.32700473410299014,0.1344169032310768],[0.34167045340481689,0.09089170077706149],[0.35057006950595065,0.04583259065984515]]}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"populated\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"roundtrip\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"clone\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"disabled\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"mapped\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"fallback\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[0.35355339059327373,-1.3877787807814457e-17],[0.35057006950595065,-0.04583259065984515],[0.34167045340481689,-0.09089170077706149],[0.35355339059327373,1.3877787807814457e-17],[0.32700473410299014,0.1344169032310768],[0.34167045340481689,0.09089170077706149],[0.35057006950595065,0.04583259065984515]]}\nINVERSE_CASE {\"layout\":0,\"operation\":0,\"mode\":\"nested\",\"error\":1.1102230246251565e-16}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"inverse\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[-1.3877787807814457e-17,-0.35355339059327373],[0.35057006950595065,-0.04583259065984515],[0.09089170077706149,0.34167045340481689],[0.35355339059327373,1.3877787807814457e-17],[0.1344169032310768,-0.32700473410299014],[0.34167045340481689,0.09089170077706149],[-0.04583259065984515,0.35057006950595065]]}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"populated\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"roundtrip\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"clone\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"disabled\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"mapped\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"fallback\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[-1.3877787807814457e-17,-0.35355339059327373],[0.35057006950595065,-0.04583259065984515],[0.09089170077706149,0.34167045340481689],[0.35355339059327373,1.3877787807814457e-17],[0.1344169032310768,-0.32700473410299014],[0.34167045340481689,0.09089170077706149],[-0.04583259065984515,0.35057006950595065]]}\nINVERSE_CASE {\"layout\":0,\"operation\":1,\"mode\":\"nested\",\"error\":1.1102230246251565e-16}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"inverse\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[0.34167045340481689,-0.09089170077706149],[0.35057006950595065,-0.04583259065984515],[-0.35355339059327373,1.3877787807814457e-17],[0.35355339059327373,1.3877787807814457e-17],[0.35057006950595065,0.04583259065984515],[0.34167045340481689,0.09089170077706149],[-0.32700473410299014,-0.1344169032310768]]}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"populated\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"roundtrip\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"clone\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"disabled\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"mapped\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"fallback\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[0.34167045340481689,-0.09089170077706149],[0.35057006950595065,-0.04583259065984515],[-0.35355339059327373,1.3877787807814457e-17],[0.35355339059327373,1.3877787807814457e-17],[0.35057006950595065,0.04583259065984515],[0.34167045340481689,0.09089170077706149],[-0.32700473410299014,-0.1344169032310768]]}\nINVERSE_CASE {\"layout\":0,\"operation\":2,\"mode\":\"nested\",\"error\":1.1102230246251565e-16}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"inverse\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[0.49159749453362822,-0.06427013797303878],[0.35057006950595065,-0.04583259065984515],[-0.0084025054663716403,-0.064270137973038752],[0.35355339059327373,1.3877787807814457e-17],[0.47911773839302518,0.12745563943571406],[0.34167045340481689,0.09089170077706149],[0.016663208464368806,-0.062638568125866628]]}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"populated\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"roundtrip\",\"error\":1.1295700899707568e-16}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"clone\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"disabled\",\"error\":5.5511151231257827e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"mapped\",\"error\":5.7219584981527968e-17}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"fallback\",\"error\":5.5511151231257827e-17,\"amplitudes\":[[0.32700473410299014,-0.1344169032310768],[0.49159749453362822,-0.06427013797303878],[0.35057006950595065,-0.04583259065984515],[-0.0084025054663716403,-0.064270137973038752],[0.35355339059327373,1.3877787807814457e-17],[0.47911773839302518,0.12745563943571406],[0.34167045340481689,0.09089170077706149],[0.016663208464368806,-0.062638568125866628]]}\nINVERSE_CASE {\"layout\":0,\"operation\":3,\"mode\":\"nested\",\"error\":1.1102230246251565e-16}\n",
+      "timeout_seconds": 60
+    }
+  ]
+}

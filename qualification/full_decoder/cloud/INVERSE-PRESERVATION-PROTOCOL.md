@@ -79,3 +79,19 @@ interference cases: complex product preparation, controlled inverse, H on target
 dense model. This prevents a pair of omitted forward/inverse operations from
 passing only roundtrip checks. No fixed seed is claimed for this sparse backend.
 These sampling cases are separate from the existing 20 exact 64-shot roundtrips.
+
+The second attempt passed X/Y/Z/H cases, then the first controlled-Rx inverse
+failed the unchanged complex bound (error 0.282897) using the legacy decomposition.
+This invalidates that fallback as an exact complex-state reference for this case.
+The subsequent experiment uses explicit projector/parity controlled rotations for
+QPP (at most two controls) and controlled-X basis conjugation for H. The projector
+identity is product (I-Z_control)/2; each resulting commuting Z string is realized
+by parity CNOTs, Rz and uncomputation. Sparse still executes direct metadata.
+
+Acceptance is now explicitly separated: 140 candidate complex-state cases must
+pass 1e-10; the original 20 primitive-fallback cases remain diagnostic observations
+with every mismatch retained, not silently counted as passing. Forty raw vectors
+remain (20 candidate inverse and 20 legacy fallback), permitting independent
+classification. Sparse acceptance and all original process bounds are unchanged.
+This is a new candidate implementation, not a tolerance adjustment or repair of
+the selected legacy XACC binary. Generic/public fallback remains unqualified.
