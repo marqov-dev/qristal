@@ -1,6 +1,6 @@
 # Quantum Brilliance conference demonstration
 
-Use the saved [report](https://app.marqov.ai/projects/776ca156-9051-4fcb-8aca-202e78a94cac/report).
+Start with [what works today](CURRENT.md), then use the saved [report](https://app.marqov.ai/projects/776ca156-9051-4fcb-8aca-202e78a94cac/report).
 Open it before the meeting. No live cloud job or backend selection is needed.
 
 ## Five-minute sequence
@@ -66,8 +66,10 @@ the archive verifier after copying. Embedded figures need no network.
 
 Optional technical appendix: 70 native QFT/IQFT complex-state checks passed at
 1–3 qubits. Show the numerical table and saved vector provenance in the report.
-Full Decoder still times out in its first search iteration; service restoration
-and QFT correctness do not establish a completed Decoder result.
+Full Decoder now reaches simulation but still times out before caller completion,
+including the latest O1/O3 comparisons. Scientific research and engineering are
+delegated to separate Claude Code lanes. This optional application is not a
+prerequisite for the CPU/GPU demonstrations or the platform release.
 
 Tracking: platform #2172 (conference), #2173 (full Decoder), #1701 (priority queue).
 
