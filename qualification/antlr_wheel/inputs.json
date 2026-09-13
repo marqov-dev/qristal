@@ -1,0 +1,9 @@
+{
+  "schema": "qb.antlr-wheel-recipe/v1",
+  "built": false,
+  "artifacts": {
+    "antlr4-python3-runtime-4.9.2.tar.gz": {"bytes": 117220, "sha256": "31f5abdc7faf16a1a6e9bf2eb31565d004359b821b09944436a34361929ae85a"},
+    "setuptools-59.6.0-py3-none-any.whl": {"bytes": 952597, "sha256": "4ce92f1e1f8f01233ee9952c04f6b81d1e02939d6e1b488428154974a4d0783e"},
+    "wheel-0.37.1-py2.py3-none-any.whl": {"bytes": 35301, "sha256": "4bdcd7d840138086126cd09254dc6195fb4fc6f01c050a1d7236f2630db1d22a"}
+  }
+}

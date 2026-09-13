@@ -45,24 +45,24 @@ an install receipt or a reason to relabel the existing private CPU image.
 
 ## Remaining configure blockers
 
-1. **CPM:** `cmake/add_dependency.cmake:4–14` downloads CPM0.36.0 when absent.
-   Capture its existing hash-bound script and provide its expected cache location.
-   Provide explicit source overrides for all eleven locked dependencies; do not
-   assume the old CPM cache directory keys are Git commits. CPM package selection,
-   patches and configure writes need a controlled fresh working area. Keep the
-   pristine dependency exports immutable; derive any patched source copies first.
-2. **Python:** preinstall the complete hash-locked Linux amd64/Python3.10 wheelhouse
-   into a fresh interpreter environment before offline configure. Set
-   `INSTALL_MISSING=CXX` so Core cannot invoke pip; this permits C++ dependency
-   setup while disabling automatic Python installation. Core0.46 and Integrations1.2
-   refer to their Qiskit environments, not Core product versions. Integrations
-   remains a separate installation/qualification, not part of this first build.
-3. **Fresh XACC:** supply its retained installed artifact and manifest, set
-   `XACC_ROOT`, `XACC_TAG`, and `XACC_REPOSITORY` explicitly. The latter must use
-   public XACC; otherwise Core's default still names the old QB GitLab repository.
-   Confirm `add_poorly_behaved_dependency` accepts the installed version/tag rather
-   than entering its clone/build fallback. A disconnected configure must fail if
-   it cannot select these declared inputs; no network retry.
+1. **Actual C++ dependency selection:** [Core dependency preparation](../core_dependencies/README.md)
+   provides all eleven explicit source overrides, the pinned CPM0.36.0 script and
+   a verified Eigen copy with the required patch already applied. CPM's source
+   override omits patch commands. Native configure must still prove its actual
+   selections: Core's earlier system-package discovery can bypass the overrides.
+2. **Python:** the acquired Linux amd64/Python3.10 wheelhouse needs the remaining
+   ANTLR4.9.2 source built as a wheel; see [its offline recipe](../antlr_wheel/README.md).
+   A fresh native environment must pass installation and dependency checks before
+   offline Core configure. Set `INSTALL_MISSING=CXX` so Core cannot invoke pip.
+   Core Qiskit0.46 and Integrations Qiskit1.2 remain separate environments.
+3. **Fresh XACC consumption:** the complete freshly built installation is retained
+   and verified. [Installed-input preparation](../installed_inputs/README.md)
+   preserves it as a transport archive; extraction needs a case-sensitive Linux
+   filesystem. Use `/work/install-xacc` explicitly with `XACC_ROOT`, `XACC_TAG` and
+   public `XACC_REPOSITORY`; record actual CMake selection. Its installed version
+   suffix is empty and Core accepts version substrings, so only the bound source/
+   artifact manifest proves revision identity. Installed-only replay after
+   extraction and final Core install remain required.
 
 ## Explicit build directory map
 

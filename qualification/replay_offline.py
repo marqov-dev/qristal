@@ -8,6 +8,9 @@ ROOT = Path(__file__).resolve().parent
 SUITES = (
     ("source_artifact", (), "test_*.py"),
     ("core_build", (), "test_*.py"),
+    ("installed_inputs", (), "test_*.py"),
+    ("core_dependencies", (), "test_*.py"),
+    ("antlr_wheel", (), "test_*.py"),
     ("source_build", (), "test_*.py"),
     ("source_provenance", (), "test_*.py"),
     ("cpu_release", (), "test_*.py"),

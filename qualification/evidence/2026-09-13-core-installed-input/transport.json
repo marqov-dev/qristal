@@ -1,0 +1,17 @@
+{
+  "archive": {
+    "bytes": 17059046,
+    "receipt_sha256": "8810f452dc58a6d9dba6b20b6423ed6ac8feb9f0666e7f496bb989d539569ee0",
+    "report_sha256": "e416c913c3ba73327f0f91162a2d04fb61664136e29309b3f1cd5a74a154a097",
+    "sha256": "b4569c7ca587c3a1fcbaa5e87a4606792c9a0904e2d15c5c2ef03a83b3088bb5"
+  },
+  "executed": false,
+  "installed_files": 3525,
+  "materialization": "archive-only",
+  "relocatable": false,
+  "required_guest_prefix": "/work/install-xacc",
+  "schema": "qb.installed-input/v1",
+  "verified": true,
+  "staging_manifest_sha256": "0d000f9ec584069ad47ac30718525872e374e96688145060536785d3f9867b5b",
+  "linux_materialization_qualified": false
+}

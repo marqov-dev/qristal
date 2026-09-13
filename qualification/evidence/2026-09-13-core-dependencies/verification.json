@@ -1,0 +1,14 @@
+{
+  "actual_dependency_selection_verified": false,
+  "all_11_pristine_and_effective_trees_verified": true,
+  "cmake_executed": false,
+  "eigen_changed_files": 4,
+  "native_build_executed": false,
+  "offline_fixture_tests_passed": 7,
+  "receipt_files": {
+    "overrides.cmake": "19be7eafa02c9f5bede9d5099e519e7f615d8143a3e927254d7b3b3fa53cd981",
+    "preparation.json": "4ba157cdac418f57d2fab1b3dbbd817ef400307ea97331142cc4b66063956a06"
+  },
+  "schema": "marqov.core-dependency-local-evidence/v1",
+  "source_only": true
+}

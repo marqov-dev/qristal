@@ -1,0 +1,77 @@
+{
+  "schema": "marqov.core-dependency-lock/v1",
+  "core_commit": "a5c3e5fa544c07d538974d3a289b19652d483848",
+  "historical_lock_sha256": "434b82181f897f7ee395c9a1e3465ce89f881237d91c2b075477651cc1a049dc",
+  "dependencies": [
+    {
+      "name": "nlohmann_json",
+      "cpm_name": "nlohmann_json",
+      "commit": "8968adcd53951b652f9f480ad62e66dc2714b061",
+      "receipt_sha256": "09e3c0cab9079ece29a5520c7dda90870b3ea2445dd93a9ecb4eb9386c41363f"
+    },
+    {
+      "name": "autodiff",
+      "cpm_name": "autodiff",
+      "commit": "79d833fe734b83af9af7ccc448bd996266e59a9b",
+      "receipt_sha256": "c436fb85c7e97561dfdbf9f734e4d60316b443cfdad7852f88bf213d58006b3e"
+    },
+    {
+      "name": "cpr",
+      "cpm_name": "cpr",
+      "commit": "da40186618909b1a7363d4e4495aa899c6e0eb75",
+      "receipt_sha256": "551221208862ac0fde3e4da6e6b99a90c2d733c2f4f5ea6994dea8ffaac9e1b8"
+    },
+    {
+      "name": "pybind11",
+      "cpm_name": "pybind11",
+      "commit": "3e9dfa2866941655c56877882565e7577de6fc7b",
+      "receipt_sha256": "c4f1ef13bcabbf26809d8d532167030da0aad3c9d766741c930ac56dff862a20"
+    },
+    {
+      "name": "eigen3",
+      "cpm_name": "Eigen3",
+      "commit": "157756130a154b8b819090fa16bb7f7f3bd5211f",
+      "receipt_sha256": "2442378d2f45b16b26bd7bfd4f548e24cfef62de2f3f40babc1df64753ebcfba"
+    },
+    {
+      "name": "yamlcpp",
+      "cpm_name": "yamlcpp",
+      "commit": "2f86d13775d119edbb69af52e5f566fd65c6953b",
+      "receipt_sha256": "b58e75ba18d830d5ce4ebef9c1a66bbb882a65fff31b92a471f9dc5d0b60b333"
+    },
+    {
+      "name": "range-v3",
+      "cpm_name": "range-v3",
+      "commit": "a81477931a8aa2ad025c6bda0609f38e09e4d7ec",
+      "receipt_sha256": "d99383e032e1a8fc295379912b6fad89501c2667b60b0c057ae179691e903ff7"
+    },
+    {
+      "name": "cppitertools",
+      "cpm_name": "cppitertools",
+      "commit": "539a5be8359c4330b3f88ed1821f32bb5c89f5f6",
+      "receipt_sha256": "897adbff274cf7b6db4561ae64b3b07d489f1a913eaef7448ebe63559dd5028b"
+    },
+    {
+      "name": "googletest",
+      "cpm_name": "googletest",
+      "commit": "52eb8108c5bdec04579160ae17225d66034bd723",
+      "receipt_sha256": "5f9f499060e48594462a39abcf4092db9318eed70f6b8935f9353986a94dceb7"
+    },
+    {
+      "name": "cereal",
+      "cpm_name": "cereal",
+      "commit": "ebef1e929807629befafbb2918ea1a08c7194554",
+      "receipt_sha256": "ad42802685ed835edebbcec46854430600a8d226ee34228feaf98b2f3d9bea61"
+    },
+    {
+      "name": "args",
+      "cpm_name": "args",
+      "commit": "016aa8a054dd88b8e1d2a020466ce38f310444cc",
+      "receipt_sha256": "f4b8d3e8be120d77703c21f6cb0914594df18516c39aa55eab9a5e31388adecc"
+    }
+  ],
+  "materials": {
+    "CPM_0.36.0.cmake": "179600d59f0e7528a18a98e8ed086a21930a05cbe6f56c9f279978599c16f427",
+    "eigen.patch": "b08427c38c41439410468a969ab87b428c119412c821fd7d6c2d6030abd706dd"
+  }
+}
