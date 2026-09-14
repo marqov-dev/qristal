@@ -1,0 +1,70 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.08kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 54B done
+#3 DONE 0.0s
+
+#4 [ 1/10] FROM docker.io/library/ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d
+#4 resolve docker.io/library/ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 311.33MB 1.9s done
+#5 DONE 1.9s
+
+#6 [ 2/10] COPY os/debs/ /inputs/debs/
+#6 DONE 1.0s
+
+#7 [ 3/10] RUN apt-get --no-download --no-install-recommends -y install /inputs/debs/*.deb     && dpkg-query -W -f='${binary:Package}\t${Version}\n' > /runtime-packages.txt     && rm -rf /inputs/debs /var/lib/apt/lists/*
+#7 0.115 Reading package lists...
+#7 0.166 Building dependency tree...
+#7 0.168 Reading state information...
+#7 0.175 libstdc++6 is already the newest version (12.3.0-1ubuntu1~22.04.3).
+#7 0.175 Suggested packages:
+#7 0.175   python3-doc python3-tk python3-venv python3.10-doc binutils binfmt-support
+#7 0.175   readline-doc
+#7 0.175 Recommended packages:
+#7 0.175   libldap-common publicsuffix libsasl2-modules
+#7 0.215 The following NEW packages will be installed:
+#7 0.215   ca-certificates libbrotli1 libcurl4 libexpat1 libgfortran5 libgomp1
+#7 0.215   libldap-2.5-0 libmpdec3 libnghttp2-14 libopenblas0-pthread libpsl5
+#7 0.215   libpython3-stdlib libpython3.10 libpython3.10-minimal libpython3.10-stdlib
+#7 0.215   libquadmath0 libreadline8 librtmp1 libsasl2-2 libsasl2-modules-db
+#7 0.215   libsqlite3-0 libssh-4 media-types openssl python3 python3-distutils
+#7 0.215   python3-lib2to3 python3-minimal python3-pip-whl python3-setuptools-whl
+#7 0.216   python3.10 python3.10-minimal python3.10-venv readline-common
+#7 0.216 The following packages will be upgraded:
+#7 0.216   libssl3
+#7 0.479 E: Internal Error, Pathname to install is not absolute 'libssl3_3.0.2-0ubuntu1.29_amd64.deb'
+#7 0.479 1 upgraded, 34 newly installed, 0 to remove and 0 not upgraded.
+#7 0.479 After this operation, 88.6 MB of additional disk space will be used.
+#7 ERROR: process "/bin/sh -c apt-get --no-download --no-install-recommends -y install /inputs/debs/*.deb     && dpkg-query -W -f='${binary:Package}\\t${Version}\\n' > /runtime-packages.txt     && rm -rf /inputs/debs /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [ 3/10] RUN apt-get --no-download --no-install-recommends -y install /inputs/debs/*.deb     && dpkg-query -W -f='${binary:Package}\t${Version}\n' > /runtime-packages.txt     && rm -rf /inputs/debs /var/lib/apt/lists/*:
+0.215   libpython3-stdlib libpython3.10 libpython3.10-minimal libpython3.10-stdlib
+0.215   libquadmath0 libreadline8 librtmp1 libsasl2-2 libsasl2-modules-db
+0.215   libsqlite3-0 libssh-4 media-types openssl python3 python3-distutils
+0.215   python3-lib2to3 python3-minimal python3-pip-whl python3-setuptools-whl
+0.216   python3.10 python3.10-minimal python3.10-venv readline-common
+0.216 The following packages will be upgraded:
+0.216   libssl3
+0.479 E: Internal Error, Pathname to install is not absolute 'libssl3_3.0.2-0ubuntu1.29_amd64.deb'
+0.479 1 upgraded, 34 newly installed, 0 to remove and 0 not upgraded.
+0.479 After this operation, 88.6 MB of additional disk space will be used.
+------
+Dockerfile:3
+--------------------
+   2 |     COPY os/debs/ /inputs/debs/
+   3 | >>> RUN apt-get --no-download --no-install-recommends -y install /inputs/debs/*.deb \
+   4 | >>>     && dpkg-query -W -f='${binary:Package}\t${Version}\n' > /runtime-packages.txt \
+   5 | >>>     && rm -rf /inputs/debs /var/lib/apt/lists/*
+   6 |     COPY work.tar /inputs/work.tar
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c apt-get --no-download --no-install-recommends -y install /inputs/debs/*.deb     && dpkg-query -W -f='${binary:Package}\\t${Version}\\n' > /runtime-packages.txt     && rm -rf /inputs/debs /var/lib/apt/lists/*" did not complete successfully: exit code: 100

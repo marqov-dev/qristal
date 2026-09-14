@@ -86,3 +86,13 @@ native input manifest; missing, extra or symlink wheel inputs fail closed. The
 staging inventory binds the installation tar, recipe, evidence and wheel bytes;
 it must be rechecked before any later build consumes the context. No compiled
 artifacts or acquired wheels are committed to Git.
+
+## Subsequent OS acquisition and local image proof
+
+The next batch adds `os_lock.py`, `assemble.py`, `os/Dockerfile` and
+`local_probe.py`. See `os/README.md` for the signed-snapshot acquisition and offline
+build workflow, and `qualification/evidence/2026-09-14-os-acquisition` for its
+actual successful local amd64-emulation image build and six-case probe.
+The earlier staging receipt remains an unchanged input-preparation record;
+subsequent build results are separate evidence. `notices.py` inventories available
+wheel/native notices without claiming complete redistribution coverage.

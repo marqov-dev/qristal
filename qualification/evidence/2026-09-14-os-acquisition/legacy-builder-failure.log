@@ -1,0 +1,9 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon  311.3MB
+Step 1/15 : FROM ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d AS prepared
+ ---> 4f838adc7181
+Step 2/15 : COPY os/debs/ /inputs/debs/
+failed to export image: NotFound: content digest sha256:c1fc012913af7a4dd0d86553d9dae19b323e7fb60d5407e800cbfbc8f7e6aa63: not found
