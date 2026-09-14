@@ -22,17 +22,10 @@ def digest(path):
 
 
 def emit(report):
-    try:
-        spec=importlib.util.spec_from_file_location('core_report_reference',ROOT/'inputs/native/report_reference.py')
-        reference=importlib.util.module_from_spec(spec);spec.loader.exec_module(reference)
-        report=reference.envelope(report)
-    except Exception:
-        report={'kind':'qb-core-native/v1','schema':'qb.core-report-reference/v1',
-                'native_passed':False,'error':'output_artifact_unavailable'}
     raw=json.dumps(report,sort_keys=True,separators=(',',':')).encode()
     encoded=base64.b64encode(zlib.compress(raw,9)).decode()
     if len(encoded)>128*160:
-        raw=json.dumps({'kind':'qb-core-native/v1','native_passed':False,'error':'report_bounds'}).encode()
+        raw=json.dumps({'kind':'qb-core-native/v1','error':'report_bounds'}).encode()
         encoded=base64.b64encode(zlib.compress(raw)).decode()
     parts=[encoded[i:i+160] for i in range(0,len(encoded),160)]
     for _ in range(2):

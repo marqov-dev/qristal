@@ -47,7 +47,7 @@ def document(path, *, limit=2 * 1024 * 1024):
     return parse(path.read_bytes())
 
 
-def audit(archive, protocol_path, native_receipt, material_manifest):
+def audit(archive, protocol_path, native_receipt, material_manifest, recovery_verification=None):
     archive, protocol_path, native_receipt, material_manifest = map(Path, (archive, protocol_path, native_receipt, material_manifest))
     protocol = document(protocol_path)
     envelope = document(native_receipt)
@@ -100,6 +100,40 @@ def audit(archive, protocol_path, native_receipt, material_manifest):
     classified = NATIVE.classify(report, protocol_path, archive)
     if classified.get('native_passed') is not True:
         raise ValueError('native classification failed')
+    provenance = {'mode': 'supplied native receipt', 'console_artifact_binding': None,
+                  'receipt_schema': envelope.get('schema'), 'source': envelope.get('source')}
+    if envelope.get('schema') == 'qb.core-recovered-report/v1':
+        binding = envelope.get('console_artifact_binding')
+        if type(binding) is not bool:
+            raise ValueError('recovered report requires explicit binding provenance')
+        if binding is True:
+            supplied = envelope.get('provenance', {})
+            if (envelope.get('source') not in ('compact-console-reference', 'legacy-full-console')
+                    or supplied.get('source') != envelope['source']
+                    or supplied.get('console_artifact_binding') is not True):
+                raise ValueError('recovered report provenance mismatch')
+            # This gate does not have the original console record. Preserve the
+            # operator claim without treating a supplied boolean as authentication.
+            provenance.update(mode='operator-reported console binding; not independently replayed',
+                              reported_console_artifact_binding=True)
+    elif 'console_artifact_binding' in envelope:
+        raise ValueError('binding provenance requires recognized recovered schema')
+    if envelope.get('console_artifact_binding') is False:
+        if envelope.get('schema') != 'qb.core-recovered-report/v1' or recovery_verification is None:
+            raise ValueError('alternate recovery requires its verification record')
+        recovery = document(recovery_verification)
+        if (recovery.get('schema') != 'qb.core-alternate-recovery/v1'
+                or recovery.get('authenticated_object_recovery') is not True
+                or recovery.get('console_artifact_binding') is not False
+                or recovery.get('identity') != identity
+                or recovery.get('archive_verification') != verified
+                or recovery.get('native_classification') != classified):
+            raise ValueError('alternate recovery verification mismatch')
+        provenance.update(mode='authenticated object recovery; original console binding unavailable',
+                          console_artifact_binding=False,
+                          recovery_record_sha256=sha(recovery_verification))
+    elif recovery_verification is not None:
+        raise ValueError('unexpected alternate recovery verification')
     # Security rules already enforced above. Read only the validated receipt to
     # expose its inventory; do not implement another extractor/link policy.
     receipt = None
@@ -129,7 +163,7 @@ def audit(archive, protocol_path, native_receipt, material_manifest):
                      'material_manifest_sha256': materials_sha,
                      'validator_files': {name: sha(QUALIFICATION / name) for name in validators},
                      'audit_sha256': sha(__file__), 'required_wheel_manifest_sha256': wheel_manifest_sha},
-        'native_classification': classified,
+        'native_classification': classified, 'evidence_provenance': provenance,
         'retained_inventory': inventory,
         'required_python': {'implementation': 'CPython', 'version': '3.10', 'platform': 'linux/amd64',
                             'wheel_install_verified': False,
@@ -160,8 +194,9 @@ def main():
     parser.add_argument('native_receipt', type=Path)
     parser.add_argument('material_manifest', type=Path)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--recovery-verification', type=Path)
     args = parser.parse_args()
-    result = audit(args.archive, args.protocol, args.native_receipt, args.material_manifest)
+    result = audit(args.archive, args.protocol, args.native_receipt, args.material_manifest, args.recovery_verification)
     # Successful evidence only, and never overwrite an existing plan.
     with args.output.open('x') as stream:
         stream.write(json.dumps(result, indent=2) + '\n')

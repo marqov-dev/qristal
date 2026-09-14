@@ -1,0 +1,11 @@
+{
+  "complete_records": [
+    "QB_ADAPTER_CHUNK 4c46184e4fd21630cfecdd743257fc4728ec8bc93063b821c07f94cf7ffe03ac 0 1 eJyrVsrOzEtRslJQKkzSTc4vStXNSyzJLEvVLzNU0lFQSi0qyi8CyRalFuQXlcQn5ZfmpRQr1QIA9mUSkg==",
+    "QB_ADAPTER_CHUNK 4c46184e4fd21630cfecdd743257fc4728ec8bc93063b821c07f94cf7ffe03ac 0 1 eJyrVsrOzEtRslJQKkzSTc4vStXNSyzJLEvVLzNU0lFQSi0qyi8CyRalFuQXlcQn5ZfmpRQr1QIA9mUSkg=="
+  ],
+  "discarded_truncated_nonfinal_fragments": [],
+  "result": {
+    "error": "report_bounds",
+    "kind": "qb-core-native/v1"
+  }
+}

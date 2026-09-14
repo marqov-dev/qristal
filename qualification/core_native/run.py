@@ -38,7 +38,13 @@ def main():
         if output.digest((HERE.parent/relative).read_bytes())!=expected:raise ValueError('operator source identity')
     source=load('core_source_lifecycle',HERE.parent/'source_build/run.py')
     transport=load('core_retention_transport',HERE.parent/'source_artifact/run.py')
-    transport.verify=output.verify
+    reference=load('core_report_reference',HERE/'report_reference.py')
+    resolved={}
+    def verify_reference(path,identity,console):
+        verified,full,provenance=reference.resolve(path,identity,console,output)
+        resolved.update(report=full,provenance=provenance)
+        return verified
+    transport.verify=verify_reference
     transport.MAX_BYTES=output.MAX_BYTES
     lifecycle=source.lifecycle
     import boto3
@@ -74,6 +80,10 @@ def main():
                 deadline=self.deadline('observe_until')
                 with transport.retention_deadline(deadline):
                     retained.update(transport.download(client,state,directory,report,deadline=deadline))
+                    report=resolved['report']
+                    lifecycle.atomic_json(directory/'recovered-full-report.json',
+                        reference.recovered_record(report,resolved['provenance']))
+                    retained['console_reference']=resolved['provenance']
                     checker=load('core_result_checker',HERE/'check_result.py')
                     retained['native']=checker.classify(report,artifact/'work/protocol.json',directory/'output.tar.gz')
             except Exception as error:

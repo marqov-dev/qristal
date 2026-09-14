@@ -1,0 +1,29 @@
+{
+  "account": "090208085542",
+  "builder_files": {
+    "Dockerfile": "8a11e9e3a6773dec4352b268a176aa1bfee77053026b94989fe2fb5542cb8e0a",
+    "install-toolchain.sh": "84c984b8dae5801ed276d5db90ab0a1f6426802ba043d5d2d7a18c1f5186cce1"
+  },
+  "cleanup_seconds": 300,
+  "guest_sha256": "4aaccf59c0aa397a5a9c1bad8fba38a7ea1588378f10ce40d02cc076d32b1883",
+  "instance_type": "m7i.large",
+  "materials_sha256": "1877d10d2d9c2511c9006650332e9bded3c51854d3d0c7fae43216c0acdb9900",
+  "native_qualified": false,
+  "observation_seconds": 3600,
+  "operator_files": {
+    "core_native/check_result.py": "029bcab5b6b2703f60adbaaa26bb055e4529d87a9578f98a701d8fe29c5796a9",
+    "core_native/run.py": "8ee48d45b87cb8f832d11ec79368675fcf5c51b8f394dc9cf70fa0164ac16b42",
+    "core_output/output.py": "90a66a35c7c686d4efc912a2d30bfe489339bc81be14680da9a887387e49f5a9",
+    "full_decoder/cloud/run.py": "e82269fdbb1ea12592a35ae782a91864f67859b8bc22e38e324db7b1487fc739",
+    "gpu_package/console.py": "ba0d3154bb0d8fd3ec9a87e981d5ca5499ab063217c3512ad81db72923980b95",
+    "gpu_release/observer.py": "10fc4a270327420bce06ec1a3ccdb6d51be098275b28b02065814d212e9bd8c2",
+    "gpu_release/supervisor.py": "1ff3265a9055d0a94458bfeca2f66eeaabfb3fd20cc7907bd48f12007c7e35ad",
+    "source_artifact/archive.py": "0dc925bc33a2db3db6976fcdb87fdccae8a5fa3bba5b7e261137b9d37e003590",
+    "source_artifact/requirements-operator.txt": "3d6e5d1d388d75c63cd7b11e45b63423632d2e9c5e57b2cd09145410746959d3",
+    "source_artifact/run.py": "fa4ef39cfc5f5fc7c1d21b576d0df1986b192e91c4e681fc3d427ca7ef70f75f",
+    "source_build/run.py": "735a9712583d7252481fc24a9954b12e1a67aae623abe1bd41fc8737c9db5b37"
+  },
+  "region": "us-east-1",
+  "root_gib": 20,
+  "schema": "qb.core-native-protocol/v1"
+}

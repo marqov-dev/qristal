@@ -10,7 +10,7 @@ import tarfile
 HERE=Path(__file__).resolve().parent
 BASE='ubuntu@sha256:4f838adc7181d9039ac795a7d0aba05a9bd9ecd480d294483169c5def983b64d'
 TOOLCHAIN_SHA='84c984b8dae5801ed276d5db90ab0a1f6426802ba043d5d2d7a18c1f5186cce1'
-OPERATOR_FILES=('core_native/run.py','core_native/check_result.py','core_output/output.py',
+OPERATOR_FILES=('core_native/run.py','core_native/report_reference.py','core_native/check_result.py','core_output/output.py',
  'source_artifact/run.py','source_artifact/archive.py','source_build/run.py',
  'full_decoder/cloud/run.py','gpu_release/supervisor.py','gpu_release/observer.py',
  'gpu_package/console.py','source_artifact/requirements-operator.txt')
@@ -38,6 +38,7 @@ def package(core,dependencies,xacc,python,toolchain,output):
     prepare=load('core_material_preparation',HERE/'prepare.py')
     prepare.prepare(core,dependencies,xacc,python,inputs)
     extras={
+       'native/report_reference.py':HERE/'report_reference.py',
        'output/output.py':HERE.parent/'core_output/output.py',
        'tools/qualification/core_selection/check.py':HERE.parent/'core_selection/check.py',
        'tools/qualification/core_selection/after_install.py':HERE.parent/'core_selection/after_install.py',
