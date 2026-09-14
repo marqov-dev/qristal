@@ -1,0 +1,22 @@
+{
+  "account": "090208085542",
+  "bucket": "qb-proof-2cfd223f3f5a4771970b714c6a7ec9de-cpu",
+  "bucket_absent": true,
+  "bucket_error_code": "404",
+  "client_token": "qb-proof-2cfd223f3f5a4771970b714c6a7ec9de",
+  "group_absent": true,
+  "group_error_code": "InvalidGroup.NotFound",
+  "group_id": "sg-01095e717227b0234",
+  "instance_id": "i-047db8d980ce21e59",
+  "instance_state": "terminated",
+  "region": "us-east-1",
+  "schema": "qb.native-image-independent-cleanup/v1",
+  "verified": true,
+  "volumes": [
+    {
+      "absent": true,
+      "code": "InvalidVolume.NotFound",
+      "id": "vol-063ad346b4f639f8c"
+    }
+  ]
+}
