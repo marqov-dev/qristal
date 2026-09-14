@@ -65,6 +65,41 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(len(result['required_python']['wheels']), 50)
             self.assertIn('QPP-only', result['scope'])
 
+    def test_alternate_recovery_requires_and_preserves_provenance(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            args = self.fixture(root)
+            baseline = audit.audit(*args)
+            envelope = json.loads(args[2].read_text())
+            envelope.update(schema='qb.core-recovered-report/v1', console_artifact_binding=False,
+                            source='synthetic authenticated-object recovery fixture')
+            args[2].write_text(json.dumps(envelope))
+            with self.assertRaisesRegex(ValueError, 'requires its verification'):
+                audit.audit(*args)
+            report = envelope['result']
+            identity = report['output_artifact']
+            verification = audit.OUTPUT.verify(args[0], identity,
+                {key: value for key, value in report.items() if key != 'output_artifact'})
+            recovery = {'schema': 'qb.core-alternate-recovery/v1',
+                        'authenticated_object_recovery': True, 'console_artifact_binding': False,
+                        'identity': identity, 'archive_verification': verification,
+                        'native_classification': baseline['native_classification']}
+            sidecar = root / 'recovery.json'
+            sidecar.write_text(json.dumps(recovery))
+            result = audit.audit(*args, recovery_verification=sidecar)
+            self.assertFalse(result['evidence_provenance']['console_artifact_binding'])
+            self.assertEqual(result['evidence_provenance']['recovery_record_sha256'], audit.sha(sidecar))
+            for replacement in (True, None):
+                changed = dict(envelope, console_artifact_binding=replacement)
+                args[2].write_text(json.dumps(changed))
+                with self.assertRaises(ValueError):
+                    audit.audit(*args)
+            args[2].write_text(json.dumps(envelope))
+            recovery['identity'] = dict(identity, sha256='0' * 64)
+            sidecar.write_text(json.dumps(recovery))
+            with self.assertRaisesRegex(ValueError, 'verification mismatch'):
+                audit.audit(*args, recovery_verification=sidecar)
+
     def test_failed_receipt_rejected_before_archive(self):
         with tempfile.TemporaryDirectory() as directory:
             args = self.fixture(Path(directory))

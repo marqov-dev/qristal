@@ -43,3 +43,17 @@ public distribution, bit reproducibility and hosted admission are separate gates
 
 Tests use synthetic receipts and the existing native-checker fixture. They test
 the preparation boundary and rejection behavior; they do not run a simulator.
+
+When a report explicitly declares `console_artifact_binding: false`, supply
+`--recovery-verification` with its separate alternate-recovery record. The audit
+requires matching archive identity, verification and native classification, and
+preserves the missing console binding plus the recovery-record hash in its plan.
+This preserves the authenticated-object recovery distinction; it does not recreate
+a lost console hash or turn local receipt hashes into publisher authentication.
+Original console/retention failures and subsequent cleanup records stay separate.
+
+Recovered envelopes require an explicit boolean binding flag and consistent source
+provenance. A supplied claim of console binding is recorded as operator-reported,
+with independently checked binding left unknown: this gate does not receive the
+original console reference. Flipping or dropping the alternate recovery flag
+cannot bypass the sidecar requirement.

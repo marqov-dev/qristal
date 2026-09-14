@@ -1,0 +1,15 @@
+{
+  "schema": "qb.core-packaging-input-plan/v1",
+  "input_gate_passed": true,
+  "runtime_built": false,
+  "runtime_qualified": false,
+  "published": false,
+  "hosted": false,
+  "evidence_provenance": {
+    "mode": "authenticated object recovery; original console binding unavailable",
+    "console_artifact_binding": false,
+    "receipt_schema": "qb.core-recovered-report/v1",
+    "source": "authenticated S3 archive recovery; original console artifact binding unavailable",
+    "recovery_record_sha256": "0788674c5c885ae9bc0a86141aa6c7fef7adbb6fdb741a207dab0b353d4b2bb4"
+  }
+}

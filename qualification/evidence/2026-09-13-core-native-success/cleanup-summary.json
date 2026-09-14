@@ -1,0 +1,8 @@
+{
+  "instance_terminated_or_absent": true,
+  "volumes_absent": true,
+  "security_group_absent": true,
+  "bucket_absent": true,
+  "retained_archive_verified_before_deletion": true,
+  "independently_verified": true
+}
