@@ -9,6 +9,8 @@ import sys
 import difflib
 import version
 import dependency_path
+import dependency_selection
+import eigen_configure
 
 HERE = Path(__file__).resolve().parent
 SOURCE_COMMIT = 'a5c3e5fa544c07d538974d3a289b19652d483848'
@@ -54,6 +56,14 @@ def prepare(inputs, output):
         raise ValueError('unexpected transformation patch')
     original = (source / 'cmake/dependencies.cmake').read_bytes()
     changed = transform(original)
+    staged_dependency = changed
+    changed = eigen_configure.transform(staged_dependency)
+    eigen_patch = (HERE / 'eigen-configure-install.patch').read_bytes()
+    expected_eigen_patch = ''.join(difflib.unified_diff(staged_dependency.decode().splitlines(True),
+        changed.decode().splitlines(True), fromfile='a/cmake/dependencies.cmake',
+        tofile='b/cmake/dependencies.cmake', n=0)).encode()
+    if eigen_patch != expected_eigen_patch:
+        raise ValueError('unexpected Eigen configure patch')
     original_version = (source / 'CMakeLists.txt').read_bytes()
     changed_version = version.transform(original_version)
     version_patch = (HERE / 'exported-version.patch').read_bytes()
@@ -69,6 +79,14 @@ def prepare(inputs, output):
         tofile='b/cmake/add_dependency.cmake', n=0)).encode()
     if path_patch != expected_path_patch:
         raise ValueError('unexpected dependency path patch')
+    guarded_dependency = changed_path
+    changed_path = dependency_selection.transform(guarded_dependency)
+    selection_patch = (HERE / 'dependency-source-selection.patch').read_bytes()
+    expected_selection_patch = ''.join(difflib.unified_diff(guarded_dependency.decode().splitlines(True),
+        changed_path.decode().splitlines(True), fromfile='a/cmake/add_dependency.cmake',
+        tofile='b/cmake/add_dependency.cmake', n=0)).encode()
+    if selection_patch != expected_selection_patch:
+        raise ValueError('unexpected dependency selection patch')
     output.mkdir(parents=True)
     derived = output / 'qristal-core'
     shutil.copytree(source, derived, symlinks=True)
@@ -100,8 +118,10 @@ def prepare(inputs, output):
               'original_version_file_sha256': sha(original_version),
               'derived_version_file_sha256': sha(changed_version),
               'original_dependency_sha256': sha(original), 'derived_dependency_sha256': sha(changed),
+              'staged_dependency_sha256': sha(staged_dependency), 'eigen_configure_patch_sha256': sha(eigen_patch),
               'dependency_path_patch_sha256': sha(path_patch),
               'original_dependency_path_sha256': sha(original_path), 'derived_dependency_path_sha256': sha(changed_path),
+              'guarded_dependency_path_sha256': sha(guarded_dependency), 'dependency_selection_patch_sha256': sha(selection_patch),
               'effective_manifest_sha256': sha(effective_bytes),
               'configured': False, 'native_qualified': False, 'published': False,
               'remaining_blockers': ['offline dependency selection',

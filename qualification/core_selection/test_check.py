@@ -11,7 +11,6 @@ class Tests(unittest.TestCase):
         for name,package in c.PACKAGES.items():
             rows += [f'CPM_PACKAGE_{package}_SOURCE_DIR:INTERNAL=/work/core-dependencies/deps/{name}',
                      f'CPM_PACKAGE_{package}_BINARY_DIR:INTERNAL=/work/build-core/_deps/{name}-build']
-        rows += [f'CMAKE_DISABLE_FIND_PACKAGE_{name}:BOOL=TRUE' for name in c.FIND_NAMES]
         rows += ['XACC_DIR:PATH=/work/install-xacc','XACC_ROOT:PATH=/work/install-xacc',
                  'CMAKE_HOME_DIRECTORY:INTERNAL=/work/source-core','CMAKE_INSTALL_PREFIX:PATH=/work/install-core']
         return '\n'.join(rows)
@@ -30,7 +29,9 @@ class Tests(unittest.TestCase):
         for path in ['/tmp/build','/work/build-core/../outside','/work/build-core']:
             with self.assertRaises(ValueError):c.selections(self.fixture().replace('/work/build-core/_deps/cpr-build',path))
     def test_find_gate_and_xacc(self):
-        with self.assertRaises(ValueError):c.selections(self.fixture().replace('CMAKE_DISABLE_FIND_PACKAGE_GTest:BOOL=TRUE','CMAKE_DISABLE_FIND_PACKAGE_GTest:BOOL=FALSE'))
+        for value in ('TRUE', 'ON', '1'):
+            with self.assertRaises(ValueError):c.selections(self.fixture()+'\nCMAKE_DISABLE_FIND_PACKAGE_Eigen3:BOOL='+value)
+        self.assertTrue(c.selections(self.fixture()+'\nCMAKE_DISABLE_FIND_PACKAGE_Eigen3:BOOL=FALSE')['actual_cpm_sources_verified'])
         with self.assertRaises(ValueError):c.selections(self.fixture().replace('XACC_DIR:PATH=/work/install-xacc','XACC_DIR:PATH=/opt/qb'))
     def test_duplicate_cache_key(self):
         with self.assertRaises(ValueError):c.selections(self.fixture()+'\nXACC_DIR:PATH=/work/install-xacc')

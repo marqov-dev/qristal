@@ -9,14 +9,16 @@ sources, noncanonical/outside build paths, duplicate cache keys and wrong
 Core/XACC prefixes. It is a check of CMake's recorded selection, not proof of
 compiled target linkage or a signature over untrusted cache bytes.
 
-Configure must add separate `-DCMAKE_DISABLE_FIND_PACKAGE_<name>:BOOL=TRUE`
-options for Eigen3, pybind11, yaml-cpp, GTest, nlohmann_json, range-v3,
-autodiff, cereal, args, cpr and cppitertools. These disable Core's preliminary
-optional system lookup. Do not carry these flags into the installed consumer:
-that consumer needs to find the newly installed exports. System Python, Boost,
-OpenSSL, OpenMP, BLAS and CURL remain explicit builder dependencies, not eleven
-alternative source selections. Record their versions and actual paths in the
-native inventory/configure logs; this checker does not qualify those versions.
+The source-preparation helper bypasses Core's optional ambient lookup only when
+that dependency has an explicit nonempty `CPM_<name>_SOURCE` override. Configure
+must not globally disable package discovery: dependencies such as autodiff need
+`find_package(Eigen3 REQUIRED)` against the Eigen installation just created by
+Core. `check.py` rejects enabled global disable flags while still requiring all
+eleven actual CPM selections. An override alone never satisfies the gate.
+
+System Python, Boost, OpenSSL, OpenMP, BLAS and CURL remain explicit builder
+dependencies. Record their versions and actual paths in native inventory and
+configure logs; this checker does not qualify those versions.
 
 Run after configure and again after build, **before Core installation**:
 
@@ -38,10 +40,11 @@ those source trees is not classified as source provenance. XACC must be exactly
 unchanged from the verified extracted installation until Core install; the
 separate post-install gate owns allowed new plugin links and targets.
 
-Native CMake behavior remains unverified. A legitimate dependency source write
-or nested REQUIRED find-package call affected by the disable flags may require
-a narrow documented protocol revision; do not loosen this gate based only on
-an expected successful outcome.
+The [retained repeat failure](../evidence/2026-09-13-core-eigen-configure/README.md)
+establishes that the previous global flags blocked a nested required Eigen
+lookup. The revised scoped lookup and checked Eigen setup require another native
+run; neither has passed this selection gate yet. Unexpected source writes still
+require a narrow documented correction, never silent acceptance.
 
 Python fixture review: locked Core's `MapVectorBoolInt` manually exposes key
 iteration and `__getitem__`, but no `.items()` method

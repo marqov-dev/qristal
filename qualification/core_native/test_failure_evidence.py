@@ -32,5 +32,24 @@ class NativeFailureEvidence(unittest.TestCase):
         self.assertTrue(all(cleanup.values()))
 
 
+class EigenFailureEvidence(unittest.TestCase):
+    def test_path_fix_passed_but_nested_eigen_flow_failed(self):
+        evidence = ROOT / 'evidence/2026-09-13-core-eigen-configure'
+        report = json.loads((evidence / 'recovered.json').read_text())['result']
+        retained = output.verify(evidence / 'output.tar.gz', report['output_artifact'],
+                                 {key: value for key, value in report.items() if key != 'output_artifact'})
+        self.assertTrue(retained['verified'])
+        self.assertFalse(retained['native_passed'])
+        self.assertEqual(report['error'], 'RuntimeError:configure failed')
+        self.assertNotIn('build', report['stages'])
+        with tarfile.open(evidence / 'output.tar.gz', 'r:gz') as archive:
+            log = archive.extractfile('logs/configure.log').read().decode()
+        self.assertNotIn('is_in_install_path Macro invoked with incorrect arguments', log)
+        self.assertIn('cmake_install.cmake', log)
+        self.assertIn('A REQUIRED package cannot be', log)
+        self.assertIn('CMAKE_DISABLE_FIND_PACKAGE_Eigen3 is enabled', log)
+        self.assertTrue(all(json.loads((evidence / 'independent-cleanup.json').read_text()).values()))
+
+
 if __name__ == '__main__':
     unittest.main()

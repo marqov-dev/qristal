@@ -1,0 +1,22 @@
+--- a/cmake/add_dependency.cmake
++++ b/cmake/add_dependency.cmake
+@@ -68,3 +68,10 @@
+-  if (arg_FIND_PACKAGE_VERSION)
+-    if(${arg_FIND_PACKAGE_VERSION} STREQUAL " ")
+-      find_package(${arg_FIND_PACKAGE_NAME} QUIET ${arg_FIND_PACKAGE_ARGUMENTS})
++  if (DEFINED CPM_${NAME}_SOURCE AND NOT "${CPM_${NAME}_SOURCE}" STREQUAL "")
++    # Honor the explicit source override without disabling nested required lookup.
++    set(${arg_FIND_PACKAGE_NAME}_FOUND FALSE)
++  else()
++    if (arg_FIND_PACKAGE_VERSION)
++      if(${arg_FIND_PACKAGE_VERSION} STREQUAL " ")
++        find_package(${arg_FIND_PACKAGE_NAME} QUIET ${arg_FIND_PACKAGE_ARGUMENTS})
++      else()
++        find_package(${arg_FIND_PACKAGE_NAME} ${arg_FIND_PACKAGE_VERSION} QUIET ${arg_FIND_PACKAGE_ARGUMENTS})
++      endif()
+@@ -72 +79 @@
+-      find_package(${arg_FIND_PACKAGE_NAME} ${arg_FIND_PACKAGE_VERSION} QUIET ${arg_FIND_PACKAGE_ARGUMENTS})
++      find_package(${arg_FIND_PACKAGE_NAME} ${VERSION} QUIET ${arg_FIND_PACKAGE_ARGUMENTS})
+@@ -74,2 +80,0 @@
+-  else()
+-    find_package(${arg_FIND_PACKAGE_NAME} ${VERSION} QUIET ${arg_FIND_PACKAGE_ARGUMENTS})
