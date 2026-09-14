@@ -1,0 +1,22 @@
+{
+  "schema": "qb.qpp-local-build-evidence/v1",
+  "source_main": "2d80af863eba6a57e0c19c27bd1b28da710c2cc8",
+  "image_id": "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+  "assembly_sha256": "4e260cd08be822a8bd82ee9546716ca38d62a4713faef099a8f5020328fc322f",
+  "dockerfile_sha256": "8e7cedb6354e0fc7ceb56178c9780e06f6717c17500757a2a59b893044d33c2b",
+  "probe_sha256": "e3af18627a29cfe41ad4075b41d42db85c826ebe98a69a843f86e5e746d33a02",
+  "os_packages_authenticated": 36,
+  "offline_build_passed": true,
+  "pip_check_passed": true,
+  "local_emulated_cases_passed": 6,
+  "native_amd64_hardware_qualified": false,
+  "hosted": false,
+  "redistribution_cleared": false,
+  "build_network": "none",
+  "build_resource_limits_requested": {
+    "memory": "4g",
+    "cpu_quota": 200000
+  },
+  "build_resource_limits_verified": false,
+  "runtime_limits_in_probe_commands": true
+}

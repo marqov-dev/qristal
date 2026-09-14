@@ -1,0 +1,41 @@
+Ign:1 https://snapshot.ubuntu.com/ubuntu/20260913T000000Z jammy InRelease
+Ign:2 https://snapshot.ubuntu.com/ubuntu/20260913T000000Z jammy-updates InRelease
+Ign:3 https://snapshot.ubuntu.com/ubuntu/20260913T000000Z jammy-security InRelease
+Err:1 https://snapshot.ubuntu.com/ubuntu/20260913T000000Z jammy InRelease
+  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 185.125.189.37 443]
+Err:2 https://snapshot.ubuntu.com/ubuntu/20260913T000000Z jammy-updates InRelease
+  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 185.125.189.37 443]
+Err:3 https://snapshot.ubuntu.com/ubuntu/20260913T000000Z jammy-security InRelease
+  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 185.125.189.37 443]
+Reading package lists...
+W: http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy/InRelease: No system certificates available. Try installing ca-certificates.
+W: http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy-updates/InRelease: No system certificates available. Try installing ca-certificates.
+W: http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy-security/InRelease: No system certificates available. Try installing ca-certificates.
+W: http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy/InRelease: No system certificates available. Try installing ca-certificates.
+W: http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy-updates/InRelease: No system certificates available. Try installing ca-certificates.
+W: http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy-security/InRelease: No system certificates available. Try installing ca-certificates.
+W: Failed to fetch http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 185.125.189.37 443]
+W: Failed to fetch http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy-updates/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 185.125.189.37 443]
+W: Failed to fetch http://snapshot.ubuntu.com/ubuntu/20260913T000000Z/dists/jammy-security/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 185.125.189.37 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package ca-certificates is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Unable to locate package python3.10
+E: Couldn't find any package by glob 'python3.10'
+E: Couldn't find any package by regex 'python3.10'
+E: Unable to locate package python3.10-venv
+E: Couldn't find any package by glob 'python3.10-venv'
+E: Couldn't find any package by regex 'python3.10-venv'
+E: Unable to locate package libpython3.10
+E: Couldn't find any package by glob 'libpython3.10'
+E: Couldn't find any package by regex 'libpython3.10'
+E: Unable to locate package libgomp1
+E: Unable to locate package libopenblas0-pthread
+E: Unable to locate package libcurl4
+E: Unable to locate package libgfortran5
+E: Package 'ca-certificates' has no installation candidate

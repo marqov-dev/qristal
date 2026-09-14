@@ -44,3 +44,15 @@ Next bounded acquisition/build experiment:
 No new VM or image build was performed for this staging batch. Historical native
 build success and the artifact's alternate recovery provenance are preserved;
 neither establishes reproducibility or final-image qualification.
+
+## 2026-09-14 progress
+
+The acquisition and local offline-build steps now have experimental evidence in
+`qualification/evidence/2026-09-14-os-acquisition`: 36 signed-index-verified .debs,
+unchanged acquisition dpkg state, successful final image build, pip check and six
+bounded CLI probes. This ran as amd64 emulation on the existing ARM Docker host.
+APT's resolver handled package pre-dependency ordering; complete standalone
+closure is not inferred from the download lock. The image is retained privately.
+Notice reconciliation, image-wide ELF/plugin coverage, saved-image replay and
+native amd64/hosted admission remain outstanding. Original staging and native
+qualification records are unchanged.
