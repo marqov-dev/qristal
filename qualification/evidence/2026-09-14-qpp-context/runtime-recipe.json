@@ -1,0 +1,61 @@
+{
+  "schema": "qb.core-runtime-recipe/v1",
+  "assets_sha256": {
+    "adapter.py": "af1be0aeddf17191560e6aadb85b130b6fdb31eb61a246f9b238e006127a2754",
+    "runtime.py": "8e39de398ea8117e74200026813e54f48304aa9c297d6d6fb2e5b7f9678b91f4",
+    "qpp_runtime.py": "6bdc11b7348b4497d97c71e094e50280d9cef5d60354813e7dd535c5c452de23",
+    "capabilities.json": "f13dd1573b1df7e8b8bf51fe26d4ad86853f5f63ed844db34baeda7d9d19d542",
+    "install-python.sh": "86392f16d9704952ec2c107597c998e06fb48f536bddce6bdb7a645e92060503",
+    "requirements.txt": "9643acc5fb752665f70f7beec6b896a4e99fda812c522d6aa540fc2f4c31d14a",
+    "empty-backends.yaml": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "source_artifact_sha256": "bbfe86d11afc5ed5fe827d68f78c5fada27f1aa7827bc23ca9e4f4d02bae3c85",
+  "evidence_provenance": {
+    "mode": "authenticated object recovery; original console binding unavailable",
+    "console_artifact_binding": false,
+    "receipt_schema": "qb.core-recovered-report/v1",
+    "source": "authenticated S3 archive recovery; original console artifact binding unavailable",
+    "recovery_record_sha256": "0788674c5c885ae9bc0a86141aa6c7fef7adbb6fdb741a207dab0b353d4b2bb4"
+  },
+  "runtime_built": false,
+  "runtime_qualified": false,
+  "hosted": false,
+  "build_ready": false,
+  "blocked_on": "acquire and bind final linux/amd64 OS package closure and notices",
+  "install_layout": {
+    "work.tar": "extract validated payload into /work on case-sensitive Linux",
+    "python/wheels": "/inputs/wheels",
+    "runtime/requirements.txt": "/inputs/requirements.txt",
+    "runtime": "/opt/qristal"
+  },
+  "entrypoint": [
+    "/work/python-core/bin/python",
+    "/opt/qristal/qpp_runtime.py"
+  ],
+  "environment": {
+    "PYTHONPATH": "/work/install-core/lib:/work/install-core/python-site",
+    "HOME": "/tmp",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2"
+  },
+  "isolation": {
+    "user": "65532:65532",
+    "network": "none",
+    "read_only": true,
+    "cpus": 2,
+    "memory_bytes": 4294967296,
+    "pids": 256,
+    "cap_drop": "ALL",
+    "no_new_privileges": true
+  },
+  "next_validation": [
+    "OS/Python ABI and pip check",
+    "installed-only identity and Bell",
+    "QPP CLI JSON counts and bit order",
+    "Aer and noise rejected before native import",
+    "no source/build mounts; read-only nonroot networkless limits",
+    "full notices and acquired image-digest replay"
+  ]
+}
