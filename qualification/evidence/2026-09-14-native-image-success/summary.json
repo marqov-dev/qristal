@@ -1,0 +1,69 @@
+{
+  "broader_qristal_backends_qualified": false,
+  "circuit_counts": {
+    "bell": {
+      "00": 141,
+      "11": 115
+    },
+    "identity": {
+      "00": 256
+    },
+    "q0": {
+      "10": 256
+    }
+  },
+  "config_digest": "sha256:0127d58acfa19aae8fe4ab911b1acbb9993d8ab16ebd40ad55421480457907f0",
+  "distinct_qpp_circuits": 3,
+  "empty_daemon_observed_before_load": true,
+  "execution_digest": "sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f",
+  "files": {
+    "independent-cleanup.json": {
+      "bytes": 623,
+      "sha256": "9345b232c29efde27e2bbde24f3f5e0da97dc0f318f3e795fba5845a2ea5efbd"
+    },
+    "native-image-report.json": {
+      "bytes": 82822,
+      "sha256": "c4f9eddd336b8cc74663b93b31472019b9f27ce053e0b1d49f771b51f8e5a705"
+    },
+    "retention.json": {
+      "bytes": 906,
+      "sha256": "0816e4d786e21d872bd8f47898aeb19633dad8537757c91756710fe9654a7ad1"
+    },
+    "transfer.json": {
+      "bytes": 503,
+      "sha256": "53e9fa611673d74a6ca962a4477147eaee97a8af269d1d28a5cb3087afbd1304"
+    },
+    "vm/cleanup.json": {
+      "bytes": 255,
+      "sha256": "8bf3447cb6ff07a66851ecf6f43808768ff479d597ddedce0532f4dd310120fe"
+    },
+    "vm/console-filtered.json": {
+      "bytes": 927,
+      "sha256": "68d01ab95ad8c94d4a2acac45811b2ceefc156d15ceaa526b7ebcf8ef081128f"
+    },
+    "vm/recovered.json": {
+      "bytes": 1278,
+      "sha256": "b29fd1fe07bb04f5919f614fbcc471b129810d262f563ace7467680ef28730de"
+    },
+    "vm/resources.json": {
+      "bytes": 151,
+      "sha256": "f7ba9968289f2375c83b386ec5a30282c8e9a03f3c6afd0e1904e706eae0a0bd"
+    },
+    "vm/supervisor.json": {
+      "bytes": 629,
+      "sha256": "b97987c04321c3529e76dd139829a662ab43620963de7ca4efe2b36b512010ae"
+    }
+  },
+  "hosted": false,
+  "image_index_digest": "sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f",
+  "independent_cleanup_verified": true,
+  "merged_commit": "ef954daf725168b58608e39e600d79327d1906a6",
+  "native_checks_passed": 9,
+  "native_execution_passed": true,
+  "native_host_architecture": "x86_64",
+  "raw_evidence_sha256": "c4f9eddd336b8cc74663b93b31472019b9f27ce053e0b1d49f771b51f8e5a705",
+  "redistribution_cleared": false,
+  "schema": "qb.native-image-success-summary/v1",
+  "shots_per_circuit": 256,
+  "source_commit": "af34b9d59be0ad337427046b28a14e7cbb8e9896"
+}

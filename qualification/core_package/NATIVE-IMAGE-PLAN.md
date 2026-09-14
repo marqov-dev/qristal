@@ -1,6 +1,10 @@
-# Next native image qualification: prepared, unlaunched
+# Native image qualification: bounded run completed
 
-The next candidate is the notice-overlay image, OCI index
+The notice-overlay image passed the authorized native AMD64 replay and independent
+cleanup verification; see `../evidence/2026-09-14-native-image-success`. The next
+boundaries are distribution coverage and managed-execution admission.
+
+The tested candidate is the notice-overlay image, OCI index
 `sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f`.
 Its private archive is 514,349,056 bytes, SHA256
 `451b0710cea596fcae3bf717caed723ab18677cab0e3354b11c3db9761a96ab5`.
@@ -18,7 +22,8 @@ separately bound and tested; these values cannot silently carry over.
 
 The bounded runner is now frozen in `NATIVE-IMAGE-RUN.md`, including the existing
 independent QB experiment supervisor and verified private result retention.
-The following resource proposal remains unlaunched. Use the existing QB experiment
+The following resource proposal is historical; its single authorized run completed.
+Do not relaunch it implicitly. It used the existing QB experiment
 supervisor, with one m7i.large in the previously approved account/region, encrypted
 20GiB root disk, no inbound ports or workload IAM profile, and private transfer
 objects. Keep upload preparation separate from the 3,600-second VM observation

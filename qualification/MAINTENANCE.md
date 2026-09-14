@@ -190,3 +190,17 @@ The [fresh XACC source-build protocol](source_build/README.md) prepares named
 patches and a separately compiled installed-only consumer on the isolated CPU
 lifecycle. Consult its retained outcome before claiming the native run passed;
 its protocol and offline preparation tests alone are not compilation evidence.
+
+## Exact source-built QPP image — native replay completed, 14 September 2026
+
+[Retained native image evidence](evidence/2026-09-14-native-image-success/README.md)
+records nine passing checks on one disposable AWS m7i.large. The PR49 image's
+archive, loaded configuration and layer chain were verified on an empty native
+AMD64 Docker daemon; all test containers and cloud resources have cleanup
+evidence, independently rechecked. This qualifies the bounded QPP Python-image
+replay, not all simulators, arbitrary circuits, performance or hosted execution.
+
+Next priorities remain complete distribution coverage/provenance and exact-image
+managed-execution admission (#609/#640/#1585/#1839 and #338/#704). Existing GPU
+results retain their separate scope. Full Decoder stays last. Do not restore
+legacy polling workers or infer a dependency on SDK/compiler release work.

@@ -1,0 +1,27 @@
+{
+  "account": "090208085542",
+  "bucket": "qb-proof-2cfd223f3f5a4771970b714c6a7ec9de-cpu",
+  "cloud_instance": {
+    "Architecture": "x86_64",
+    "ClientToken": "qb-proof-2cfd223f3f5a4771970b714c6a7ec9de",
+    "ImageId": "ami-05a3e9423ae4d7a19",
+    "InstanceId": "i-047db8d980ce21e59",
+    "InstanceType": "m7i.large",
+    "SubnetId": "subnet-01fb5ff873d16c141",
+    "VpcId": "vpc-0c8ff9e3276495a4c"
+  },
+  "cloud_protocol_sha256": "9a77717db1ca8da397e04a05fc99a03944549c10d71af5c5dd6a9414f1871d86",
+  "key": "native-image-report.json",
+  "native_passed": true,
+  "result": {
+    "classification": {
+      "cloud_instance_binding_verified": false,
+      "hosted": false,
+      "native_passed": true,
+      "redistribution_cleared": false,
+      "resource_cleanup_verified": false
+    },
+    "envelope_sha256": "c4f9eddd336b8cc74663b93b31472019b9f27ce053e0b1d49f771b51f8e5a705"
+  },
+  "verified": true
+}

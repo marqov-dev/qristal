@@ -1,0 +1,18 @@
+{
+  "complete_records": [
+    "QB_ADAPTER_CHUNK e4d4a9faf4a6c8ce663d4156c150e4aba7e5ac5c1417c8a48574ff8657f2c28c 0 2 eJw9jVtqxDAMAO+i74Ra8juXCZItt6HtJps4C2XZuzdQ6O8wzDzhc7lVmOAu433bxhv35aHj8s3v+vZAGOCPzBsfh15i308dYD37dvaZ9740Lh2mJ8hP1wOmRIlogOODyYerW1zLWmu1NkgqJboQrGQrFl0kg1ly",
+    "QB_ADAPTER_CHUNK e4d4a9faf4a6c8ce663d4156c150e4aba7e5ac5c1417c8a48574ff8657f2c28c 1 2 o1jUeKtGsLrcYkTx2JJ6jsbDa4BtX/ta1q/5v8rSiE2w1lOKhE5bRlczN9eMq6EgcazNeSrXkxmJNJVoAl3PSKLw+gWZH0sQ",
+    "QB_ADAPTER_CHUNK e4d4a9faf4a6c8ce663d4156c150e4aba7e5ac5c1417c8a48574ff8657f2c28c 0 2 eJw9jVtqxDAMAO+i74Ra8juXCZItt6HtJps4C2XZuzdQ6O8wzDzhc7lVmOAu433bxhv35aHj8s3v+vZAGOCPzBsfh15i308dYD37dvaZ9740Lh2mJ8hP1wOmRIlogOODyYerW1zLWmu1NkgqJboQrGQrFl0kg1ly",
+    "QB_ADAPTER_CHUNK e4d4a9faf4a6c8ce663d4156c150e4aba7e5ac5c1417c8a48574ff8657f2c28c 1 2 o1jUeKtGsLrcYkTx2JJ6jsbDa4BtX/ta1q/5v8rSiE2w1lOKhE5bRlczN9eMq6EgcazNeSrXkxmJNJVoAl3PSKLw+gWZH0sQ"
+  ],
+  "discarded_truncated_nonfinal_fragments": [],
+  "result": {
+    "kind": "qb-qpp-native-image/v1",
+    "native_passed": true,
+    "output_artifact": {
+      "bytes": 82822,
+      "sha256": "c4f9eddd336b8cc74663b93b31472019b9f27ce053e0b1d49f771b51f8e5a705"
+    },
+    "protocol_sha256": "abf2a06335287214ef914d9af4f04d6c12a7df452c8ccaa122e8c706272072be"
+  }
+}

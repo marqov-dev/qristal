@@ -1,7 +1,10 @@
-# Frozen native QPP image experiment
+# Frozen native QPP image experiment — completed
 
 Prepared from main `25559c95220e3e49e3ec1c75346658cd95bc3591` (PR49).
-This is an unlaunched experiment, not native or hosted qualification.
+The authorized experiment subsequently passed all nine native checks and independent
+cleanup verification. See `../evidence/2026-09-14-native-image-success`. The frozen
+protocol and command below are retained as historical execution inputs; do not
+launch a duplicate run. Hosted admission and redistribution remain separate.
 
 The image is unchanged from PR49: OCI index
 `sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f`,
