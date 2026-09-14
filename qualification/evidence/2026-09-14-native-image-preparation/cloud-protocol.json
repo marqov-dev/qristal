@@ -1,0 +1,66 @@
+{
+  "account": "090208085542",
+  "cleanup_seconds": 300,
+  "executed": false,
+  "files": {
+    "guest.py": {
+      "bytes": 2334,
+      "sha256": "ffb0a33c4b185ae6d46b670a949073fcdf37a42eea1931246ae60c7fd379cf82"
+    },
+    "native/image.tar": {
+      "bytes": 514349056,
+      "sha256": "451b0710cea596fcae3bf717caed723ab18677cab0e3354b11c3db9761a96ab5"
+    },
+    "native/protocol.json": {
+      "bytes": 1710,
+      "sha256": "abf2a06335287214ef914d9af4f04d6c12a7df452c8ccaa122e8c706272072be"
+    },
+    "native/qualification/core_package/image_archive.py": {
+      "bytes": 12287,
+      "sha256": "caec6bd4e050f1d829e46cf15d9d7f71dc785b905dc56efed50b2d8ff84993fd"
+    },
+    "native/qualification/core_package/local_probe.py": {
+      "bytes": 5231,
+      "sha256": "e3af18627a29cfe41ad4075b41d42db85c826ebe98a69a843f86e5e746d33a02"
+    },
+    "native/qualification/core_package/native_image.py": {
+      "bytes": 10178,
+      "sha256": "ca4f42c3d2e334fdd9a82960fd3eae8b1b8966ee6c58ee2e0e6a22d3ccf85cc6"
+    },
+    "native/qualification/core_package/native_image_probe.py": {
+      "bytes": 10530,
+      "sha256": "ae24ad6e02d51fe83ffada27abe0da1ab7cca4442ddb79959848e607265e2159"
+    },
+    "native/qualification/core_package/wheel_linkage_guest.py": {
+      "bytes": 1950,
+      "sha256": "5a4a15b9139490d11627800b4a820cadc172cc2be958656307f8106b94caca8b"
+    },
+    "native/qualification/runtime/bounded_process.py": {
+      "bytes": 2355,
+      "sha256": "11cc12c25b671f6fe4b605c28eb235e82a0504f5ccf19e3384d6b465ae1ebeb3"
+    },
+    "native_image_evidence.py": {
+      "bytes": 10853,
+      "sha256": "0866693947567171f56ec330a67437738990865658cc5ea16ad12a27b04b3e8a"
+    }
+  },
+  "instance_type": "m7i.large",
+  "native_protocol_sha256": "abf2a06335287214ef914d9af4f04d6c12a7df452c8ccaa122e8c706272072be",
+  "observation_seconds": 3600,
+  "operator_files": {
+    "core_package/native_image.py": "ca4f42c3d2e334fdd9a82960fd3eae8b1b8966ee6c58ee2e0e6a22d3ccf85cc6",
+    "core_package/native_image_cloud.py": "83024dd9b6fd370bb0d0fe3569e52942d176f03bf1eaea5af27da10ac01d3566",
+    "core_package/native_image_evidence.py": "0866693947567171f56ec330a67437738990865658cc5ea16ad12a27b04b3e8a",
+    "full_decoder/cloud/run.py": "e82269fdbb1ea12592a35ae782a91864f67859b8bc22e38e324db7b1487fc739",
+    "gpu_adapter/console.py": "d9c39b3fbedd1823acbbe5dd1fbf92b031c8fa4a8ad298725737f2118ec544b0",
+    "gpu_package/console.py": "ba0d3154bb0d8fd3ec9a87e981d5ca5499ab063217c3512ad81db72923980b95",
+    "gpu_release/observer.py": "10fc4a270327420bce06ec1a3ccdb6d51be098275b28b02065814d212e9bd8c2",
+    "gpu_release/supervisor.py": "1ff3265a9055d0a94458bfeca2f66eeaabfb3fd20cc7907bd48f12007c7e35ad",
+    "source_artifact/archive.py": "0dc925bc33a2db3db6976fcdb87fdccae8a5fa3bba5b7e261137b9d37e003590",
+    "source_artifact/run.py": "fa4ef39cfc5f5fc7c1d21b576d0df1986b192e91c4e681fc3d427ca7ef70f75f",
+    "source_build/run.py": "735a9712583d7252481fc24a9954b12e1a67aae623abe1bd41fc8737c9db5b37"
+  },
+  "region": "us-east-1",
+  "root_gib": 20,
+  "schema": "qb.native-image-cloud-protocol/v1"
+}

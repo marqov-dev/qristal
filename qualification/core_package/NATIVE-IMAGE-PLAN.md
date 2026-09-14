@@ -1,4 +1,4 @@
-# Next native image qualification: proposal only
+# Next native image qualification: prepared, unlaunched
 
 The next candidate is the notice-overlay image, OCI index
 `sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f`.
@@ -16,7 +16,9 @@ Its OCI index is sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a3853
 Any notice overlay or runtime change creates a new image identity and must be
 separately bound and tested; these values cannot silently carry over.
 
-Prepare one bounded native runner using the existing independent QB experiment
+The bounded runner is now frozen in `NATIVE-IMAGE-RUN.md`, including the existing
+independent QB experiment supervisor and verified private result retention.
+The following resource proposal remains unlaunched. Use the existing QB experiment
 supervisor, with one m7i.large in the previously approved account/region, encrypted
 20GiB root disk, no inbound ports or workload IAM profile, and private transfer
 objects. Keep upload preparation separate from the 3,600-second VM observation

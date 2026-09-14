@@ -1,0 +1,48 @@
+{
+  "config_digest": "sha256:0127d58acfa19aae8fe4ab911b1acbb9993d8ab16ebd40ad55421480457907f0",
+  "executed": false,
+  "files": {
+    "image.tar": {
+      "bytes": 514349056,
+      "sha256": "451b0710cea596fcae3bf717caed723ab18677cab0e3354b11c3db9761a96ab5"
+    },
+    "qualification/core_package/image_archive.py": {
+      "bytes": 12287,
+      "sha256": "caec6bd4e050f1d829e46cf15d9d7f71dc785b905dc56efed50b2d8ff84993fd"
+    },
+    "qualification/core_package/local_probe.py": {
+      "bytes": 5231,
+      "sha256": "e3af18627a29cfe41ad4075b41d42db85c826ebe98a69a843f86e5e746d33a02"
+    },
+    "qualification/core_package/native_image.py": {
+      "bytes": 10178,
+      "sha256": "ca4f42c3d2e334fdd9a82960fd3eae8b1b8966ee6c58ee2e0e6a22d3ccf85cc6"
+    },
+    "qualification/core_package/native_image_probe.py": {
+      "bytes": 10530,
+      "sha256": "ae24ad6e02d51fe83ffada27abe0da1ab7cca4442ddb79959848e607265e2159"
+    },
+    "qualification/core_package/wheel_linkage_guest.py": {
+      "bytes": 1950,
+      "sha256": "5a4a15b9139490d11627800b4a820cadc172cc2be958656307f8106b94caca8b"
+    },
+    "qualification/runtime/bounded_process.py": {
+      "bytes": 2355,
+      "sha256": "11cc12c25b671f6fe4b605c28eb235e82a0504f5ccf19e3384d6b465ae1ebeb3"
+    }
+  },
+  "hosted": false,
+  "image_index_digest": "sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f",
+  "proposed_cloud": {
+    "authorized": false,
+    "cleanup_seconds": 300,
+    "inbound_ports": [],
+    "instance_type": "m7i.large",
+    "observation_seconds": 3600,
+    "region": "us-east-1",
+    "root_gib": 20,
+    "workload_iam_profile": null
+  },
+  "redistribution_cleared": false,
+  "schema": "qb.native-image-protocol/v1"
+}
