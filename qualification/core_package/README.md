@@ -110,3 +110,8 @@ verify a single attribution-only image layer. See `ATTRIBUTION.md` for provenanc
 limits and `../evidence/2026-09-14-attribution-overlay` for actual saved-archive
 verification and six passing local probes. Public redistribution, native image
 qualification and hosted execution remain separate gates.
+
+`native_image.py`, `native_image_probe.py` and the cloud/evidence wrappers now
+prepare the exact nine-case native image experiment using the existing disposable
+VM supervisor. `NATIVE-IMAGE-RUN.md` binds its inputs, command and remaining
+authorization. Preparation and mocked cloud tests are not execution evidence.
