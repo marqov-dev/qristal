@@ -1,0 +1,54 @@
+{
+  "schema": "qb.core-staged-inputs/v1",
+  "staged": true,
+  "runtime_built": false,
+  "runtime_qualified": false,
+  "published": false,
+  "hosted": false,
+  "scope": "QPP-only CPU packaging input; no Aer/Integrations/Decoder qualification",
+  "bindings": {
+    "archive_sha256": "bbfe86d11afc5ed5fe827d68f78c5fada27f1aa7827bc23ca9e4f4d02bae3c85",
+    "archive_bytes": 26868891,
+    "protocol_sha256": "081082d6b81a4e0112b0473839cda83dc2e020b7d3ccf175d1eecc21209884d1",
+    "native_receipt_sha256": "f3ee01dedf0ffefa05df4a5bb0fdec76cda8772bee6529ef531b60e4f0c62bac",
+    "material_manifest_sha256": "1877d10d2d9c2511c9006650332e9bded3c51854d3d0c7fae43216c0acdb9900",
+    "validator_files": {
+      "core_output/output.py": "90a66a35c7c686d4efc912a2d30bfe489339bc81be14680da9a887387e49f5a9",
+      "core_native/check_result.py": "029bcab5b6b2703f60adbaaa26bb055e4529d87a9578f98a701d8fe29c5796a9"
+    },
+    "audit_sha256": "a9e5cf49b55f28d7941d04e39d12b897856da7feafc9f29fa97c472917edfd7e",
+    "required_wheel_manifest_sha256": "bf23cfede133887592e8e49c40c901af413dfaeb75dfb55935858522a9ed1247"
+  },
+  "stage_sha256": "bf442de74c3d401e455a840165f4c14ea6c353bc1192c2baa0806a9323a027a7",
+  "recipe_sha256": "80fd93ef395cb78a2fad2ceb9de03b00872ca256eda0f588df00258901deb097",
+  "evidence_provenance": {
+    "mode": "authenticated object recovery; original console binding unavailable",
+    "console_artifact_binding": false,
+    "receipt_schema": "qb.core-recovered-report/v1",
+    "source": "authenticated S3 archive recovery; original console artifact binding unavailable",
+    "recovery_record_sha256": "0788674c5c885ae9bc0a86141aa6c7fef7adbb6fdb741a207dab0b353d4b2bb4"
+  },
+  "wheel_count": 51,
+  "layout": {
+    "work_archive": "work.tar",
+    "archive_roots": [
+      "install-core",
+      "install-xacc"
+    ],
+    "linux_unpack_destination": "/work",
+    "wheels": "python/wheels"
+  },
+  "installation_entries": 5432,
+  "context_entries": 70,
+  "work_tar": {
+    "type": "file",
+    "mode": 420,
+    "bytes": 115097600,
+    "sha256": "131e56b91354fb57bfcbc16b2889a2f823b4051add96fac2b1619da8298a6f4e"
+  },
+  "staging_manifest_sha256": "99cf64873510ba102b6c83cebf186023a7f0de06e81191f29e038939321be863",
+  "case_distinct_headers_preserved": [
+    "install-xacc/include/xacc/Json.hpp",
+    "install-xacc/include/xacc/json.hpp"
+  ]
+}

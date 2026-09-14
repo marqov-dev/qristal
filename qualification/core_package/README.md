@@ -57,3 +57,32 @@ provenance. A supplied claim of console binding is recorded as operator-reported
 with independently checked binding left unknown: this gate does not receive the
 original console reference. Flipping or dropping the alternate recovery flag
 cannot bypass the sidecar requirement.
+
+## Source-built QPP staging
+
+`stage.py` snapshots and revalidates the native archive, receipts and supplied
+wheel bytes into a new context. It preserves the sibling `/work/install-core`
+and `/work/install-xacc` installation paths and relative plugin links inside
+`work.tar`. This avoids case-insensitive host collisions between XACC headers;
+extraction is deferred to the future case-sensitive Linux image build. It copies
+no build/source trees or historical virtual environment. Runtime assets reuse
+the existing local adapter behind a QPP-only entry point which rejects other
+backends and nonzero noise before native execution. The generated requirements
+bind all 50 acquired wheels plus the retained ANTLR wheel by hash.
+
+Staging does not install packages, build an image or run native code. Its runtime
+recipe deliberately records `build_ready: false`: final OS bytes/closure and
+notices must be acquired and bound before building. This is a preparation result,
+not a newly qualified image. Run the eventual Python install script only in the
+separately qualified linux/amd64 image build environment with local wheel inputs.
+
+```
+python3 -B qualification/core_package/stage.py OUTPUT.tar.gz protocol.json recovered-full-report.json material-manifest.json WHEEL_DIRECTORY NEW_CONTEXT --recovery-verification recovery-verification.json
+```
+
+Omit the recovery sidecar only for receipts that do not use alternate recovery.
+Existing output directories are rejected. Every supplied wheel must match the
+native input manifest; missing, extra or symlink wheel inputs fail closed. The
+staging inventory binds the installation tar, recipe, evidence and wheel bytes;
+it must be rechecked before any later build consumes the context. No compiled
+artifacts or acquired wheels are committed to Git.
