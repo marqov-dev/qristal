@@ -39,8 +39,8 @@ completion responses. These tests establish operator behavior, not AWS success
 or native Core qualification. Native observations belong in the evidence index
 once the run has returned and cleanup is verified.
 
-The current wrapper targets the corrected path-guard input recorded in
-[corrected-package.json](../evidence/2026-09-13-core-native-configure/corrected-package.json).
+The current wrapper targets the corrected scoped-selection input recorded in
+[corrected-package.json](../evidence/2026-09-13-core-eigen-configure/corrected-package.json).
 The successful prior transport operator is preserved with its native evidence.
 The original single-VM experiment is complete; the corrected package has not
 been executed and requires a new bounded run authorization.

@@ -1,0 +1,22 @@
+{
+  "schema": "qb.core-multipart-transport/v1",
+  "bucket": "core-eigen-bucket",
+  "key": "cpu.tar.gz",
+  "account": "proof-account",
+  "region": "us-east-1",
+  "payload_sha256": "52c90c0db488806109d381410d23978e973b32446c2e080780f9aba666659650",
+  "payload_bytes": 314255620,
+  "wrapper_sha256": "9846ce5f51a882a2d2d3270f2ffeef2d7ed2cc49d00383ccc6b6e429f7fcb486",
+  "part_bytes": 8388608,
+  "workers": 2,
+  "upload_seconds": 3600,
+  "abort_seconds": 90,
+  "phase": "complete",
+  "verified": true,
+  "create_attempted": true,
+  "upload_id": "core-eigen-upload",
+  "parts_received": 38,
+  "parts": 38,
+  "upload_process_timeout": false,
+  "upload_process_exit": 0
+}

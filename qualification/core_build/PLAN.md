@@ -53,7 +53,10 @@ The resulting file SHA256 is
 `dependency-path-guard.patch` is checked against the exact generated diff before
 preparation writes any output. The receipt separately binds original/derived file
 hashes and patch hash, and the effective manifest records the third changed file.
-Forced find-package flags and CPM source-selection audits remain unchanged.
+The path-guard transformation itself changes no find-package selection or CPM
+audit behavior. The scoped override transformation below replaces the need for
+global package-disabling flags, which otherwise also suppress required nested
+lookups in dependencies.
 
 The regression extracts only this macro and its two call sites into a minimal
 `cmake -P` script; it never includes CPM, configures Core or builds a library.
@@ -62,6 +65,50 @@ space-containing paths. Locally the CMake test skips if no existing executable
 is available. CI must set `QB_REQUIRE_CMAKE_TESTS=1` to make missing CMake fatal;
 `QB_CMAKE` may identify an existing executable. Native configure success remains
 unverified until the separately frozen experiment is rerun.
+
+## Scoped source selection and nested Eigen configuration
+
+The next native configure passed the original macro-argument failure and exposed
+two further integration problems: global find-package disabling also blocked
+dependencies' own required lookups, and Eigen's nested configure/install commands
+did not propagate failure before their build directory was deleted.
+
+`dependency_selection.py` accepts only the exact path-guard output SHA
+`37480e0849a7cb4865ae3189213c67e979696853f98b723e8e1db46d29530502`.
+When `CPM_${NAME}_SOURCE` is explicitly defined and nonempty, it skips only Core's
+initial optional `find_package` and clears the corresponding `_FOUND` variable,
+so a stale ambient package cannot win over the declared source. Otherwise the
+original lookup, including its versions/options, is preserved. No global
+`CMAKE_DISABLE_FIND_PACKAGE_*` variable is written, so a dependency's later
+`find_package(... REQUIRED)` still operates normally. Native stage flags must
+remove those global disables separately, and actual CPM selections must still
+pass the existing independent audit.
+
+`eigen_configure.py` accepts only the exact staged-Eigen dependency file SHA
+`342cc2bcf56d5c90944cc4e332d20e70f258e72e6f27a258778f7080408d93b1`.
+It replaces Eigen's three unchecked child commands with explicit quoted `-S`
+and `-B` arguments, disables `BUILD_TESTING`, `EIGEN_BUILD_TESTING` and
+`EIGEN_BUILD_DOC` (all declared by the locked Eigen source), and checks configure
+and installation status separately. A failed configure stops before installation;
+a failed installation is fatal. The temporary build directory is retained for
+CPM and diagnostic evidence. The intended install prefix and final exported
+Eigen layout remain unchanged.
+
+Both changes have separately checked zero-context patches, intermediate/final
+file hashes and receipt fields. Final `add_dependency.cmake` SHA is
+`9c0d7edab059e541709ce04d3e985a58dfa5247300089bc0a36fd59b0d7bb18a`;
+final `dependencies.cmake` SHA is
+`9598f7727fb593e95db8d4d2a62792a4c59cfae6ae1b3f91caa355be14a1117a`.
+The resulting effective source manifest SHA is
+`6ab2ab67c277275b21878742d0088cb4337626336cbb088b310ab92b2e4c75bf`.
+
+Additional script-only regressions inject mock find-package/CPM behavior to
+check explicit override precedence, stale `_FOUND` clearing, preserved nested
+required lookup and unchanged absent/empty-override behavior. Eigen tests use a
+small fake child executable, not a compiler or project configure, to check
+quoted space-containing paths, disabled tests/docs, failure propagation, ordering
+and retained build directory. They follow the same strict-CI CMake requirement
+as the path-guard regression. No full Core build success follows from these tests.
 
 ```sh
 python3 -B qualification/core_build/prepare.py /path/to/pristine-core-inputs /new/outside/path

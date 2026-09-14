@@ -17,12 +17,12 @@ class PreparationTests(unittest.TestCase):
         self.inputs = self.root / 'inputs'
         source = self.inputs / 'qristal-core/cmake'
         source.mkdir(parents=True)
-        self.original = b'# fixture\n' * 87 + prepare.OLD + b'# retained install behavior\n'
+        self.original = b'# fixture\n' * 87 + prepare.OLD + prepare.eigen_configure.OLD + b'# retained install behavior\n'
         (source / 'dependencies.cmake').write_bytes(self.original)
         self.source = source / 'dependencies.cmake'
         self.version_source = prepare.version.OLD + b'# Project\n'
         (source.parent / 'CMakeLists.txt').write_bytes(self.version_source)
-        self.path_source = prepare.dependency_path.OLD + b'\n'.join(old for old, new in prepare.dependency_path.CALLS) + b'\n'
+        self.path_source = prepare.dependency_path.OLD + b'\n'.join(old for old, new in prepare.dependency_path.CALLS) + b'\n' + prepare.dependency_selection.OLD
         (source / 'add_dependency.cmake').write_bytes(self.path_source)
         receipt = {'source': {'commit': prepare.SOURCE_COMMIT, 'tree': 'fixture', 'entries': [
             {'path': 'cmake/dependencies.cmake', 'mode': '100644', 'git_blob': 'fixture',
@@ -38,6 +38,10 @@ class PreparationTests(unittest.TestCase):
         patch.object(prepare, 'DEPENDENCIES_SHA256', prepare.sha(self.original)).start()
         patch.object(prepare.version, 'SOURCE_SHA256', prepare.sha(self.version_source)).start()
         patch.object(prepare.dependency_path, 'SOURCE_SHA256', prepare.sha(self.path_source)).start()
+        staged = self.original.replace(prepare.OLD, prepare.NEW)
+        guarded = prepare.dependency_path.transform(self.path_source)
+        patch.object(prepare.eigen_configure, 'SOURCE_SHA256', prepare.sha(staged)).start()
+        patch.object(prepare.dependency_selection, 'SOURCE_SHA256', prepare.sha(guarded)).start()
         tools = self.root / 'tools'; tools.mkdir()
         (tools / 'eigen-build-staging.patch').write_bytes(prepare.PATCH)
         changed = self.version_source.replace(prepare.version.OLD, prepare.version.NEW)
@@ -47,6 +51,11 @@ class PreparationTests(unittest.TestCase):
         (tools / 'dependency-path-guard.patch').write_text(''.join(difflib.unified_diff(
             self.path_source.decode().splitlines(True), prepare.dependency_path.transform(self.path_source).decode().splitlines(True),
             fromfile='a/cmake/add_dependency.cmake', tofile='b/cmake/add_dependency.cmake', n=0)))
+        for name, before, after, file in (
+            ('eigen-configure-install.patch', staged, prepare.eigen_configure.transform(staged), 'dependencies.cmake'),
+            ('dependency-source-selection.patch', guarded, prepare.dependency_selection.transform(guarded), 'add_dependency.cmake')):
+            (tools / name).write_text(''.join(difflib.unified_diff(before.decode().splitlines(True), after.decode().splitlines(True),
+                fromfile='a/cmake/' + file, tofile='b/cmake/' + file, n=0)))
         patch.object(prepare, 'HERE', tools).start()
 
     def test_only_dependency_location_changes_and_receipt_is_not_build(self):
@@ -54,14 +63,14 @@ class PreparationTests(unittest.TestCase):
         result = prepare.prepare(self.inputs, output)
         self.assertEqual(self.source.read_bytes(), self.original)
         changed = (output / 'qristal-core/cmake/dependencies.cmake').read_bytes()
-        self.assertEqual(changed, self.original.replace(prepare.OLD, prepare.NEW))
+        self.assertEqual(changed, prepare.eigen_configure.transform(self.original.replace(prepare.OLD, prepare.NEW)))
         self.assertEqual(result['derived_dependency_sha256'], prepare.sha(changed))
         self.assertEqual(result['source_version'], '1.8.1')
         self.assertNotIn('git describe', (output / 'qristal-core/CMakeLists.txt').read_text())
         self.assertEqual((self.inputs / 'qristal-core/CMakeLists.txt').read_bytes(), self.version_source)
         self.assertFalse(result['configured'])
         self.assertFalse(result['native_qualified'])
-        self.assertEqual(result['derived_dependency_path_sha256'], prepare.sha(prepare.dependency_path.transform(self.path_source)))
+        self.assertEqual(result['derived_dependency_path_sha256'], prepare.sha(prepare.dependency_selection.transform(prepare.dependency_path.transform(self.path_source))))
         self.assertEqual((self.inputs / 'qristal-core/cmake/add_dependency.cmake').read_bytes(), self.path_source)
         effective_raw = (output / 'effective-source.json').read_bytes()
         self.assertEqual(result['effective_manifest_sha256'], prepare.sha(effective_raw))
@@ -84,6 +93,17 @@ class PreparationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'dependency path patch'):
             prepare.prepare(self.inputs, self.root / 'result')
         self.assertFalse((self.root / 'result').exists())
+
+    def test_new_patch_tampering_rejected_before_output(self):
+        for name in ('eigen-configure-install.patch', 'dependency-source-selection.patch'):
+            with self.subTest(name=name):
+                path = prepare.HERE / name
+                original = path.read_bytes()
+                path.write_text('unreviewed')
+                with self.assertRaisesRegex(ValueError, 'patch'):
+                    prepare.prepare(self.inputs, self.root / 'result')
+                self.assertFalse((self.root / 'result').exists())
+                path.write_bytes(original)
 
     def test_modified_version_source_rejected(self):
         with self.assertRaisesRegex(ValueError, 'version source'):

@@ -43,14 +43,16 @@ def selections(text):
             raise ValueError('CPM build output: '+name)
         observed[name] = {'source':expected,'binary':binary[1]}
     for name in FIND_NAMES:
-        if cache.get('CMAKE_DISABLE_FIND_PACKAGE_'+name) != ('BOOL','TRUE'):
-            raise ValueError('find-package gate: '+name)
+        gate = cache.get('CMAKE_DISABLE_FIND_PACKAGE_'+name)
+        if gate is not None and (gate[0] != 'BOOL' or gate[1].upper() not in ('', '0', 'OFF', 'NO', 'FALSE', 'N', 'IGNORE', 'NOTFOUND')):
+            raise ValueError('global find-package disabling blocks nested dependencies: '+name)
     for name, value in {'XACC_DIR':'/work/install-xacc','XACC_ROOT':'/work/install-xacc',
                         'CMAKE_HOME_DIRECTORY':'/work/source-core',
                         'CMAKE_INSTALL_PREFIX':'/work/install-core'}.items():
         if cache.get(name, ('',''))[1] != value: raise ValueError('prefix selection: '+name)
     return {'schema':'qb.core-selection/v1','cpm_sources':observed,
             'actual_cpm_sources_verified':True,'target_linkage_verified':False,
+            'source_selection_scope':'Core explicit CPM overrides; nested lookup allowed',
             'system_package_versions_qualified':False}
 
 
