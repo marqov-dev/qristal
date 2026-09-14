@@ -1,6 +1,16 @@
 # Next native image qualification: proposal only
 
-The exact private archive is 514,063,872 bytes, SHA256
+The next candidate is the notice-overlay image, OCI index
+`sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f`.
+Its private archive is 514,349,056 bytes, SHA256
+`451b0710cea596fcae3bf717caed723ab18677cab0e3354b11c3db9761a96ab5`.
+The saved archive preserves the ten baseline layers and complete runtime config,
+adds only 142 attribution payload files, and passes six local emulation probes.
+See `../evidence/2026-09-14-attribution-overlay`. This replaces the proposed
+candidate identity, not the historical evidence or remaining native/hosted gates.
+Full distribution coverage is still incomplete.
+
+The earlier baseline private archive is 514,063,872 bytes, SHA256
 139d7b3e5bc463f2067bfd9a5beda4a59326a996d7fd8d95ea9e3f06c332a4eb.
 Its OCI index is sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266.
 Any notice overlay or runtime change creates a new image identity and must be

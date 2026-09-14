@@ -1,0 +1,52 @@
+{
+  "base_commit": "85bc7411c9ad2b0984be602915cf857e5de80931",
+  "base_tag_after": "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+  "base_tag_before": "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+  "coverage_complete": false,
+  "files": {
+    "attribution-index.json": {
+      "bytes": 183149,
+      "sha256": "3c806d11a02c3ada3e19fed98ac9cbca65faa97378e543af354e80a156c43a49"
+    },
+    "build.log": {
+      "bytes": 1398,
+      "sha256": "865e8ae69c40a1574bef5f0c521b66f8bd9ae6c14d36f55e2878dac91e96971b"
+    },
+    "context.json": {
+      "bytes": 29591,
+      "sha256": "bfec7fa373e9e8bbb15894a69c970d7a9d300a7aff214cd8e6ba7398446160b7"
+    },
+    "digest-resolution-failure.log.gz": {
+      "bytes": 449,
+      "sha256": "d24c1ff13efe0a7eb49e1ff81aceea23f21cffcb0c2913c38f46556a0052a64d",
+      "uncompressed": {
+        "bytes": 1257,
+        "sha256": "cf32b1670f3663b1e018c7da5fdd927787d10b2d8a3e16313f0351b031310004"
+      }
+    },
+    "local-probe.json": {
+      "bytes": 9195,
+      "sha256": "2d87b35bc859e3962462cfdfc3f6061c682f59457d789630751617f55c216ccd"
+    },
+    "overlay-verification.json": {
+      "bytes": 7930,
+      "sha256": "999a1d9ef0f3e33559d8c224c5447138d54500b34b066847d692b64888eb1f88"
+    }
+  },
+  "hosted": false,
+  "image_id": "sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f",
+  "local_probe_cases_passed": 6,
+  "native_amd64_hardware": false,
+  "notice_files": 140,
+  "offline_suites": 27,
+  "offline_tests": 477,
+  "payload_files": 142,
+  "redistribution_cleared": false,
+  "schema": "qb.attribution-overlay-summary/v1",
+  "tools": {
+    "qualification/core_package/attribution.py": "8c3e27951a93bc8cbc69d6c8261fd8691902d7b0031253762c04c79fe01abf7b",
+    "qualification/core_package/image_archive.py": "caec6bd4e050f1d829e46cf15d9d7f71dc785b905dc56efed50b2d8ff84993fd",
+    "qualification/core_package/local_probe.py": "e3af18627a29cfe41ad4075b41d42db85c826ebe98a69a843f86e5e746d33a02",
+    "qualification/core_package/notice_overlay.py": "a17a033015ca88eb1d9fbdf2f75e5dd27416c6b5d5abb76b7e773d2e1afd1afb"
+  }
+}
