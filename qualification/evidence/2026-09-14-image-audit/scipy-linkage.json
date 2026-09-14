@@ -1,0 +1,103 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "qpp-wheel-audit-f05ff98d6c314dbc",
+    "--platform",
+    "linux/amd64",
+    "--network",
+    "none",
+    "--read-only",
+    "--cpus",
+    "2",
+    "--memory",
+    "4g",
+    "--memory-swap",
+    "4g",
+    "--pids-limit",
+    "256",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "65532:65532",
+    "--tmpfs",
+    "/tmp:rw,exec,size=512m",
+    "--mount",
+    "type=bind,source=/private/tmp/marqov-qristal-followup-20260909/qristal/qualification/core_package/wheel_linkage_guest.py,target=/audit.py,readonly",
+    "--entrypoint",
+    "/work/python-core/bin/python",
+    "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+    "/audit.py",
+    "scipy"
+  ],
+  "image_id": "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+  "passed": true,
+  "native_amd64_hardware": false,
+  "exit_code": 0,
+  "stderr": "",
+  "audit": {
+    "loader_overrides": false,
+    "mapped_libraries": [
+      {
+        "bytes": 2686065,
+        "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libgfortran-040039e1.so.5.0.0",
+        "sha256": "14afb3129b1a8b50bc40a3b0820c7f1152ea9bc10121aab152943f7057472886"
+      },
+      {
+        "bytes": 35123345,
+        "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+        "sha256": "9254d0854dd7615e11de28d771ae408878ca8123a7ac204f21e4cc7a376cc2e5"
+      },
+      {
+        "bytes": 247609,
+        "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libquadmath-96973f99.so.0.0.0",
+        "sha256": "934c22ded0e7d169c4d4678876c96051adf3d94545da962f60b41659b075da3b"
+      },
+      {
+        "bytes": 2833617,
+        "path": "/work/python-core/lib/python3.10/site-packages/scipy.libs/libgfortran-040039e1-0352e75f.so.5.0.0",
+        "sha256": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980"
+      },
+      {
+        "bytes": 250985,
+        "path": "/work/python-core/lib/python3.10/site-packages/scipy.libs/libquadmath-96973f99-934c22de.so.0.0.0",
+        "sha256": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6"
+      },
+      {
+        "bytes": 22211841,
+        "path": "/work/python-core/lib/python3.10/site-packages/scipy.libs/libscipy_openblas-68440149.so",
+        "sha256": "3e739a2435af49d2d938749f316aa338c65f41c9ae6615406e7cf83feb662f46"
+      }
+    ],
+    "matrix_product": [
+      [
+        10.0,
+        5.0
+      ],
+      [
+        5.0,
+        5.0
+      ]
+    ],
+    "mode": "scipy",
+    "passed": true,
+    "schema": "qb.qpp-installed-wheel-linkage/v1",
+    "solution": [
+      2.0,
+      3.0
+    ],
+    "standalone_ldd_is_not_import_context": true,
+    "svd_reconstruction_passed": true
+  },
+  "cleanup": {
+    "remove_exit_code": 0,
+    "absence_verified": true,
+    "inspect_exit_code": 1,
+    "stdout": "\n",
+    "stderr": "Error response from daemon: No such container: qpp-wheel-audit-f05ff98d6c314dbc\n"
+  }
+}

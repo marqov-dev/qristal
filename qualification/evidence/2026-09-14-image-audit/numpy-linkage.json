@@ -1,0 +1,88 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "qpp-wheel-audit-7dfb422ea16844e6",
+    "--platform",
+    "linux/amd64",
+    "--network",
+    "none",
+    "--read-only",
+    "--cpus",
+    "2",
+    "--memory",
+    "4g",
+    "--memory-swap",
+    "4g",
+    "--pids-limit",
+    "256",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "65532:65532",
+    "--tmpfs",
+    "/tmp:rw,exec,size=512m",
+    "--mount",
+    "type=bind,source=/private/tmp/marqov-qristal-followup-20260909/qristal/qualification/core_package/wheel_linkage_guest.py,target=/audit.py,readonly",
+    "--entrypoint",
+    "/work/python-core/bin/python",
+    "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+    "/audit.py",
+    "numpy"
+  ],
+  "image_id": "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+  "passed": true,
+  "native_amd64_hardware": false,
+  "exit_code": 0,
+  "stderr": "",
+  "audit": {
+    "loader_overrides": false,
+    "mapped_libraries": [
+      {
+        "bytes": 2686065,
+        "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libgfortran-040039e1.so.5.0.0",
+        "sha256": "14afb3129b1a8b50bc40a3b0820c7f1152ea9bc10121aab152943f7057472886"
+      },
+      {
+        "bytes": 35123345,
+        "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+        "sha256": "9254d0854dd7615e11de28d771ae408878ca8123a7ac204f21e4cc7a376cc2e5"
+      },
+      {
+        "bytes": 247609,
+        "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libquadmath-96973f99.so.0.0.0",
+        "sha256": "934c22ded0e7d169c4d4678876c96051adf3d94545da962f60b41659b075da3b"
+      }
+    ],
+    "matrix_product": [
+      [
+        10.0,
+        5.0
+      ],
+      [
+        5.0,
+        5.0
+      ]
+    ],
+    "mode": "numpy",
+    "passed": true,
+    "schema": "qb.qpp-installed-wheel-linkage/v1",
+    "solution": [
+      2.0,
+      3.0
+    ],
+    "standalone_ldd_is_not_import_context": true,
+    "svd_reconstruction_passed": true
+  },
+  "cleanup": {
+    "remove_exit_code": 0,
+    "absence_verified": true,
+    "inspect_exit_code": 1,
+    "stdout": "\n",
+    "stderr": "Error response from daemon: No such container: qpp-wheel-audit-7dfb422ea16844e6\n"
+  }
+}
