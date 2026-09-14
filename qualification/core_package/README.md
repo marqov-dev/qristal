@@ -96,3 +96,11 @@ actual successful local amd64-emulation image build and six-case probe.
 The earlier staging receipt remains an unchanged input-preparation record;
 subsequent build results are separate evidence. `notices.py` inventories available
 wheel/native notices without claiming complete redistribution coverage.
+
+Saved-image checks now live in `image_archive.py`; the verifier distinguishes OCI
+index, amd64 manifest and config identities and verifies compressed layers plus
+uncompressed diff IDs without extraction. `image_audit_guest.py` and
+`wheel_linkage_guest.py` are fixed isolated-image probes, not host utilities.
+Evidence is in `qualification/evidence/2026-09-14-image-audit`; it preserves three
+standalone wheel-library linkage findings alongside successful installed-loader
+operations. `NATIVE-IMAGE-PLAN.md` describes the next separate native-host gate.

@@ -1,0 +1,337 @@
+{
+  "schema": "qb.source-notice-reconciliation/v1",
+  "scanner_sha256": "2b0bbd7eb9559d72b2cf785840a60059ced95c7ff32be4ab573766eb627c6315",
+  "material_manifest": {
+    "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/material-manifest.json",
+    "sha256": "1877d10d2d9c2511c9006650332e9bded3c51854d3d0c7fae43216c0acdb9900"
+  },
+  "core_license": {
+    "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core/LICENSE",
+    "material_path": "core/LICENSE",
+    "bytes": 9388,
+    "sha256": "e966b14be242b644f9cf0d3f425aad8982cb7490e88468e60823ecdee3a27e3e",
+    "observed_first_line": "Copyright 2022-2024 Quantum Brilliance"
+  },
+  "xacc": {
+    "bound_recovered_report": {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/xacc/recovered.json",
+      "material_path": "xacc/recovered.json",
+      "bytes": 32319,
+      "sha256": "45e04eab3193cd65afbc1db33f9665096ca13e9eae34d995e22090d386a14579"
+    },
+    "executed_source_manifest_sha256": "d4f91a688f0bee2eab12d5b9c874f28b7bedfbd71c6f7f3e477863129600c814",
+    "notices": [
+      {
+        "path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/NOTICE",
+        "manifest_path": "xacc/NOTICE",
+        "bytes": 1613,
+        "sha256": "076bf91ef0e2b878053af1de30be84262d600cf86975fc083bfd14722297464b",
+        "matches_pristine": true
+      },
+      {
+        "path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/LICENSE.EPL",
+        "manifest_path": "xacc/LICENSE.EPL",
+        "bytes": 11232,
+        "sha256": "44277b2bec6093e4ac313afec251a4de599d24c4e768f8574d95b13a9d2d97b5",
+        "matches_pristine": true
+      },
+      {
+        "path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/LICENSE.EDL",
+        "manifest_path": "xacc/LICENSE.EDL",
+        "bytes": 1555,
+        "sha256": "5a6a6f0ce5c63fb5578f56ccc927c79a03e248ac1880681405bb310739ebad15",
+        "matches_pristine": true
+      },
+      {
+        "path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/quantum/plugins/qpp/accelerator/src/LICENSE",
+        "manifest_path": "xacc/quantum/plugins/qpp/accelerator/src/LICENSE",
+        "bytes": 1079,
+        "sha256": "e62e9f4fddeacfc70547068972e8c937585a597b32078d19c096c5940ecf8863",
+        "matches_pristine": true
+      }
+    ],
+    "limitation": "Historical NOTICE dependency versions are attribution text, not current dependency version evidence."
+  },
+  "core_dependency_notice_files": [
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/args/LICENSE",
+      "material_path": "core-dependencies/deps/args/LICENSE",
+      "bytes": 1105,
+      "sha256": "e0c9f11d6dfec641f099a0a153358b8b9954a86a61c64c89db3a75d5d282852a"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/autodiff/LICENSE",
+      "material_path": "core-dependencies/deps/autodiff/LICENSE",
+      "bytes": 1074,
+      "sha256": "85640cc0fddb667a8866985d9a737def9f4e9c0bfba97918a020723fcce461c5"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/LICENSE",
+      "material_path": "core-dependencies/deps/cereal/LICENSE",
+      "bytes": 1542,
+      "sha256": "58604a126af6a671ea390ee3d5b3e42228aa59b2858fb7af1d5b20b31739ccbb"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/LICENSE",
+      "material_path": "core-dependencies/deps/cereal/include/cereal/external/LICENSE",
+      "bytes": 921,
+      "sha256": "642e7003561473f4f1f3dd09e053ee2a6ecfb0563e961a3392e914295f9d350c"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/rapidjson/LICENSE",
+      "material_path": "core-dependencies/deps/cereal/include/cereal/external/rapidjson/LICENSE",
+      "bytes": 678,
+      "sha256": "dc2ef044e52a4c0ea784f9b54229775ce5275505cc09f21283dfa301e9c962fa"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/rapidjson/msinttypes/LICENSE",
+      "material_path": "core-dependencies/deps/cereal/include/cereal/external/rapidjson/msinttypes/LICENSE",
+      "bytes": 1569,
+      "sha256": "bf3c9bf6a176c890c7387c71f9ae5bcaf9d33324b9d4a5f8524a6f8bf3063097"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/rapidxml/license.txt",
+      "material_path": "core-dependencies/deps/cereal/include/cereal/external/rapidxml/license.txt",
+      "bytes": 2804,
+      "sha256": "794bf3b2ecf5cf0c740ac6c524d66ce6284c4b1de1f983d21a242b8abbeb9720"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cppitertools/LICENSE.md",
+      "material_path": "core-dependencies/deps/cppitertools/LICENSE.md",
+      "bytes": 1318,
+      "sha256": "466164da9b0db19fb948eab6de21e94548a49721c10ee35472d1c2ccb9375c05"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cpr/LICENSE",
+      "material_path": "core-dependencies/deps/cpr/LICENSE",
+      "bytes": 1229,
+      "sha256": "df77cacba01d8f241a2e7af01b9a636c0037cf810d80bbcfdbcc405c99a2d563"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cpr/package-build/debian-libcpr/copyright",
+      "material_path": "core-dependencies/deps/cpr/package-build/debian-libcpr/copyright",
+      "bytes": 1977,
+      "sha256": "f953372e3f50242cd7cbb36e95385791999147c24f55e1b48b40fbc46337b188"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cpr/test/LICENSE",
+      "material_path": "core-dependencies/deps/cpr/test/LICENSE",
+      "bytes": 35231,
+      "sha256": "7d412b7a16a0ca54f6a026b7e24394f9ac3621fba8301976db4044711135842b"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.APACHE",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.APACHE",
+      "bytes": 11362,
+      "sha256": "03379001a7b12a2ec997a25554247d985270b353c10d5bafee9ac8d6519820b7"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.BSD",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.BSD",
+      "bytes": 1517,
+      "sha256": "51928dce36213c5333ba3172e847d735d4c6e9b7ff2722a326c49067155b82eb"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.GPL",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.GPL",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.LGPL",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.LGPL",
+      "bytes": 26530,
+      "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.MINPACK",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.MINPACK",
+      "bytes": 2193,
+      "sha256": "c87b7f8ee88f6195e91743820c00354833583aef091b72e2d4a49c8e28e798a0"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.MPL2",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.MPL2",
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.README",
+      "material_path": "core-dependencies/deps/eigen3/COPYING.README",
+      "bytes": 779,
+      "sha256": "c83230b770f17ef1386ea1fd3681271dd98aa93646bdbfb5bff3a1b7050fff9d"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/bench/btl/COPYING",
+      "material_path": "core-dependencies/deps/eigen3/bench/btl/COPYING",
+      "bytes": 18109,
+      "sha256": "b8d0e2bcbf36f6af3cdbf94055ad2ea675d5a19fc623eb0ec82febb2b08e719b"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/googletest/LICENSE",
+      "material_path": "core-dependencies/deps/googletest/LICENSE",
+      "bytes": 1475,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/LICENSE.MIT",
+      "material_path": "core-dependencies/deps/nlohmann_json/LICENSE.MIT",
+      "bytes": 1076,
+      "sha256": "7b875bb7a4e28abb7956ea821b4b7d88ff6a2a4fabf261c3993730a365ec56dd"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/benchmarks/thirdparty/benchmark/LICENSE",
+      "material_path": "core-dependencies/deps/nlohmann_json/benchmarks/thirdparty/benchmark/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/test/data/big-list-of-naughty-strings/LICENSE",
+      "material_path": "core-dependencies/deps/nlohmann_json/test/data/big-list-of-naughty-strings/LICENSE",
+      "bytes": 1077,
+      "sha256": "b62d4b4f54d088b5555a0438744d61c1b03c74184db73901e7c79fa7dd144980"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/test/data/nst_json_testsuite/LICENSE",
+      "material_path": "core-dependencies/deps/nlohmann_json/test/data/nst_json_testsuite/LICENSE",
+      "bytes": 1071,
+      "sha256": "8bd0e0578be788c617ea01d18b2a8146e3746ae50bddadc65a5f9d3aad08ad49"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/test/thirdparty/catch/LICENSE_1_0.txt",
+      "material_path": "core-dependencies/deps/nlohmann_json/test/thirdparty/catch/LICENSE_1_0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/third_party/amalgamate/LICENSE.md",
+      "material_path": "core-dependencies/deps/nlohmann_json/third_party/amalgamate/LICENSE.md",
+      "bytes": 1543,
+      "sha256": "2ef7ef27af194a22edf4086439104ba038636877356e6e8eeb009e7de89894e4"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/pybind11/LICENSE",
+      "material_path": "core-dependencies/deps/pybind11/LICENSE",
+      "bytes": 1684,
+      "sha256": "83965b843b98f670d3a85bd041ed4b372c8ec50d7b4a5995a83ac697ba675dcb"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/range-v3/LICENSE.txt",
+      "material_path": "core-dependencies/deps/range-v3/LICENSE.txt",
+      "bytes": 7233,
+      "sha256": "2b74ee37dd1a90b2b385534b7dbc171938409bda468673a123ff25302c9c5739"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/yamlcpp/LICENSE",
+      "material_path": "core-dependencies/deps/yamlcpp/LICENSE",
+      "bytes": 1061,
+      "sha256": "aa6fcc27be034e41e21dd832f9175bfe694a48491d9e14ff0fa278e19ad14f1b"
+    },
+    {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/yamlcpp/test/googletest-1.13.0/LICENSE",
+      "material_path": "core-dependencies/deps/yamlcpp/test/googletest-1.13.0/LICENSE",
+      "bytes": 1475,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    }
+  ],
+  "antlr": {
+    "source_archive": {
+      "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/antlr/antlr4-python3-runtime-4.9.2.tar.gz",
+      "material_path": "antlr/antlr4-python3-runtime-4.9.2.tar.gz",
+      "bytes": 117220,
+      "sha256": "31f5abdc7faf16a1a6e9bf2eb31565d004359b821b09944436a34361929ae85a"
+    },
+    "standalone_notice_files": [],
+    "source_metadata": [
+      {
+        "member": "antlr4-python3-runtime-4.9.2/PKG-INFO",
+        "bytes": 282,
+        "sha256": "5b520700e110b9704dd251ac9b38063dfaad289c785bed3bbecaa16134b9d08b",
+        "header_excerpt": "Metadata-Version: 1.0\nName: antlr4-python3-runtime\nVersion: 4.9.2\nSummary: ANTLR 4.9.2 runtime for Python 3.7\nHome-page: http://www.antlr.org\nAuthor: Eric Vergnaud, Terence Parr, Sam Harwell\nAuthor-email: eric.vergnaud@wanadoo.fr\nLicense: BSD\nDescription: UNKNOWN\nPlatform: UNKNOWN\n"
+      },
+      {
+        "member": "antlr4-python3-runtime-4.9.2/src/antlr4/Recognizer.py",
+        "bytes": 5383,
+        "sha256": "0b3a24c7beb53195e054cd317891ffaae2d34a20ac64f15cecaa4578d738b7f3",
+        "header_excerpt": "#\n# Copyright (c) 2012-2017 The ANTLR Project. All rights reserved.\n# Use of this file is governed by the BSD 3-clause license that\n# can be found in the LICENSE.txt file in the project root.\n#\nfrom antlr4.RuleContext import RuleContext\nfrom antlr4.Token import Token\nfrom antlr4.error.ErrorListener import ProxyErrorListener, ConsoleErrorListener\n\n# need forward delcaration\nRecognitionException = None\n\nclass Recognizer(object):\n    __slots__ = ('_listeners', '_interp', '_stateNumber')\n\n    tokenT"
+      },
+      {
+        "member": "antlr4-python3-runtime-4.9.2/src/antlr4_python3_runtime.egg-info/PKG-INFO",
+        "bytes": 282,
+        "sha256": "5b520700e110b9704dd251ac9b38063dfaad289c785bed3bbecaa16134b9d08b",
+        "header_excerpt": "Metadata-Version: 1.0\nName: antlr4-python3-runtime\nVersion: 4.9.2\nSummary: ANTLR 4.9.2 runtime for Python 3.7\nHome-page: http://www.antlr.org\nAuthor: Eric Vergnaud, Terence Parr, Sam Harwell\nAuthor-email: eric.vergnaud@wanadoo.fr\nLicense: BSD\nDescription: UNKNOWN\nPlatform: UNKNOWN\n"
+      }
+    ],
+    "observation": "Source header names BSD 3-clause and references root LICENSE.txt; no standalone license file exists in this exact sdist."
+  },
+  "wheels": [
+    {
+      "package": "openpulse",
+      "wheel": {
+        "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/python/wheels/openpulse-1.0.1-py3-none-any.whl",
+        "material_path": "python/wheels/openpulse-1.0.1-py3-none-any.whl",
+        "bytes": 537758,
+        "sha256": "75fb2d4d7f74db3a86027719744541fcb725e1f5b79e14b78dc5b34ed8c66e87"
+      },
+      "metadata": [
+        {
+          "member": "openpulse-1.0.1.dist-info/METADATA",
+          "sha256": "9df0ec34af4fd10322c1f743cfdfb299226e26d85e63d010c06187637090daa8",
+          "license_fields": [
+            "License: Apache 2.0 Software License",
+            "Classifier: License :: OSI Approved :: Apache Software License"
+          ]
+        }
+      ],
+      "source_header_candidates": [],
+      "observation": "Metadata declares Apache licensing; inspect candidate headers separately. Full standalone license text not established by metadata."
+    },
+    {
+      "package": "ply",
+      "wheel": {
+        "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/python/wheels/ply-3.11-py2.py3-none-any.whl",
+        "material_path": "python/wheels/ply-3.11-py2.py3-none-any.whl",
+        "bytes": 49567,
+        "sha256": "096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"
+      },
+      "metadata": [
+        {
+          "member": "ply-3.11.dist-info/METADATA",
+          "sha256": "a5867da754ec58643c2b1a7dc84255cafb36e4f911e61de0203b93382b2f2468",
+          "license_fields": [
+            "License: BSD"
+          ]
+        }
+      ],
+      "source_header_candidates": [
+        {
+          "member": "ply/cpp.py",
+          "sha256": "293835dd1e5229e89cc199bb6c83cbe3829c40145c1ec99e1063b020156f2e4a",
+          "bytes": 33639,
+          "header_excerpt": "# -----------------------------------------------------------------------------\n# cpp.py\n#\n# Author:  David Beazley (http://www.dabeaz.com)\n# Copyright (C) 2007\n# All rights reserved\n#\n# This module implements an ANSI-C style lexical preprocessor for PLY.\n# -----------------------------------------------------------------------------\nfrom __future__ import generators\n\nimport sys\n\n# Some Python 3 compatibility shims\nif sys.version_info.major < 3:\n    STRING_TYPES = (str, unicode)\nelse:\n    STRING_TYPES = str\n    xrange = range\n\n# -----------------------------------------------------------------------------\n# Default preprocessor lexer definitions.   These tokens are enough to get\n# a basic preprocessor working.   Other modules may import these if they want\n# -----------------------------------------------------------------------------\n\ntokens = (\n   'CPP_ID','CPP_INTEGER', 'CPP_FLOAT', 'CPP_STRING', 'CPP_CHAR', 'CPP_WS', 'CPP_COMMENT1', 'CPP_COMMENT2', 'CPP_POUND','CPP_DPOUND'\n)\n\nliterals = \"+-*/%|&~^<>=!?()[]{}.,;:\\\\\\'\\\"\"\n\n# Whitespace\ndef t_CPP_WS(t):\n    r'\\s+'\n    t.lexer.lineno += t.value.count(\"\\n\")\n    return t\n\nt_CPP_POUND = r'\\#'\nt_CPP_DPOUND = r'\\#\\#'\n\n# Identifier\nt_CPP_ID = r'[A-Za-z_][\\w_]*'\n\n# Integer literal\ndef CPP_INTEGER(t):\n    r'(((((0x)|(0X))[0-9a-fA-F]+)|(\\d+))([uU][lL]|[lL][uU]|[uU]|[lL])?)'\n    return t\n\nt_CPP_INTEGER = CPP_INTEGER\n\n# Floating literal\nt_CPP_FLOAT = r'((\\d+)(\\.\\d+)(e(\\+|-)?(\\d+))? | (\\d+)e(\\+|-)?(\\d+))([lL]|[fF])?'\n\n# String literal\ndef t_CPP_STRING(t):\n    r'\\\"([^\\\\\\n]|(\\\\(.|\\n)))*?\\\"'\n    t.lexer.lineno += t.value.count(\"\\n\")\n    return t\n\n# Character constant 'c' or L'c'\ndef t_CPP_CHAR(t):\n    r'(L)?\\'([^\\\\\\n]|(\\\\(.|\\n)))*?\\''\n    t.lexer.lineno += t.value.count(\"\\n\")\n    return t\n\n# Comment\ndef t_CPP_COMMENT1(t):\n    r'(/\\*(.|\\n)*?\\*/)'\n    ncr = t.value.count(\"\\n\")\n    t.lexer.lineno += ncr\n    # replace with one space or a number of '\\n'\n    t.type = 'CPP_WS'; t.value = '\\n' * ncr if ncr else ' '\n    return t\n\n# Line comment\ndef t_CPP_COMMENT2(t):\n    r'(//.*?(\\n|$))'\n    # replace with '/n'\n    t.type = 'CPP_WS'; t.value = '\\n'\n    return t\n\ndef t_error(t):\n    t.type = t.value[0]\n    t.value = t.value[0]\n    t.lexer"
+        },
+        {
+          "member": "ply/lex.py",
+          "sha256": "6da6d12129c801fcc7a3b5aa2d8176a86092687d1bb4cf1ddf3b601da2b7480d",
+          "bytes": 42905,
+          "header_excerpt": "# -----------------------------------------------------------------------------\n# ply: lex.py\n#\n# Copyright (C) 2001-2018\n# David M. Beazley (Dabeaz LLC)\n# All rights reserved.\n#\n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions are\n# met:\n#\n# * Redistributions of source code must retain the above copyright notice,\n#   this list of conditions and the following disclaimer.\n# * Redistributions in binary form must reproduce the above copyright notice,\n#   this list of conditions and the following disclaimer in the documentation\n#   and/or other materials provided with the distribution.\n# * Neither the name of the David Beazley or Dabeaz LLC may be used to\n#   endorse or promote products derived from this software without\n#  specific prior written permission.\n#\n# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n# \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n# OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n# -----------------------------------------------------------------------------\n\n__version__    = '3.11'\n__tabversion__ = '3.10'\n\nimport re\nimport sys\nimport types\nimport copy\nimport os\nimport inspect\n\n# This tuple contains known string types\ntry:\n    # Python 2.6\n    StringTypes = (types.StringType, types.UnicodeType)\nexcept AttributeError:\n    # Python 3.0\n    StringTypes = (str, bytes)\n\n# This regular expression is used to match valid token names\n_is_identifier = re.compile(r'^[a-zA-Z0-9_]+$')\n\n# Exception thrown when invalid token encountered and no default"
+        },
+        {
+          "member": "ply/yacc.py",
+          "sha256": "105d38deb207ad72581ba8dc6f5e5323648bc1d0a834e4195c237fd4cdfe2389",
+          "bytes": 137736,
+          "header_excerpt": "# -----------------------------------------------------------------------------\n# ply: yacc.py\n#\n# Copyright (C) 2001-2018\n# David M. Beazley (Dabeaz LLC)\n# All rights reserved.\n#\n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions are\n# met:\n#\n# * Redistributions of source code must retain the above copyright notice,\n#   this list of conditions and the following disclaimer.\n# * Redistributions in binary form must reproduce the above copyright notice,\n#   this list of conditions and the following disclaimer in the documentation\n#   and/or other materials provided with the distribution.\n# * Neither the name of the David Beazley or Dabeaz LLC may be used to\n#   endorse or promote products derived from this software without\n#  specific prior written permission.\n#\n# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n# \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n# OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n# -----------------------------------------------------------------------------\n#\n# This implements an LR parser that is constructed from grammar rules defined\n# as Python functions. The grammar is specified by supplying the BNF inside\n# Python documentation strings.  The inspiration for this technique was borrowed\n# from John Aycock's Spark parsing system.  PLY might be viewed as cross between\n# Spark and the GNU bison utility.\n#\n# The current implementation is only somewhat object-oriented. The\n# LR parser itself is defined in terms of an object (which allow"
+        }
+      ],
+      "observation": "Embedded redistribution text found in lex.py/yacc.py; preserve complete header bytes."
+    }
+  ],
+  "coverage_complete": false,
+  "legal_conclusion": null,
+  "remaining": [
+    "Acquire exact-version full ANTLR license text from independently verified upstream source; do not substitute arbitrary BSD text.",
+    "Acquire exact-version OpenPulse standalone license/notice source; package metadata alone is incomplete notice coverage.",
+    "Collect all exact native dependency attribution texts and determine distributed component scope.",
+    "Preserve PLY full embedded notices and original source member hashes in collected attribution bundle."
+  ]
+}

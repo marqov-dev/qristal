@@ -1,0 +1,243 @@
+{
+  "collection": "Exact bytes only; no ANTLR or OpenPulse standalone text supplied or manufactured.",
+  "coverage_complete": false,
+  "entries": {
+    "evidence/source-notice-reconciliation.json": {
+      "bytes": 24625,
+      "mode": 384,
+      "sha256": "d34ca9b3cea891368e1924ea111d18f21fd73dc1f5709897ac146f050c0362d1",
+      "source_path": "/private/tmp/qpp-source-notice-reconciliation-20260914.json"
+    },
+    "evidence/source-notice-scan.py": {
+      "bytes": 6153,
+      "mode": 384,
+      "sha256": "2b0bbd7eb9559d72b2cf785840a60059ced95c7ff32be4ab573766eb627c6315",
+      "source_path": "/private/tmp/qpp-source-notice-scan-20260914.py"
+    },
+    "materials/core-dependencies/deps/args/LICENSE": {
+      "bytes": 1105,
+      "mode": 384,
+      "sha256": "e0c9f11d6dfec641f099a0a153358b8b9954a86a61c64c89db3a75d5d282852a",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/args/LICENSE"
+    },
+    "materials/core-dependencies/deps/autodiff/LICENSE": {
+      "bytes": 1074,
+      "mode": 384,
+      "sha256": "85640cc0fddb667a8866985d9a737def9f4e9c0bfba97918a020723fcce461c5",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/autodiff/LICENSE"
+    },
+    "materials/core-dependencies/deps/cereal/LICENSE": {
+      "bytes": 1542,
+      "mode": 384,
+      "sha256": "58604a126af6a671ea390ee3d5b3e42228aa59b2858fb7af1d5b20b31739ccbb",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/LICENSE"
+    },
+    "materials/core-dependencies/deps/cereal/include/cereal/external/LICENSE": {
+      "bytes": 921,
+      "mode": 384,
+      "sha256": "642e7003561473f4f1f3dd09e053ee2a6ecfb0563e961a3392e914295f9d350c",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/LICENSE"
+    },
+    "materials/core-dependencies/deps/cereal/include/cereal/external/rapidjson/LICENSE": {
+      "bytes": 678,
+      "mode": 384,
+      "sha256": "dc2ef044e52a4c0ea784f9b54229775ce5275505cc09f21283dfa301e9c962fa",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/rapidjson/LICENSE"
+    },
+    "materials/core-dependencies/deps/cereal/include/cereal/external/rapidjson/msinttypes/LICENSE": {
+      "bytes": 1569,
+      "mode": 384,
+      "sha256": "bf3c9bf6a176c890c7387c71f9ae5bcaf9d33324b9d4a5f8524a6f8bf3063097",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/rapidjson/msinttypes/LICENSE"
+    },
+    "materials/core-dependencies/deps/cereal/include/cereal/external/rapidxml/license.txt": {
+      "bytes": 2804,
+      "mode": 384,
+      "sha256": "794bf3b2ecf5cf0c740ac6c524d66ce6284c4b1de1f983d21a242b8abbeb9720",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cereal/include/cereal/external/rapidxml/license.txt"
+    },
+    "materials/core-dependencies/deps/cppitertools/LICENSE.md": {
+      "bytes": 1318,
+      "mode": 384,
+      "sha256": "466164da9b0db19fb948eab6de21e94548a49721c10ee35472d1c2ccb9375c05",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cppitertools/LICENSE.md"
+    },
+    "materials/core-dependencies/deps/cpr/LICENSE": {
+      "bytes": 1229,
+      "mode": 384,
+      "sha256": "df77cacba01d8f241a2e7af01b9a636c0037cf810d80bbcfdbcc405c99a2d563",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cpr/LICENSE"
+    },
+    "materials/core-dependencies/deps/cpr/package-build/debian-libcpr/copyright": {
+      "bytes": 1977,
+      "mode": 384,
+      "sha256": "f953372e3f50242cd7cbb36e95385791999147c24f55e1b48b40fbc46337b188",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cpr/package-build/debian-libcpr/copyright"
+    },
+    "materials/core-dependencies/deps/cpr/test/LICENSE": {
+      "bytes": 35231,
+      "mode": 384,
+      "sha256": "7d412b7a16a0ca54f6a026b7e24394f9ac3621fba8301976db4044711135842b",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/cpr/test/LICENSE"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.APACHE": {
+      "bytes": 11362,
+      "mode": 384,
+      "sha256": "03379001a7b12a2ec997a25554247d985270b353c10d5bafee9ac8d6519820b7",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.APACHE"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.BSD": {
+      "bytes": 1517,
+      "mode": 384,
+      "sha256": "51928dce36213c5333ba3172e847d735d4c6e9b7ff2722a326c49067155b82eb",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.BSD"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.GPL": {
+      "bytes": 35147,
+      "mode": 384,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.GPL"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.LGPL": {
+      "bytes": 26530,
+      "mode": 384,
+      "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.LGPL"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.MINPACK": {
+      "bytes": 2193,
+      "mode": 384,
+      "sha256": "c87b7f8ee88f6195e91743820c00354833583aef091b72e2d4a49c8e28e798a0",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.MINPACK"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.MPL2": {
+      "bytes": 16726,
+      "mode": 384,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.MPL2"
+    },
+    "materials/core-dependencies/deps/eigen3/COPYING.README": {
+      "bytes": 779,
+      "mode": 384,
+      "sha256": "c83230b770f17ef1386ea1fd3681271dd98aa93646bdbfb5bff3a1b7050fff9d",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/COPYING.README"
+    },
+    "materials/core-dependencies/deps/eigen3/bench/btl/COPYING": {
+      "bytes": 18109,
+      "mode": 384,
+      "sha256": "b8d0e2bcbf36f6af3cdbf94055ad2ea675d5a19fc623eb0ec82febb2b08e719b",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/eigen3/bench/btl/COPYING"
+    },
+    "materials/core-dependencies/deps/googletest/LICENSE": {
+      "bytes": 1475,
+      "mode": 384,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/googletest/LICENSE"
+    },
+    "materials/core-dependencies/deps/nlohmann_json/LICENSE.MIT": {
+      "bytes": 1076,
+      "mode": 384,
+      "sha256": "7b875bb7a4e28abb7956ea821b4b7d88ff6a2a4fabf261c3993730a365ec56dd",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/LICENSE.MIT"
+    },
+    "materials/core-dependencies/deps/nlohmann_json/benchmarks/thirdparty/benchmark/LICENSE": {
+      "bytes": 11358,
+      "mode": 384,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/benchmarks/thirdparty/benchmark/LICENSE"
+    },
+    "materials/core-dependencies/deps/nlohmann_json/test/data/big-list-of-naughty-strings/LICENSE": {
+      "bytes": 1077,
+      "mode": 384,
+      "sha256": "b62d4b4f54d088b5555a0438744d61c1b03c74184db73901e7c79fa7dd144980",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/test/data/big-list-of-naughty-strings/LICENSE"
+    },
+    "materials/core-dependencies/deps/nlohmann_json/test/data/nst_json_testsuite/LICENSE": {
+      "bytes": 1071,
+      "mode": 384,
+      "sha256": "8bd0e0578be788c617ea01d18b2a8146e3746ae50bddadc65a5f9d3aad08ad49",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/test/data/nst_json_testsuite/LICENSE"
+    },
+    "materials/core-dependencies/deps/nlohmann_json/test/thirdparty/catch/LICENSE_1_0.txt": {
+      "bytes": 1338,
+      "mode": 384,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/test/thirdparty/catch/LICENSE_1_0.txt"
+    },
+    "materials/core-dependencies/deps/nlohmann_json/third_party/amalgamate/LICENSE.md": {
+      "bytes": 1543,
+      "mode": 384,
+      "sha256": "2ef7ef27af194a22edf4086439104ba038636877356e6e8eeb009e7de89894e4",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/nlohmann_json/third_party/amalgamate/LICENSE.md"
+    },
+    "materials/core-dependencies/deps/pybind11/LICENSE": {
+      "bytes": 1684,
+      "mode": 384,
+      "sha256": "83965b843b98f670d3a85bd041ed4b372c8ec50d7b4a5995a83ac697ba675dcb",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/pybind11/LICENSE"
+    },
+    "materials/core-dependencies/deps/range-v3/LICENSE.txt": {
+      "bytes": 7233,
+      "mode": 384,
+      "sha256": "2b74ee37dd1a90b2b385534b7dbc171938409bda468673a123ff25302c9c5739",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/range-v3/LICENSE.txt"
+    },
+    "materials/core-dependencies/deps/yamlcpp/LICENSE": {
+      "bytes": 1061,
+      "mode": 384,
+      "sha256": "aa6fcc27be034e41e21dd832f9175bfe694a48491d9e14ff0fa278e19ad14f1b",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/yamlcpp/LICENSE"
+    },
+    "materials/core-dependencies/deps/yamlcpp/test/googletest-1.13.0/LICENSE": {
+      "bytes": 1475,
+      "mode": 384,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core-dependencies/deps/yamlcpp/test/googletest-1.13.0/LICENSE"
+    },
+    "materials/core/LICENSE": {
+      "bytes": 9388,
+      "mode": 384,
+      "sha256": "e966b14be242b644f9cf0d3f425aad8982cb7490e88468e60823ecdee3a27e3e",
+      "source_path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/core/LICENSE"
+    },
+    "xacc-source/xacc/LICENSE.EDL": {
+      "bytes": 1555,
+      "mode": 384,
+      "sha256": "5a6a6f0ce5c63fb5578f56ccc927c79a03e248ac1880681405bb310739ebad15",
+      "source_path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/LICENSE.EDL"
+    },
+    "xacc-source/xacc/LICENSE.EPL": {
+      "bytes": 11232,
+      "mode": 384,
+      "sha256": "44277b2bec6093e4ac313afec251a4de599d24c4e768f8574d95b13a9d2d97b5",
+      "source_path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/LICENSE.EPL"
+    },
+    "xacc-source/xacc/NOTICE": {
+      "bytes": 1613,
+      "mode": 384,
+      "sha256": "076bf91ef0e2b878053af1de30be84262d600cf86975fc083bfd14722297464b",
+      "source_path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/NOTICE"
+    },
+    "xacc-source/xacc/quantum/plugins/qpp/accelerator/src/LICENSE": {
+      "bytes": 1079,
+      "mode": 384,
+      "sha256": "e62e9f4fddeacfc70547068972e8c937585a597b32078d19c096c5940ecf8863",
+      "source_path": "/private/tmp/qb-xacc-out-of-tree-build-20260913/work/xacc/quantum/plugins/qpp/accelerator/src/LICENSE"
+    }
+  },
+  "evidence_file_count": 2,
+  "legal_conclusion": null,
+  "notice_file_count": 35,
+  "remaining": [
+    "Acquire exact-version full ANTLR license text from independently verified upstream source; do not substitute arbitrary BSD text.",
+    "Acquire exact-version OpenPulse standalone license/notice source; package metadata alone is incomplete notice coverage.",
+    "Collect all exact native dependency attribution texts and determine distributed component scope.",
+    "Preserve PLY full embedded notices and original source member hashes in collected attribution bundle."
+  ],
+  "schema": "qb.supplemental-source-notices/v1",
+  "source_material_manifest": {
+    "path": "/private/tmp/qb-core-scoped-selection-package-20260913/work/inputs/material-manifest.json",
+    "sha256": "1877d10d2d9c2511c9006650332e9bded3c51854d3d0c7fae43216c0acdb9900"
+  },
+  "xacc_executed_manifest_sha256": "d4f91a688f0bee2eab12d5b9c874f28b7bedfbd71c6f7f3e477863129600c814"
+}

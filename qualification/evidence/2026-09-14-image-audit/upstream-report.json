@@ -1,0 +1,173 @@
+{
+  "schema": "qb.upstream-notice-candidates/v1",
+  "sources": [
+    {
+      "repository": "antlr/antlr4",
+      "tag": "4.9.2",
+      "tag_object_sha": "55630772501ba79f87a69501c0ebb5e969de6b73",
+      "commit": "5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+      "files": [
+        {
+          "path": "antlr/LICENSE.txt",
+          "upstream_path": "LICENSE.txt",
+          "commit": "5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+          "git_blob_sha1": "2042d1bda6c933e504d9dc2fe3197a6e42a71fe2",
+          "bytes": 2699,
+          "sha256": "b1b379fcaf3219593a4c433feb1b35c780bed23fafaae440b1ae2771a9521e3a",
+          "url": "https://github.com/antlr/antlr4/blob/5e5b6d35b4183fd330102c40947b95c4b5c6abb5/LICENSE.txt"
+        },
+        {
+          "path": "antlr/runtime_Python3_setup.py",
+          "upstream_path": "runtime/Python3/setup.py",
+          "commit": "5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+          "git_blob_sha1": "54bedfb3eb79b2778fed3d3fafd93f590f04053f",
+          "bytes": 527,
+          "sha256": "3fdeef1ce56979cba4cb199069ac2d5fe84295e65a1350ba7ac03326e520d11b",
+          "url": "https://github.com/antlr/antlr4/blob/5e5b6d35b4183fd330102c40947b95c4b5c6abb5/runtime/Python3/setup.py"
+        }
+      ],
+      "assessment": "Exact public release attribution candidate; not proof that this text was included in the acquired wheel or that redistribution requirements are satisfied."
+    },
+    {
+      "repository": "openqasm/openpulse-python",
+      "tag": "v1.0.1",
+      "tag_object_sha": "72282e1a4dd312ae76e0de4f974041b703999bb5",
+      "commit": "db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "files": [
+        {
+          "path": "openpulse/LICENSE",
+          "upstream_path": "LICENSE",
+          "commit": "db7bf66e64be290b1d1485652d1c7e92ce07e499",
+          "git_blob_sha1": "9ea48f0e155ef3443793610958ee73b1ae87a300",
+          "bytes": 11352,
+          "sha256": "5d24d1bf838a90bd88ba223b3d64bebb260ec6e52300dc5df3ed8f1ee9f8723e",
+          "url": "https://github.com/openqasm/openpulse-python/blob/db7bf66e64be290b1d1485652d1c7e92ce07e499/LICENSE"
+        },
+        {
+          "path": "openpulse/source_openpulse_setup.cfg",
+          "upstream_path": "source/openpulse/setup.cfg",
+          "commit": "db7bf66e64be290b1d1485652d1c7e92ce07e499",
+          "git_blob_sha1": "8ac00e1aff3525af27bfdb7778882023ecab386a",
+          "bytes": 1085,
+          "sha256": "9dc9b583d2e62a6f835f2a0c1bdf538b3fed02b54a7bf4e34ed6a8a748cda971",
+          "url": "https://github.com/openqasm/openpulse-python/blob/db7bf66e64be290b1d1485652d1c7e92ce07e499/source/openpulse/setup.cfg"
+        },
+        {
+          "path": "openpulse/source_openpulse_MANIFEST.in",
+          "upstream_path": "source/openpulse/MANIFEST.in",
+          "commit": "db7bf66e64be290b1d1485652d1c7e92ce07e499",
+          "git_blob_sha1": "777240b0fb27c23672499803216e6e795ba8ff50",
+          "bytes": 208,
+          "sha256": "3b9a13d3667c3a13751b886cdd52898111aa75bfc970de42a7a0b41aba83652b",
+          "url": "https://github.com/openqasm/openpulse-python/blob/db7bf66e64be290b1d1485652d1c7e92ce07e499/source/openpulse/MANIFEST.in"
+        }
+      ],
+      "assessment": "Exact public release attribution candidate; not proof that this text was included in the acquired wheel or that redistribution requirements are satisfied."
+    }
+  ],
+  "http_metadata": [
+    {
+      "path": "antlr/tag-ref.json",
+      "requested_url": "https://api.github.com/repos/antlr/antlr4/git/ref/tags/4.9.2",
+      "resolved_url": "https://api.github.com/repos/antlr/antlr4/git/ref/tags/4.9.2",
+      "bytes": 321,
+      "sha256": "2f4a91cd51f2f6c130c8d5c809f3fe2d2862cd162817524607bcfc6a64f7e6bc"
+    },
+    {
+      "path": "antlr/tag-object.json",
+      "requested_url": "https://api.github.com/repos/antlr/antlr4/git/tags/55630772501ba79f87a69501c0ebb5e969de6b73",
+      "resolved_url": "https://api.github.com/repos/antlr/antlr4/git/tags/55630772501ba79f87a69501c0ebb5e969de6b73",
+      "bytes": 675,
+      "sha256": "06d74d05d6c98c4bea027fa692aa028236392912cda385455406a3fbd9ddc6e4"
+    },
+    {
+      "path": "antlr/LICENSE.txt.api.json",
+      "requested_url": "https://api.github.com/repos/antlr/antlr4/contents/LICENSE.txt?ref=5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+      "resolved_url": "https://api.github.com/repos/antlr/antlr4/contents/LICENSE.txt?ref=5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+      "bytes": 4640,
+      "sha256": "665e18f61fd280dea79140e159a7e0055a9f5930d8f52bc059479245e114568e"
+    },
+    {
+      "path": "antlr/runtime_Python3_setup.py.api.json",
+      "requested_url": "https://api.github.com/repos/antlr/antlr4/contents/runtime/Python3/setup.py?ref=5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+      "resolved_url": "https://api.github.com/repos/antlr/antlr4/contents/runtime/Python3/setup.py?ref=5e5b6d35b4183fd330102c40947b95c4b5c6abb5",
+      "bytes": 1722,
+      "sha256": "eb7b51cf51a5fd6942b9e4bcd5e3046270144397d9ed918b27c163953e7f9197"
+    },
+    {
+      "path": "openpulse/tag-ref.json",
+      "requested_url": "https://api.github.com/repos/openqasm/openpulse-python/git/ref/tags/v1.0.1",
+      "resolved_url": "https://api.github.com/repos/openqasm/openpulse-python/git/ref/tags/v1.0.1",
+      "bytes": 345,
+      "sha256": "f89dfce7dcd7f686f428a1807181ea8f9edf5570a5f817f5d84465a298493d2a"
+    },
+    {
+      "path": "openpulse/tag-object.json",
+      "requested_url": "https://api.github.com/repos/openqasm/openpulse-python/git/tags/72282e1a4dd312ae76e0de4f974041b703999bb5",
+      "resolved_url": "https://api.github.com/repos/openqasm/openpulse-python/git/tags/72282e1a4dd312ae76e0de4f974041b703999bb5",
+      "bytes": 679,
+      "sha256": "7df40e12294f5d3e90d90a9bf6a35eef0538f7bedf7e40e3833ad746b0b6241d"
+    },
+    {
+      "path": "openpulse/LICENSE.api.json",
+      "requested_url": "https://api.github.com/repos/openqasm/openpulse-python/contents/LICENSE?ref=db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "resolved_url": "https://api.github.com/repos/openqasm/openpulse-python/contents/LICENSE?ref=db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "bytes": 16626,
+      "sha256": "874e14c8d9a7d15cbee72e6c2abbd134462110fe9e0bc7d8e33868aeb8267950"
+    },
+    {
+      "path": "openpulse/source_openpulse_setup.cfg.api.json",
+      "requested_url": "https://api.github.com/repos/openqasm/openpulse-python/contents/source/openpulse/setup.cfg?ref=db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "resolved_url": "https://api.github.com/repos/openqasm/openpulse-python/contents/source/openpulse/setup.cfg?ref=db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "bytes": 2597,
+      "sha256": "de93c3f7bd021f25d3f5a12616dd6131e31c9ffc8b7d12b259db2a3461d5cc0d"
+    },
+    {
+      "path": "openpulse/source_openpulse_MANIFEST.in.api.json",
+      "requested_url": "https://api.github.com/repos/openqasm/openpulse-python/contents/source/openpulse/MANIFEST.in?ref=db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "resolved_url": "https://api.github.com/repos/openqasm/openpulse-python/contents/source/openpulse/MANIFEST.in?ref=db7bf66e64be290b1d1485652d1c7e92ce07e499",
+      "bytes": 1402,
+      "sha256": "fad36f4702334b4a4b0a162448d9853bc0d86b8bfc990c902646786501889d31"
+    }
+  ],
+  "acquired_wheel_metadata": [
+    {
+      "wheel": "antlr4_python3_runtime-4.9.2-py3-none-any.whl",
+      "wheel_sha256": "eb96d80b0f41e33dbc94aed874f61e62214ee6635d7e77411db3238a145a3030",
+      "metadata_member": "antlr4_python3_runtime-4.9.2.dist-info/METADATA",
+      "metadata_sha256": "3d021cb5f1f7a666a49c0bf1beb7dcc896368109e8b6d0fb127f9f82e8a9ca6d",
+      "saved_path": "antlr4_python3_runtime-wheel-METADATA.txt",
+      "fields": [
+        "Name: antlr4-python3-runtime",
+        "Version: 4.9.2",
+        "Home-page: http://www.antlr.org",
+        "License: BSD"
+      ]
+    },
+    {
+      "wheel": "openpulse-1.0.1-py3-none-any.whl",
+      "wheel_sha256": "75fb2d4d7f74db3a86027719744541fcb725e1f5b79e14b78dc5b34ed8c66e87",
+      "metadata_member": "openpulse-1.0.1.dist-info/METADATA",
+      "metadata_sha256": "9df0ec34af4fd10322c1f743cfdfb299226e26d85e63d010c06187637090daa8",
+      "saved_path": "openpulse-wheel-METADATA.txt",
+      "fields": [
+        "Name: openpulse",
+        "Version: 1.0.1",
+        "Home-page: https://github.com/openqasm/openpulse/",
+        "License: Apache 2.0 Software License"
+      ]
+    }
+  ],
+  "coverage_complete": false,
+  "legal_conclusion": null,
+  "limitations": [
+    "Upstream tag/license attribution candidates do not demonstrate wheel source reproducibility or grant blanket redistribution clearance.",
+    "OpenPulse wheel Home-page points to openqasm/openpulse, which GitHub redirects to openqasm/openpulse-python.",
+    "The unsigned ANTLR annotated tag is recorded as upstream evidence, not cryptographic author authentication."
+  ],
+  "additional_observations": {
+    "antlr_sdist_setup_py_matches_upstream_release_bytes": true,
+    "antlr_sdist_setup_py_sha256": "3fdeef1ce56979cba4cb199069ac2d5fe84295e65a1350ba7ac03326e520d11b",
+    "openpulse_packaging_inference": "At this tag the root license is LICENSE, while source/openpulse/MANIFEST.in requests LICENSE.txt and setup.cfg requests LICENSE. The inspected package subdirectory listing has neither filename. This is consistent with an upstream packaging omission; wheel origin is not proven by this observation."
+  }
+}

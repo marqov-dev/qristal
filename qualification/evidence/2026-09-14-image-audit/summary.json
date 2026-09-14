@@ -1,0 +1,84 @@
+{
+  "schema": "qb.qpp-image-audit-summary/v1",
+  "source_main": "9f6e5d108f771e14fcce3705c11cd1b07a007651",
+  "image_id": "sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266",
+  "full_report_sha256": "811e2b801833c135234d8dc0993b18e3cd91408f765d94451e516bc450b322ee",
+  "elf_file_count": 1065,
+  "errors": [],
+  "imports": [
+    {
+      "file": "/work/install-core/lib/qristal/core.cpython-310-x86_64-linux-gnu.so",
+      "module": "qristal.core",
+      "passed": true,
+      "version": null
+    },
+    {
+      "file": "/work/python-core/lib/python3.10/site-packages/numpy/__init__.py",
+      "module": "numpy",
+      "passed": true,
+      "version": "1.26.4"
+    },
+    {
+      "file": "/work/python-core/lib/python3.10/site-packages/scipy/linalg/__init__.py",
+      "module": "scipy.linalg",
+      "passed": true,
+      "version": null
+    },
+    {
+      "file": "/work/python-core/lib/python3.10/site-packages/symengine/__init__.py",
+      "module": "symengine",
+      "passed": true,
+      "version": "0.14.1"
+    },
+    {
+      "file": "/work/python-core/lib/python3.10/site-packages/qiskit/__init__.py",
+      "module": "qiskit",
+      "passed": true,
+      "version": "0.46.0"
+    }
+  ],
+  "elapsed_seconds": 80.09,
+  "standalone_ldd_all_passed": false,
+  "findings": [
+    {
+      "bytes": 2686065,
+      "elf_type": 3,
+      "ldd": "\tlibquadmath-96973f99.so.0.0.0 => not found\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007fffff7a3000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fffff6bc000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fffff69c000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffffefd7000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ffffffc4000)\n",
+      "ldd_exit_code": 0,
+      "linkage_ok": false,
+      "path": "/work/python-core/lib/python3.10/site-packages/scipy.libs/libgfortran-040039e1.so.5.0.0",
+      "sha256": "14afb3129b1a8b50bc40a3b0820c7f1152ea9bc10121aab152943f7057472886"
+    },
+    {
+      "bytes": 35123345,
+      "elf_type": 3,
+      "ldd": "\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ffffd659000)\n\tlibpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ffffd654000)\n\tlibgfortran-040039e1.so.5.0.0 => not found\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffffd42b000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ffffffc4000)\n",
+      "ldd_exit_code": 0,
+      "linkage_ok": false,
+      "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "sha256": "9254d0854dd7615e11de28d771ae408878ca8123a7ac204f21e4cc7a376cc2e5"
+    },
+    {
+      "bytes": 2686065,
+      "elf_type": 3,
+      "ldd": "\tlibquadmath-96973f99.so.0.0.0 => not found\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007fffff7a3000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fffff6bc000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fffff69c000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffffefd7000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ffffffc4000)\n",
+      "ldd_exit_code": 0,
+      "linkage_ok": false,
+      "path": "/work/python-core/lib/python3.10/site-packages/numpy.libs/libgfortran-040039e1.so.5.0.0",
+      "sha256": "14afb3129b1a8b50bc40a3b0820c7f1152ea9bc10121aab152943f7057472886"
+    }
+  ],
+  "cleanup": {
+    "remove_exit_code": 0,
+    "absence_verified": true,
+    "inspect_exit_code": 1,
+    "stdout": "\n",
+    "stderr": "Error response from daemon: No such container: qpp-elf-audit-461cef1640da4d6b\n"
+  },
+  "installed_numeric_operations_passed": true,
+  "local_loaded_image_probes_passed": 6,
+  "clean_daemon_replay_verified": false,
+  "native_amd64_hardware": false,
+  "hosted": false,
+  "redistribution_cleared": false
+}
