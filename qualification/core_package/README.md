@@ -104,3 +104,9 @@ uncompressed diff IDs without extraction. `image_audit_guest.py` and
 Evidence is in `qualification/evidence/2026-09-14-image-audit`; it preserves three
 standalone wheel-library linkage findings alongside successful installed-loader
 operations. `NATIVE-IMAGE-PLAN.md` describes the next separate native-host gate.
+
+`attribution.py` and `notice_overlay.py` now assemble pinned notice evidence and
+verify a single attribution-only image layer. See `ATTRIBUTION.md` for provenance
+limits and `../evidence/2026-09-14-attribution-overlay` for actual saved-archive
+verification and six passing local probes. Public redistribution, native image
+qualification and hosted execution remain separate gates.

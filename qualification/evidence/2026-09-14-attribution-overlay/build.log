@@ -1,0 +1,33 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 125B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/qristal-qpp-local:20260914
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/library/qristal-qpp-local:20260914@sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266
+#4 resolve docker.io/library/qristal-qpp-local:20260914@sha256:8d8a81d995325ae9c452dca2698442b02c735cc6eae9d98ea78a38532a5a8266 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 1.18MB 0.1s done
+#5 DONE 0.1s
+
+#6 [2/2] COPY --chown=0:0 attribution/ /opt/qristal/attribution/
+#6 DONE 0.2s
+
+#7 exporting to image
+#7 exporting layers 0.1s done
+#7 exporting manifest sha256:5c5958540dfdacc04f7ca87f56ca9a97056a533a19617169b1829d5ee1704d0e done
+#7 exporting config sha256:0127d58acfa19aae8fe4ab911b1acbb9993d8ab16ebd40ad55421480457907f0 done
+#7 exporting attestation manifest sha256:c27ead0ab58339f56a7a3441fd45742436a0e2fe878c79c6e678cf6f6b0afda1 done
+#7 exporting manifest list sha256:03a2db140fdb579f3d6376700c36016af2bd3ffa139aeb5282439498a9a4aa2f done
+#7 naming to docker.io/library/qristal-qpp-attribution:20260914
+#7 naming to docker.io/library/qristal-qpp-attribution:20260914 done
+#7 DONE 0.1s
