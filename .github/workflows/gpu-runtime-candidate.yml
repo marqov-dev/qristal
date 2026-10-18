@@ -1,6 +1,7 @@
 name: GPU runtime candidate
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, converted_to_draft]
     paths:
       - '.github/workflows/gpu-runtime-candidate.yml'
       - 'qualification/gpu_release/**'
@@ -19,13 +20,62 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: gpu-runtime-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: false
+  group: gpu-runtime-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
+  ci-scope:
+    name: CI change scope
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      code: ${{ steps.scope.outputs.code }}
+    steps:
+      - uses: actions/github-script@v7
+        id: scope
+        with:
+          script: |
+            let files;
+            if (context.eventName === 'push' && !/^0+$/.test(context.payload.before)) {
+              const comparison = await github.rest.repos.compareCommits({
+                owner: context.repo.owner, repo: context.repo.repo,
+                base: context.payload.before, head: context.sha
+              });
+              files = comparison.data.files;
+              if (!Array.isArray(files) || !files.length || files.length >= 300) {
+                core.setOutput('code', 'true');
+                return;
+              }
+            } else if (context.eventName !== 'pull_request') {
+              core.setOutput('code', 'true');
+              return;
+            } else {
+              files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner, repo: context.repo.repo,
+              pull_number: context.issue.number, per_page: 100
+              });
+            }
+            // A truncated or empty file list must never suppress executable checks.
+            if (!files.length || (context.eventName === 'pull_request' && files.length !== context.payload.pull_request.changed_files) || files.some(file => typeof file.filename !== 'string' || !file.filename || !['added', 'removed', 'modified', 'renamed', 'copied', 'changed', 'unchanged'].includes(file.status) || (file.status === 'renamed' && (typeof file.previous_filename !== 'string' || !file.previous_filename)))) {
+              throw new Error('Incomplete pull request file list');
+            }
+            const docsOnly = path => /^(README|CHANGELOG|CONTRIBUTING|CODE_OF_CONDUCT|SECURITY|LICENSE)(\.(md|rst|txt))?$/i.test(path)
+              || (/^(docs|doc)\//.test(path) && /\.(md|rst|txt)$/i.test(path)
+                  && !/(^|\/)(tests?|fixtures?|config|requirements)(\/|\.)/i.test(path));
+            core.setOutput('code', String(!files.every(file => docsOnly(file.filename)
+              && (!file.previous_filename || docsOnly(file.previous_filename)))));
+
   check:
+    if: always() && (github.event_name != 'pull_request' || github.event.pull_request.draft == false) && (needs.ci-scope.result != 'success' || needs.ci-scope.outputs.code == 'true')
+    needs: ci-scope
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:
+      - name: Require successful change classification
+        if: needs.ci-scope.result != 'success'
+        run: exit 1
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
